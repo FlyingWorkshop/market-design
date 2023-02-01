@@ -1,0 +1,669 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>2. Game Theory Review + Incentives &#8212; market-design</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="canonical" href="https://FlyingWorkshop.github.io/market-design/book/game-theory-review-and-incentives.html" />
+    <link rel="shortcut icon" href="../_static/fav.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="3. Stability + Order" href="stability-and-order.html" />
+    <link rel="prev" title="1. Matching Theory" href="matching-theory.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">market-design</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="matching-theory.html">
+   1. Matching Theory
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   2. Game Theory Review + Incentives
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="stability-and-order.html">
+   3. Stability + Order
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="house-allocation.html">
+   4. Housing Model
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="school-choice.html">
+   5. School Choice
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="practice.html">
+   6. Practice
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="bibliography.html">
+   7. Bibliography
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/FlyingWorkshop/market-design"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/FlyingWorkshop/market-design/issues/new?title=Issue%20on%20page%20%2Fbook/game-theory-review-and-incentives.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/FlyingWorkshop/market-design/edit/master/book/game-theory-review-and-incentives.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Edit this page"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="headerbtn__text-container">suggest edit</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/book/game-theory-review-and-incentives.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#game-theory-and-mechanism-design">
+   2.1. Game Theory and Mechanism Design
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#incomplete-information">
+     2.1.1. Incomplete Information
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#allocation-problems">
+     2.1.2. Allocation Problems
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#good-allocations">
+       “Good” Allocations
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#mechanisms">
+     2.1.3. Mechanisms
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#example-1-gayle-shapley-marriage-problem">
+       Example 1: Gayle-Shapley Marriage Problem
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#example-2-simple-auction">
+       Example 2: Simple Auction
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#applying-gt-to-market-design">
+     2.1.4. Applying GT to Market Design
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#studying-existing-markets">
+       Studying existing markets
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#designing-new-markets">
+       Designing new markets
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#incentives-in-matching">
+   2.2. Incentives in Matching
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Game Theory Review + Incentives</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#game-theory-and-mechanism-design">
+   2.1. Game Theory and Mechanism Design
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#incomplete-information">
+     2.1.1. Incomplete Information
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#allocation-problems">
+     2.1.2. Allocation Problems
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#good-allocations">
+       “Good” Allocations
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#mechanisms">
+     2.1.3. Mechanisms
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#example-1-gayle-shapley-marriage-problem">
+       Example 1: Gayle-Shapley Marriage Problem
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#example-2-simple-auction">
+       Example 2: Simple Auction
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#applying-gt-to-market-design">
+     2.1.4. Applying GT to Market Design
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#studying-existing-markets">
+       Studying existing markets
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#designing-new-markets">
+       Designing new markets
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#incentives-in-matching">
+   2.2. Incentives in Matching
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="game-theory-review-incentives">
+<h1><span class="section-number">2. </span>Game Theory Review + Incentives<a class="headerlink" href="#game-theory-review-incentives" title="Permalink to this headline">#</a></h1>
+<section id="game-theory-and-mechanism-design">
+<h2><span class="section-number">2.1. </span>Game Theory and Mechanism Design<a class="headerlink" href="#game-theory-and-mechanism-design" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Classical game theory analyzes strategic behavior:</p></li>
+<li><p>Given a strategic environment (a “game”), what can we say about the likely outcome?</p></li>
+<li><p>Mechanism design flips the problem around</p></li>
+<li><p>How can we create rules of play (a “mechanism”) so that even if players are strategically sophisticated,
+we still get a desired outcome?</p></li>
+</ul>
+<dl class="simple myst">
+<dt>Game</dt><dd><p>A game in a strategic form is a triple <span class="math notranslate nohighlight">\((N, A, u)\)</span> consisting of</p>
+</dd>
+</dl>
+<ul class="simple">
+<li><p>A set of players <span class="math notranslate nohighlight">\(N = \{1, \ldots, n\}\)</span></p></li>
+<li><p>Possible <em>actions</em> for each player: <span class="math notranslate nohighlight">\(A_1, \ldots, A_n\)</span></p></li>
+<li><p>Payoff functions for each player: <span class="math notranslate nohighlight">\(u_i(a_1, \ldots, a_n)\)</span> for <span class="math notranslate nohighlight">\(u: A_1 \times \dots \times A_n \to
+\mathbb{R}^n\)</span></p></li>
+</ul>
+<p>The game is commonly known to players.</p>
+<dl class="simple myst">
+<dt>Dominant Action</dt><dd><p>Action <span class="math notranslate nohighlight">\(a_i\)</span> is (weakly) <em>dominant</em> for player <span class="math notranslate nohighlight">\(i\)</span>if for
+all <span class="math notranslate nohighlight">\(a_i'\)</span> and <span class="math notranslate nohighlight">\(a_{-1}\)</span>:
+<span class="math notranslate nohighlight">\(u_i(a_i, a_{-1} \geq u_i(a_i', a_{-i})\)</span>
+and for some <span class="math notranslate nohighlight">\(\hat{a}_{-i}\)</span>,
+<span class="math notranslate nohighlight">\(u_i(a_i, \hat{a}_{-i}) &gt; u_i(a_i', \hat{a}_{-i}).\)</span></p>
+</dd>
+</dl>
+<p>It’s a no-brainer for <span class="math notranslate nohighlight">\(i\)</span> to play a dominant action if she has one; it is an optimal choice <em>regardless of how the
+others may play</em></p>
+<dl class="simple myst">
+<dt>Nash Equilbrium</dt><dd><p>Action profile <span class="math notranslate nohighlight">\(a = (a_1, \ldots, a_n)\)</span> is a <em>Nash
+equilibrium</em> if for each player <span class="math notranslate nohighlight">\(i\)</span> and action <span class="math notranslate nohighlight">\(a_i'\)</span>, <span class="math notranslate nohighlight">\(U_i(a_i, a_{-i}) \geq u_i(a_i', a_{-1})\)</span>. In words,
+an action profile <span class="math notranslate nohighlight">\(a\)</span> is a Nash equilibrium if no player <span class="math notranslate nohighlight">\(i\)</span> can increase its own payoff above <span class="math notranslate nohighlight">\(u_i(a)\)</span> by
+unilaterally changing in its action from <span class="math notranslate nohighlight">\(a_i\)</span> to some other action <span class="math notranslate nohighlight">\(a_i'\)</span>.</p>
+</dd>
+</dl>
+<section id="incomplete-information">
+<h3><span class="section-number">2.1.1. </span>Incomplete Information<a class="headerlink" href="#incomplete-information" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>What happens if the players don’t know each other’s payoff functions? For example, in an auction, players may
+not know the other bidders’ valuations.</p></li>
+<li><p>(Bayesian) Nash equilibrium is more subtle: each player’s optimal choice depends on what it believes others’ payoffs may be,
+so each player’s expected payoff depends on probabilities of what others would do with different payoffs.</p></li>
+</ul>
+</section>
+<section id="allocation-problems">
+<h3><span class="section-number">2.1.2. </span>Allocation Problems<a class="headerlink" href="#allocation-problems" title="Permalink to this headline">#</a></h3>
+<p>An allocation problem consists of player <span class="math notranslate nohighlight">\(i = 1, \ldots, n\)</span>, a set of possible outcomes or allocations <span class="math notranslate nohighlight">\(X\)</span>, and
+(possibly) payments by each player <span class="math notranslate nohighlight">\(p_1, \ldots, p_n\)</span>, and value functions <span class="math notranslate nohighlight">\(v_i(x)\)</span> such that the payoff for each
+player is <span class="math notranslate nohighlight">\(v_i(x) - p_i\)</span>.
+Challenge:  the <em>mechanism designer</em> typically does not know the payoff functions! The function is the player’s privately known “type.”</p>
+<section id="good-allocations">
+<h4>“Good” Allocations<a class="headerlink" href="#good-allocations" title="Permalink to this headline">#</a></h4>
+<p>Various criteria may define “good” allocations or outcomes. In auction problems, a good allocation might be one that is <em>Pareto efficient</em> given everyone’s values, or one that has high revenue for the seller. In matching problems, a good allocation might be one that is <em>stable</em>.</p>
+</section>
+</section>
+<section id="mechanisms">
+<h3><span class="section-number">2.1.3. </span>Mechanisms<a class="headerlink" href="#mechanisms" title="Permalink to this headline">#</a></h3>
+<dl class="simple myst">
+<dt>Mechanism</dt><dd><p>A mechanism <span class="math notranslate nohighlight">\((M, x, p)\)</span> is a triple consisting of</p>
+</dd>
+</dl>
+<ul class="simple">
+<li><p>A set of possible <em>messages</em> for each player: <span class="math notranslate nohighlight">\(M_1, \ldots, M_n\)</span></p></li>
+<li><p>An allocation rule: <span class="math notranslate nohighlight">\(X(m_1, \ldots, m_n)\)</span></p></li>
+<li><p>Possibly: a payment rule <span class="math notranslate nohighlight">\(p: M_1 \times \ldots \times M_n \to \mathbb{R}^n\)</span> where player <span class="math notranslate nohighlight">\(i\)</span> pays <span class="math notranslate nohighlight">\(p_i(m_1, \ldots, m_n)\)</span>.
+We will look at mechanisms with and without payments. If there are no payments, set all <span class="math notranslate nohighlight">\(p_i \equiv 0\)</span>.</p></li>
+</ul>
+<section id="example-1-gayle-shapley-marriage-problem">
+<h4>Example 1: Gayle-Shapley Marriage Problem<a class="headerlink" href="#example-1-gayle-shapley-marriage-problem" title="Permalink to this headline">#</a></h4>
+<p>In the Gale-Shapley marriage problem, the messages are statements of preference (not necessarily truthful). The outcome/allocation/assignment is a matching, which the mechanism selects as a function of the reported preferences. No payments are made. A “type” is the preference list of each agent.</p>
+</section>
+<section id="example-2-simple-auction">
+<h4>Example 2: Simple Auction<a class="headerlink" href="#example-2-simple-auction" title="Permalink to this headline">#</a></h4>
+<p>In a simple auction problem, the messages are the bids <span class="math notranslate nohighlight">\((b_i \geq 0)\)</span>. The auction mechanism determines who wins and what everyone must pay as a function of the bids. A type is typically a person’s value (maximum price).</p>
+<p>A mechanism plus payoffs defines a game. The possible actions are the messages: <span class="math notranslate nohighlight">\(M_1, \ldots, M_n\)</span>. The payoffs are functions of the messages <span class="math notranslate nohighlight">\(u_i(m_1, \ldots, m_n) = v_{i}\left(x\left(m_{1},\ldots,m_{n}\right)\right) - p_i(m_1, \ldots, m_n).\)</span></p>
+<p>Often, we will focus on <em>direct mechanisms</em>: <span class="math notranslate nohighlight">\(M_i\)</span> is equal to the set of <span class="math notranslate nohighlight">\(i\)</span>’s possible payoff functions (or preferences).</p>
+<dl class="simple myst">
+<dt>Strategy-proof Mechanisms</dt><dd><p>A <em>strategy/action</em> for player <span class="math notranslate nohighlight">\(i\)</span> specifies what message to send as a function of player <span class="math notranslate nohighlight">\(i\)</span>’s type. A mechanism is <em>strategy-proof</em> if each player <span class="math notranslate nohighlight">\(i\)</span> has a dominant strategy, that is, a strategy that is optimal regardless of the strategies chosen by the other players. Sometimes, we’ll look at mechanisms that are not strategy-proof, using Nash equilibrium to forecast mechanism outcomes.</p>
+</dd>
+</dl>
+</section>
+</section>
+<section id="applying-gt-to-market-design">
+<h3><span class="section-number">2.1.4. </span>Applying GT to Market Design<a class="headerlink" href="#applying-gt-to-market-design" title="Permalink to this headline">#</a></h3>
+<section id="studying-existing-markets">
+<h4>Studying existing markets<a class="headerlink" href="#studying-existing-markets" title="Permalink to this headline">#</a></h4>
+<p>Identify the “rules of the game,” the incentives for participants, and how they behave. Then try ot understand why the market functions well, or not so well.</p>
+</section>
+<section id="designing-new-markets">
+<h4>Designing new markets<a class="headerlink" href="#designing-new-markets" title="Permalink to this headline">#</a></h4>
+<p>Identify the economic problem to be solved, the players and their incentives and information. Then try to understand what sort of market rules would lead to a good outcome when participants are selfish and smart.</p>
+<p>Economic theory provides a conceptual framework, but good practice also uses data and experiment to test hypotheses and identify things models may have missed.</p>
+</section>
+</section>
+</section>
+<section id="incentives-in-matching">
+<h2><span class="section-number">2.2. </span>Incentives in Matching<a class="headerlink" href="#incentives-in-matching" title="Permalink to this headline">#</a></h2>
+<p>[TODO]</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./book"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="matching-theory.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><span class="section-number">1. </span>Matching Theory</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="stability-and-order.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">3. </span>Stability + Order</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Logan Mondal Bhamidipaty and Paul Milgrom<br/>
+  
+      &copy; Copyright 2023.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
