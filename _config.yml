@@ -65,6 +65,8 @@ sphinx:
           colab_url: "https://colab.research.google.com",
         }
     bibtex_reference_style: author_year
+  extra_extensions:
+    - sphinx_proof
 
 
 # Define the name of the latex output file for PDF builds
@@ -76,3 +78,19 @@ sphinx:
 # Add a bibtex file so that we can create citations
 bibtex_bibfiles:
   - book/references.bib
+
+parse:
+  myst_enable_extensions:
+    # don't forget to list any other extensions you want enabled,
+    # including those that are enabled by default!
+    - amsmath
+    - colon_fence
+    - deflist
+    - dollarmath
+    # - html_admonition
+    # - html_image
+    - linkify
+    # - replacements
+    # - smartquotes
+    - substitution
+    - tasklist

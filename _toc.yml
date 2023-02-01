@@ -2,10 +2,16 @@
 # Learn more at https://jupyterbook.org/customize/toc.html
 
 format: jb-book
-root: index
+root: intro
+options:
+  numbered: 3
 chapters:
-  - file: book/markdown
-  - file: book/notebooks
+  - file: book/matching-theory  # 3
+  - file: book/game-theory-review-and-incentives  # 4 [unfinished]
+  - file: book/stability-and-order  # 5 [unfinished]
+  - file: book/house-allocation  # 6 [unfinished]
+  - file: book/school-choice # 7, 8 [unfinished]
+  - file: book/practice
   - file: book/bibliography
 
 # Or you organize the TOC by parts
