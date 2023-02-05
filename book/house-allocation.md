@@ -1,4 +1,4 @@
-# Housing Model
+# Housing Allocation
 
 In some matching markets, only one side of the market has preferences (or we care mostly about the preferences of one side). Sample applications include students picking housing on campus, organ transplants, school choice, and professional sports teams drafting college athletes.
 
@@ -238,4 +238,6 @@ Husband of Phoenix woman gave kidney to woman in Toledo.
 Her mom gave kidney to patient A in Columbus, whose daughter simultaneously gave kidney to patient B in Columbus.
 And so on $\ldots$
 
-![donor-chain](../images/donor-chain.png)
+```{image} ../images/donor-chain.png
+:align: center
+```
