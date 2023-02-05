@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>5. School Choice &#8212; market-design</title>
+    <title>School Choice &#8212; market-design</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -43,6 +43,7 @@
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js"></script>
+    <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
@@ -57,8 +58,8 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="shortcut icon" href="../_static/fav.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="6. Practice" href="practice.html" />
-    <link rel="prev" title="4. Housing Model" href="house-allocation.html" />
+    <link rel="next" title="Matching with Contracts" href="matching-with-contracts.html" />
+    <link rel="prev" title="Housing Model" href="house-allocation.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -110,40 +111,87 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="current nav bd-sidenav">
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Matching Theory
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="matching-theory.html">
-   1. Matching Theory
+   Matching Theory
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="game-theory-review-and-incentives.html">
-   2. Game Theory Review + Incentives
+   Game Theory Review + Incentives
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="stability-and-order.html">
-   3. Stability + Order
+   Stability + Order
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="house-allocation.html">
-   4. Housing Model
+   Housing Model
   </a>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   5. School Choice
+   School Choice
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="matching-with-contracts.html">
+   Matching with Contracts
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Auction Theory
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="auction-theory.html">
+   Auction Theory
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="multi-unit-auctions-with-matching.html">
+   Multi-Unit Auctions with Matching
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="sponsored-search-auctions.html">
+   Sponsored Search Auctions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="chilean-fisheries.html">
+   Chilean Fisheries
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="radio-spectrum-auctions.html">
+   Radio Spectrum Auctions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="incentive-reverse-auction.html">
+   Incentive Reverse Auction
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="practice.html">
-   6. Practice
+   Practice
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="bibliography.html">
-   7. Bibliography
+   Bibliography
   </a>
  </li>
 </ul>
@@ -342,59 +390,59 @@ title="Print to PDF"
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#objectives">
-   5.1. Objectives
+   Objectives
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#school-choice-model">
-   5.2. School Choice Model
+   School Choice Model
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#stability">
-   5.3. Stability
+   Stability
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#stability-as-fairness">
-   5.4. Stability as Fairness
+   Stability as Fairness
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#boston-mechanism">
-   5.5. Boston Mechanism
+   Boston Mechanism
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#problems">
-     5.5.1. Problems
+     Problems
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#boston-in-practice">
-     5.5.2. Boston in Practice
+     Boston in Practice
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#columbus-oh-schools">
-   5.6. Columbus (OH) Schools
+   Columbus (OH) Schools
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#old-nyc-schools">
-   5.7. (Old) NYC Schools
+   (Old) NYC Schools
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#student-proposing-da">
-   5.8. Student Proposing DA
+   Student Proposing DA
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#inefficient-stable-matchings">
-     5.8.1. Inefficient Stable Matchings
+     Inefficient Stable Matchings
     </a>
    </li>
   </ul>
@@ -420,59 +468,59 @@ title="Print to PDF"
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#objectives">
-   5.1. Objectives
+   Objectives
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#school-choice-model">
-   5.2. School Choice Model
+   School Choice Model
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#stability">
-   5.3. Stability
+   Stability
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#stability-as-fairness">
-   5.4. Stability as Fairness
+   Stability as Fairness
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#boston-mechanism">
-   5.5. Boston Mechanism
+   Boston Mechanism
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#problems">
-     5.5.1. Problems
+     Problems
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#boston-in-practice">
-     5.5.2. Boston in Practice
+     Boston in Practice
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#columbus-oh-schools">
-   5.6. Columbus (OH) Schools
+   Columbus (OH) Schools
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#old-nyc-schools">
-   5.7. (Old) NYC Schools
+   (Old) NYC Schools
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#student-proposing-da">
-   5.8. Student Proposing DA
+   Student Proposing DA
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#inefficient-stable-matchings">
-     5.8.1. Inefficient Stable Matchings
+     Inefficient Stable Matchings
     </a>
    </li>
   </ul>
@@ -488,7 +536,7 @@ title="Print to PDF"
               <div>
                 
   <section class="tex2jax_ignore mathjax_ignore" id="school-choice">
-<h1><span class="section-number">5. </span>School Choice<a class="headerlink" href="#school-choice" title="Permalink to this headline">#</a></h1>
+<h1>School Choice<a class="headerlink" href="#school-choice" title="Permalink to this headline">#</a></h1>
 <p>So far, two approaches to matching problems</p>
 <ul class="simple">
 <li><p>Finding stable outcomes: DA algorithm</p></li>
@@ -504,7 +552,7 @@ title="Print to PDF"
 <p>In more recent years, many US cities have adopted “school choice” programs, designed to give families additional flexibility, and maybe create some competition between schools.</p>
 <p>We’ll discuss how the matching mechanisms we’ve studied inform the design of these programs.</p>
 <section id="objectives">
-<h2><span class="section-number">5.1. </span>Objectives<a class="headerlink" href="#objectives" title="Permalink to this headline">#</a></h2>
+<h2>Objectives<a class="headerlink" href="#objectives" title="Permalink to this headline">#</a></h2>
 <p>What are the design goals?</p>
 <p>“Efficient” placements</p>
 <p>“Fair” procedure and outcomes</p>
@@ -519,7 +567,7 @@ title="Print to PDF"
 </ul>
 </section>
 <section id="school-choice-model">
-<h2><span class="section-number">5.2. </span>School Choice Model<a class="headerlink" href="#school-choice-model" title="Permalink to this headline">#</a></h2>
+<h2>School Choice Model<a class="headerlink" href="#school-choice-model" title="Permalink to this headline">#</a></h2>
 <p>Set of students <span class="math notranslate nohighlight">\(S\)</span> and schools <span class="math notranslate nohighlight">\(C\)</span></p>
 <ul class="simple">
 <li><p>Each student can go to one school</p></li>
@@ -530,7 +578,7 @@ title="Print to PDF"
 <p>This is a “many-to-one” version of the matching model we started with.</p>
 </section>
 <section id="stability">
-<h2><span class="section-number">5.3. </span>Stability<a class="headerlink" href="#stability" title="Permalink to this headline">#</a></h2>
+<h2>Stability<a class="headerlink" href="#stability" title="Permalink to this headline">#</a></h2>
 <p>One notion of a “good” assignment might be an assignment that is stable.</p>
 <dl class="simple myst">
 <dt>Stability means:</dt><dd><p>no blocking individual – no student wants to drop out and no school wants to refuse a student.</p>
@@ -540,14 +588,14 @@ title="Print to PDF"
 </dl>
 </section>
 <section id="stability-as-fairness">
-<h2><span class="section-number">5.4. </span>Stability as Fairness<a class="headerlink" href="#stability-as-fairness" title="Permalink to this headline">#</a></h2>
+<h2>Stability as Fairness<a class="headerlink" href="#stability-as-fairness" title="Permalink to this headline">#</a></h2>
 <p>No blocking individual means no student can be forced to attend a school they don’t want to attend, and no school can be forced to take a student they view as unqualified.</p>
 <p>No blocking pair can mean “no justified envy.” That is, no student <span class="math notranslate nohighlight">\(s\)</span> prefers school <span class="math notranslate nohighlight">\(c\)</span> to her assigned school <span class="math notranslate nohighlight">\(c\)</span>, when some other student with lower priority is assigned to <span class="math notranslate nohighlight">\(c\)</span>.</p>
 </section>
 <section id="boston-mechanism">
-<h2><span class="section-number">5.5. </span>Boston Mechanism<a class="headerlink" href="#boston-mechanism" title="Permalink to this headline">#</a></h2>
+<h2>Boston Mechanism<a class="headerlink" href="#boston-mechanism" title="Permalink to this headline">#</a></h2>
 <div class="proof algorithm admonition" id="algorithm-0">
-<p class="admonition-title"><span class="caption-number">Algorithm 5.1 </span> (Old Boston Mechanism)</p>
+<p class="admonition-title"><span class="caption-number">Algorithm 7 </span> (Old Boston Mechanism)</p>
 <section class="algorithm-content" id="proof-content">
 <p>Each student submits a preference ranking, and each school’s priority order over students is known.</p>
 <ol class="simple">
@@ -559,9 +607,9 @@ title="Print to PDF"
 </ol>
 </section>
 </div><section id="problems">
-<h3><span class="section-number">5.5.1. </span>Problems<a class="headerlink" href="#problems" title="Permalink to this headline">#</a></h3>
+<h3>Problems<a class="headerlink" href="#problems" title="Permalink to this headline">#</a></h3>
 <div class="proof remark admonition" id="remark-1">
-<p class="admonition-title"><span class="caption-number">Remark 5.1 </span></p>
+<p class="admonition-title"><span class="caption-number">Remark 1 </span></p>
 <section class="remark-content" id="proof-content">
 <p>The Boston mechanism is not strategy-proof.</p>
 </section>
@@ -569,7 +617,7 @@ title="Print to PDF"
 <p>Example: you want school A most and B second. You have high priority at B but not A. If a school is in high demand, then to be admitted you need both to rank it first and have high priority. Perhaps you should rank B first.</p>
 <p>This was well-understood by Boston parents, and frequently showed up on parent message boards.</p>
 <div class="proof remark admonition" id="remark-2">
-<p class="admonition-title"><span class="caption-number">Remark 5.2 </span></p>
+<p class="admonition-title"><span class="caption-number">Remark 2 </span></p>
 <section class="remark-content" id="proof-content">
 <p>The Boston mechanism is also unfair.</p>
 </section>
@@ -579,7 +627,7 @@ Or, it ranks B first and later learns that it could have gotten into A!
 (Economically) disadvantaged families often don’t know how to game the system.</p>
 </section>
 <section id="boston-in-practice">
-<h3><span class="section-number">5.5.2. </span>Boston in Practice<a class="headerlink" href="#boston-in-practice" title="Permalink to this headline">#</a></h3>
+<h3>Boston in Practice<a class="headerlink" href="#boston-in-practice" title="Permalink to this headline">#</a></h3>
 <p>Students entering in grades K,6,9 and new students submit preferences
 Schools have priorities as follows</p>
 <ol class="simple">
@@ -593,9 +641,9 @@ Abdulkadiroglu et al. found that 19% listed two over-demanded schools as top two
 </section>
 </section>
 <section id="columbus-oh-schools">
-<h2><span class="section-number">5.6. </span>Columbus (OH) Schools<a class="headerlink" href="#columbus-oh-schools" title="Permalink to this headline">#</a></h2>
+<h2>Columbus (OH) Schools<a class="headerlink" href="#columbus-oh-schools" title="Permalink to this headline">#</a></h2>
 <div class="proof algorithm admonition" id="algorithm-3">
-<p class="admonition-title"><span class="caption-number">Algorithm 5.2 </span> (Columbus Mechanism)</p>
+<p class="admonition-title"><span class="caption-number">Algorithm 8 </span> (Columbus Mechanism)</p>
 <section class="algorithm-content" id="proof-content">
 <ol class="simple">
 <li><p>Each student applies to up to three schools.</p></li>
@@ -607,9 +655,9 @@ Abdulkadiroglu et al. found that 19% listed two over-demanded schools as top two
 </section>
 </div></section>
 <section id="old-nyc-schools">
-<h2><span class="section-number">5.7. </span>(Old) NYC Schools<a class="headerlink" href="#old-nyc-schools" title="Permalink to this headline">#</a></h2>
+<h2>(Old) NYC Schools<a class="headerlink" href="#old-nyc-schools" title="Permalink to this headline">#</a></h2>
 <div class="proof algorithm admonition" id="algorithm-4">
-<p class="admonition-title"><span class="caption-number">Algorithm 5.3 </span> (Old NYC Mechanism)</p>
+<p class="admonition-title"><span class="caption-number">Algorithm 9 </span> (Old NYC Mechanism)</p>
 <section class="algorithm-content" id="proof-content">
 <ol class="simple">
 <li><p>Each student (90,000 plus applying to high schools) can submit up to five applications.</p></li>
@@ -621,7 +669,7 @@ Abdulkadiroglu et al. found that 19% listed two over-demanded schools as top two
 </div><p>Roughly 30,000 students would be unassigned at the end; they would be administratively assigned.</p>
 </section>
 <section id="student-proposing-da">
-<h2><span class="section-number">5.8. </span>Student Proposing DA<a class="headerlink" href="#student-proposing-da" title="Permalink to this headline">#</a></h2>
+<h2>Student Proposing DA<a class="headerlink" href="#student-proposing-da" title="Permalink to this headline">#</a></h2>
 <p>What about the student proposing DA?</p>
 <ul class="simple">
 <li><p>We know this leads to a stable match: no justified envy.</p></li>
@@ -630,7 +678,7 @@ Abdulkadiroglu et al. found that 19% listed two over-demanded schools as top two
 So our earlier results indicate that student-proposing DA has attractive properties, but are there drawbacks?</p></li>
 </ul>
 <section id="inefficient-stable-matchings">
-<h3><span class="section-number">5.8.1. </span>Inefficient Stable Matchings<a class="headerlink" href="#inefficient-stable-matchings" title="Permalink to this headline">#</a></h3>
+<h3>Inefficient Stable Matchings<a class="headerlink" href="#inefficient-stable-matchings" title="Permalink to this headline">#</a></h3>
 <p>Example [TODO]</p>
 <p>TODO: finish lecture 7</p>
 </section>
@@ -668,13 +716,13 @@ So our earlier results indicate that student-proposing DA has attractive propert
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">4. </span>Housing Model</p>
+            <p class="prev-next-title">Housing Model</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="practice.html" title="next page">
+    <a class='right-next' id="next-link" href="matching-with-contracts.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">6. </span>Practice</p>
+        <p class="prev-next-title">Matching with Contracts</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>2. Game Theory Review + Incentives &#8212; market-design</title>
+    <title>Game Theory Review + Incentives &#8212; market-design</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -43,6 +43,7 @@
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js"></script>
+    <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
@@ -57,8 +58,8 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="shortcut icon" href="../_static/fav.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="3. Stability + Order" href="stability-and-order.html" />
-    <link rel="prev" title="1. Matching Theory" href="matching-theory.html" />
+    <link rel="next" title="Stability + Order" href="stability-and-order.html" />
+    <link rel="prev" title="Matching Theory" href="matching-theory.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -110,40 +111,87 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="current nav bd-sidenav">
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Matching Theory
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="matching-theory.html">
-   1. Matching Theory
+   Matching Theory
   </a>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   2. Game Theory Review + Incentives
+   Game Theory Review + Incentives
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="stability-and-order.html">
-   3. Stability + Order
+   Stability + Order
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="house-allocation.html">
-   4. Housing Model
+   Housing Model
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="school-choice.html">
-   5. School Choice
+   School Choice
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="matching-with-contracts.html">
+   Matching with Contracts
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Auction Theory
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="auction-theory.html">
+   Auction Theory
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="multi-unit-auctions-with-matching.html">
+   Multi-Unit Auctions with Matching
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="sponsored-search-auctions.html">
+   Sponsored Search Auctions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="chilean-fisheries.html">
+   Chilean Fisheries
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="radio-spectrum-auctions.html">
+   Radio Spectrum Auctions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="incentive-reverse-auction.html">
+   Incentive Reverse Auction
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="practice.html">
-   6. Practice
+   Practice
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="bibliography.html">
-   7. Bibliography
+   Bibliography
   </a>
  </li>
 </ul>
@@ -342,17 +390,17 @@ title="Print to PDF"
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#game-theory-and-mechanism-design">
-   2.1. Game Theory and Mechanism Design
+   Game Theory and Mechanism Design
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#incomplete-information">
-     2.1.1. Incomplete Information
+     Incomplete Information
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#allocation-problems">
-     2.1.2. Allocation Problems
+     Allocation Problems
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
@@ -364,7 +412,7 @@ title="Print to PDF"
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#mechanisms">
-     2.1.3. Mechanisms
+     Mechanisms
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
@@ -381,7 +429,7 @@ title="Print to PDF"
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#applying-gt-to-market-design">
-     2.1.4. Applying GT to Market Design
+     Applying GT to Market Design
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
@@ -400,7 +448,7 @@ title="Print to PDF"
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#incentives-in-matching">
-   2.2. Incentives in Matching
+   Incentives in Matching
   </a>
  </li>
 </ul>
@@ -424,17 +472,17 @@ title="Print to PDF"
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#game-theory-and-mechanism-design">
-   2.1. Game Theory and Mechanism Design
+   Game Theory and Mechanism Design
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#incomplete-information">
-     2.1.1. Incomplete Information
+     Incomplete Information
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#allocation-problems">
-     2.1.2. Allocation Problems
+     Allocation Problems
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
@@ -446,7 +494,7 @@ title="Print to PDF"
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#mechanisms">
-     2.1.3. Mechanisms
+     Mechanisms
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
@@ -463,7 +511,7 @@ title="Print to PDF"
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#applying-gt-to-market-design">
-     2.1.4. Applying GT to Market Design
+     Applying GT to Market Design
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
@@ -482,7 +530,7 @@ title="Print to PDF"
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#incentives-in-matching">
-   2.2. Incentives in Matching
+   Incentives in Matching
   </a>
  </li>
 </ul>
@@ -496,9 +544,9 @@ title="Print to PDF"
               <div>
                 
   <section class="tex2jax_ignore mathjax_ignore" id="game-theory-review-incentives">
-<h1><span class="section-number">2. </span>Game Theory Review + Incentives<a class="headerlink" href="#game-theory-review-incentives" title="Permalink to this headline">#</a></h1>
+<h1>Game Theory Review + Incentives<a class="headerlink" href="#game-theory-review-incentives" title="Permalink to this headline">#</a></h1>
 <section id="game-theory-and-mechanism-design">
-<h2><span class="section-number">2.1. </span>Game Theory and Mechanism Design<a class="headerlink" href="#game-theory-and-mechanism-design" title="Permalink to this headline">#</a></h2>
+<h2>Game Theory and Mechanism Design<a class="headerlink" href="#game-theory-and-mechanism-design" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>Classical game theory analyzes strategic behavior:</p></li>
 <li><p>Given a strategic environment (a “game”), what can we say about the likely outcome?</p></li>
@@ -535,7 +583,7 @@ unilaterally changing in its action from <span class="math notranslate nohighlig
 </dd>
 </dl>
 <section id="incomplete-information">
-<h3><span class="section-number">2.1.1. </span>Incomplete Information<a class="headerlink" href="#incomplete-information" title="Permalink to this headline">#</a></h3>
+<h3>Incomplete Information<a class="headerlink" href="#incomplete-information" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>What happens if the players don’t know each other’s payoff functions? For example, in an auction, players may
 not know the other bidders’ valuations.</p></li>
@@ -544,7 +592,7 @@ so each player’s expected payoff depends on probabilities of what others would
 </ul>
 </section>
 <section id="allocation-problems">
-<h3><span class="section-number">2.1.2. </span>Allocation Problems<a class="headerlink" href="#allocation-problems" title="Permalink to this headline">#</a></h3>
+<h3>Allocation Problems<a class="headerlink" href="#allocation-problems" title="Permalink to this headline">#</a></h3>
 <p>An allocation problem consists of player <span class="math notranslate nohighlight">\(i = 1, \ldots, n\)</span>, a set of possible outcomes or allocations <span class="math notranslate nohighlight">\(X\)</span>, and
 (possibly) payments by each player <span class="math notranslate nohighlight">\(p_1, \ldots, p_n\)</span>, and value functions <span class="math notranslate nohighlight">\(v_i(x)\)</span> such that the payoff for each
 player is <span class="math notranslate nohighlight">\(v_i(x) - p_i\)</span>.
@@ -555,7 +603,7 @@ Challenge:  the <em>mechanism designer</em> typically does not know the payoff f
 </section>
 </section>
 <section id="mechanisms">
-<h3><span class="section-number">2.1.3. </span>Mechanisms<a class="headerlink" href="#mechanisms" title="Permalink to this headline">#</a></h3>
+<h3>Mechanisms<a class="headerlink" href="#mechanisms" title="Permalink to this headline">#</a></h3>
 <dl class="simple myst">
 <dt>Mechanism</dt><dd><p>A mechanism <span class="math notranslate nohighlight">\((M, x, p)\)</span> is a triple consisting of</p>
 </dd>
@@ -582,7 +630,7 @@ We will look at mechanisms with and without payments. If there are no payments, 
 </section>
 </section>
 <section id="applying-gt-to-market-design">
-<h3><span class="section-number">2.1.4. </span>Applying GT to Market Design<a class="headerlink" href="#applying-gt-to-market-design" title="Permalink to this headline">#</a></h3>
+<h3>Applying GT to Market Design<a class="headerlink" href="#applying-gt-to-market-design" title="Permalink to this headline">#</a></h3>
 <section id="studying-existing-markets">
 <h4>Studying existing markets<a class="headerlink" href="#studying-existing-markets" title="Permalink to this headline">#</a></h4>
 <p>Identify the “rules of the game,” the incentives for participants, and how they behave. Then try ot understand why the market functions well, or not so well.</p>
@@ -595,7 +643,7 @@ We will look at mechanisms with and without payments. If there are no payments, 
 </section>
 </section>
 <section id="incentives-in-matching">
-<h2><span class="section-number">2.2. </span>Incentives in Matching<a class="headerlink" href="#incentives-in-matching" title="Permalink to this headline">#</a></h2>
+<h2>Incentives in Matching<a class="headerlink" href="#incentives-in-matching" title="Permalink to this headline">#</a></h2>
 <p>[TODO]</p>
 </section>
 </section>
@@ -631,13 +679,13 @@ We will look at mechanisms with and without payments. If there are no payments, 
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">1. </span>Matching Theory</p>
+            <p class="prev-next-title">Matching Theory</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="stability-and-order.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">3. </span>Stability + Order</p>
+        <p class="prev-next-title">Stability + Order</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

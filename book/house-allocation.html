@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>4. Housing Model &#8212; market-design</title>
+    <title>Housing Model &#8212; market-design</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -43,6 +43,7 @@
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js"></script>
+    <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
@@ -57,8 +58,8 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="shortcut icon" href="../_static/fav.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="5. School Choice" href="school-choice.html" />
-    <link rel="prev" title="3. Stability + Order" href="stability-and-order.html" />
+    <link rel="next" title="School Choice" href="school-choice.html" />
+    <link rel="prev" title="Stability + Order" href="stability-and-order.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -110,40 +111,87 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="current nav bd-sidenav">
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Matching Theory
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="matching-theory.html">
-   1. Matching Theory
+   Matching Theory
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="game-theory-review-and-incentives.html">
-   2. Game Theory Review + Incentives
+   Game Theory Review + Incentives
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="stability-and-order.html">
-   3. Stability + Order
+   Stability + Order
   </a>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   4. Housing Model
+   Housing Model
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="school-choice.html">
-   5. School Choice
+   School Choice
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="matching-with-contracts.html">
+   Matching with Contracts
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Auction Theory
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="auction-theory.html">
+   Auction Theory
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="multi-unit-auctions-with-matching.html">
+   Multi-Unit Auctions with Matching
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="sponsored-search-auctions.html">
+   Sponsored Search Auctions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="chilean-fisheries.html">
+   Chilean Fisheries
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="radio-spectrum-auctions.html">
+   Radio Spectrum Auctions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="incentive-reverse-auction.html">
+   Incentive Reverse Auction
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="practice.html">
-   6. Practice
+   Practice
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="bibliography.html">
-   7. Bibliography
+   Bibliography
   </a>
  </li>
 </ul>
@@ -342,17 +390,17 @@ title="Print to PDF"
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#house-allocation-problem">
-   4.1. House Allocation Problem
+   House Allocation Problem
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#random-serial-dictatorship">
-   4.2. (Random) Serial Dictatorship
+   (Random) Serial Dictatorship
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#truthful-and-efficient">
-     4.2.1. Truthful and Efficient
+     Truthful and Efficient
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
@@ -366,51 +414,51 @@ title="Print to PDF"
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#top-trading-cycles">
-   4.3. Top Trading Cycles
+   Top Trading Cycles
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#an-important-variation">
-     4.3.1. An Important Variation
+     An Important Variation
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#uniqueness">
-     4.3.2. Uniqueness
+     Uniqueness
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#truthful">
-     4.3.3. Truthful
+     Truthful
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#rsd-with-incumbents">
-   4.4. RSD with Incumbents
+   RSD with Incumbents
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#problems">
-     4.4.1. Problems
+     Problems
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#priority-line-mechanism">
-   4.5. Priority Line Mechanism
+   Priority Line Mechanism
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#properties-of-priority-line">
-     4.5.1. Properties of Priority Line
+     Properties of Priority Line
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#relationship-with-sd-and-ttc">
-     4.5.2. Relationship with SD and TTC
+     Relationship with SD and TTC
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
@@ -424,32 +472,32 @@ title="Print to PDF"
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#kidney-exchange">
-   4.6. Kidney Exchange
+   Kidney Exchange
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#resolving-the-shortage">
-     4.6.1. Resolving the Shortage
+     Resolving the Shortage
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#compatability">
-     4.6.2. Compatability
+     Compatability
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#paired-exchange">
-     4.6.3. Paired Exchange
+     Paired Exchange
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#exchange-in-practice">
-     4.6.4. Exchange in Practice
+     Exchange in Practice
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#donor-chains">
-     4.6.5. Donor Chains
+     Donor Chains
     </a>
    </li>
   </ul>
@@ -475,17 +523,17 @@ title="Print to PDF"
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#house-allocation-problem">
-   4.1. House Allocation Problem
+   House Allocation Problem
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#random-serial-dictatorship">
-   4.2. (Random) Serial Dictatorship
+   (Random) Serial Dictatorship
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#truthful-and-efficient">
-     4.2.1. Truthful and Efficient
+     Truthful and Efficient
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
@@ -499,51 +547,51 @@ title="Print to PDF"
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#top-trading-cycles">
-   4.3. Top Trading Cycles
+   Top Trading Cycles
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#an-important-variation">
-     4.3.1. An Important Variation
+     An Important Variation
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#uniqueness">
-     4.3.2. Uniqueness
+     Uniqueness
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#truthful">
-     4.3.3. Truthful
+     Truthful
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#rsd-with-incumbents">
-   4.4. RSD with Incumbents
+   RSD with Incumbents
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#problems">
-     4.4.1. Problems
+     Problems
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#priority-line-mechanism">
-   4.5. Priority Line Mechanism
+   Priority Line Mechanism
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#properties-of-priority-line">
-     4.5.1. Properties of Priority Line
+     Properties of Priority Line
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#relationship-with-sd-and-ttc">
-     4.5.2. Relationship with SD and TTC
+     Relationship with SD and TTC
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
@@ -557,32 +605,32 @@ title="Print to PDF"
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#kidney-exchange">
-   4.6. Kidney Exchange
+   Kidney Exchange
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#resolving-the-shortage">
-     4.6.1. Resolving the Shortage
+     Resolving the Shortage
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#compatability">
-     4.6.2. Compatability
+     Compatability
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#paired-exchange">
-     4.6.3. Paired Exchange
+     Paired Exchange
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#exchange-in-practice">
-     4.6.4. Exchange in Practice
+     Exchange in Practice
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#donor-chains">
-     4.6.5. Donor Chains
+     Donor Chains
     </a>
    </li>
   </ul>
@@ -598,10 +646,10 @@ title="Print to PDF"
               <div>
                 
   <section class="tex2jax_ignore mathjax_ignore" id="housing-model">
-<h1><span class="section-number">4. </span>Housing Model<a class="headerlink" href="#housing-model" title="Permalink to this headline">#</a></h1>
+<h1>Housing Model<a class="headerlink" href="#housing-model" title="Permalink to this headline">#</a></h1>
 <p>In some matching markets, only one side of the market has preferences (or we care mostly about the preferences of one side). Sample applications include students picking housing on campus, organ transplants, school choice, and professional sports teams drafting college athletes.</p>
 <section id="house-allocation-problem">
-<h2><span class="section-number">4.1. </span>House Allocation Problem<a class="headerlink" href="#house-allocation-problem" title="Permalink to this headline">#</a></h2>
+<h2>House Allocation Problem<a class="headerlink" href="#house-allocation-problem" title="Permalink to this headline">#</a></h2>
 <p><span class="math notranslate nohighlight">\(N\)</span> individuals and <span class="math notranslate nohighlight">\(N\)</span> houses (generalizable to <span class="math notranslate nohighlight">\(\neq\)</span>). Each individual has strict preference over houses.
 The goal is to assign each individual to a house.</p>
 <dl class="simple myst">
@@ -621,9 +669,9 @@ The goal is to assign each individual to a house.</p>
 <p>Core assignments are Pareto efficient. Inefficient assignment would be blocked by the “coalition of the whole.” Not all Pareto efficient assignments are in the core: the core imposes additional constraints that respect prior ownership.</p>
 </section>
 <section id="random-serial-dictatorship">
-<h2><span class="section-number">4.2. </span>(Random) Serial Dictatorship<a class="headerlink" href="#random-serial-dictatorship" title="Permalink to this headline">#</a></h2>
+<h2>(Random) Serial Dictatorship<a class="headerlink" href="#random-serial-dictatorship" title="Permalink to this headline">#</a></h2>
 <div class="proof algorithm admonition" id="algorithm-0">
-<p class="admonition-title"><span class="caption-number">Algorithm 4.1 </span></p>
+<p class="admonition-title"><span class="caption-number">Algorithm 3 </span></p>
 <section class="algorithm-content" id="proof-content">
 <ol class="simple">
 <li><p>Each student gets a priority (perhaps randomly assigned as in the housing draw).</p></li>
@@ -631,9 +679,9 @@ The goal is to assign each individual to a house.</p>
 </ol>
 </section>
 </div><section id="truthful-and-efficient">
-<h3><span class="section-number">4.2.1. </span>Truthful and Efficient<a class="headerlink" href="#truthful-and-efficient" title="Permalink to this headline">#</a></h3>
+<h3>Truthful and Efficient<a class="headerlink" href="#truthful-and-efficient" title="Permalink to this headline">#</a></h3>
 <div class="proof theorem admonition" id="theorem-1">
-<p class="admonition-title"><span class="caption-number">Theorem 4.1 </span></p>
+<p class="admonition-title"><span class="caption-number">Theorem 5 </span></p>
 <section class="theorem-content" id="proof-content">
 <p>The serial dictatorship mechanism is efficient (i.e., no mutually agreeable trades afterwards) and truthful (no incentive to misreport).</p>
 </section>
@@ -670,10 +718,10 @@ Solution<div class="sd-summary-down docutils">
 </section>
 </section>
 <section id="top-trading-cycles">
-<h2><span class="section-number">4.3. </span>Top Trading Cycles<a class="headerlink" href="#top-trading-cycles" title="Permalink to this headline">#</a></h2>
+<h2>Top Trading Cycles<a class="headerlink" href="#top-trading-cycles" title="Permalink to this headline">#</a></h2>
 <p>Now imagine that individuals start by owning a house, but the original allocation might be inefficient.</p>
 <div class="proof algorithm admonition" id="algorithm-2">
-<p class="admonition-title"><span class="caption-number">Algorithm 4.2 </span> (Gale’s TTC Algorithm)</p>
+<p class="admonition-title"><span class="caption-number">Algorithm 4 </span> (Gale’s TTC Algorithm)</p>
 <section class="algorithm-content" id="proof-content">
 <ol class="simple">
 <li><p>Each house points to its owner</p></li>
@@ -689,19 +737,19 @@ Solution<div class="sd-summary-down docutils">
 </ol>
 </section>
 </div><section id="an-important-variation">
-<h3><span class="section-number">4.3.1. </span>An Important Variation<a class="headerlink" href="#an-important-variation" title="Permalink to this headline">#</a></h3>
+<h3>An Important Variation<a class="headerlink" href="#an-important-variation" title="Permalink to this headline">#</a></h3>
 <p>What if we changed the algorithm, replacing “remove all cycles” with “remove one cycle”?</p>
 <div class="proof proposition admonition" id="proposition-3">
-<p class="admonition-title"><span class="caption-number">Proposition 4.1 </span></p>
+<p class="admonition-title"><span class="caption-number">Proposition 1 </span></p>
 <section class="proposition-content" id="proof-content">
 <p>The order of elimination of cycles does not affect the TTC outcome.</p>
 </section>
 </div><p>Proof of this proposition (by mathematical induction, delaying the elimination of any particular cycle for <span class="math notranslate nohighlight">\(n\)</span> rounds) is left as an exercise.</p>
 </section>
 <section id="uniqueness">
-<h3><span class="section-number">4.3.2. </span>Uniqueness<a class="headerlink" href="#uniqueness" title="Permalink to this headline">#</a></h3>
+<h3>Uniqueness<a class="headerlink" href="#uniqueness" title="Permalink to this headline">#</a></h3>
 <div class="proof theorem admonition" id="theorem-4">
-<p class="admonition-title"><span class="caption-number">Theorem 4.2 </span></p>
+<p class="admonition-title"><span class="caption-number">Theorem 6 </span></p>
 <section class="theorem-content" id="proof-content">
 <p>The outcome of the TTC algorithm is the unique core assignment in the housing market.</p>
 </section>
@@ -718,9 +766,9 @@ Hence, by mathematical induction, any assignment <span class="math notranslate n
 </div>
 </section>
 <section id="truthful">
-<h3><span class="section-number">4.3.3. </span>Truthful<a class="headerlink" href="#truthful" title="Permalink to this headline">#</a></h3>
+<h3>Truthful<a class="headerlink" href="#truthful" title="Permalink to this headline">#</a></h3>
 <div class="proof theorem admonition" id="theorem-5">
-<p class="admonition-title"><span class="caption-number">Theorem 4.3 </span></p>
+<p class="admonition-title"><span class="caption-number">Theorem 7 </span></p>
 <section class="theorem-content" id="proof-content">
 <p>The TTC algorithm is truthful.</p>
 </section>
@@ -735,13 +783,13 @@ By our earlier Proposition, the TTC assignment is independent of the order of el
 </section>
 </section>
 <section id="rsd-with-incumbents">
-<h2><span class="section-number">4.4. </span>RSD with Incumbents<a class="headerlink" href="#rsd-with-incumbents" title="Permalink to this headline">#</a></h2>
+<h2>RSD with Incumbents<a class="headerlink" href="#rsd-with-incumbents" title="Permalink to this headline">#</a></h2>
 <p>What can we do if some people start with houses (“incumbents”) but others do not?</p>
 <p>A common problem in allocating student housing
 Many universities, e.g. Michigan, Duke, Northwestern, Penn, CMU, use a variation of random serial dictatorship (with incumbency).</p>
 <p>Let’s see how it works.</p>
 <div class="proof algorithm admonition" id="algorithm-6">
-<p class="admonition-title"><span class="caption-number">Algorithm 4.3 </span></p>
+<p class="admonition-title"><span class="caption-number">Algorithm 5 </span></p>
 <section class="algorithm-content" id="proof-content">
 <ol class="simple">
 <li><p>Each agent with a house decides whether to keep their house or enter a lottery.</p></li>
@@ -756,20 +804,20 @@ Many universities, e.g. Michigan, Duke, Northwestern, Penn, CMU, use a variation
 </ol>
 </section>
 </div><section id="problems">
-<h3><span class="section-number">4.4.1. </span>Problems<a class="headerlink" href="#problems" title="Permalink to this headline">#</a></h3>
+<h3>Problems<a class="headerlink" href="#problems" title="Permalink to this headline">#</a></h3>
 <p>There is a problem. Existing tenants are not guaranteed to get at least as good a house as their current house!
 This may cause existing tenants to avoid the lottery risk and the process may fail to take advantage of beneficial trades.
 Is there a way to protect existing tenants, enjoy all beneficial trades, and maybe ensure truthfulness, too? Yes!</p>
 </section>
 </section>
 <section id="priority-line-mechanism">
-<h2><span class="section-number">4.5. </span>Priority Line Mechanism<a class="headerlink" href="#priority-line-mechanism" title="Permalink to this headline">#</a></h2>
+<h2>Priority Line Mechanism<a class="headerlink" href="#priority-line-mechanism" title="Permalink to this headline">#</a></h2>
 <div class="admonition-intuition admonition">
 <p class="admonition-title">Intuition</p>
 <p>“you request my house – I get your turn”</p>
 </div>
 <div class="proof algorithm admonition" id="algorithm-7">
-<p class="admonition-title"><span class="caption-number">Algorithm 4.4 </span> (Priority Line Mechanism)</p>
+<p class="admonition-title"><span class="caption-number">Algorithm 6 </span> (Priority Line Mechanism)</p>
 <section class="algorithm-content" id="proof-content">
 <ol class="simple">
 <li><p>All agents are ordered according to some priority</p></li>
@@ -779,9 +827,9 @@ Is there a way to protect existing tenants, enjoy all beneficial trades, and may
 </section>
 </div><p>If a cycle forms, it is formed exclusively by incumbents (why?), so let’s clear that cycle and continue with the priority order.</p>
 <section id="properties-of-priority-line">
-<h3><span class="section-number">4.5.1. </span>Properties of Priority Line<a class="headerlink" href="#properties-of-priority-line" title="Permalink to this headline">#</a></h3>
+<h3>Properties of Priority Line<a class="headerlink" href="#properties-of-priority-line" title="Permalink to this headline">#</a></h3>
 <div class="proof theorem admonition" id="theorem-8">
-<p class="admonition-title"><span class="caption-number">Theorem 4.4 </span></p>
+<p class="admonition-title"><span class="caption-number">Theorem 8 </span></p>
 <section class="theorem-content" id="proof-content">
 <p>The Priority Line mechanism is Pareto-efficient, truthful and makes no incumbent tenant worse off.</p>
 </section>
@@ -790,7 +838,7 @@ Is there a way to protect existing tenants, enjoy all beneficial trades, and may
 </div>
 </section>
 <section id="relationship-with-sd-and-ttc">
-<h3><span class="section-number">4.5.2. </span>Relationship with SD and TTC<a class="headerlink" href="#relationship-with-sd-and-ttc" title="Permalink to this headline">#</a></h3>
+<h3>Relationship with SD and TTC<a class="headerlink" href="#relationship-with-sd-and-ttc" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>If there are no existing tenants: Priority Line = serial dictatorship.</p></li>
 <li><p>If everyone has a house: Priority Line = TTC.</p></li>
@@ -826,7 +874,7 @@ Solution<div class="sd-summary-down docutils">
 </section>
 </section>
 <section id="kidney-exchange">
-<h2><span class="section-number">4.6. </span>Kidney Exchange<a class="headerlink" href="#kidney-exchange" title="Permalink to this headline">#</a></h2>
+<h2>Kidney Exchange<a class="headerlink" href="#kidney-exchange" title="Permalink to this headline">#</a></h2>
 <p>Transplants are standard treatment for patients with failed kidneys. Transplants come from two sources</p>
 <ul class="simple">
 <li><p>Cadaveric transplants: donors who have died.</p></li>
@@ -840,7 +888,7 @@ Solution<div class="sd-summary-down docutils">
 <li><p>In 2018, 9,500 people on the list died or became too sick to receive a transplant.</p></li>
 </ul>
 <section id="resolving-the-shortage">
-<h3><span class="section-number">4.6.1. </span>Resolving the Shortage<a class="headerlink" href="#resolving-the-shortage" title="Permalink to this headline">#</a></h3>
+<h3>Resolving the Shortage<a class="headerlink" href="#resolving-the-shortage" title="Permalink to this headline">#</a></h3>
 <p>Buying and selling kidneys is illegal.
 Section 301 of National Organ Transplant Act</p>
 <blockquote>
@@ -850,7 +898,7 @@ Section 301 of National Organ Transplant Act</p>
 We’re going to focus on ways to increase the supply of living donor kidneys.</p>
 </section>
 <section id="compatability">
-<h3><span class="section-number">4.6.2. </span>Compatability<a class="headerlink" href="#compatability" title="Permalink to this headline">#</a></h3>
+<h3>Compatability<a class="headerlink" href="#compatability" title="Permalink to this headline">#</a></h3>
 <p>Donor kidney must be compatible with patient
 Blood type match</p>
 <ul class="simple">
@@ -863,7 +911,7 @@ Potential inefficiency: if a patient has a donor but can’t use the donor’s k
 </ul>
 </section>
 <section id="paired-exchange">
-<h3><span class="section-number">4.6.3. </span>Paired Exchange<a class="headerlink" href="#paired-exchange" title="Permalink to this headline">#</a></h3>
+<h3>Paired Exchange<a class="headerlink" href="#paired-exchange" title="Permalink to this headline">#</a></h3>
 <p>Paired exchange: match two donor-patient pairs…</p>
 <ul class="simple">
 <li><p>Donor 1 is compatible with Patient 2, not Patient 1</p></li>
@@ -882,7 +930,7 @@ Potential inefficiency: if a patient has a donor but can’t use the donor’s k
 <p>In 2004, RSU helped doctors in Boston to establish first clearinghouse for New England.</p>
 </section>
 <section id="exchange-in-practice">
-<h3><span class="section-number">4.6.4. </span>Exchange in Practice<a class="headerlink" href="#exchange-in-practice" title="Permalink to this headline">#</a></h3>
+<h3>Exchange in Practice<a class="headerlink" href="#exchange-in-practice" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>Moving from theory to practice has some twists</p></li>
 <li><p>US doctors think of compatibility as 0-1, which eliminates strict preference and allows for a different algorithm.</p></li>
@@ -893,7 +941,7 @@ Potential inefficiency: if a patient has a donor but can’t use the donor’s k
 <p>Real-world market design always raises extra issues!</p>
 </section>
 <section id="donor-chains">
-<h3><span class="section-number">4.6.5. </span>Donor Chains<a class="headerlink" href="#donor-chains" title="Permalink to this headline">#</a></h3>
+<h3>Donor Chains<a class="headerlink" href="#donor-chains" title="Permalink to this headline">#</a></h3>
 <p>In July 2007, Alliance for paired donations started an “Altruistic Donor Chain”
 Altruistic donor in Michigan donated kidney to woman in Phoenix.
 Husband of Phoenix woman gave kidney to woman in Toledo.
@@ -935,13 +983,13 @@ And so on <span class="math notranslate nohighlight">\(\ldots\)</span></p>
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">3. </span>Stability + Order</p>
+            <p class="prev-next-title">Stability + Order</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="school-choice.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">5. </span>School Choice</p>
+        <p class="prev-next-title">School Choice</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

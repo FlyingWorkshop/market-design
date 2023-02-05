@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>3. Stability + Order &#8212; market-design</title>
+    <title>Stability + Order &#8212; market-design</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -43,6 +43,7 @@
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js"></script>
+    <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
@@ -57,8 +58,8 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="shortcut icon" href="../_static/fav.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="4. Housing Model" href="house-allocation.html" />
-    <link rel="prev" title="2. Game Theory Review + Incentives" href="game-theory-review-and-incentives.html" />
+    <link rel="next" title="Housing Model" href="house-allocation.html" />
+    <link rel="prev" title="Game Theory Review + Incentives" href="game-theory-review-and-incentives.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -110,40 +111,87 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="current nav bd-sidenav">
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Matching Theory
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="matching-theory.html">
-   1. Matching Theory
+   Matching Theory
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="game-theory-review-and-incentives.html">
-   2. Game Theory Review + Incentives
+   Game Theory Review + Incentives
   </a>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   3. Stability + Order
+   Stability + Order
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="house-allocation.html">
-   4. Housing Model
+   Housing Model
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="school-choice.html">
-   5. School Choice
+   School Choice
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="matching-with-contracts.html">
+   Matching with Contracts
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Auction Theory
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="auction-theory.html">
+   Auction Theory
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="multi-unit-auctions-with-matching.html">
+   Multi-Unit Auctions with Matching
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="sponsored-search-auctions.html">
+   Sponsored Search Auctions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="chilean-fisheries.html">
+   Chilean Fisheries
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="radio-spectrum-auctions.html">
+   Radio Spectrum Auctions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="incentive-reverse-auction.html">
+   Incentive Reverse Auction
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="practice.html">
-   6. Practice
+   Practice
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="bibliography.html">
-   7. Bibliography
+   Bibliography
   </a>
  </li>
 </ul>
@@ -342,29 +390,29 @@ title="Print to PDF"
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#history-theory-to-practice">
-   3.1. History: Theory to Practice
+   History: Theory to Practice
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#national-residency-matching-program-nrmp">
-     3.1.1. National Residency Matching Program (NRMP)
+     National Residency Matching Program (NRMP)
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#stability-and-orderly-markets">
-     3.1.2. Stability and Orderly Markets
+     Stability and Orderly Markets
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#priority-matching">
-   3.2. Priority Matching
+   Priority Matching
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#algorithm">
-     3.2.1. Algorithm
+     Algorithm
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
@@ -376,17 +424,17 @@ title="Print to PDF"
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#failure-of-priority-matching">
-     3.2.2. Failure of Priority Matching
+     Failure of Priority Matching
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#stability-and-market-participation">
-     3.2.3. Stability and Market Participation
+     Stability and Market Participation
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#couples-a-problem">
-     3.2.4. Couples: A Problem!
+     Couples: A Problem!
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
@@ -405,29 +453,29 @@ title="Print to PDF"
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#nrmp-redesign">
-   3.3. NRMP Redesign
+   NRMP Redesign
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#takeaway">
-     3.3.1. Takeaway
+     Takeaway
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#further-examples">
-     3.3.2. Further Examples
+     Further Examples
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#timing-problems">
-   3.4. Timing Problems
+   Timing Problems
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#matching-design">
-   3.5. Matching Design
+   Matching Design
   </a>
  </li>
 </ul>
@@ -451,29 +499,29 @@ title="Print to PDF"
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#history-theory-to-practice">
-   3.1. History: Theory to Practice
+   History: Theory to Practice
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#national-residency-matching-program-nrmp">
-     3.1.1. National Residency Matching Program (NRMP)
+     National Residency Matching Program (NRMP)
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#stability-and-orderly-markets">
-     3.1.2. Stability and Orderly Markets
+     Stability and Orderly Markets
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#priority-matching">
-   3.2. Priority Matching
+   Priority Matching
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#algorithm">
-     3.2.1. Algorithm
+     Algorithm
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
@@ -485,17 +533,17 @@ title="Print to PDF"
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#failure-of-priority-matching">
-     3.2.2. Failure of Priority Matching
+     Failure of Priority Matching
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#stability-and-market-participation">
-     3.2.3. Stability and Market Participation
+     Stability and Market Participation
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#couples-a-problem">
-     3.2.4. Couples: A Problem!
+     Couples: A Problem!
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
@@ -514,29 +562,29 @@ title="Print to PDF"
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#nrmp-redesign">
-   3.3. NRMP Redesign
+   NRMP Redesign
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#takeaway">
-     3.3.1. Takeaway
+     Takeaway
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#further-examples">
-     3.3.2. Further Examples
+     Further Examples
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#timing-problems">
-   3.4. Timing Problems
+   Timing Problems
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#matching-design">
-   3.5. Matching Design
+   Matching Design
   </a>
  </li>
 </ul>
@@ -550,12 +598,12 @@ title="Print to PDF"
               <div>
                 
   <section class="tex2jax_ignore mathjax_ignore" id="stability-order">
-<h1><span class="section-number">3. </span>Stability + Order<a class="headerlink" href="#stability-order" title="Permalink to this headline">#</a></h1>
+<h1>Stability + Order<a class="headerlink" href="#stability-order" title="Permalink to this headline">#</a></h1>
 <section id="history-theory-to-practice">
-<h2><span class="section-number">3.1. </span>History: Theory to Practice<a class="headerlink" href="#history-theory-to-practice" title="Permalink to this headline">#</a></h2>
+<h2>History: Theory to Practice<a class="headerlink" href="#history-theory-to-practice" title="Permalink to this headline">#</a></h2>
 <p>The study of matching started as mathematics: first by Gale and Shapley (1962) who introduced deferred acceptance algorithm, then others, including Stanford math Prof. Donald Knuth. In 1984, Al Roth made a surprising discovery. Since the 1950s, US hospitals have used a clearinghouse to assign graduating medical students to residencies. Students apply and interview at hospitals in the fall, then students and hospitals submit rank-order preferences in February. A computer algorithm is used to assign students to hospitals, and matches are all revealed on a single day: match day. Roth realized that the doctors has independently discovered and were using exactly the Gale and Shapley DA algorithm!</p>
 <section id="national-residency-matching-program-nrmp">
-<h3><span class="section-number">3.1.1. </span>National Residency Matching Program (NRMP)<a class="headerlink" href="#national-residency-matching-program-nrmp" title="Permalink to this headline">#</a></h3>
+<h3>National Residency Matching Program (NRMP)<a class="headerlink" href="#national-residency-matching-program-nrmp" title="Permalink to this headline">#</a></h3>
 <p>History turns out to be illuminating. Into the 1930s, medical students found residencies through a completely decentralized process, but there were problems: students and hospitals made contracts earlier and earlier, eventually in second year of med school! Hospitals decided to change the system by adopting a centralized clearinghouse. The National Residency Matching Program (NRMP) was adopted, after various adjustments in 1952. The system has persisted but was modified in late 1990s to handle couples and some recent debate about salaries.</p>
 <div class="admonition-question admonition">
 <p class="admonition-title">Question</p>
@@ -563,7 +611,7 @@ title="Print to PDF"
 </div>
 </section>
 <section id="stability-and-orderly-markets">
-<h3><span class="section-number">3.1.2. </span>Stability and Orderly Markets<a class="headerlink" href="#stability-and-orderly-markets" title="Permalink to this headline">#</a></h3>
+<h3>Stability and Orderly Markets<a class="headerlink" href="#stability-and-orderly-markets" title="Permalink to this headline">#</a></h3>
 <p>Some hypotheses to consider:</p>
 <ul class="simple">
 <li><p>Centralized clearinghouse can lead to more “orderly” market than decentralized (e.g., clinical psychology)</p></li>
@@ -576,11 +624,11 @@ Ideally, with some sort of experiment (lab? natural?)</p>
 </section>
 </section>
 <section id="priority-matching">
-<h2><span class="section-number">3.2. </span>Priority Matching<a class="headerlink" href="#priority-matching" title="Permalink to this headline">#</a></h2>
+<h2>Priority Matching<a class="headerlink" href="#priority-matching" title="Permalink to this headline">#</a></h2>
 <section id="algorithm">
-<h3><span class="section-number">3.2.1. </span>Algorithm<a class="headerlink" href="#algorithm" title="Permalink to this headline">#</a></h3>
+<h3>Algorithm<a class="headerlink" href="#algorithm" title="Permalink to this headline">#</a></h3>
 <div class="proof algorithm admonition" id="algorithm-0">
-<p class="admonition-title"><span class="caption-number">Algorithm 3.1 </span></p>
+<p class="admonition-title"><span class="caption-number">Algorithm 2 </span></p>
 <section class="algorithm-content" id="proof-content">
 <ol class="simple">
 <li><p>Men and women submit their preferences.</p></li>
@@ -665,23 +713,23 @@ Unstable: <span class="math notranslate nohighlight">\((m_3, w_1)\)</span> is a 
 </details><div class="admonition attention">
 <p class="admonition-title">Attention</p>
 <p>[TODO]
-Get more practice <span class="xref myst">here</span>!</p>
+Get more practice [here]!</p>
 </div>
 </section>
 </section>
 <section id="failure-of-priority-matching">
-<h3><span class="section-number">3.2.2. </span>Failure of Priority Matching<a class="headerlink" href="#failure-of-priority-matching" title="Permalink to this headline">#</a></h3>
+<h3>Failure of Priority Matching<a class="headerlink" href="#failure-of-priority-matching" title="Permalink to this headline">#</a></h3>
 <p>Roth (1991, AER) studied residency matches in Britain, which are local and have used different types of algorithms — a “natural experiment”.
 Newcastle introduced priority matching in 1967. By 1981, 80% of the preferences submitted contained only a single first choice.
 The participants had pre-contracted, before the formal market. This is the type of “market unraveling” that plagued the US residency market prior to the NRMP.
 We’ll have more to say about unraveling later.</p>
 </section>
 <section id="stability-and-market-participation">
-<h3><span class="section-number">3.2.3. </span>Stability and Market Participation<a class="headerlink" href="#stability-and-market-participation" title="Permalink to this headline">#</a></h3>
+<h3>Stability and Market Participation<a class="headerlink" href="#stability-and-market-participation" title="Permalink to this headline">#</a></h3>
 <p>Starting in the 1970s, an increasing number of couples graduated from medical school. Typically, couples want to be in the same city, but the DA algorithm doesn’t account for this; it might put a husband in Boston and wife in Chicago. So many couples started to go around the NRMP to find positions where they could be at the same hospital: match was threatened by a new form of unraveling. NRMP realized there was a problem and eventually asked Al Roth to redesign the match.</p>
 </section>
 <section id="couples-a-problem">
-<h3><span class="section-number">3.2.4. </span>Couples: A Problem!<a class="headerlink" href="#couples-a-problem" title="Permalink to this headline">#</a></h3>
+<h3>Couples: A Problem!<a class="headerlink" href="#couples-a-problem" title="Permalink to this headline">#</a></h3>
 <p>Couple <span class="math notranslate nohighlight">\(c = (c_1, c_2)\)</span> and single student <span class="math notranslate nohighlight">\(s\)</span>. Two hospitals <span class="math notranslate nohighlight">\(h_1, h_2\)</span> each hiring one student.</p>
 <p>Preferences:</p>
 <ul class="simple">
@@ -744,10 +792,10 @@ We’ll have more to say about unraveling later.</p>
 </section>
 </section>
 <section id="nrmp-redesign">
-<h2><span class="section-number">3.3. </span>NRMP Redesign<a class="headerlink" href="#nrmp-redesign" title="Permalink to this headline">#</a></h2>
+<h2>NRMP Redesign<a class="headerlink" href="#nrmp-redesign" title="Permalink to this headline">#</a></h2>
 <p>No “clean” solution to the couples problem. Student-proposing perhaps a bit better: switch from hospital to student proposing version of DA. What if DA algorithm doesn’t find a stable match? Perturb the algorithm and “keep going.” Not guaranteed to find a stable match, but seemed to work in simulations (and “large” markets). Similar theory-guided “fixes” brought couples back into the match, stopping the unraveling.</p>
 <section id="takeaway">
-<h3><span class="section-number">3.3.1. </span>Takeaway<a class="headerlink" href="#takeaway" title="Permalink to this headline">#</a></h3>
+<h3>Takeaway<a class="headerlink" href="#takeaway" title="Permalink to this headline">#</a></h3>
 <p>NRMP is an unusual but illuminating design of a matching market because it is so organized.</p>
 <ul class="simple">
 <li><p>Motivation for moving to a clearinghouse was unraveling (i.e., disorderly operation) of decentralized matching.</p></li>
@@ -755,7 +803,7 @@ We’ll have more to say about unraveling later.</p>
 </ul>
 </section>
 <section id="further-examples">
-<h3><span class="section-number">3.3.2. </span>Further Examples<a class="headerlink" href="#further-examples" title="Permalink to this headline">#</a></h3>
+<h3>Further Examples<a class="headerlink" href="#further-examples" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>Medical fellowships</p></li>
 <li><p>judicial clerkships</p></li>
@@ -769,7 +817,7 @@ We’ll have more to say about unraveling later.</p>
 </section>
 </section>
 <section id="timing-problems">
-<h2><span class="section-number">3.4. </span>Timing Problems<a class="headerlink" href="#timing-problems" title="Permalink to this headline">#</a></h2>
+<h2>Timing Problems<a class="headerlink" href="#timing-problems" title="Permalink to this headline">#</a></h2>
 <p>Decentralized markets with fixed appointment dates can have timing issues that may create problems</p>
 <ul class="simple">
 <li><p>Employers and workers may have an incentive to <strong>“jump the gun”</strong> in order to ensure a match or a good match.</p></li>
@@ -779,7 +827,7 @@ We’ll have more to say about unraveling later.</p>
 <p>Different markets have tried to address these problems in various ways, with varying success (!).</p>
 </section>
 <section id="matching-design">
-<h2><span class="section-number">3.5. </span>Matching Design<a class="headerlink" href="#matching-design" title="Permalink to this headline">#</a></h2>
+<h2>Matching Design<a class="headerlink" href="#matching-design" title="Permalink to this headline">#</a></h2>
 <p>Well-designed matching markets aim for several goals:</p>
 <ol class="simple">
 <li><p>Orderly process for making matches: ability to consider options, not be rushed into making decisions, coordinated timing.</p></li>
@@ -821,13 +869,13 @@ We’ll have more to say about unraveling later.</p>
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">2. </span>Game Theory Review + Incentives</p>
+            <p class="prev-next-title">Game Theory Review + Incentives</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="house-allocation.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">4. </span>Housing Model</p>
+        <p class="prev-next-title">Housing Model</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

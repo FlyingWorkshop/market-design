@@ -1,0 +1,788 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Multi-Unit Auctions with Matching &#8212; market-design</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="canonical" href="https://FlyingWorkshop.github.io/market-design/book/multi-unit-auctions-with-matching.html" />
+    <link rel="shortcut icon" href="../_static/fav.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Sponsored Search Auctions" href="sponsored-search-auctions.html" />
+    <link rel="prev" title="Auction Theory" href="auction-theory.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">market-design</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Matching Theory
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="matching-theory.html">
+   Matching Theory
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="game-theory-review-and-incentives.html">
+   Game Theory Review + Incentives
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="stability-and-order.html">
+   Stability + Order
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="house-allocation.html">
+   Housing Model
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="school-choice.html">
+   School Choice
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="matching-with-contracts.html">
+   Matching with Contracts
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Auction Theory
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="auction-theory.html">
+   Auction Theory
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Multi-Unit Auctions with Matching
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="sponsored-search-auctions.html">
+   Sponsored Search Auctions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="chilean-fisheries.html">
+   Chilean Fisheries
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="radio-spectrum-auctions.html">
+   Radio Spectrum Auctions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="incentive-reverse-auction.html">
+   Incentive Reverse Auction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="practice.html">
+   Practice
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="bibliography.html">
+   Bibliography
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/FlyingWorkshop/market-design"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/FlyingWorkshop/market-design/issues/new?title=Issue%20on%20page%20%2Fbook/multi-unit-auctions-with-matching.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/FlyingWorkshop/market-design/edit/master/book/multi-unit-auctions-with-matching.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Edit this page"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="headerbtn__text-container">suggest edit</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/book/multi-unit-auctions-with-matching.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#connection-to-gale-shapley-marriage-problem">
+   Connection to Gale-Shapley “Marriage Problem”
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#assignment-model">
+   Assignment Model
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#aside-matching-with-contracts">
+   Aside: Matching with Contracts?
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-cubicle-assignment">
+     Example: Cubicle Assignment
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#questions">
+       Questions
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#pareto-efficiency">
+   Pareto Efficiency
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example">
+     Example
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#efficient-assignments">
+   Efficient Assignments
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#algorithm-to-allocate-efficiently">
+   Algorithm to Allocate Efficiently?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ascending-clock-auction">
+   Ascending (Clock) Auction
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-1">
+     Example 1
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-2">
+     Example 2
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-3-market-clearing-prices">
+     Example 3: Market-Clearing Prices
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-magic-of-the-market">
+   The Magic of the Market
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Multi-Unit Auctions with Matching</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#connection-to-gale-shapley-marriage-problem">
+   Connection to Gale-Shapley “Marriage Problem”
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#assignment-model">
+   Assignment Model
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#aside-matching-with-contracts">
+   Aside: Matching with Contracts?
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-cubicle-assignment">
+     Example: Cubicle Assignment
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#questions">
+       Questions
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#pareto-efficiency">
+   Pareto Efficiency
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example">
+     Example
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#efficient-assignments">
+   Efficient Assignments
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#algorithm-to-allocate-efficiently">
+   Algorithm to Allocate Efficiently?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ascending-clock-auction">
+   Ascending (Clock) Auction
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-1">
+     Example 1
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-2">
+     Example 2
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-3-market-clearing-prices">
+     Example 3: Market-Clearing Prices
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-magic-of-the-market">
+   The Magic of the Market
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="multi-unit-auctions-with-matching">
+<h1>Multi-Unit Auctions with Matching<a class="headerlink" href="#multi-unit-auctions-with-matching" title="Permalink to this headline">#</a></h1>
+<p>Some auctions involve sale of different types of items. Spectrum licenses in different regions, seats for a concert or event, advertising spots on the internet, assets of a company being liquidated, pieces of a procurement contract.</p>
+<section id="connection-to-gale-shapley-marriage-problem">
+<h2>Connection to Gale-Shapley “Marriage Problem”<a class="headerlink" href="#connection-to-gale-shapley-marriage-problem" title="Permalink to this headline">#</a></h2>
+<p>Assignment models seeks to allocate items to people with different preferences, with each person getting <span class="math notranslate nohighlight">\(\leq 1\)</span> item. This sounds like a matching problem. Before we tried to assign the items without payments.
+Now, we assume items can have money prices.</p>
+<p>Certain auctions function similarly to matching algorithms–they implicitly include <em>deferred acceptance mechanisms</em> to find efficient allocations, ideally also providing truthful (or “near-truthful”) incentives.</p>
+</section>
+<section id="assignment-model">
+<h2>Assignment Model<a class="headerlink" href="#assignment-model" title="Permalink to this headline">#</a></h2>
+<p>Sets of individuals <span class="math notranslate nohighlight">\(\{1,\ldots,N\}\)</span> and items <span class="math notranslate nohighlight">\(\{1,\ldots,𝐾,\emptyset \}.\)</span> An assignment <span class="math notranslate nohighlight">\(k\)</span> maps individuals to items, so <span class="math notranslate nohighlight">\(k(i)\)</span> is the item assigned to individual <span class="math notranslate nohighlight">\(i\)</span> and <span class="math notranslate nohighlight">\(k(i) = \emptyset\)</span> means that no item is assigned to <span class="math notranslate nohighlight">\(i\)</span>.</p>
+<p>Payoffs: Let <span class="math notranslate nohighlight">\(v_{ik}\)</span> denote individual <span class="math notranslate nohighlight">\(i\)</span>’s value for item <span class="math notranslate nohighlight">\(k\)</span>. If <span class="math notranslate nohighlight">\(i\)</span> gets item <span class="math notranslate nohighlight">\(k\)</span> and pays <span class="math notranslate nohighlight">\(p_k\)</span>, her utility is <span class="math notranslate nohighlight">\(v_{ik} - p_k\)</span>.</p>
+<p>Connection to the “marriage problem”: If prices were fixed, then each buyer would rank alternatives in order according to <span class="math notranslate nohighlight">\(v_{ik} - p_k\)</span> and Gale-Shapley could be applied. But our seller’s rank according to prices only, so we won’t hold those fixed.</p>
+</section>
+<section id="aside-matching-with-contracts">
+<h2>Aside: Matching with Contracts?<a class="headerlink" href="#aside-matching-with-contracts" title="Permalink to this headline">#</a></h2>
+<p>We have already discussed a closely related model in our study of matching with contracts, in which parties cared about a match and terms.
+“Terms” can include money amounts. In that theory, we assumed “strict preferences”–so, no ties. In economics, it is common to model money by a continuous variable, and this can make ties unavoidable. That changes some details of the analysis, but the main thrust is very similar.
+Additional connections will be made on later slides.</p>
+<section id="example-cubicle-assignment">
+<h3>Example: Cubicle Assignment<a class="headerlink" href="#example-cubicle-assignment" title="Permalink to this headline">#</a></h3>
+<p>Say we are tasked with assigning cubicles to economics graduate students. To find an effecient assignment without prices or money, we can assign random numbers (RSD). The assignment is Pareto efficient for any random order, so there are many Pareto efficient assignments! Adding money changes things.</p>
+<section id="questions">
+<h4>Questions<a class="headerlink" href="#questions" title="Permalink to this headline">#</a></h4>
+<p>Suppose that students can trade offices for money.</p>
+<ol class="simple">
+<li><p>Is the outcome of an office draw Pareto efficient?</p></li>
+<li><p>What does a Pareto efficient outcome look like?</p></li>
+<li><p>What algorithm might identify an efficient allocation?</p></li>
+</ol>
+</section>
+</section>
+</section>
+<section id="pareto-efficiency">
+<h2>Pareto Efficiency<a class="headerlink" href="#pareto-efficiency" title="Permalink to this headline">#</a></h2>
+<dl class="simple myst">
+<dt>Pareto Domination</dt><dd><p>An assignment is <em>Pareto dominated</em> if there is another assignment and set of cash payments that results in everyone being better off.</p>
+</dd>
+<dt>Pareto Efficient</dt><dd><p>An assignment is Pareto efficient if it is not Pareto dominated.</p>
+</dd>
+</dl>
+<p>The total value (or surplus) of the assignment <span class="math notranslate nohighlight">\(k\)</span> (that assigns to each <span class="math notranslate nohighlight">\(i\)</span> the item <span class="math notranslate nohighlight">\(k(i)\)</span>) is <span class="math notranslate nohighlight">\(v_{1k(1)} + \dots + v_{Nk(N)}\)</span>.</p>
+<div class="admonition-question admonition">
+<p class="admonition-title">Question</p>
+<p>What’s the relationship between Pareto efficiency &amp; total value?</p>
+</div>
+<section id="example">
+<h3>Example<a class="headerlink" href="#example" title="Permalink to this headline">#</a></h3>
+<p>We have three people <span class="math notranslate nohighlight">\(a\)</span>, <span class="math notranslate nohighlight">\(b\)</span>, and <span class="math notranslate nohighlight">\(c\)</span> and two items <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span>. The value matrix is:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{bmatrix}
+30 &amp; 60 \\
+20 &amp; 40 \\
+10 &amp; 20 
+\end{bmatrix}
+\end{split}\]</div>
+<p>The rows from top to bottom represent the values for <span class="math notranslate nohighlight">\(a\)</span>, <span class="math notranslate nohighlight">\(b\)</span>, and <span class="math notranslate nohighlight">\(c\)</span>. The left and right columns represent <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> respectively.</p>
+<ol class="simple">
+<li><p>Can it be efficient to assign <span class="math notranslate nohighlight">\(\{(a, x), (b, y), (c, \emptyset)\}\)</span> with some payments, so <span class="math notranslate nohighlight">\(b\)</span> gets his most preferred item?</p></li>
+<li><p>Identify a Pareto efficient allocation.</p></li>
+</ol>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Solution<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">TODO: check this with Paul</p>
+<ol class="simple">
+<li><p class="sd-card-text">Yes.</p></li>
+<li><p class="sd-card-text">TODO</p></li>
+</ol>
+</div>
+</details></section>
+</section>
+<section id="efficient-assignments">
+<h2>Efficient Assignments<a class="headerlink" href="#efficient-assignments" title="Permalink to this headline">#</a></h2>
+<div class="proof theorem admonition" id="efficient-assignments">
+<p class="admonition-title"><span class="caption-number">Theorem 9 </span> (Efficient Assignments)</p>
+<section class="theorem-content" id="proof-content">
+<p>When payoffs are value plus cash and total transfers must be equal to zero, an assignment with transfers is Pareto efficient if and only if no other assignment has a higher total value.</p>
+</section>
+</div><div class="proof admonition" id="proof">
+<p>Proof. Suppose an assignment achieves the maximum total value. Then any change in the assignment and any payments reduce the total value of all participants, so <em>someone</em> must lose from this change. Hence, such an assignment is Pareto efficient.</p>
+<p>Conversely, suppose an assignment does NOT maximize the total value. Then there is another assignment of items that adds some amount <span class="math notranslate nohighlight">\(\Delta &gt; 0\)</span> to the total value. Then, it is feasible to switch to this alternate assignment, make transfers so that everyone is indifferent about the change, and make additional payments to everyone of <span class="math notranslate nohighlight">\(\Delta / N\)</span>. All strictly prefer that arrangement, so the original assignment is not efficient.</p>
+</div>
+</section>
+<section id="algorithm-to-allocate-efficiently">
+<h2>Algorithm to Allocate Efficiently?<a class="headerlink" href="#algorithm-to-allocate-efficiently" title="Permalink to this headline">#</a></h2>
+<p>Suppose items are initially owned by a seller that has zero value for the items, and suppose the seller wants to allocate the items efficiently. A seller might also care about selling for high prices, but we won’t focus on that concern today. Let’s consider an auction mechanism in which prices rise until all offers are accepted: a kind of <strong>deferred acceptance mechanism.</strong></p>
+</section>
+<section id="ascending-clock-auction">
+<h2>Ascending (Clock) Auction<a class="headerlink" href="#ascending-clock-auction" title="Permalink to this headline">#</a></h2>
+<div class="proof algorithm admonition" id="ascending-auction">
+<p class="admonition-title"><span class="caption-number">Algorithm 10 </span> (Ascending Auction)</p>
+<section class="algorithm-content" id="proof-content">
+<p>Seller has a price clock for each item.</p>
+<ol class="simple">
+<li><p>Price of each item starts at <span class="math notranslate nohighlight">\(0\)</span>.</p></li>
+<li><p>Buyers demand their most preferred (acceptable) item-price combination.</p></li>
+<li><p>If any good has “excess demand” (i.e., more than one bids), increase its price “slightly” and return to step <span class="math notranslate nohighlight">\(1\)</span>. Otherwise, end.</p></li>
+</ol>
+</section>
+</div><p>Assumptions:</p>
+<ul class="simple">
+<li><p>At any given moment, each buyer bids for the item it wants most at the current clock prices (“truthful bidding”).</p></li>
+<li><p>Prices rise continuously rather than “jumping” discretely.</p></li>
+</ul>
+<section id="example-1">
+<h3>Example 1<a class="headerlink" href="#example-1" title="Permalink to this headline">#</a></h3>
+<p>Three bidders <span class="math notranslate nohighlight">\(a, b\)</span> and <span class="math notranslate nohighlight">\(c\)</span>. Two items <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span>.</p>
+<p><span class="math notranslate nohighlight">\( \begin{bmatrix}
+30 &amp; 60 \\
+20 &amp; 40 \\
+10 &amp; 20 
+\end{bmatrix}  \)</span></p>
+<p>What is the efficient assignment?</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Solution<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text"><span class="math notranslate nohighlight">\(\{(a, y), (b, x)\}\)</span></p>
+</div>
+</details></section>
+<section id="example-2">
+<h3>Example 2<a class="headerlink" href="#example-2" title="Permalink to this headline">#</a></h3>
+<p>TODO</p>
+</section>
+<section id="example-3-market-clearing-prices">
+<h3>Example 3: Market-Clearing Prices<a class="headerlink" href="#example-3-market-clearing-prices" title="Permalink to this headline">#</a></h3>
+<p>TODO</p>
+<p>ADD PARALLELOLPIPED with PLOTLY</p>
+</section>
+</section>
+<section id="the-magic-of-the-market">
+<h2>The Magic of the Market<a class="headerlink" href="#the-magic-of-the-market" title="Permalink to this headline">#</a></h2>
+<p>TODO</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./book"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="auction-theory.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Auction Theory</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="sponsored-search-auctions.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Sponsored Search Auctions</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Logan Mondal Bhamidipaty and Paul Milgrom<br/>
+  
+      &copy; Copyright 2023.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
