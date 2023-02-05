@@ -47,6 +47,8 @@ html:
   use_issues_button: true
   use_edit_page_button: true
   use_download_button: true
+  comments:
+    hypothesis: true
   # thebe: true
   # google_analytics_id: G-XXXXXXX
 

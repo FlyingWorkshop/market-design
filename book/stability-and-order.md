@@ -82,7 +82,7 @@ Unstable: $(m_3, w_1)$ is a blocking pair.
 
 ```{attention}
 [TODO]
-Get more practice [here](www.google.com)!
+Get more practice [here]!
 ```
 
 ### Failure of Priority Matching

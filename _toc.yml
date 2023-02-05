@@ -5,14 +5,25 @@ format: jb-book
 root: intro
 options:
   numbered: 3
-chapters:
-  - file: book/matching-theory  # 3
-  - file: book/game-theory-review-and-incentives  # 4 [unfinished]
-  - file: book/stability-and-order  # 5 [unfinished]
-  - file: book/house-allocation  # 6 [unfinished]
-  - file: book/school-choice # 7, 8 [unfinished]
-  - file: book/practice
-  - file: book/bibliography
+parts:
+- caption: Matching Theory
+  chapters:
+    - file: book/matching-theory 
+    - file: book/game-theory-review-and-incentives # ~
+    - file: book/stability-and-order 
+    - file: book/house-allocation
+    - file: book/school-choice # ~
+    - file: book/matching-with-contracts # !!
+- caption: Auction Theory
+  chapters:
+    - file: book/auction-theory # !!
+    - file: book/multi-unit-auctions-with-matching.md # !!
+    - file: book/sponsored-search-auctions # ~
+    - file: book/chilean-fisheries  # !!
+    - file: book/radio-spectrum-auctions # !!
+    - file: book/incentive-reverse-auction # !!
+    - file: book/practice
+    - file: book/bibliography
 
 # Or you organize the TOC by parts
 
