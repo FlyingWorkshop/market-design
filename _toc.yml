@@ -22,6 +22,8 @@ parts:
     - file: book/chilean-fisheries  # !!
     - file: book/radio-spectrum-auctions # !!
     - file: book/incentive-reverse-auction # !!
+- caption: Resources
+  chapters:
     - file: book/practice
     - file: book/bibliography
 

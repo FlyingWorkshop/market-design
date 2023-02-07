@@ -84,4 +84,38 @@ Identify the economic problem to be solved, the players and their incentives and
 Economic theory provides a conceptual framework, but good practice also uses data and experiment to test hypotheses and identify things models may have missed.
 
 ## Incentives in Matching
-[TODO]
+
+```{admonition} Question
+Can stable matching mechanisms be truthful?
+```
+
+### From Algorithms to Mechanisms
+
+Algorithm analysis assumes that inputs are given and correct. Mechanism analysis also examines the inputs and asks:
+* Is the mechanism truthful?
+* Is it easy for participants to know what to report?
+
+
+```{prf:theorem} Man-Proposing Mechanism is Truthful for Men
+:label: Man-Proposing-Truthful
+The direct mechanism that selects the man-optimal stable allocation using reported values (for example by running the man-proposing deferred acceptance algorithm) is truthful for the men.
+```
+
+```{prf:proof}
+Suppose man $m$ makes report $r$ that (fixing others' reports) leads to matching $x$ in which $m$ is matched to woman $w$: $\mu_x(m) = w$. If instead of reporting $r$, $m$ reports that $w$ is his only acceptable woman, $x$ is still an acceptable stable matching to all parties. By the {prf:ref}`rural hospitals theorem<rural-hospitals>`, $m$ is matched in every stable matching with the revised report. Since $w$ is the only acceptable woman, {prf:ref}`DAA<daa>` matches $m$ to $w$. 
+
+A key observation is that since $m$ is matched in every stable matching, any acceptable matching $y$ in which $m$ is unmatched must be blocked by either $(m, w)$ or some $(m', w')$ with $m \neq m'$.
+
+Suppose that instead of reporting that only $w$ is acceptable, $m$ makes a "truncated truthful report" meaning that the women are ordered truthfully but those ranked below $w$ are reported to be unacceptable. As before, $m$ is matched in every stable matching even with the truncated report. Say the DAA now matches $m$ to woman $w'$ where $w' \succ_m w$. 
+
+Say that $m$ had just reported truthfully, then the DAA would select the man-optimal stable matching $\hat{x}$. Any matching that was blocked or unacceptable with the truncated report is still blocked or unacceptable in the same way. Hence $\hat{x}$ is still the man-optimal stable matching and $\mu_{\hat{x}(m) = w'}$.
+
+Putting it all together, we get that for *any* reports by the women and the other men, if man $m$ reports truthfully instead of reporitng $r$, he will be matched to woman $w'$ instead of to woman $w$ where $w' \succ_m w$.
+```
+
+```{admonition} Exercise
+1. Show that truthful reporting is a weakly dominant action for the men.
+2. Which steps of the proof also apply to women (in the man-offering deferred acceptance algorithm)?
+3. What can you infer about the structure of women’s optimal reports when they play strategically?
+```
+

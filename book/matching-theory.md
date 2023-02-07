@@ -69,6 +69,7 @@ If we have $|M| = |W| = n$, how many matchings are possible? What about when $|M
 
 ### Algorithm
 ```{prf:algorithm} Deferred Acceptance Algorithm
+:label: daa
 1. Men and women rank all potential partners.
 2. Each man proposes to the highest-ranked acceptable woman on his list, or to nobody if no one on the list is acceptable.
 3. Each woman holds only her most preferred acceptable proposal and rejects all others.
@@ -138,6 +139,7 @@ Stability respects women's preferences as well as men's. The distinction will be
 Why "rural hospitals?" Deferred acceptance is used to assign doctors to hospitals—some hospitals wondered if changing the algorithm would help them fill positions.
 
 ```{prf:theorem} Rural Hospitals Theorem
+:label: rural-hospitals
 The sets of men and women who are unmatched is the same in _all_ stable matchings.
 ```
 ```{warning}
