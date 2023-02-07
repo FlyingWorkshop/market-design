@@ -9,7 +9,7 @@ parts:
 - caption: Matching Theory
   chapters:
     - file: book/matching-theory 
-    - file: book/game-theory-review-and-incentives # ~
+    - file: book/game-theory-review-and-incentives
     - file: book/stability-and-order 
     - file: book/house-allocation
     - file: book/school-choice # ~
@@ -26,6 +26,8 @@ parts:
   chapters:
     - file: book/practice
     - file: book/bibliography
+    - file: genindex
+
 
 # Or you organize the TOC by parts
 

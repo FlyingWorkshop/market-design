@@ -2,38 +2,36 @@
 
 ## Game Theory and Mechanism Design
 
-* Classical game theory analyzes strategic behavior:
+Classical game theory analyzes strategic behavior:
 * Given a strategic environment (a "game"), what can we say about the likely outcome?
 * Mechanism design flips the problem around
 * How can we create rules of play (a "mechanism") so that even if players are strategically sophisticated,
     we still get a desired outcome?
 
-Game
-:  A game in a strategic form is a triple $(N, A, u)$ consisting of
-* A set of players $N = \{1, \ldots, n\}$
-* Possible _actions_ for each player: $A_1, \ldots, A_n$
-* Payoff functions for each player: $u_i(a_1, \ldots, a_n)$ for $u: A_1 \times \dots \times A_n \to
-\mathbb{R}^n$
+
+```{glossary}
+game
+    A game in a strategic form is a triple $(N, A, u)$ consisting of:
+    * A set of players $N = \{1, \ldots, n\}$
+    * Possible _actions_ for each player: $A_1, \ldots, A_n$
+    * Payoff functions for each player: $u_i(a_1, \ldots, a_n)$ for $u: A_1 \times \dots \times A_n \to
+    \mathbb{R}^n$
 
 
+dominant action
+    Action $a_i$ is (weakly) _dominant_ for player $i$if for
+    all $a_i'$ and $a_{-1}$: $u_i(a_i, a_{-1}) \geq u_i(a_i', a_{-i})$ and for some $\hat{a}_{-i}$, $u_i(a_i, \hat{a}_{-i}) > u_i(a_i', \hat{a}_{-i})$.
+```
 
-The game is commonly known to players.
+```{tip} Intuition
+It's a no-brainer for $i$ to play a dominant action if she has one; it is an optimal choice _regardless of how the others may play_.
+```
 
-Dominant Action
-: Action $a_i$ is (weakly) _dominant_ for player $i$if for
-all $a_i'$ and $a_{-1}$:
-$u_i(a_i, a_{-1} \geq u_i(a_i', a_{-i})$
-and for some $\hat{a}_{-i}$,
-$u_i(a_i, \hat{a}_{-i}) > u_i(a_i', \hat{a}_{-i}).$
+```{glossary}
+Nash equilbrium
+    Action profile $a = (a_1, \ldots, a_n)$ is a _Nash equilibrium_ if for each player $i$ and action $a_i'$, $U_i(a_i, a_{-i}) \geq u_i(a_i', a_{-1})$. In words, an action profile $a$ is a Nash equilibrium if no player $i$ can increase its own payoff above $u_i(a)$ by unilaterally changing in its action from $a_i$ to some other action $a_i'$.
+```
 
-It's a no-brainer for $i$ to play a dominant action if she has one; it is an optimal choice _regardless of how the
-others may play_
-
-Nash Equilbrium
-: Action profile $a = (a_1, \ldots, a_n)$ is a _Nash
-equilibrium_ if for each player $i$ and action $a_i'$, $U_i(a_i, a_{-i}) \geq u_i(a_i', a_{-1})$. In words,
-an action profile $a$ is a Nash equilibrium if no player $i$ can increase its own payoff above $u_i(a)$ by
-unilaterally changing in its action from $a_i$ to some other action $a_i'$.
 
 ### Incomplete Information
 * What happens if the players don't know each other's payoff functions? For example, in an auction, players may
@@ -53,12 +51,22 @@ Various criteria may define "good" allocations or outcomes. In auction problems,
 
 ### Mechanisms
 
-Mechanism
-: A mechanism $(M, x, p)$ is a triple consisting of 
-* A set of possible _messages_ for each player: $M_1, \ldots, M_n$
-* An allocation rule: $X(m_1, \ldots, m_n)$
-* Possibly: a payment rule $p: M_1 \times \ldots \times M_n \to \mathbb{R}^n$ where player $i$ pays $p_i(m_1, \ldots, m_n)$.
-We will look at mechanisms with and without payments. If there are no payments, set all $p_i \equiv 0$.
+```{glossary}
+mechanism
+    A mechanism $(M, x, p)$ is a triple consisting of:
+    * A set of possible _messages_ for each player: $M_1, \ldots, M_n$
+    * An allocation rule: $X(m_1, \ldots, m_n)$
+    * Possibly: a payment rule $p: M_1 \times \ldots \times M_n \to \mathbb{R}^n$ where player $i$ pays $p_i(m_1, \ldots, m_n)$.
+
+    We will look at mechanisms with and without payments. If there are no payments, set all $p_i \equiv 0$.
+
+matching mechanism
+    A **matching mechanism** is a mapping from **reported** preferences into a matching. (no payments)
+
+truthful mechanism
+    A mechanism is **truthful** if truthful reporting is a dominant acution for each participant.
+
+```
 
 #### Example 1: Gayle-Shapley Marriage Problem
 In the Gale-Shapley marriage problem, the messages are statements of preference (not necessarily truthful). The outcome/allocation/assignment is a matching, which the mechanism selects as a function of the reported preferences. No payments are made. A "type" is the preference list of each agent.
@@ -70,8 +78,10 @@ A mechanism plus payoffs defines a game. The possible actions are the messages: 
 
 Often, we will focus on _direct mechanisms_: $M_i$ is equal to the set of $i$'s possible payoff functions (or preferences).
 
-Strategy-proof Mechanisms
-: A _strategy/action_ for player $i$ specifies what message to send as a function of player $i$'s type. A mechanism is _strategy-proof_ if each player $i$ has a dominant strategy, that is, a strategy that is optimal regardless of the strategies chosen by the other players. Sometimes, we'll look at mechanisms that are not strategy-proof, using Nash equilibrium to forecast mechanism outcomes.
+```{glossary}
+strategy-proof mechanism
+    A _strategy/action_ for player $i$ specifies what message to send as a function of player $i$'s type. A mechanism is _strategy-proof_ if each player $i$ has a dominant strategy, that is, a strategy that is optimal regardless of the strategies chosen by the other players. Sometimes, we'll look at mechanisms that are not strategy-proof, using Nash equilibrium to forecast mechanism outcomes.
+```
 
 ### Applying GT to Market Design
 

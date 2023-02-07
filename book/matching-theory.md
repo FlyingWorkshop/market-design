@@ -23,23 +23,27 @@ Two different kinds of parties to be matched. Participants of both kinds care ab
 A set of men $M$ and women $W$.
 A set of men $M$ with typical man $m \in M$ and a set of women $W$ with typical woman $w \in W$. We assume one-to-one matching. Each man can be matched to one woman or remained unmatched and vice versa. People have strict preferences over their potential partner. A man $m$ is "acceptable" to a woman $w$ is she prefers him to being unmatched. We define an "acceptable" woman similarly.
 
+```{glossary}
+matching
+    A matching is a set of pairs of the form $(m, w)$ or self-matching $(m,m)$ or $(w, w)$ such that each individual appears in exactly one pair. 
+```
 
-Matching
-: A matching is a set of pairs of the form $(m, w)$ or self-matching $(m,m)$ or $(w, w)$ such that each individual appears in exactly one pair. 
 ```{admonition} Notation
 If the match includes $(m, m)$ then $m$ is unmatched. Similarly, $(w, w)$ means $w$ is unmatched.
 ```
 
-Blocking Pair
-: Given a matching $\mu$, a blocking pair $(m, w)$ is a man $m$ and a woman $w$ who would both prefer to match with each other rather than to their assigned partners in that matching.
+```{glossary}
+blocking pair
+    Given a matching $\mu$, a blocking pair $(m, w)$ is a man $m$ and a woman $w$ who would both prefer to match with each other rather than to their assigned partners in that matching.
 
-Unstable Matching
-: A matching is unstable if either:
-1. Some individual is matched to an unacceptable partner, or 
-2. There is blocking pair $(m, w)$ – that is, a man $m$ and a woman $w$ who would both prefer to match with each other rather than to their assigned partners. 
+unstable matching
+    A matching is unstable if either:
+        1. Some individual is matched to an unacceptable partner, or 
+        2. There is blocking pair $(m, w)$ – that is, a man $m$ and a wom
 
-Stable Matching
-: If a matching is not unstable, it is stable.
+stable matching
+    If a matching isn't unstable, it's stable.
+```
 
 #### Question
 
@@ -66,6 +70,8 @@ If we have $|M| = |W| = n$, how many matchings are possible? What about when $|M
 
 
 ## Deferred Acceptance Algorithm
+```{index} Deferred Acceptance Algorithm (DAA)
+```
 
 ### Algorithm
 ```{prf:algorithm} Deferred Acceptance Algorithm
