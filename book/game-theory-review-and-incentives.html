@@ -184,6 +184,13 @@ const thebe_selector_output = ".output, .cell_output"
    Incentive Reverse Auction
   </a>
  </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Resources
+ </span>
+</p>
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="practice.html">
    Practice
@@ -450,6 +457,13 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#incentives-in-matching">
    Incentives in Matching
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#from-algorithms-to-mechanisms">
+     From Algorithms to Mechanisms
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -532,6 +546,13 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#incentives-in-matching">
    Incentives in Matching
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#from-algorithms-to-mechanisms">
+     From Algorithms to Mechanisms
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -644,7 +665,38 @@ We will look at mechanisms with and without payments. If there are no payments, 
 </section>
 <section id="incentives-in-matching">
 <h2>Incentives in Matching<a class="headerlink" href="#incentives-in-matching" title="Permalink to this headline">#</a></h2>
-<p>[TODO]</p>
+<div class="admonition-question admonition">
+<p class="admonition-title">Question</p>
+<p>Can stable matching mechanisms be truthful?</p>
+</div>
+<section id="from-algorithms-to-mechanisms">
+<h3>From Algorithms to Mechanisms<a class="headerlink" href="#from-algorithms-to-mechanisms" title="Permalink to this headline">#</a></h3>
+<p>Algorithm analysis assumes that inputs are given and correct. Mechanism analysis also examines the inputs and asks:</p>
+<ul class="simple">
+<li><p>Is the mechanism truthful?</p></li>
+<li><p>Is it easy for participants to know what to report?</p></li>
+</ul>
+<div class="proof theorem admonition" id="Man-Proposing-Truthful">
+<p class="admonition-title"><span class="caption-number">Theorem 5 </span> (Man-Proposing Mechanism is Truthful for Men)</p>
+<section class="theorem-content" id="proof-content">
+<p>The direct mechanism that selects the man-optimal stable allocation using reported values (for example by running the man-proposing deferred acceptance algorithm) is truthful for the men.</p>
+</section>
+</div><div class="proof admonition" id="proof">
+<p>Proof. Suppose man <span class="math notranslate nohighlight">\(m\)</span> makes report <span class="math notranslate nohighlight">\(r\)</span> that (fixing others’ reports) leads to matching <span class="math notranslate nohighlight">\(x\)</span> in which <span class="math notranslate nohighlight">\(m\)</span> is matched to woman <span class="math notranslate nohighlight">\(w\)</span>: <span class="math notranslate nohighlight">\(\mu_x(m) = w\)</span>. If instead of reporting <span class="math notranslate nohighlight">\(r\)</span>, <span class="math notranslate nohighlight">\(m\)</span> reports that <span class="math notranslate nohighlight">\(w\)</span> is his only acceptable woman, <span class="math notranslate nohighlight">\(x\)</span> is still an acceptable stable matching to all parties. By the <a class="reference internal" href="matching-theory.html#rural-hospitals">rural hospitals theorem</a>, <span class="math notranslate nohighlight">\(m\)</span> is matched in every stable matching with the revised report. Since <span class="math notranslate nohighlight">\(w\)</span> is the only acceptable woman, <a class="reference internal" href="matching-theory.html#daa">DAA</a> matches <span class="math notranslate nohighlight">\(m\)</span> to <span class="math notranslate nohighlight">\(w\)</span>.</p>
+<p>A key observation is that since <span class="math notranslate nohighlight">\(m\)</span> is matched in every stable matching, any acceptable matching <span class="math notranslate nohighlight">\(y\)</span> in which <span class="math notranslate nohighlight">\(m\)</span> is unmatched must be blocked by either <span class="math notranslate nohighlight">\((m, w)\)</span> or some <span class="math notranslate nohighlight">\((m', w')\)</span> with <span class="math notranslate nohighlight">\(m \neq m'\)</span>.</p>
+<p>Suppose that instead of reporting that only <span class="math notranslate nohighlight">\(w\)</span> is acceptable, <span class="math notranslate nohighlight">\(m\)</span> makes a “truncated truthful report” meaning that the women are ordered truthfully but those ranked below <span class="math notranslate nohighlight">\(w\)</span> are reported to be unacceptable. As before, <span class="math notranslate nohighlight">\(m\)</span> is matched in every stable matching even with the truncated report. Say the DAA now matches <span class="math notranslate nohighlight">\(m\)</span> to woman <span class="math notranslate nohighlight">\(w'\)</span> where <span class="math notranslate nohighlight">\(w' \succ_m w\)</span>.</p>
+<p>Say that <span class="math notranslate nohighlight">\(m\)</span> had just reported truthfully, then the DAA would select the man-optimal stable matching <span class="math notranslate nohighlight">\(\hat{x}\)</span>. Any matching that was blocked or unacceptable with the truncated report is still blocked or unacceptable in the same way. Hence <span class="math notranslate nohighlight">\(\hat{x}\)</span> is still the man-optimal stable matching and <span class="math notranslate nohighlight">\(\mu_{\hat{x}(m) = w'}\)</span>.</p>
+<p>Putting it all together, we get that for <em>any</em> reports by the women and the other men, if man <span class="math notranslate nohighlight">\(m\)</span> reports truthfully instead of reporitng <span class="math notranslate nohighlight">\(r\)</span>, he will be matched to woman <span class="math notranslate nohighlight">\(w'\)</span> instead of to woman <span class="math notranslate nohighlight">\(w\)</span> where <span class="math notranslate nohighlight">\(w' \succ_m w\)</span>.</p>
+</div>
+<div class="admonition-exercise admonition">
+<p class="admonition-title">Exercise</p>
+<ol class="simple">
+<li><p>Show that truthful reporting is a weakly dominant action for the men.</p></li>
+<li><p>Which steps of the proof also apply to women (in the man-offering deferred acceptance algorithm)?</p></li>
+<li><p>What can you infer about the structure of women’s optimal reports when they play strategically?</p></li>
+</ol>
+</div>
+</section>
 </section>
 </section>
 
