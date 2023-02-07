@@ -6,20 +6,21 @@ In some matching markets, only one side of the market has preferences (or we car
 $N$ individuals and $N$ houses (generalizable to $\neq$). Each individual has strict preference over houses.
 The goal is to assign each individual to a house.
 
-Pareto Efficient
-: An allocation is Pareto efficient if no pair of individuals, or set of individuals, can “all do better” by trading houses.
-
+```{glossary}
+Pareto efficient
+    An allocation is Pareto efficient if no pair of individuals, or set of individuals, can “all do better” by trading houses. 
+```
 ```{admonition} Intuition
-Participation in the mechanism is voluntary and groups of students can swap rooms/houses among themselves.
+"I can't do better without harming someone."
 ```
 
-Stability
-: An outcome is unstable if a coalition of agents _blocks_ a candidate assignment: i.e., from their initial endowments, there is another assignment they can arrange for themselves that they all prefer.  
+```{glossary}
+stability (housing)
+    An outcome is unstable if a coalition of agents _blocks_ a candidate assignment: i.e., from their initial endowments, there is another assignment they can arrange for themselves that they all prefer.  
 
-Core
-: The _core_ is the set of feasible unblocked assignments. 
-
-Core assignments are Pareto efficient. Inefficient assignment would be blocked by the “coalition of the whole.” Not all Pareto efficient assignments are in the core: the core imposes additional constraints that respect prior ownership.
+core
+    The _core_ is the set of feasible unblocked assignments. Core assignments are Pareto efficient. Inefficient assignment would be blocked by the “coalition of the whole.” Not all Pareto efficient assignments are in the core: the core imposes additional constraints that respect prior ownership.
+```
 
 ## (Random) Serial Dictatorship
 

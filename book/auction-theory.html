@@ -199,6 +199,11 @@ const thebe_selector_output = ".output, .cell_output"
    Bibliography
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../genindex.html">
+   Index
+  </a>
+ </li>
 </ul>
 
     </div>
@@ -371,12 +376,41 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#single-item-auctions">
+   Single Item Auctions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sealed-bid-auctions">
+   Sealed-Bid Auctions
+  </a>
+ </li>
+</ul>
+
+    </nav>
 </div>
     </div>
     <div class="article row">
@@ -388,6 +422,24 @@ title="Print to PDF"
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#single-item-auctions">
+   Single Item Auctions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sealed-bid-auctions">
+   Sealed-Bid Auctions
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -397,7 +449,34 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="auction-theory">
 <h1>Auction Theory<a class="headerlink" href="#auction-theory" title="Permalink to this headline">#</a></h1>
-<p>TODO</p>
+<section id="single-item-auctions">
+<h2>Single Item Auctions<a class="headerlink" href="#single-item-auctions" title="Permalink to this headline">#</a></h2>
+<p>A seller has a single item that she wants to sell. How can she identify the right buyer and price? Why use an auction instead of simply setting a price? The seller may not know what price to set, and guessing can lead to problems: too high, no sale; too low, excess demand. Potential buyers know their max prices but don’t always reveal them (everyone loves a good deal!). If <strong>acceptance</strong> of any offer is <strong>deferred</strong> until all offers can be compared, then the mechanism is called an <strong>auction</strong> and leads to <strong>competition</strong> and <strong>price discover</strong>.</p>
+<blockquote class="epigraph">
+<div><p>Auctions are games that guide prices to mimic markets.
+– Josh Gross</p>
+</div></blockquote>
+</section>
+<section id="sealed-bid-auctions">
+<h2>Sealed-Bid Auctions<a class="headerlink" href="#sealed-bid-auctions" title="Permalink to this headline">#</a></h2>
+<p>A sealed bid auctions (also called “blind auctions”) are auctions where bidders submit bids secretly and simultaneously, so no one knows the bid of anyone else. The highest bid always wins, but they don’t always pay the highest price for reasons we’ll explore later.</p>
+<dl class="glossary simple">
+<dt id="term-First-Price-Auctions">“First-Price” Auctions<a class="headerlink" href="#term-First-Price-Auctions" title="Permalink to this term">#</a></dt><dd><ul class="simple">
+<li><p>Each bidder privately writes down a number</p></li>
+<li><p>The highest number wins (ties broken arbitrarily)</p></li>
+<li><p>The winning bidders pays a price equal to <strong>her bid</strong></p></li>
+<li><p><em>Each bidder should bid <strong>less than the maximum</strong> they’re willing to pay</em></p></li>
+</ul>
+</dd>
+<dt id="term-Second-Price-Auctions">“Second-Price” Auctions<a class="headerlink" href="#term-Second-Price-Auctions" title="Permalink to this term">#</a></dt><dd><ul class="simple">
+<li><p>Each bidder privately writes down a number</p></li>
+<li><p>The highest number is the winning bid (ties broken arbitrarily)</p></li>
+<li><p>The winning bidder pays a price equal to the highest losing bid</p></li>
+<li><p>Second-price auctions are truthful: each bidder should bid exactly the maximum it is willing to pay</p></li>
+</ul>
+</dd>
+</dl>
+</section>
 </section>
 
     <script type="text/x-thebe-config">

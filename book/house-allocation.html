@@ -201,6 +201,11 @@ const thebe_selector_output = ".output, .cell_output"
    Bibliography
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../genindex.html">
+   Index
+  </a>
+ </li>
 </ul>
 
     </div>
@@ -659,21 +664,20 @@ title="Print to PDF"
 <h2>House Allocation Problem<a class="headerlink" href="#house-allocation-problem" title="Permalink to this headline">#</a></h2>
 <p><span class="math notranslate nohighlight">\(N\)</span> individuals and <span class="math notranslate nohighlight">\(N\)</span> houses (generalizable to <span class="math notranslate nohighlight">\(\neq\)</span>). Each individual has strict preference over houses.
 The goal is to assign each individual to a house.</p>
-<dl class="simple myst">
-<dt>Pareto Efficient</dt><dd><p>An allocation is Pareto efficient if no pair of individuals, or set of individuals, can “all do better” by trading houses.</p>
+<dl class="glossary simple">
+<dt id="term-Pareto-efficient">Pareto efficient<a class="headerlink" href="#term-Pareto-efficient" title="Permalink to this term">#</a></dt><dd><p>An allocation is Pareto efficient if no pair of individuals, or set of individuals, can “all do better” by trading houses.</p>
 </dd>
 </dl>
 <div class="admonition-intuition admonition">
 <p class="admonition-title">Intuition</p>
-<p>Participation in the mechanism is voluntary and groups of students can swap rooms/houses among themselves.</p>
+<p>“I can’t do better without harming someone.”</p>
 </div>
-<dl class="simple myst">
-<dt>Stability</dt><dd><p>An outcome is unstable if a coalition of agents <em>blocks</em> a candidate assignment: i.e., from their initial endowments, there is another assignment they can arrange for themselves that they all prefer.</p>
+<dl class="glossary simple">
+<dt id="term-stability-housing">stability (housing)<a class="headerlink" href="#term-stability-housing" title="Permalink to this term">#</a></dt><dd><p>An outcome is unstable if a coalition of agents <em>blocks</em> a candidate assignment: i.e., from their initial endowments, there is another assignment they can arrange for themselves that they all prefer.</p>
 </dd>
-<dt>Core</dt><dd><p>The <em>core</em> is the set of feasible unblocked assignments.</p>
+<dt id="term-core">core<a class="headerlink" href="#term-core" title="Permalink to this term">#</a></dt><dd><p>The <em>core</em> is the set of feasible unblocked assignments. Core assignments are Pareto efficient. Inefficient assignment would be blocked by the “coalition of the whole.” Not all Pareto efficient assignments are in the core: the core imposes additional constraints that respect prior ownership.</p>
 </dd>
 </dl>
-<p>Core assignments are Pareto efficient. Inefficient assignment would be blocked by the “coalition of the whole.” Not all Pareto efficient assignments are in the core: the core imposes additional constraints that respect prior ownership.</p>
 </section>
 <section id="random-serial-dictatorship">
 <h2>(Random) Serial Dictatorship<a class="headerlink" href="#random-serial-dictatorship" title="Permalink to this headline">#</a></h2>

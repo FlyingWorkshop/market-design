@@ -201,6 +201,11 @@ const thebe_selector_output = ".output, .cell_output"
    Bibliography
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../genindex.html">
+   Index
+  </a>
+ </li>
 </ul>
 
     </div>
@@ -616,26 +621,22 @@ title="Print to PDF"
 <h3>Participants of Two Kinds<a class="headerlink" href="#participants-of-two-kinds" title="Permalink to this headline">#</a></h3>
 <p>A set of men <span class="math notranslate nohighlight">\(M\)</span> and women <span class="math notranslate nohighlight">\(W\)</span>.
 A set of men <span class="math notranslate nohighlight">\(M\)</span> with typical man <span class="math notranslate nohighlight">\(m \in M\)</span> and a set of women <span class="math notranslate nohighlight">\(W\)</span> with typical woman <span class="math notranslate nohighlight">\(w \in W\)</span>. We assume one-to-one matching. Each man can be matched to one woman or remained unmatched and vice versa. People have strict preferences over their potential partner. A man <span class="math notranslate nohighlight">\(m\)</span> is “acceptable” to a woman <span class="math notranslate nohighlight">\(w\)</span> is she prefers him to being unmatched. We define an “acceptable” woman similarly.</p>
-<dl class="simple myst">
-<dt>Matching</dt><dd><p>A matching is a set of pairs of the form <span class="math notranslate nohighlight">\((m, w)\)</span> or self-matching <span class="math notranslate nohighlight">\((m,m)\)</span> or <span class="math notranslate nohighlight">\((w, w)\)</span> such that each individual appears in exactly one pair.</p>
+<dl class="glossary simple">
+<dt id="term-matching">matching<a class="headerlink" href="#term-matching" title="Permalink to this term">#</a></dt><dd><p>A matching is a set of pairs of the form <span class="math notranslate nohighlight">\((m, w)\)</span> or self-matching <span class="math notranslate nohighlight">\((m,m)\)</span> or <span class="math notranslate nohighlight">\((w, w)\)</span> such that each individual appears in exactly one pair.</p>
 </dd>
 </dl>
 <div class="admonition-notation admonition">
 <p class="admonition-title">Notation</p>
 <p>If the match includes <span class="math notranslate nohighlight">\((m, m)\)</span> then <span class="math notranslate nohighlight">\(m\)</span> is unmatched. Similarly, <span class="math notranslate nohighlight">\((w, w)\)</span> means <span class="math notranslate nohighlight">\(w\)</span> is unmatched.</p>
 </div>
-<dl class="simple myst">
-<dt>Blocking Pair</dt><dd><p>Given a matching <span class="math notranslate nohighlight">\(\mu\)</span>, a blocking pair <span class="math notranslate nohighlight">\((m, w)\)</span> is a man <span class="math notranslate nohighlight">\(m\)</span> and a woman <span class="math notranslate nohighlight">\(w\)</span> who would both prefer to match with each other rather than to their assigned partners in that matching.</p>
+<dl class="glossary simple">
+<dt id="term-blocking-pair">blocking pair<a class="headerlink" href="#term-blocking-pair" title="Permalink to this term">#</a></dt><dd><p>Given a matching <span class="math notranslate nohighlight">\(\mu\)</span>, a blocking pair <span class="math notranslate nohighlight">\((m, w)\)</span> is a man <span class="math notranslate nohighlight">\(m\)</span> and a woman <span class="math notranslate nohighlight">\(w\)</span> who would both prefer to match with each other rather than to their assigned partners in that matching.</p>
 </dd>
-<dt>Unstable Matching</dt><dd><p>A matching is unstable if either:</p>
+<dt id="term-unstable-matching">unstable matching<a class="headerlink" href="#term-unstable-matching" title="Permalink to this term">#</a></dt><dd><p>A matching is unstable if either:
+1. Some individual is matched to an unacceptable partner, or
+2. There is blocking pair <span class="math notranslate nohighlight">\((m, w)\)</span> – that is, a man <span class="math notranslate nohighlight">\(m\)</span> and a wom</p>
 </dd>
-</dl>
-<ol class="simple">
-<li><p>Some individual is matched to an unacceptable partner, or</p></li>
-<li><p>There is blocking pair <span class="math notranslate nohighlight">\((m, w)\)</span> – that is, a man <span class="math notranslate nohighlight">\(m\)</span> and a woman <span class="math notranslate nohighlight">\(w\)</span> who would both prefer to match with each other rather than to their assigned partners.</p></li>
-</ol>
-<dl class="simple myst">
-<dt>Stable Matching</dt><dd><p>If a matching is not unstable, it is stable.</p>
+<dt id="term-stable-matching">stable matching<a class="headerlink" href="#term-stable-matching" title="Permalink to this term">#</a></dt><dd><p>If a matching isn’t unstable, it’s stable.</p>
 </dd>
 </dl>
 <section id="question">
@@ -672,7 +673,7 @@ Solution<div class="sd-summary-down docutils">
 <section id="deferred-acceptance-algorithm">
 <h2>Deferred Acceptance Algorithm<a class="headerlink" href="#deferred-acceptance-algorithm" title="Permalink to this headline">#</a></h2>
 <section id="algorithm">
-<h3>Algorithm<a class="headerlink" href="#algorithm" title="Permalink to this headline">#</a></h3>
+<span id="index-0"></span><h3>Algorithm<a class="headerlink" href="#algorithm" title="Permalink to this headline">#</a></h3>
 <div class="proof algorithm admonition" id="daa">
 <p class="admonition-title"><span class="caption-number">Algorithm 1 </span> (Deferred Acceptance Algorithm)</p>
 <section class="algorithm-content" id="proof-content">

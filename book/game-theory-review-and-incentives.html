@@ -201,6 +201,11 @@ const thebe_selector_output = ".output, .cell_output"
    Bibliography
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../genindex.html">
+   Index
+  </a>
+ </li>
 </ul>
 
     </div>
@@ -568,39 +573,33 @@ title="Print to PDF"
 <h1>Game Theory Review + Incentives<a class="headerlink" href="#game-theory-review-incentives" title="Permalink to this headline">#</a></h1>
 <section id="game-theory-and-mechanism-design">
 <h2>Game Theory and Mechanism Design<a class="headerlink" href="#game-theory-and-mechanism-design" title="Permalink to this headline">#</a></h2>
+<p>Classical game theory analyzes strategic behavior:</p>
 <ul class="simple">
-<li><p>Classical game theory analyzes strategic behavior:</p></li>
 <li><p>Given a strategic environment (a “game”), what can we say about the likely outcome?</p></li>
 <li><p>Mechanism design flips the problem around</p></li>
 <li><p>How can we create rules of play (a “mechanism”) so that even if players are strategically sophisticated,
 we still get a desired outcome?</p></li>
 </ul>
-<dl class="simple myst">
-<dt>Game</dt><dd><p>A game in a strategic form is a triple <span class="math notranslate nohighlight">\((N, A, u)\)</span> consisting of</p>
-</dd>
-</dl>
+<dl class="glossary simple">
+<dt id="term-game">game<a class="headerlink" href="#term-game" title="Permalink to this term">#</a></dt><dd><p>A game in a strategic form is a triple <span class="math notranslate nohighlight">\((N, A, u)\)</span> consisting of:</p>
 <ul class="simple">
 <li><p>A set of players <span class="math notranslate nohighlight">\(N = \{1, \ldots, n\}\)</span></p></li>
 <li><p>Possible <em>actions</em> for each player: <span class="math notranslate nohighlight">\(A_1, \ldots, A_n\)</span></p></li>
 <li><p>Payoff functions for each player: <span class="math notranslate nohighlight">\(u_i(a_1, \ldots, a_n)\)</span> for <span class="math notranslate nohighlight">\(u: A_1 \times \dots \times A_n \to
 \mathbb{R}^n\)</span></p></li>
 </ul>
-<p>The game is commonly known to players.</p>
-<dl class="simple myst">
-<dt>Dominant Action</dt><dd><p>Action <span class="math notranslate nohighlight">\(a_i\)</span> is (weakly) <em>dominant</em> for player <span class="math notranslate nohighlight">\(i\)</span>if for
-all <span class="math notranslate nohighlight">\(a_i'\)</span> and <span class="math notranslate nohighlight">\(a_{-1}\)</span>:
-<span class="math notranslate nohighlight">\(u_i(a_i, a_{-1} \geq u_i(a_i', a_{-i})\)</span>
-and for some <span class="math notranslate nohighlight">\(\hat{a}_{-i}\)</span>,
-<span class="math notranslate nohighlight">\(u_i(a_i, \hat{a}_{-i}) &gt; u_i(a_i', \hat{a}_{-i}).\)</span></p>
+</dd>
+<dt id="term-dominant-action">dominant action<a class="headerlink" href="#term-dominant-action" title="Permalink to this term">#</a></dt><dd><p>Action <span class="math notranslate nohighlight">\(a_i\)</span> is (weakly) <em>dominant</em> for player <span class="math notranslate nohighlight">\(i\)</span>if for
+all <span class="math notranslate nohighlight">\(a_i'\)</span> and <span class="math notranslate nohighlight">\(a_{-1}\)</span>: <span class="math notranslate nohighlight">\(u_i(a_i, a_{-1}) \geq u_i(a_i', a_{-i})\)</span> and for some <span class="math notranslate nohighlight">\(\hat{a}_{-i}\)</span>, <span class="math notranslate nohighlight">\(u_i(a_i, \hat{a}_{-i}) &gt; u_i(a_i', \hat{a}_{-i})\)</span>.</p>
 </dd>
 </dl>
-<p>It’s a no-brainer for <span class="math notranslate nohighlight">\(i\)</span> to play a dominant action if she has one; it is an optimal choice <em>regardless of how the
-others may play</em></p>
-<dl class="simple myst">
-<dt>Nash Equilbrium</dt><dd><p>Action profile <span class="math notranslate nohighlight">\(a = (a_1, \ldots, a_n)\)</span> is a <em>Nash
-equilibrium</em> if for each player <span class="math notranslate nohighlight">\(i\)</span> and action <span class="math notranslate nohighlight">\(a_i'\)</span>, <span class="math notranslate nohighlight">\(U_i(a_i, a_{-i}) \geq u_i(a_i', a_{-1})\)</span>. In words,
-an action profile <span class="math notranslate nohighlight">\(a\)</span> is a Nash equilibrium if no player <span class="math notranslate nohighlight">\(i\)</span> can increase its own payoff above <span class="math notranslate nohighlight">\(u_i(a)\)</span> by
-unilaterally changing in its action from <span class="math notranslate nohighlight">\(a_i\)</span> to some other action <span class="math notranslate nohighlight">\(a_i'\)</span>.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Intuition
+It’s a no-brainer for <span class="math notranslate nohighlight">\(i\)</span> to play a dominant action if she has one; it is an optimal choice <em>regardless of how the others may play</em>.</p>
+</div>
+<dl class="glossary simple">
+<dt id="term-Nash-equilbrium">Nash equilbrium<a class="headerlink" href="#term-Nash-equilbrium" title="Permalink to this term">#</a></dt><dd><p>Action profile <span class="math notranslate nohighlight">\(a = (a_1, \ldots, a_n)\)</span> is a <em>Nash equilibrium</em> if for each player <span class="math notranslate nohighlight">\(i\)</span> and action <span class="math notranslate nohighlight">\(a_i'\)</span>, <span class="math notranslate nohighlight">\(U_i(a_i, a_{-i}) \geq u_i(a_i', a_{-1})\)</span>. In words, an action profile <span class="math notranslate nohighlight">\(a\)</span> is a Nash equilibrium if no player <span class="math notranslate nohighlight">\(i\)</span> can increase its own payoff above <span class="math notranslate nohighlight">\(u_i(a)\)</span> by unilaterally changing in its action from <span class="math notranslate nohighlight">\(a_i\)</span> to some other action <span class="math notranslate nohighlight">\(a_i'\)</span>.</p>
 </dd>
 </dl>
 <section id="incomplete-information">
@@ -625,16 +624,20 @@ Challenge:  the <em>mechanism designer</em> typically does not know the payoff f
 </section>
 <section id="mechanisms">
 <h3>Mechanisms<a class="headerlink" href="#mechanisms" title="Permalink to this headline">#</a></h3>
-<dl class="simple myst">
-<dt>Mechanism</dt><dd><p>A mechanism <span class="math notranslate nohighlight">\((M, x, p)\)</span> is a triple consisting of</p>
-</dd>
-</dl>
+<dl class="glossary">
+<dt id="term-mechanism">mechanism<a class="headerlink" href="#term-mechanism" title="Permalink to this term">#</a></dt><dd><p>A mechanism <span class="math notranslate nohighlight">\((M, x, p)\)</span> is a triple consisting of:</p>
 <ul class="simple">
 <li><p>A set of possible <em>messages</em> for each player: <span class="math notranslate nohighlight">\(M_1, \ldots, M_n\)</span></p></li>
 <li><p>An allocation rule: <span class="math notranslate nohighlight">\(X(m_1, \ldots, m_n)\)</span></p></li>
-<li><p>Possibly: a payment rule <span class="math notranslate nohighlight">\(p: M_1 \times \ldots \times M_n \to \mathbb{R}^n\)</span> where player <span class="math notranslate nohighlight">\(i\)</span> pays <span class="math notranslate nohighlight">\(p_i(m_1, \ldots, m_n)\)</span>.
-We will look at mechanisms with and without payments. If there are no payments, set all <span class="math notranslate nohighlight">\(p_i \equiv 0\)</span>.</p></li>
+<li><p>Possibly: a payment rule <span class="math notranslate nohighlight">\(p: M_1 \times \ldots \times M_n \to \mathbb{R}^n\)</span> where player <span class="math notranslate nohighlight">\(i\)</span> pays <span class="math notranslate nohighlight">\(p_i(m_1, \ldots, m_n)\)</span>.</p></li>
 </ul>
+<p>We will look at mechanisms with and without payments. If there are no payments, set all <span class="math notranslate nohighlight">\(p_i \equiv 0\)</span>.</p>
+</dd>
+<dt id="term-matching-mechanism">matching mechanism<a class="headerlink" href="#term-matching-mechanism" title="Permalink to this term">#</a></dt><dd><p>A <strong>matching mechanism</strong> is a mapping from <strong>reported</strong> preferences into a matching. (no payments)</p>
+</dd>
+<dt id="term-truthful-mechanism">truthful mechanism<a class="headerlink" href="#term-truthful-mechanism" title="Permalink to this term">#</a></dt><dd><p>A mechanism is <strong>truthful</strong> if truthful reporting is a dominant acution for each participant.</p>
+</dd>
+</dl>
 <section id="example-1-gayle-shapley-marriage-problem">
 <h4>Example 1: Gayle-Shapley Marriage Problem<a class="headerlink" href="#example-1-gayle-shapley-marriage-problem" title="Permalink to this headline">#</a></h4>
 <p>In the Gale-Shapley marriage problem, the messages are statements of preference (not necessarily truthful). The outcome/allocation/assignment is a matching, which the mechanism selects as a function of the reported preferences. No payments are made. A “type” is the preference list of each agent.</p>
@@ -644,8 +647,8 @@ We will look at mechanisms with and without payments. If there are no payments, 
 <p>In a simple auction problem, the messages are the bids <span class="math notranslate nohighlight">\((b_i \geq 0)\)</span>. The auction mechanism determines who wins and what everyone must pay as a function of the bids. A type is typically a person’s value (maximum price).</p>
 <p>A mechanism plus payoffs defines a game. The possible actions are the messages: <span class="math notranslate nohighlight">\(M_1, \ldots, M_n\)</span>. The payoffs are functions of the messages <span class="math notranslate nohighlight">\(u_i(m_1, \ldots, m_n) = v_{i}\left(x\left(m_{1},\ldots,m_{n}\right)\right) - p_i(m_1, \ldots, m_n).\)</span></p>
 <p>Often, we will focus on <em>direct mechanisms</em>: <span class="math notranslate nohighlight">\(M_i\)</span> is equal to the set of <span class="math notranslate nohighlight">\(i\)</span>’s possible payoff functions (or preferences).</p>
-<dl class="simple myst">
-<dt>Strategy-proof Mechanisms</dt><dd><p>A <em>strategy/action</em> for player <span class="math notranslate nohighlight">\(i\)</span> specifies what message to send as a function of player <span class="math notranslate nohighlight">\(i\)</span>’s type. A mechanism is <em>strategy-proof</em> if each player <span class="math notranslate nohighlight">\(i\)</span> has a dominant strategy, that is, a strategy that is optimal regardless of the strategies chosen by the other players. Sometimes, we’ll look at mechanisms that are not strategy-proof, using Nash equilibrium to forecast mechanism outcomes.</p>
+<dl class="glossary simple">
+<dt id="term-strategy-proof-mechanism">strategy-proof mechanism<a class="headerlink" href="#term-strategy-proof-mechanism" title="Permalink to this term">#</a></dt><dd><p>A <em>strategy/action</em> for player <span class="math notranslate nohighlight">\(i\)</span> specifies what message to send as a function of player <span class="math notranslate nohighlight">\(i\)</span>’s type. A mechanism is <em>strategy-proof</em> if each player <span class="math notranslate nohighlight">\(i\)</span> has a dominant strategy, that is, a strategy that is optimal regardless of the strategies chosen by the other players. Sometimes, we’ll look at mechanisms that are not strategy-proof, using Nash equilibrium to forecast mechanism outcomes.</p>
 </dd>
 </dl>
 </section>
