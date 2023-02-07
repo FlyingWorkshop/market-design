@@ -52,6 +52,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="canonical" href="https://FlyingWorkshop.github.io/market-design/book/auction-theory.html" />
     <link rel="shortcut icon" href="../_static/fav.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -408,6 +410,16 @@ title="Print to PDF"
    Sealed-Bid Auctions
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#truthful-mechanisms">
+   Truthful Mechanisms
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#vickrey-clark-groves-vcg-mechanisms">
+   Vickrey-Clark-Groves (VCG) Mechanisms
+  </a>
+ </li>
 </ul>
 
     </nav>
@@ -437,6 +449,16 @@ title="Print to PDF"
    Sealed-Bid Auctions
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#truthful-mechanisms">
+   Truthful Mechanisms
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#vickrey-clark-groves-vcg-mechanisms">
+   Vickrey-Clark-Groves (VCG) Mechanisms
+  </a>
+ </li>
 </ul>
 
                         </nav>
@@ -456,10 +478,11 @@ title="Print to PDF"
 <div><p>Auctions are games that guide prices to mimic markets.
 – Josh Gross</p>
 </div></blockquote>
+<p>We can model this with <span class="math notranslate nohighlight">\(N\)</span> bidders. The item is worht <span class="math notranslate nohighlight">\(v_n &gt; 0\)</span> to bidder <span class="math notranslate nohighlight">\(n\)</span> (if <span class="math notranslate nohighlight">\(v_n \leq 0\)</span> then they don’t join the auction). Losing bidders have payoffs of zero. The winning bidder pays <span class="math notranslate nohighlight">\(p\)</span> has payoff <span class="math notranslate nohighlight">\(v_n - p\)</span>.</p>
 </section>
 <section id="sealed-bid-auctions">
 <h2>Sealed-Bid Auctions<a class="headerlink" href="#sealed-bid-auctions" title="Permalink to this headline">#</a></h2>
-<p>A sealed bid auctions (also called “blind auctions”) are auctions where bidders submit bids secretly and simultaneously, so no one knows the bid of anyone else. The highest bid always wins, but they don’t always pay the highest price for reasons we’ll explore later.</p>
+<p id="index-0">A sealed bid auctions (also called “blind auctions”) are auctions where bidders submit bids secretly and simultaneously, so no one knows the bid of anyone else. The highest bid always wins, but they don’t always pay the highest price for reasons we’ll explore later.</p>
 <dl class="glossary simple">
 <dt id="term-First-Price-Auctions">“First-Price” Auctions<a class="headerlink" href="#term-First-Price-Auctions" title="Permalink to this term">#</a></dt><dd><ul class="simple">
 <li><p>Each bidder privately writes down a number</p></li>
@@ -475,8 +498,42 @@ title="Print to PDF"
 <li><p>Second-price auctions are truthful: each bidder should bid exactly the maximum it is willing to pay</p></li>
 </ul>
 </dd>
+<dt id="term-universal-best-reply">universal best reply<a class="headerlink" href="#term-universal-best-reply" title="Permalink to this term">#</a></dt><dd><p>The action <span class="math notranslate nohighlight">\(\bar{a}_n\)</span> is a <em>universal best reply</em> for player <span class="math notranslate nohighlight">\(n\)</span> if for <em>all</em> <span class="math notranslate nohighlight">\(a_{-n} \in A_n\)</span>, we have <span class="math notranslate nohighlight">\(\bar{a}_n \in \text{argmax}_{s_n} u_n(a_n, a_{-n})\)</span></p>
+</dd>
 </dl>
+<div class="proof remark admonition" id="dom-strat">
+<p class="admonition-title"><span class="caption-number">Remark 3 </span></p>
+<section class="remark-content" id="proof-content">
+<p>The strategy <span class="math notranslate nohighlight">\(\bar{a}_n\)</span> is a <strong>dominant strategy</strong> if it’s the unique universal best reply.</p>
 </section>
+</div></section>
+<section id="truthful-mechanisms">
+<h2>Truthful Mechanisms<a class="headerlink" href="#truthful-mechanisms" title="Permalink to this headline">#</a></h2>
+<dl class="glossary simple">
+<dt id="term-truthful-auction">truthful (auction)<a class="headerlink" href="#term-truthful-auction" title="Permalink to this term">#</a></dt><dd><p>An auction is <strong>truthful</strong> if each player <span class="math notranslate nohighlight">\(n\)</span> has a universal best reply, which is to report its true value <span class="math notranslate nohighlight">\(v_n\)</span> to the auctioneer.</p>
+</dd>
+</dl>
+<div class="proof proposition admonition" id="proposition-1">
+<p class="admonition-title"><span class="caption-number">Proposition 2 </span></p>
+<section class="proposition-content" id="proof-content">
+<p>The second-price auction is truthful.</p>
+</section>
+</div><p>TODO: interactive Desmos graph!</p>
+<div class="proof proposition admonition" id="proposition-2">
+<p class="admonition-title"><span class="caption-number">Proposition 3 </span></p>
+<section class="proposition-content" id="proof-content">
+<p>The second-price auction is the <em>only</em> auction for this setting that has these three properties:</p>
+<ol class="simple">
+<li><p>Truthfulness: the auction is always truthful</p></li>
+<li><p>efficiency: the highest bid always wins</p></li>
+<li><p>losing bidders pay nothing</p></li>
+</ol>
+</section>
+</div><p>TODO proof</p>
+</section>
+<section id="vickrey-clark-groves-vcg-mechanisms">
+<h2>Vickrey-Clark-Groves (VCG) Mechanisms<a class="headerlink" href="#vickrey-clark-groves-vcg-mechanisms" title="Permalink to this headline">#</a></h2>
+<span class="target" id="index-1"></span></section>
 </section>
 
     <script type="text/x-thebe-config">
