@@ -7,7 +7,9 @@
 [TODO get data on how much is from sponsored search]
 
 
-## Sponsored Search Auctions
+## Sponsored Search Auctions (?)
+
+TODO: ask Milgrom if this is the right title or if it's supposed to be keyword auctions
 
 ```{index} sponsored search auctions
 ```
@@ -140,8 +142,90 @@ We assume more bidders than positions, so $N > K$.
 2. For $k <K$, given $p_{k+1}$, set $p_k$ so that bidder $k + 1$ will be just indifferent between buying position $k+1$ and $k$:
 \begin{align*}
     (v_{k+1} - p_k)x_k = (v_{k+1} - p_{k+1})x_{k+1}
-    \therefore p_k = v_{k+1} + (v_{k+1} + p_{k+1}) \frac{x_{k+1}}{x_k}
+    \therefore p_k = v_{k+1} + (v_{k+1} - p_{k+1}) \frac{x_{k+1}}{x_k}
 \end{align*}
 ```
 
-TODO (slide 15)
+```{prf:algorithm} _highest clearing price discovery
+:label: highest-clearing-price
+1. Set $p_k = v_{K}$ so that bidder $K$ is just willing to buy.
+2. For $k <K$, given $p_{k+1}$, set $p_k$ so that bidder $k + 1$ will be just indifferent between buying position $k+1$ and $k$:
+\begin{align*}
+    (v_{k} - p_k)x_k = (v_{k} - p_{k+1})x_{k+1}
+    \therefore p_k = v_{k} + (v_{k} - p_{k+1}) \frac{x_{k+1}}{x_k}
+\end{align*}
+```
+
+
+## Pay-As-Bid Auctions
+
+```{index} pay-as-bid auctions
+```
+
+Pay-as-bid auctions are sometimes also called overture auctions.
+
+```{prf:algorithm} Pay-As-Bid Auctions
+:label: pay-as-bid
+1. Each bidder submits a single bid (in dollars per click)
+2. Top bid gest position $1$, second position $2$, etc.
+3. Bidders pay their bid for each click they get.
+```
+
+Pay-as-bid auctions are sometimes also called overture auctions.
+
+```{prf:remark}
+The pay-as-bid auction is unstable.
+```
+```{prf:proof}
+Consider as before two positions that receive $200$ and $100$ clicker per day. Bidders $1,2,3$ have per-click values $10, 4, 2.$
+Then running the pay-as-bid auction yields:
+* Bidder $3$ will offer up to $2$ per click
+* Bidder $2$ must bid $2.01$ to get second slot
+* Bidder $1$ wants to bid $2.02$ to get top slot.
+
+But then bidder $2$ wants to top this, and so on.
+```
+
+We also observe this instability in practice.
+
+```{figure} ../images/sawtooth-bidding.png
+:name: sawtooth-bidding
+:height: 600px
+
+A "sawtooth" pattern caused by auto-bidding programs. {cite:p}`sawtooth`
+```
+
+## Google Generalized Second Price (GSP) Auctions
+```{index} generalized second price auctions
+```
+```{index} GSP auctions
+```
+
+```{prf:algorithm} Generalized Second Price Auctions
+:label: GSP
+1. Bidders submit bids (in dollars per click)
+2. Top bid gets slot $1$, second bid gets slot $2$, etc.
+3. Each bidder pays the bid of the bidder below them.
+```
+
+Intuitively, this seems more stable than pay-as-bid auctions, but do the bidders want to bid truthfully?
+
+```{prf:theorem}
+GSP auctions aren't truthful.
+```
+```{prf:proof}
+Consider two positions with $200$ and $100$ clicks. Also consider a bidder with value $v_1 = 10$. There are competing bids $v_2 = 4$ and $v_3 = 8$. If our bidder bids $10$, they get the top position and pay $8$ and profit $200 \times 2 = 400$. However, if they bid below their value at $5$, then they win the second position and pay $4$, so their profit is $100 \times 6 = 600$. So, bidding untruthfully is more profitable.  
+```
+Note that the GSP isn't always untruthful. If the competing bids were instead $6$ and $8$, then the dominant action for the bidder would have been to bid truthfully at $10$.
+
+### Example
+
+TODO (slide 26)
+
+```{attention}
+Get more practice [here](https://colab.research.google.com/drive/1Io1l9eAxCRpfQL7pa2i8s5anwWKOvcYR?usp=sharing)!
+```
+
+### Finding GSP Equilibria
+
+TODO

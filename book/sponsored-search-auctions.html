@@ -407,7 +407,7 @@ title="Print to PDF"
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id1">
-   Sponsored Search Auctions
+   Sponsored Search Auctions (?)
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -443,6 +443,28 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#algorithmic-min-max-clearing-price-discovery">
    Algorithmic Min/Max Clearing Price Discovery
   </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#pay-as-bid-auctions">
+   Pay-As-Bid Auctions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#google-generalized-second-price-gsp-auctions">
+   Google Generalized Second Price (GSP) Auctions
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example">
+     Example
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#finding-gsp-equilibria">
+     Finding GSP Equilibria
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -470,7 +492,7 @@ title="Print to PDF"
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id1">
-   Sponsored Search Auctions
+   Sponsored Search Auctions (?)
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -507,6 +529,28 @@ title="Print to PDF"
    Algorithmic Min/Max Clearing Price Discovery
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#pay-as-bid-auctions">
+   Pay-As-Bid Auctions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#google-generalized-second-price-gsp-auctions">
+   Google Generalized Second Price (GSP) Auctions
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example">
+     Example
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#finding-gsp-equilibria">
+     Finding GSP Equilibria
+    </a>
+   </li>
+  </ul>
+ </li>
 </ul>
 
                         </nav>
@@ -525,7 +569,8 @@ title="Print to PDF"
 <p>[TODO get data on how much is from sponsored search]</p>
 </section>
 <section id="id1">
-<h2>Sponsored Search Auctions<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
+<h2>Sponsored Search Auctions (?)<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
+<p>TODO: ask Milgrom if this is the right title or if it’s supposed to be keyword auctions</p>
 <p id="index-0">Search advertising is a huge auction market. In 2021, Google ad revenue in 2021 was $209 billion.</p>
 <blockquote class="epigraph">
 <div><p>“Most people don’t realize that all that money comes pennies at a time.”</p>
@@ -678,10 +723,92 @@ v_k &amp;\geq p_k
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}
     (v_{k+1} - p_k)x_k = (v_{k+1} - p_{k+1})x_{k+1}
-    \therefore p_k = v_{k+1} + (v_{k+1} + p_{k+1}) \frac{x_{k+1}}{x_k}
+    \therefore p_k = v_{k+1} + (v_{k+1} - p_{k+1}) \frac{x_{k+1}}{x_k}
 \end{align*}\]</div>
 </section>
-</div><p>TODO (slide 15)</p>
+</div><div class="proof algorithm admonition" id="highest-clearing-price">
+<p class="admonition-title"><span class="caption-number">Algorithm 12 </span> (_highest clearing price discovery)</p>
+<section class="algorithm-content" id="proof-content">
+<ol class="simple">
+<li><p>Set <span class="math notranslate nohighlight">\(p_k = v_{K}\)</span> so that bidder <span class="math notranslate nohighlight">\(K\)</span> is just willing to buy.</p></li>
+<li><p>For <span class="math notranslate nohighlight">\(k &lt;K\)</span>, given <span class="math notranslate nohighlight">\(p_{k+1}\)</span>, set <span class="math notranslate nohighlight">\(p_k\)</span> so that bidder <span class="math notranslate nohighlight">\(k + 1\)</span> will be just indifferent between buying position <span class="math notranslate nohighlight">\(k+1\)</span> and <span class="math notranslate nohighlight">\(k\)</span>:</p></li>
+</ol>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+    (v_{k} - p_k)x_k = (v_{k} - p_{k+1})x_{k+1}
+    \therefore p_k = v_{k} + (v_{k} - p_{k+1}) \frac{x_{k+1}}{x_k}
+\end{align*}\]</div>
+</section>
+</div></section>
+<section id="pay-as-bid-auctions">
+<h2>Pay-As-Bid Auctions<a class="headerlink" href="#pay-as-bid-auctions" title="Permalink to this headline">#</a></h2>
+<p id="index-3">Pay-as-bid auctions are sometimes also called overture auctions.</p>
+<div class="proof algorithm admonition" id="pay-as-bid">
+<p class="admonition-title"><span class="caption-number">Algorithm 13 </span> (Pay-As-Bid Auctions)</p>
+<section class="algorithm-content" id="proof-content">
+<ol class="simple">
+<li><p>Each bidder submits a single bid (in dollars per click)</p></li>
+<li><p>Top bid gest position <span class="math notranslate nohighlight">\(1\)</span>, second position <span class="math notranslate nohighlight">\(2\)</span>, etc.</p></li>
+<li><p>Bidders pay their bid for each click they get.</p></li>
+</ol>
+</section>
+</div><p>Pay-as-bid auctions are sometimes also called overture auctions.</p>
+<div class="proof remark admonition" id="remark-4">
+<p class="admonition-title"><span class="caption-number">Remark 5 </span></p>
+<section class="remark-content" id="proof-content">
+<p>The pay-as-bid auction is unstable.</p>
+</section>
+</div><div class="proof admonition" id="proof">
+<p>Proof. Consider as before two positions that receive <span class="math notranslate nohighlight">\(200\)</span> and <span class="math notranslate nohighlight">\(100\)</span> clicker per day. Bidders <span class="math notranslate nohighlight">\(1,2,3\)</span> have per-click values <span class="math notranslate nohighlight">\(10, 4, 2.\)</span>
+Then running the pay-as-bid auction yields:</p>
+<ul class="simple">
+<li><p>Bidder <span class="math notranslate nohighlight">\(3\)</span> will offer up to <span class="math notranslate nohighlight">\(2\)</span> per click</p></li>
+<li><p>Bidder <span class="math notranslate nohighlight">\(2\)</span> must bid <span class="math notranslate nohighlight">\(2.01\)</span> to get second slot</p></li>
+<li><p>Bidder <span class="math notranslate nohighlight">\(1\)</span> wants to bid <span class="math notranslate nohighlight">\(2.02\)</span> to get top slot.</p></li>
+</ul>
+<p>But then bidder <span class="math notranslate nohighlight">\(2\)</span> wants to top this, and so on.</p>
+</div>
+<p>We also observe this instability in practice.</p>
+<figure class="align-default" id="sawtooth-bidding">
+<a class="reference internal image-reference" href="../_images/sawtooth-bidding.png"><img alt="../_images/sawtooth-bidding.png" src="../_images/sawtooth-bidding.png" style="height: 600px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 1 </span><span class="caption-text">A “sawtooth” pattern caused by auto-bidding programs. <span id="id2">[<a class="reference internal" href="bibliography.html#id2" title="Edelman and Ostrovsky. Strategic bidder behavior in sponsored search auctions. Decision Support Systems, 43:192–8, 2007.">Edelman and Ostrovsky, 2007</a>]</span></span><a class="headerlink" href="#sawtooth-bidding" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="google-generalized-second-price-gsp-auctions">
+<h2>Google Generalized Second Price (GSP) Auctions<a class="headerlink" href="#google-generalized-second-price-gsp-auctions" title="Permalink to this headline">#</a></h2>
+<span class="target" id="index-4"></span><div class="proof algorithm admonition" id="GSP">
+<span id="index-5"></span><p class="admonition-title"><span class="caption-number">Algorithm 14 </span> (Generalized Second Price Auctions)</p>
+<section class="algorithm-content" id="proof-content">
+<ol class="simple">
+<li><p>Bidders submit bids (in dollars per click)</p></li>
+<li><p>Top bid gets slot <span class="math notranslate nohighlight">\(1\)</span>, second bid gets slot <span class="math notranslate nohighlight">\(2\)</span>, etc.</p></li>
+<li><p>Each bidder pays the bid of the bidder below them.</p></li>
+</ol>
+</section>
+</div><p>Intuitively, this seems more stable than pay-as-bid auctions, but do the bidders want to bid truthfully?</p>
+<div class="proof theorem admonition" id="theorem-6">
+<p class="admonition-title"><span class="caption-number">Theorem 11 </span></p>
+<section class="theorem-content" id="proof-content">
+<p>GSP auctions aren’t truthful.</p>
+</section>
+</div><div class="proof admonition" id="proof">
+<p>Proof. Consider two positions with <span class="math notranslate nohighlight">\(200\)</span> and <span class="math notranslate nohighlight">\(100\)</span> clicks. Also consider a bidder with value <span class="math notranslate nohighlight">\(v_1 = 10\)</span>. There are competing bids <span class="math notranslate nohighlight">\(v_2 = 4\)</span> and <span class="math notranslate nohighlight">\(v_3 = 8\)</span>. If our bidder bids <span class="math notranslate nohighlight">\(10\)</span>, they get the top position and pay <span class="math notranslate nohighlight">\(8\)</span> and profit <span class="math notranslate nohighlight">\(200 \times 2 = 400\)</span>. However, if they bid below their value at <span class="math notranslate nohighlight">\(5\)</span>, then they win the second position and pay <span class="math notranslate nohighlight">\(4\)</span>, so their profit is <span class="math notranslate nohighlight">\(100 \times 6 = 600\)</span>. So, bidding untruthfully is more profitable.</p>
+</div>
+<p>Note that the GSP isn’t always untruthful. If the competing bids were instead <span class="math notranslate nohighlight">\(6\)</span> and <span class="math notranslate nohighlight">\(8\)</span>, then the dominant action for the bidder would have been to bid truthfully at <span class="math notranslate nohighlight">\(10\)</span>.</p>
+<section id="example">
+<h3>Example<a class="headerlink" href="#example" title="Permalink to this headline">#</a></h3>
+<p>TODO (slide 26)</p>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>Get more practice <a class="reference external" href="https://colab.research.google.com/drive/1Io1l9eAxCRpfQL7pa2i8s5anwWKOvcYR?usp=sharing">here</a>!</p>
+</div>
+</section>
+<section id="finding-gsp-equilibria">
+<h3>Finding GSP Equilibria<a class="headerlink" href="#finding-gsp-equilibria" title="Permalink to this headline">#</a></h3>
+<p>TODO</p>
+</section>
 </section>
 </section>
 
