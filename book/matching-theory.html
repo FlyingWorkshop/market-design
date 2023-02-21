@@ -634,7 +634,7 @@ A set of men <span class="math notranslate nohighlight">\(M\)</span> with typica
 </dd>
 <dt id="term-unstable-matching">unstable matching<a class="headerlink" href="#term-unstable-matching" title="Permalink to this term">#</a></dt><dd><p>A matching is unstable if either:
 1. Some individual is matched to an unacceptable partner, or
-2. There is blocking pair <span class="math notranslate nohighlight">\((m, w)\)</span> – that is, a man <span class="math notranslate nohighlight">\(m\)</span> and a wom</p>
+2. There is blocking pair <span class="math notranslate nohighlight">\((m, w)\)</span> – that is, a man <span class="math notranslate nohighlight">\(m\)</span> and a woman.</p>
 </dd>
 <dt id="term-stable-matching">stable matching<a class="headerlink" href="#term-stable-matching" title="Permalink to this term">#</a></dt><dd><p>If a matching isn’t unstable, it’s stable.</p>
 </dd>
@@ -643,7 +643,7 @@ A set of men <span class="math notranslate nohighlight">\(M\)</span> with typica
 <h4>Question<a class="headerlink" href="#question" title="Permalink to this headline">#</a></h4>
 <p>There are two men <span class="math notranslate nohighlight">\(m, m'\)</span> and two women <span class="math notranslate nohighlight">\(w, w'\)</span>.</p>
 <ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(m\)</span> prefers <span class="math notranslate nohighlight">\(w\)</span> to <span class="math notranslate nohighlight">\(w'\)</span> to <span class="math notranslate nohighlight">\(m\)</span> (<span class="math notranslate nohighlight">\(s \succ_m w' \succ_m m\)</span>)</p></li>
+<li><p><span class="math notranslate nohighlight">\(m\)</span> prefers <span class="math notranslate nohighlight">\(w\)</span> to <span class="math notranslate nohighlight">\(w'\)</span> to <span class="math notranslate nohighlight">\(m\)</span> (<span class="math notranslate nohighlight">\(w \succ_m w' \succ_m m\)</span>)</p></li>
 <li><p><span class="math notranslate nohighlight">\(m'\)</span> prefers <span class="math notranslate nohighlight">\(w'\)</span> to <span class="math notranslate nohighlight">\(w\)</span> to <span class="math notranslate nohighlight">\(m'\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(w\)</span> prefers <span class="math notranslate nohighlight">\(m\)</span> to <span class="math notranslate nohighlight">\(m'\)</span> to <span class="math notranslate nohighlight">\(w\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(w'\)</span> prefers <span class="math notranslate nohighlight">\(m'\)</span> to <span class="math notranslate nohighlight">\(m\)</span> to <span class="math notranslate nohighlight">\(w'\)</span></p></li>
@@ -657,7 +657,7 @@ Solution<div class="sd-summary-down docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
 </summary><div class="sd-summary-content sd-card-body docutils">
 <p class="sd-card-text">There are three possible matchings:
-<span class="math notranslate nohighlight">\(\{(m, w), (m', w')\}\)</span>, <span class="math notranslate nohighlight">\(\{(m, w'), (m', w)\}\)</span>, and <span class="math notranslate nohighlight">\(\{(m, m), (m', m'), (w, w), (w', w')\}\)</span>. Clearly, the last matching is unstable because everyone perfers matching to <em>someone</em> over <em>no one</em>. The second matching is also unstable because <span class="math notranslate nohighlight">\(w\)</span> and <span class="math notranslate nohighlight">\(m\)</span> both prefer each other over their current partners. The first matching is thus the unique stable matching. In general, we will see that stable matchings are neither unique nor equally preferable for all agents.</p>
+<span class="math notranslate nohighlight">\(\{(m, w), (m', w')\}\)</span>, <span class="math notranslate nohighlight">\(\{(m, w'), (m', w)\}\)</span>, and <span class="math notranslate nohighlight">\(\{(m, m), (m', m'), (w, w), (w', w')\}\)</span>. Clearly, the last matching is unstable because everyone perfers matching to <em>someone</em> over <em>no one</em>. The second matching is also unstable because <span class="math notranslate nohighlight">\(w\)</span> and <span class="math notranslate nohighlight">\(m\)</span> both prefer each other over their current partners. The first matching is thus the unique stable matching.</p>
 </div>
 </details><div class="admonition attention">
 <p class="admonition-title">Attention</p>
@@ -738,9 +738,11 @@ proposed to <span class="math notranslate nohighlight">\(w'\)</span> and she eve
 <li><p><span class="math notranslate nohighlight">\(m_2: w_2 \succ w_1\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(m_3: w_1 \succ w_2\)</span></p></li>
 </ul>
-<p>Woman Preferences:
-<span class="math notranslate nohighlight">\(w_1: m_2 \succ m_3 \succ m_1\)</span>
-<span class="math notranslate nohighlight">\(w_2: m_1 \succ m_3 \succ m_2\)</span></p>
+<p>Woman Preferences:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(w_1: m_2 \succ m_3 \succ m_1\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(w_2: m_1 \succ m_3 \succ m_2\)</span></p></li>
+</ul>
 <p>What is the unique stable matching? Are there any matchings that all men weakly prefer?</p>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
@@ -789,7 +791,7 @@ Solution<div class="sd-summary-down docutils">
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./book"
         },
         predefinedOutput: true
