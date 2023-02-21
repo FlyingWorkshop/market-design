@@ -19,7 +19,7 @@ game
 
 
 dominant action
-    Action $a_i$ is (weakly) _dominant_ for player $i$ if for all $a_i'$ and $a_{-1}$: $u_i(a_i, a_{-1}) \geq u_i(a_i', a_{-i})$ and for some $\hat{a}_{-i}$, $u_i(a_i, \hat{a}_{-i}) > u_i(a_i', \hat{a}_{-i})$.
+    Action $a_i$ is (weakly) _dominant_ for player $i$ if for all $a_i'$ and $a_{-i}$: $u_i(a_i, a_{-i}) \geq u_i(a_i', a_{-i})$ and for some $\hat{a}_{-i}$, $u_i(a_i, \hat{a}_{-i}) > u_i(a_i', \hat{a}_{-i})$.
 ```
 
 ```{tip} Intuition

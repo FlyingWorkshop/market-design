@@ -39,7 +39,7 @@ blocking pair
 unstable matching
     A matching is unstable if either:
         1. Some individual is matched to an unacceptable partner, or 
-        2. There is blocking pair $(m, w)$ – that is, a man $m$ and a wom
+        2. There is blocking pair $(m, w)$ – that is, a man $m$ and a woman.
 
 stable matching
     If a matching isn't unstable, it's stable.
@@ -48,7 +48,7 @@ stable matching
 #### Question
 
 There are two men $m, m'$ and two women $w, w'$.
-* $m$ prefers $w$ to $w'$ to $m$ ($s \succ_m w' \succ_m m$)
+* $m$ prefers $w$ to $w'$ to $m$ ($w \succ_m w' \succ_m m$)
 * $m'$ prefers $w'$ to $w$ to $m'$
 * $w$ prefers $m$ to $m'$ to $w$
 * $w'$ prefers $m'$ to $m$ to $w'$
@@ -57,7 +57,7 @@ How many matchings are possible? Which are stable and which are unstable? Why?
 
 ```{dropdown} Solution
 There are three possible matchings:
-$\{(m, w), (m', w')\}$, $\{(m, w'), (m', w)\}$, and $\{(m, m), (m', m'), (w, w), (w', w')\}$. Clearly, the last matching is unstable because everyone perfers matching to _someone_ over _no one_. The second matching is also unstable because $w$ and $m$ both prefer each other over their current partners. The first matching is thus the unique stable matching. In general, we will see that stable matchings are neither unique nor equally preferable for all agents.
+$\{(m, w), (m', w')\}$, $\{(m, w'), (m', w)\}$, and $\{(m, m), (m', m'), (w, w), (w', w')\}$. Clearly, the last matching is unstable because everyone perfers matching to _someone_ over _no one_. The second matching is also unstable because $w$ and $m$ both prefer each other over their current partners. The first matching is thus the unique stable matching.
 ```
 
 ```{attention}
@@ -127,8 +127,8 @@ Man Preferences:
 * $m_3: w_1 \succ w_2$
 
 Woman Preferences:
-$w_1: m_2 \succ m_3 \succ m_1$ 
-$w_2: m_1 \succ m_3 \succ m_2$
+* $w_1: m_2 \succ m_3 \succ m_1$ 
+* $w_2: m_1 \succ m_3 \succ m_2$
 
 What is the unique stable matching? Are there any matchings that all men weakly prefer?
 
