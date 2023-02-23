@@ -1,4 +1,12 @@
 # School Choice
+
+```{figure} ../images/school-choice.png
+:name: school-choice
+:height: 400px
+
+_Wanderer above the Sea of Fog_ by Caspar David Friedbrich inpainted with an aerial view of Stanford's campus with DALL-E-2.
+```
+
 So far, two approaches to matching problems
 * Finding stable outcomes: DA algorithm
 * Finding core or Pareto efficient outcomes: serial dictatorship, TTC and Priority Line mechanisms.
