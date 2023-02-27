@@ -7,7 +7,7 @@ $N$ individuals and $N$ houses (generalizable to $\neq$). Each individual has st
 The goal is to assign each individual to a house.
 
 ```{glossary}
-Pareto efficient
+Pareto efficient (matching)
     An allocation is Pareto efficient if no pair of individuals, or set of individuals, can “all do better” by trading houses. 
 ```
 ```{admonition} Intuition

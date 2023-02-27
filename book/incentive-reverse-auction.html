@@ -52,6 +52,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="canonical" href="https://FlyingWorkshop.github.io/market-design/book/incentive-reverse-auction.html" />
     <link rel="shortcut icon" href="../_static/fav.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -376,12 +378,77 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-is-the-broadcast-incentive-auction">
+   What is the Broadcast Incentive Auction?
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#constrained-channel-assignments">
+     Constrained Channel Assignments
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#fcc-s-2011-initial-internal-proposal">
+   FCC’s 2011 Initial Internal Proposal
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#problems-with-vickrey-auction">
+     Problems with Vickrey Auction
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#milgram-segal-descending-clock-auctions">
+     Milgram-Segal Descending Clock Auctions
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#clock-auctions-as-heuristics-for-optimization">
+   Clock Auctions as Heuristics for Optimization
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-channel-reallocation-optimization-problem">
+     The Channel Reallocation Optimization Problem
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-classic-knapsack-problem">
+     The Classic “Knapsack Problem”
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
 </div>
     </div>
     <div class="article row">
@@ -393,6 +460,60 @@ title="Print to PDF"
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-is-the-broadcast-incentive-auction">
+   What is the Broadcast Incentive Auction?
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#constrained-channel-assignments">
+     Constrained Channel Assignments
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#fcc-s-2011-initial-internal-proposal">
+   FCC’s 2011 Initial Internal Proposal
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#problems-with-vickrey-auction">
+     Problems with Vickrey Auction
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#milgram-segal-descending-clock-auctions">
+     Milgram-Segal Descending Clock Auctions
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#clock-auctions-as-heuristics-for-optimization">
+   Clock Auctions as Heuristics for Optimization
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-channel-reallocation-optimization-problem">
+     The Channel Reallocation Optimization Problem
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-classic-knapsack-problem">
+     The Classic “Knapsack Problem”
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -402,7 +523,112 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="incentive-reverse-auction">
 <h1>Incentive Reverse Auction<a class="headerlink" href="#incentive-reverse-auction" title="Permalink to this headline">#</a></h1>
-<p>TODO</p>
+<section id="what-is-the-broadcast-incentive-auction">
+<h2>What is the Broadcast Incentive Auction?<a class="headerlink" href="#what-is-the-broadcast-incentive-auction" title="Permalink to this headline">#</a></h2>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Watch a <a class="reference external" href="https://www.youtube.com/watch?v=7k450BJbcMY">video</a>!</p>
+</div>
+<section id="constrained-channel-assignments">
+<h3>Constrained Channel Assignments<a class="headerlink" href="#constrained-channel-assignments" title="Permalink to this headline">#</a></h3>
+<a class="reference internal image-reference" href="../_images/constrained-channels.png" id="constrained-channels"><img alt="../_images/constrained-channels.png" class="align-center" id="constrained-channels" src="../_images/constrained-channels.png" style="height: 300px;" /></a>
+<p>For each station, fewer than <span class="math notranslate nohighlight">\(0.5\%\)</span> of existing customers may suffer interference from another station.</p>
+<a class="reference internal image-reference" href="../_images/one-station-interference.png" id="one-station-interference"><img alt="../_images/one-station-interference.png" class="align-center" id="one-station-interference" src="../_images/one-station-interference.png" style="height: 300px;" /></a>
+<p>Each “node” represents the location of a (ultra high frequency) UHF-TV station. Each “arc” represents a pair of stations that cannot both be assigned to the same channel without causing unacceptable interference. Nodes connected to the central red node are shown in pink.</p>
+<a class="reference internal image-reference" href="../_images/node-map.png" id="node-map"><img alt="../_images/node-map.png" class="align-center" id="node-map" src="../_images/node-map.png" style="height: 300px;" /></a>
+<p>A set of stations can all continue to broadcast if there is a way to assign channels to the stations without interference. There are about <span class="math notranslate nohighlight">\(130,000\)</span> co-channel constraints shown in the graph. (<span class="math notranslate nohighlight">\(2.7\)</span> million detailed constraints). This is similar to graph coloring, which is an <a class="reference external" href="https://en.wikipedia.org/wiki/NP-completeness">NP-complete problem</a>.</p>
+</section>
+</section>
+<section id="fcc-s-2011-initial-internal-proposal">
+<h2>FCC’s 2011 Initial Internal Proposal<a class="headerlink" href="#fcc-s-2011-initial-internal-proposal" title="Permalink to this headline">#</a></h2>
+<p>They proposed a variant of the pivot mechanism (“Vickrey auction”) with allocation and prices:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+S^{*} &amp;= \arg\max_{S \in F}\sum_{j \in S}v_j\\
+p_i &amp;= \sum_{j \in S^{*}} v_j - \max_{S \in F, i \in S} \sum_{j \in S - \{ i \} v_j}
+\end{align*}\]</div>
+<p>where <span class="math notranslate nohighlight">\(S^{*}\)</span> is the set of stations to remain on-air and <span class="math notranslate nohighlight">\(p_i\)</span> is the price paid to stations going off-air <span class="math notranslate nohighlight">\((i \not\in S^{*})\)</span> which can be interpreted as the “opportunity cost.”</p>
+<p>TODO: don’t understand the pricing error</p>
+<p>Percentage pricing errors around <span class="math notranslate nohighlight">\(2500\)</span> times optimization errors.
+FCC computational experiments showed that computed approximate Vickrey prices were badly inaccurate</p>
+<section id="problems-with-vickrey-auction">
+<h3>Problems with Vickrey Auction<a class="headerlink" href="#problems-with-vickrey-auction" title="Permalink to this headline">#</a></h3>
+<ol class="simple">
+<li><p>Depends on intractable computations</p></li>
+<li><p>Requires very high trust</p></li>
+<li><p>Ignores procurement budgets</p></li>
+<li><p>Is not group strategy-proof</p></li>
+<li><p>Cannot balance efficiency and cost objectives</p></li>
+<li><p>May produce an uncompetitively high price vector</p></li>
+<li><p>Reveals winning bidders’ values</p></li>
+</ol>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>As we will see, these deficiencies can <em>all</em> be overcome at little efficiency cost for the incentive auction!</p>
+</div>
+<p>Vickrey auctions also require <em>too much trust</em> in practice. The auction model can be difficult to interpret, so many bidders barely understand the computations. Most cannot determine the outcomes from the bids. The FCC can’t even guarentee that computations will be accurate, and by law, they can’t share bid data to allow verifying the computation.</p>
+<p>TODO: is it because the model is super big?</p>
+<div class="proof remark admonition" id="remark-0">
+<p class="admonition-title"><span class="caption-number">Remark 6 </span></p>
+<section class="remark-content" id="proof-content">
+<p>The Vickrey auction is not budge aware, group strategy-proof, or generally price competitive.</p>
+</section>
+</div><a class="reference internal image-reference" href="../_images/incentive-example.png" id="incentive-example"><img alt="../_images/incentive-example.png" class="align-center" id="incentive-example" src="../_images/incentive-example.png" style="height: 150px;" /></a>
+<div class="proof admonition" id="proof">
+<p>Proof. Consider the following example.
+Initially, stations <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> share a channel and <span class="math notranslate nohighlight">\(C\)</span> uses another. Our goal is to reduce use from two channels to one. Optimization: If <span class="math notranslate nohighlight">\(v_A + v_B &lt; v_C\)</span>, then we should buy <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span>; otherwise, we should buy <span class="math notranslate nohighlight">\(C\)</span>. If <span class="math notranslate nohighlight">\(C\)</span> wins, the Vickrey prices are <span class="math notranslate nohighlight">\(p_C = v_A + v_B\)</span>. If <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> win, they are <span class="math notranslate nohighlight">\(p_A = v_C - v_B\)</span> and <span class="math notranslate nohighlight">\(p_B = v_C - v_A\)</span>. As this example shows, the Vickrey auction is:</p>
+<ul class="simple">
+<li><p>NOT budget aware: infeasible if total price exceeds budget</p></li>
+<li><p>NOT group strategy-proof: if <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> both bid <span class="math notranslate nohighlight">\(0\)</span>, they will win and receive maximum Vickrey payments of <span class="math notranslate nohighlight">\(\hat{p}_A = \hat{p}_B = v_C\)</span></p></li>
+<li><p>NOT generally price competitive. If <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> win, <span class="math notranslate nohighlight">\(p_A + p_B &gt; v_C\)</span></p></li>
+</ul>
+</div>
+</section>
+<section id="milgram-segal-descending-clock-auctions">
+<h3>Milgram-Segal Descending Clock Auctions<a class="headerlink" href="#milgram-segal-descending-clock-auctions" title="Permalink to this headline">#</a></h3>
+<p id="index-0">Milgrom-Segal descending clock auctions overcome the problems of the Vickrey auction:</p>
+<ol class="simple">
+<li><p>can compute well and quickly</p></li>
+<li><p>require no bidder trust</p></li>
+<li><p>can accommodate budget constraints</p></li>
+<li><p>are group strategy-proof (without side payments)</p></li>
+<li><p>can accommodate any mix of efficiency and cost minimization objectives</p></li>
+<li><p>produce competitive, market-clearing prices</p></li>
+<li><p>preserve winner privacy</p></li>
+</ol>
+</section>
+</section>
+<section id="clock-auctions-as-heuristics-for-optimization">
+<h2>Clock Auctions as Heuristics for Optimization<a class="headerlink" href="#clock-auctions-as-heuristics-for-optimization" title="Permalink to this headline">#</a></h2>
+<section id="the-channel-reallocation-optimization-problem">
+<h3>The Channel Reallocation Optimization Problem<a class="headerlink" href="#the-channel-reallocation-optimization-problem" title="Permalink to this headline">#</a></h3>
+<p>Goal: Given the current set of stations <span class="math notranslate nohighlight">\(N\)</span>, find the feasible subset of stations <span class="math notranslate nohighlight">\(S^{*}\)</span> that should continue to broadcast (in a more limited set of channels) to maximize the total value of the stations remaining on-air.</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\max_{S \in F} \sum_{n \in S} v_n
+\end{align*}\]</div>
+<p>where <span class="math notranslate nohighlight">\(v_n\)</span> are station values.</p>
+<p>TODO: what does “feasible to pack mean?” slide 14</p>
+</section>
+<section id="the-classic-knapsack-problem">
+<h3>The Classic “Knapsack Problem”<a class="headerlink" href="#the-classic-knapsack-problem" title="Permalink to this headline">#</a></h3>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\max_{S \subseteq N} \sum_{n \in S} v_n \text{ subject to } \sum_{n \in S} s_n \leq K
+\end{align*}\]</div>
+<p>where <span class="math notranslate nohighlight">\(K\)</span> is the knapsack constraint.</p>
+<div class="proof algorithm admonition" id="greedy-packing">
+<span id="index-1"></span><p class="admonition-title"><span class="caption-number">Algorithm 15 </span> (Greedy Packing)</p>
+<section class="algorithm-content" id="proof-content">
+<ol class="simple">
+<li><p>Order items so that <span class="math notranslate nohighlight">\(\frac{v_1}{s_1} &gt; \frac{v_2}{s_2} &gt; \dots\)</span> and ignore ties.</p></li>
+<li><p>“Pack” items in numerical order so long as there is space remaining. If there is no room to pack an item, set it aside and continue.</p></li>
+</ol>
+</section>
+</div><p>The difference between the maximum value and the greedy algorithm value is at most <span class="math notranslate nohighlight">\(\frac{v_{m}}{s_{m}}\left(K-\sum_{j=1}^{m-1}s_{j}\right)\)</span>: a fraction of the value of the first item 𝑚 that is excluded from the knapsack.</p>
+<p>[TODO continue from slide 16]</p>
+</section>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
