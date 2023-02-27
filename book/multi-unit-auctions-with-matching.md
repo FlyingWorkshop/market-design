@@ -36,13 +36,15 @@ Suppose that students can trade offices for money.
 
 ## Pareto Efficiency
 
-Pareto Domination
-: An assignment is _Pareto dominated_ if there is another assignment and set of cash payments that results in everyone being better off. 
+```{glossary}
+Pareto domination
+    An assignment is _Pareto dominated_ if there is another assignment and set of cash payments that results in everyone being better off. 
 
-Pareto Efficient
-: An assignment is Pareto efficient if it is not Pareto dominated.
+Pareto efficient (auctions)
+    An assignment is Pareto efficient if it is not Pareto dominated.
 
 The total value (or surplus) of the assignment $k$ (that assigns to each $i$ the item $k(i)$) is $v_{1k(1)} + \dots + v_{Nk(N)}$.
+```
 
 ```{admonition} Question
 What’s the relationship between Pareto efficiency & total value?

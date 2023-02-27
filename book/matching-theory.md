@@ -86,6 +86,7 @@ This is the _"man-proposing"_ deferred acceptance algorithm; there is also a _"w
 
 ### Existence
 ```{prf:theorem} Stable Matchings Exist
+:label: stable-matchings-exist
 The deferred acceptance algorithm ends in finite time with a stable matching. (In particular, a stable matching exists).
 ```
 ```{prf:proof}
