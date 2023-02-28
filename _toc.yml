@@ -17,9 +17,10 @@ parts:
 - caption: Auction Theory
   chapters:
     - file: book/auction-theory # !!
+    - file: book/auction-design
     - file: book/multi-unit-auctions-with-matching.md # !!
     - file: book/sponsored-search-auctions # ~
-    - file: book/chilean-fisheries  # !!
+    - file: book/bidding-languages-and-chilean-fisheries.md  # !!
     - file: book/radio-spectrum-auctions # !!
     - file: book/incentive-reverse-auction # !!
 - caption: Resources
