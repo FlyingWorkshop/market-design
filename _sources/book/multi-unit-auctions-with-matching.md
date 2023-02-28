@@ -42,9 +42,8 @@ Pareto domination
 
 Pareto efficient (auctions)
     An assignment is Pareto efficient if it is not Pareto dominated.
-
-The total value (or surplus) of the assignment $k$ (that assigns to each $i$ the item $k(i)$) is $v_{1k(1)} + \dots + v_{Nk(N)}$.
 ```
+The total value (or surplus) of the assignment $k$ (that assigns to each $i$ the item $k(i)$) is $v_{1k(1)} + \dots + v_{Nk(N)}$.
 
 ```{admonition} Question
 What’s the relationship between Pareto efficiency & total value?
@@ -54,13 +53,13 @@ What’s the relationship between Pareto efficiency & total value?
 
 We have three people $a$, $b$, and $c$ and two items $x$ and $y$. The value matrix is:
 
-$$
+\begin{align*}
 \begin{bmatrix}
 30 & 60 \\
 20 & 40 \\
 10 & 20 
 \end{bmatrix}
-$$
+\end{align*}
 
 The rows from top to bottom represent the values for $a$, $b$, and $c$. The left and right columns represent $x$ and $y$ respectively.
 
@@ -104,11 +103,13 @@ Assumptions:
 ### Example 1
 Three bidders $a, b$ and $c$. Two items $x$ and $y$.
 
-$ \begin{bmatrix}
+\begin{align*}
+\begin{bmatrix}
 30 & 60 \\
 20 & 40 \\
 10 & 20 
-\end{bmatrix}  $
+\end{bmatrix}
+\end{align*}
 
 What is the efficient assignment?
 ```{dropdown} Solution

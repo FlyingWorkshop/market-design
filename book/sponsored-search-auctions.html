@@ -58,7 +58,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="shortcut icon" href="../_static/fav.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Chilean Fisheries" href="chilean-fisheries.html" />
+    <link rel="next" title="Bidding Languages + Chilean Fisheries" href="bidding-languages-and-chilean-fisheries.html" />
     <link rel="prev" title="Multi-Unit Auctions with Matching" href="multi-unit-auctions-with-matching.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -160,6 +160,11 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="auction-design.html">
+   Auction Design
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="multi-unit-auctions-with-matching.html">
    Multi-Unit Auctions with Matching
   </a>
@@ -170,8 +175,8 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="chilean-fisheries.html">
-   Chilean Fisheries
+  <a class="reference internal" href="bidding-languages-and-chilean-fisheries.html">
+   Bidding Languages + Chilean Fisheries
   </a>
  </li>
  <li class="toctree-l1">
@@ -714,7 +719,7 @@ v_k &amp;\geq p_k
 <h2>Algorithmic Min/Max Clearing Price Discovery<a class="headerlink" href="#algorithmic-min-max-clearing-price-discovery" title="Permalink to this headline">#</a></h2>
 <p>We assume more bidders than positions, so <span class="math notranslate nohighlight">\(N &gt; K\)</span>.</p>
 <div class="proof algorithm admonition" id="lowest-clearing-price">
-<p class="admonition-title"><span class="caption-number">Algorithm 11 </span> (<em>lowest</em> clearing price discovery)</p>
+<p class="admonition-title"><span class="caption-number">Algorithm 12 </span> (<em>lowest</em> clearing price discovery)</p>
 <section class="algorithm-content" id="proof-content">
 <ol class="simple">
 <li><p>Set <span class="math notranslate nohighlight">\(p_k = v_{K + 1}\)</span> so that bidder <span class="math notranslate nohighlight">\(K + 1\)</span> won’t buy that position.</p></li>
@@ -727,7 +732,7 @@ v_k &amp;\geq p_k
 \end{align*}\]</div>
 </section>
 </div><div class="proof algorithm admonition" id="highest-clearing-price">
-<p class="admonition-title"><span class="caption-number">Algorithm 12 </span> (_highest clearing price discovery)</p>
+<p class="admonition-title"><span class="caption-number">Algorithm 13 </span> (_highest clearing price discovery)</p>
 <section class="algorithm-content" id="proof-content">
 <ol class="simple">
 <li><p>Set <span class="math notranslate nohighlight">\(p_k = v_{K}\)</span> so that bidder <span class="math notranslate nohighlight">\(K\)</span> is just willing to buy.</p></li>
@@ -744,7 +749,7 @@ v_k &amp;\geq p_k
 <h2>Pay-As-Bid Auctions<a class="headerlink" href="#pay-as-bid-auctions" title="Permalink to this headline">#</a></h2>
 <p id="index-3">Pay-as-bid auctions are sometimes also called overture auctions.</p>
 <div class="proof algorithm admonition" id="pay-as-bid">
-<p class="admonition-title"><span class="caption-number">Algorithm 13 </span> (Pay-As-Bid Auctions)</p>
+<p class="admonition-title"><span class="caption-number">Algorithm 14 </span> (Pay-As-Bid Auctions)</p>
 <section class="algorithm-content" id="proof-content">
 <ol class="simple">
 <li><p>Each bidder submits a single bid (in dollars per click)</p></li>
@@ -772,14 +777,14 @@ Then running the pay-as-bid auction yields:</p>
 <figure class="align-default" id="sawtooth-bidding">
 <a class="reference internal image-reference" href="../_images/sawtooth-bidding.png"><img alt="../_images/sawtooth-bidding.png" src="../_images/sawtooth-bidding.png" style="height: 600px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 2 </span><span class="caption-text">A “sawtooth” pattern caused by auto-bidding programs. <span id="id2">[<a class="reference internal" href="bibliography.html#id2" title="Edelman and Ostrovsky. Strategic bidder behavior in sponsored search auctions. Decision Support Systems, 43:192–8, 2007.">Edelman and Ostrovsky, 2007</a>]</span></span><a class="headerlink" href="#sawtooth-bidding" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 3 </span><span class="caption-text">A “sawtooth” pattern caused by auto-bidding programs. <span id="id2">[<a class="reference internal" href="bibliography.html#id2" title="Edelman and Ostrovsky. Strategic bidder behavior in sponsored search auctions. Decision Support Systems, 43:192-8, 2007.">Edelman and Ostrovsky, 2007</a>]</span></span><a class="headerlink" href="#sawtooth-bidding" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
 <section id="google-generalized-second-price-gsp-auctions">
 <h2>Google Generalized Second Price (GSP) Auctions<a class="headerlink" href="#google-generalized-second-price-gsp-auctions" title="Permalink to this headline">#</a></h2>
 <span class="target" id="index-4"></span><div class="proof algorithm admonition" id="GSP">
-<span id="index-5"></span><p class="admonition-title"><span class="caption-number">Algorithm 14 </span> (Generalized Second Price Auctions)</p>
+<span id="index-5"></span><p class="admonition-title"><span class="caption-number">Algorithm 15 </span> (Generalized Second Price Auctions)</p>
 <section class="algorithm-content" id="proof-content">
 <ol class="simple">
 <li><p>Bidders submit bids (in dollars per click)</p></li>
@@ -789,7 +794,7 @@ Then running the pay-as-bid auction yields:</p>
 </section>
 </div><p>Intuitively, this seems more stable than pay-as-bid auctions, but do the bidders want to bid truthfully?</p>
 <div class="proof theorem admonition" id="theorem-6">
-<p class="admonition-title"><span class="caption-number">Theorem 11 </span></p>
+<p class="admonition-title"><span class="caption-number">Theorem 12 </span></p>
 <section class="theorem-content" id="proof-content">
 <p>GSP auctions aren’t truthful.</p>
 </section>
@@ -846,10 +851,10 @@ Then running the pay-as-bid auction yields:</p>
             <p class="prev-next-title">Multi-Unit Auctions with Matching</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="chilean-fisheries.html" title="next page">
+    <a class='right-next' id="next-link" href="bidding-languages-and-chilean-fisheries.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Chilean Fisheries</p>
+        <p class="prev-next-title">Bidding Languages + Chilean Fisheries</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

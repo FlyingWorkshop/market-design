@@ -57,7 +57,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Incentive Reverse Auction" href="incentive-reverse-auction.html" />
-    <link rel="prev" title="Chilean Fisheries" href="chilean-fisheries.html" />
+    <link rel="prev" title="Bidding Languages + Chilean Fisheries" href="bidding-languages-and-chilean-fisheries.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -158,6 +158,11 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="auction-design.html">
+   Auction Design
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="multi-unit-auctions-with-matching.html">
    Multi-Unit Auctions with Matching
   </a>
@@ -168,8 +173,8 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="chilean-fisheries.html">
-   Chilean Fisheries
+  <a class="reference internal" href="bidding-languages-and-chilean-fisheries.html">
+   Bidding Languages + Chilean Fisheries
   </a>
  </li>
  <li class="toctree-l1 current active">
@@ -376,12 +381,89 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#fcc-spectrum-auctions">
+   FCC Spectrum Auctions
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#resolving-radio-spectrum-interference">
+     Resolving Radio Spectrum Interference
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#simultaneous-ascending-auction-saa">
+   Simultaneous Ascending Auction (SAA)
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#motivation">
+     Motivation
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#termination-rule">
+     Termination Rule
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#activity-rules">
+     Activity Rules
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#example">
+       Example
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#theory">
+     Theory
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#gaming-in-spectrum-auctions">
+   “Gaming” in Spectrum Auctions
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#entry-deterance">
+     Entry Deterance
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
 </div>
     </div>
     <div class="article row">
@@ -393,6 +475,72 @@ title="Print to PDF"
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#fcc-spectrum-auctions">
+   FCC Spectrum Auctions
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#resolving-radio-spectrum-interference">
+     Resolving Radio Spectrum Interference
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#simultaneous-ascending-auction-saa">
+   Simultaneous Ascending Auction (SAA)
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#motivation">
+     Motivation
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#termination-rule">
+     Termination Rule
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#activity-rules">
+     Activity Rules
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#example">
+       Example
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#theory">
+     Theory
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#gaming-in-spectrum-auctions">
+   “Gaming” in Spectrum Auctions
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#entry-deterance">
+     Entry Deterance
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -402,7 +550,87 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="radio-spectrum-auctions">
 <h1>Radio Spectrum Auctions<a class="headerlink" href="#radio-spectrum-auctions" title="Permalink to this headline">#</a></h1>
-<p>TODO</p>
+<img alt="../_images/2003-freq-alloc.png" class="align-center" src="../_images/2003-freq-alloc.png" />
+<section id="fcc-spectrum-auctions">
+<h2>FCC Spectrum Auctions<a class="headerlink" href="#fcc-spectrum-auctions" title="Permalink to this headline">#</a></h2>
+<p>Federal government assigns rights to use the radio spectrum for television, radio, cell phones, etc. – historically done by administrative process or lottery.</p>
+<p>Auctions to assign radio spectrum licenses
+Suggested by Herzel (1951) and Coase (1959) – paper is most famous for a footnote in which he suggested the Coase Theorem!
+FCC switched to auctions in early 1990s, adopting the Milgrom-Wilson auction proposal. Other countries adopted essentially the US design, sometimes with modifications.</p>
+<p>Spectrum auctions have fostered a great deal of interest in auctions and auction design – a difficult problem, with high stakes for consumers, firm and governments.</p>
+<section id="resolving-radio-spectrum-interference">
+<h3>Resolving Radio Spectrum Interference<a class="headerlink" href="#resolving-radio-spectrum-interference" title="Permalink to this headline">#</a></h3>
+<blockquote>
+<div><p>What this analysis demonstrates, so far as the radio industry is con is that there is no analytical difference between the problem of interf tween operators on a single frequency and that of interference betw tors on adjacent frequencies. The latter problem, like the former, can  by delimiting the rights of operators to transmit signals which inte might potentially interfere, with those of others. Once this is done, left to market transactions to bring an optimum utilization rights.</p>
+</div></blockquote>
+<blockquote>
+<div><p>It is, of course, true that the distribution of wealth as between the doctor a fectioner was affected by the decision, which is why questions of equity bulk s such cases. Indeed, if the efficiency with which the economic system worked was  independent of the legal position, this would be all that mattered. But this is  of all, the law may be such as to make certain desirable market transactions This is, indeed, my chief criticism of the present American law of radio comm Second, it may impose costly and time-consuming procedures. Third, the legal  of rights provides the starting point for the rearrangement of rights through ma actions. Such transactions are not costless, with a result that the initial deli rights may be maintained even though some other would be more efficient. Or, original position is modified, the most efficient delimitation of rights may not. Finally, a waste of resources may occur when the criteria used by the court rights result in resources being employed solely to establish a claim.</p>
+</div></blockquote>
+<p><span id="id1">[<a class="reference internal" href="bibliography.html#id3" title="R. H. Coase. The federal communications comission. The Journal of Law &amp; Economics, 2:1-40, 1959.">Coase, 1959</a>]</span></p>
+</section>
+</section>
+<section id="simultaneous-ascending-auction-saa">
+<h2>Simultaneous Ascending Auction (SAA)<a class="headerlink" href="#simultaneous-ascending-auction-saa" title="Permalink to this headline">#</a></h2>
+<div class="proof algorithm admonition" id="saa">
+<span id="index-0"></span><p class="admonition-title"><span class="caption-number">Algorithm 16 </span> (Simultaneous Ascending Auction)</p>
+<section class="algorithm-content" id="proof-content">
+<p>Auction is run in a potentially long series of rounds.
+Each round begins with standing high bid on each license (initially the seller), and a minimum bid increment.
+Each bidder can submit bids on any number of items, subject to an eligibility and activity rule.
+If no bids on a license, standing high bidder remains. If multiple bids, one bid selected to be the new high bid.
+Information about bids is revealed; move to next round.
+Auction ends when no new bids are submitted.</p>
+</section>
+</div><section id="motivation">
+<h3>Motivation<a class="headerlink" href="#motivation" title="Permalink to this headline">#</a></h3>
+<p>Why simultaneous? .. relative to sequential auctions
+Price discovery! Bidders get some information about the prices of all licenses before finalizing their bids for all.<br />
+This leads to more efficient package choices and equalization of prices for similar items.</p>
+<p>Why ascending? … relative to sealed bidding.
+Price discovery! Sealed bids convey too little information, requiring guesswork. Winning bidders “preserve privacy” about their values…
+But… there may be more opportunity for demand reduction, collusion.</p>
+</section>
+<section id="termination-rule">
+<h3>Termination Rule<a class="headerlink" href="#termination-rule" title="Permalink to this headline">#</a></h3>
+<p>The FCC ends the auction for all items only when there is no new bid for any item.</p>
+<p>Prevents “sniping”, in which last second bidders steal some item from the previous highest bidder.</p>
+</section>
+<section id="activity-rules">
+<h3>Activity Rules<a class="headerlink" href="#activity-rules" title="Permalink to this headline">#</a></h3>
+<p>Activity rule are used to keep the auction moving
+Each license assigned some number of points
+Bidders start with eligibility points, must use them each round or else have their eligibility reduced.
+Necessary so bidders don’t just sit back and wait.</p>
+<p>In practice, though, it can complicate bidding
+Suppose NY is 200 points; LA and SF are each 100.
+Easy to switch to SF/LA if outbid on NY, but what if you are bidding for SF/LA and are outbid on LA only?
+A consequence: bidding on large licenses stops earlier.</p>
+<section id="example">
+<h4>Example<a class="headerlink" href="#example" title="Permalink to this headline">#</a></h4>
+<p>[TODO slide 14]</p>
+</section>
+</section>
+<section id="theory">
+<h3>Theory<a class="headerlink" href="#theory" title="Permalink to this headline">#</a></h3>
+<dl class="glossary simple">
+</dl>
+<div class="proof theorem admonition" id="theorem-1">
+<p class="admonition-title"><span class="caption-number">Theorem 13 </span></p>
+<section class="theorem-content" id="proof-content">
+<p>If bidders have “substitutes” values (e.g. want only one license) and bid straightforwardly, the SAA leads to an efficient allocation and lowest competitive prices.</p>
+</section>
+</div><p>Magic of the Market Results
+Auction outcome is “as if” the seller knew all the values and used a computer to find the efficient allocation &amp; market-clearing prices – auction discovers the right prices and quantities.
+Bidders have “no regret” – at the final prices, each winner gets exactly the licenses that gives it the most profit, and no loser would like to be a winner (assignment is “stable” given prices).</p>
+</section>
+</section>
+<section id="gaming-in-spectrum-auctions">
+<h2>“Gaming” in Spectrum Auctions<a class="headerlink" href="#gaming-in-spectrum-auctions" title="Permalink to this headline">#</a></h2>
+<section id="entry-deterance">
+<h3>Entry Deterance<a class="headerlink" href="#entry-deterance" title="Permalink to this headline">#</a></h3>
+<p>[TODO slide 22]</p>
+</section>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -432,11 +660,11 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="chilean-fisheries.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="bidding-languages-and-chilean-fisheries.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Chilean Fisheries</p>
+            <p class="prev-next-title">Bidding Languages + Chilean Fisheries</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="incentive-reverse-auction.html" title="next page">

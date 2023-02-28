@@ -52,6 +52,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="canonical" href="https://FlyingWorkshop.github.io/market-design/book/matching-with-contracts.html" />
     <link rel="shortcut icon" href="../_static/fav.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -158,6 +160,11 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="auction-design.html">
+   Auction Design
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="multi-unit-auctions-with-matching.html">
    Multi-Unit Auctions with Matching
   </a>
@@ -168,8 +175,8 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="chilean-fisheries.html">
-   Chilean Fisheries
+  <a class="reference internal" href="bidding-languages-and-chilean-fisheries.html">
+   Bidding Languages + Chilean Fisheries
   </a>
  </li>
  <li class="toctree-l1">
@@ -376,12 +383,68 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#extended-marriage-problem">
+   Extended Marriage Problem
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#formulation">
+     Formulation
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#stability">
+     Stability
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#extended-man-offering-algorithm">
+     Extended Man-Offering Algorithm
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#theorems">
+     Theorems
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#examples-and-intuition">
+     Examples and Intuition
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#deferred-acceptance-as-an-auction">
+     Deferred Acceptance as an Auction?!
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
 </div>
     </div>
     <div class="article row">
@@ -393,6 +456,51 @@ title="Print to PDF"
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#extended-marriage-problem">
+   Extended Marriage Problem
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#formulation">
+     Formulation
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#stability">
+     Stability
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#extended-man-offering-algorithm">
+     Extended Man-Offering Algorithm
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#theorems">
+     Theorems
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#examples-and-intuition">
+     Examples and Intuition
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#deferred-acceptance-as-an-auction">
+     Deferred Acceptance as an Auction?!
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -402,7 +510,81 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="matching-with-contracts">
 <h1>Matching with Contracts<a class="headerlink" href="#matching-with-contracts" title="Permalink to this headline">#</a></h1>
-<p>TODO</p>
+<section id="extended-marriage-problem">
+<h2>Extended Marriage Problem<a class="headerlink" href="#extended-marriage-problem" title="Permalink to this headline">#</a></h2>
+<p>Preferences in matching often involves additional terms besides just your partner’s identity:
+Dating: Will we go to the concert or the ball game, alone or with others, etc.
+College admissions: Whose lab will the student work in? Is financial aid offered?
+Marriage: “Let’s have kids right away and take over dad’s store in Provo, Utah” or “Let’s travel abroad for a year and then live in a commune in Portland, OR.”</p>
+<section id="formulation">
+<h3>Formulation<a class="headerlink" href="#formulation" title="Permalink to this headline">#</a></h3>
+<p>There is a finite set of terms <span class="math notranslate nohighlight">\({T}\)</span> with typical element <span class="math notranslate nohighlight">\(t \in {T}\)</span>. Each man <span class="math notranslate nohighlight">\(m\)</span> has a strict ranking of pairs of the form <span class="math notranslate nohighlight">\((w,t)\)</span> or “unmatched”. Each woman <span class="math notranslate nohighlight">\(w\)</span> has a strict ranking of pairs of the form <span class="math notranslate nohighlight">\((m,t)\)</span> or “unmatched”. A triple <span class="math notranslate nohighlight">\((m,w,t) \in {M} \times {W} \times {T}\)</span> is called a contract. Think of a contract form that has two blank lines and a series of check boxes. One writes the names of the contracting parties <span class="math notranslate nohighlight">\(m\)</span> and <span class="math notranslate nohighlight">\(w\)</span> into the lines and checks boxes to determine contract options or terms.</p>
+</section>
+<section id="stability">
+<h3>Stability<a class="headerlink" href="#stability" title="Permalink to this headline">#</a></h3>
+<p>TODO: add glossary</p>
+<p>A matching is a function <span class="math notranslate nohighlight">\(\mu : M \cup W \rightarrow (M \cup W) \times T\)</span> such that <span class="math notranslate nohighlight">\(\mu(m) \in (W \cup \{m\}) \times T\)</span> and <span class="math notranslate nohighlight">\(\mu(w) \in (M \cup \{w\}) \times T\)</span>, and <span class="math notranslate nohighlight">\(\mu(m) = (w,t) \Leftrightarrow \mu(w) = (m,t)\)</span>. The same <span class="math notranslate nohighlight">\(t\)</span> can appear in multiple contracts in <span class="math notranslate nohighlight">\(\mu\)</span>.</p>
+<p>A matching <span class="math notranslate nohighlight">\(\mu\)</span> is unstable if:</p>
+<ol class="simple">
+<li><p>Some contract <span class="math notranslate nohighlight">\((m,w,t)\)</span> is unacceptable to either <span class="math notranslate nohighlight">\(m\)</span> or <span class="math notranslate nohighlight">\(w\)</span>, or</p></li>
+<li><p>There is some blocking contract <span class="math notranslate nohighlight">\((m',w',t')\)</span> that <span class="math notranslate nohighlight">\(m\)</span> and <span class="math notranslate nohighlight">\(w\)</span> both prefer to their <span class="math notranslate nohighlight">\(\mu\)</span>-contract.</p></li>
+</ol>
+<p>A matching <span class="math notranslate nohighlight">\(\mu\)</span> is stable if it is not unstable.</p>
+</section>
+<section id="extended-man-offering-algorithm">
+<h3>Extended Man-Offering Algorithm<a class="headerlink" href="#extended-man-offering-algorithm" title="Permalink to this headline">#</a></h3>
+<span class="target" id="index-0"></span><div class="proof algorithm admonition" id="extended-man-offering-daa">
+<span id="index-1"></span><p class="admonition-title"><span class="caption-number">Algorithm 10 </span> (Extended Man-Offering Algorithm)</p>
+<section class="algorithm-content" id="proof-content">
+<p><strong>Inputs</strong> Each man and woman submits a preference list ranking the possible partner-terms pairs.</p>
+<ol class="simple">
+<li><p>Each man offers the highest remaining acceptable “contract” <span class="math notranslate nohighlight">\((w,t)\)</span>, if any, on his list.</p></li>
+<li><p>Each woman rejects all but the best acceptable offered contract.</p></li>
+<li><p>Each man strikes any rejected offer from his list.</p></li>
+<li><p>If any man was rejected at the last round, return to 1 (iterate).</p></li>
+<li><p>Otherwise, the accepted contract offers are finalized.</p></li>
+</ol>
+</section>
+</div><p>There is also an extended woman-offering algorithm, with the obvious reversal of roles.</p>
+</section>
+<section id="theorems">
+<h3>Theorems<a class="headerlink" href="#theorems" title="Permalink to this headline">#</a></h3>
+<div class="proof theorem admonition" id="extended-theorems">
+<p class="admonition-title"><span class="caption-number">Theorem 10 </span> (Extended Matching Theorems)</p>
+<section class="theorem-content" id="proof-content">
+<p>Let <span class="math notranslate nohighlight">\(\mu\)</span> be the output of the extended man-offering algorithm.</p>
+<ol class="simple">
+<li><p><span class="math notranslate nohighlight">\(\mu\)</span> is a stable matching.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\mu\)</span> is the most preferred stable matching for each man.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\mu\)</span> is the least preferred stable matching for each woman.</p></li>
+<li><p>The algorithm is “truthful” for men, but not for women.</p></li>
+</ol>
+</section>
+</div></section>
+<section id="examples-and-intuition">
+<h3>Examples and Intuition<a class="headerlink" href="#examples-and-intuition" title="Permalink to this headline">#</a></h3>
+<p>Example: the matching may have <span class="math notranslate nohighlight">\(m\)</span> and <span class="math notranslate nohighlight">\(w\)</span> going to the concert <span class="math notranslate nohighlight">\(t\)</span> at Bing tonight, which he prefers, rather than to the basketball game <span class="math notranslate nohighlight">\(t'\)</span> at Maples, which she prefers, when both <span class="math notranslate nohighlight">\(t\)</span> and <span class="math notranslate nohighlight">\(t'\)</span> were acceptable to both.</p>
+<p>Review of the results:</p>
+<ul class="simple">
+<li><p>Outcome is stable</p></li>
+<li><p>Man-best stable matching</p></li>
+<li><p>Woman-worst stable matching</p></li>
+<li><p>Truthful for men (not for women)</p></li>
+</ul>
+</section>
+<section id="deferred-acceptance-as-an-auction">
+<h3>Deferred Acceptance as an Auction?!<a class="headerlink" href="#deferred-acceptance-as-an-auction" title="Permalink to this headline">#</a></h3>
+<p>Suppose the two sides are buyers and sellers.</p>
+<ul class="simple">
+<li><p>Each seller has one unit of its product and cares only about price and breaks ties in favor of the lowest numbered buyer.</p></li>
+<li><p>Each buyer cares about the item and the price, breaking ties in favor of the lowest numbered seller.
+With just one seller/one item,</p></li>
+<li><p>the buyer offering deferred acceptance algorithm is an ascending (”English”) auction.</p></li>
+<li><p>the seller offering deferred acceptance algorithm is a descending (”Dutch”) auction
+With multiple sellers, the auction is a less familiar one: a multi-product ascending (or descending) auction.</p></li>
+</ul>
+</section>
+</section>
 </section>
 
     <script type="text/x-thebe-config">

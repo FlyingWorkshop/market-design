@@ -59,7 +59,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Sponsored Search Auctions" href="sponsored-search-auctions.html" />
-    <link rel="prev" title="Auction Theory" href="auction-theory.html" />
+    <link rel="prev" title="Auction Design" href="auction-design.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -159,6 +159,11 @@ const thebe_selector_output = ".output, .cell_output"
    Auction Theory
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="auction-design.html">
+   Auction Design
+  </a>
+ </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
    Multi-Unit Auctions with Matching
@@ -170,8 +175,8 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="chilean-fisheries.html">
-   Chilean Fisheries
+  <a class="reference internal" href="bidding-languages-and-chilean-fisheries.html">
+   Bidding Languages + Chilean Fisheries
   </a>
  </li>
  <li class="toctree-l1">
@@ -626,8 +631,8 @@ Additional connections will be made on later slides.</p>
 </dd>
 <dt id="term-Pareto-efficient-auctions">Pareto efficient (auctions)<a class="headerlink" href="#term-Pareto-efficient-auctions" title="Permalink to this term">#</a></dt><dd><p>An assignment is Pareto efficient if it is not Pareto dominated.</p>
 </dd>
-<dt id="term-The-total-value-or-surplus-of-the-assignment-k-that-assigns-to-each-i-the-item-k-i-is-v_-1k-1-dots-v_-Nk-N-.">The total value (or surplus) of the assignment <span class="math notranslate nohighlight">\(k\)</span> (that assigns to each <span class="math notranslate nohighlight">\(i\)</span> the item <span class="math notranslate nohighlight">\(k(i)\)</span>) is <span class="math notranslate nohighlight">\(v_{1k(1)} + \dots + v_{Nk(N)}\)</span>.<a class="headerlink" href="#term-The-total-value-or-surplus-of-the-assignment-k-that-assigns-to-each-i-the-item-k-i-is-v_-1k-1-dots-v_-Nk-N-." title="Permalink to this term">#</a></dt><dd></dd>
 </dl>
+<p>The total value (or surplus) of the assignment <span class="math notranslate nohighlight">\(k\)</span> (that assigns to each <span class="math notranslate nohighlight">\(i\)</span> the item <span class="math notranslate nohighlight">\(k(i)\)</span>) is <span class="math notranslate nohighlight">\(v_{1k(1)} + \dots + v_{Nk(N)}\)</span>.</p>
 <div class="admonition-question admonition">
 <p class="admonition-title">Question</p>
 <p>What’s the relationship between Pareto efficiency &amp; total value?</p>
@@ -635,14 +640,14 @@ Additional connections will be made on later slides.</p>
 <section id="example">
 <h3>Example<a class="headerlink" href="#example" title="Permalink to this headline">#</a></h3>
 <p>We have three people <span class="math notranslate nohighlight">\(a\)</span>, <span class="math notranslate nohighlight">\(b\)</span>, and <span class="math notranslate nohighlight">\(c\)</span> and two items <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span>. The value matrix is:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
 \begin{bmatrix}
 30 &amp; 60 \\
 20 &amp; 40 \\
 10 &amp; 20 
 \end{bmatrix}
-\end{split}\]</div>
+\end{align*}\]</div>
 <p>The rows from top to bottom represent the values for <span class="math notranslate nohighlight">\(a\)</span>, <span class="math notranslate nohighlight">\(b\)</span>, and <span class="math notranslate nohighlight">\(c\)</span>. The left and right columns represent <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> respectively.</p>
 <ol class="simple">
 <li><p>Can it be efficient to assign <span class="math notranslate nohighlight">\(\{(a, x), (b, y), (c, \emptyset)\}\)</span> with some payments, so <span class="math notranslate nohighlight">\(b\)</span> gets his most preferred item?</p></li>
@@ -666,7 +671,7 @@ Solution<div class="sd-summary-down docutils">
 <section id="efficient-assignments">
 <h2>Efficient Assignments<a class="headerlink" href="#efficient-assignments" title="Permalink to this headline">#</a></h2>
 <div class="proof theorem admonition" id="efficient-assignments">
-<p class="admonition-title"><span class="caption-number">Theorem 10 </span> (Efficient Assignments)</p>
+<p class="admonition-title"><span class="caption-number">Theorem 11 </span> (Efficient Assignments)</p>
 <section class="theorem-content" id="proof-content">
 <p>When payoffs are value plus cash and total transfers must be equal to zero, an assignment with transfers is Pareto efficient if and only if no other assignment has a higher total value.</p>
 </section>
@@ -682,7 +687,7 @@ Solution<div class="sd-summary-down docutils">
 <section id="ascending-clock-auction">
 <h2>Ascending (Clock) Auction<a class="headerlink" href="#ascending-clock-auction" title="Permalink to this headline">#</a></h2>
 <div class="proof algorithm admonition" id="ascending-auction">
-<p class="admonition-title"><span class="caption-number">Algorithm 10 </span> (Ascending Auction)</p>
+<p class="admonition-title"><span class="caption-number">Algorithm 11 </span> (Ascending Auction)</p>
 <section class="algorithm-content" id="proof-content">
 <p>Seller has a price clock for each item.</p>
 <ol class="simple">
@@ -699,11 +704,14 @@ Solution<div class="sd-summary-down docutils">
 <section id="example-1">
 <h3>Example 1<a class="headerlink" href="#example-1" title="Permalink to this headline">#</a></h3>
 <p>Three bidders <span class="math notranslate nohighlight">\(a, b\)</span> and <span class="math notranslate nohighlight">\(c\)</span>. Two items <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span>.</p>
-<p><span class="math notranslate nohighlight">\( \begin{bmatrix}
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\begin{bmatrix}
 30 &amp; 60 \\
 20 &amp; 40 \\
 10 &amp; 20 
-\end{bmatrix}  \)</span></p>
+\end{bmatrix}
+\end{align*}\]</div>
 <p>What is the efficient assignment?</p>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
@@ -758,11 +766,11 @@ Solution<div class="sd-summary-down docutils">
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="auction-theory.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="auction-design.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Auction Theory</p>
+            <p class="prev-next-title">Auction Design</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="sponsored-search-auctions.html" title="next page">
