@@ -425,6 +425,11 @@ title="Print to PDF"
    Vickrey-Clark-Groves (VCG) Mechanisms
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#revenues">
+   Revenues
+  </a>
+ </li>
 </ul>
 
     </nav>
@@ -464,6 +469,11 @@ title="Print to PDF"
    Vickrey-Clark-Groves (VCG) Mechanisms
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#revenues">
+   Revenues
+  </a>
+ </li>
 </ul>
 
                         </nav>
@@ -478,7 +488,7 @@ title="Print to PDF"
 <h1>Auction Theory<a class="headerlink" href="#auction-theory" title="Permalink to this headline">#</a></h1>
 <section id="single-item-auctions">
 <h2>Single Item Auctions<a class="headerlink" href="#single-item-auctions" title="Permalink to this headline">#</a></h2>
-<p>A seller has a single item that she wants to sell. How can she identify the right buyer and price? Why use an auction instead of simply setting a price? The seller may not know what price to set, and guessing can lead to problems: too high, no sale; too low, excess demand. Potential buyers know their max prices but don’t always reveal them (everyone loves a good deal!). If <strong>acceptance</strong> of any offer is <strong>deferred</strong> until all offers can be compared, then the mechanism is called an <strong>auction</strong> and leads to <strong>competition</strong> and <strong>price discover</strong>.</p>
+<p>A seller has a single item that she wants to sell. How can she identify the right buyer and price? Why use an auction instead of s1. ply setting a price? The seller may not know what price to set, and guessing can lead to problems: too high, no sale; too low, excess demand. Potential buyers know their max prices but don’t always reveal them (everyone loves a good deal!). If <strong>acceptance</strong> of any offer is <strong>deferred</strong> until all offers can be compared, then the mechanism is called an <strong>auction</strong> and leads to <strong>competition</strong> and <strong>price discover</strong>.</p>
 <blockquote class="epigraph">
 <div><p>Auctions are games that guide prices to mimic markets.
 – Josh Gross</p>
@@ -523,8 +533,7 @@ title="Print to PDF"
 <section class="proposition-content" id="proof-content">
 <p>The second-price auction is truthful.</p>
 </section>
-</div><p>TODO: interactive Desmos graph!</p>
-<div class="proof proposition admonition" id="proposition-2">
+</div><div class="proof proposition admonition" id="proposition-2">
 <p class="admonition-title"><span class="caption-number">Proposition 3 </span></p>
 <section class="proposition-content" id="proof-content">
 <p>The second-price auction is the <em>only</em> auction for this setting that has these three properties:</p>
@@ -534,11 +543,81 @@ title="Print to PDF"
 <li><p>losing bidders pay nothing</p></li>
 </ol>
 </section>
-</div><p>TODO proof</p>
+</div><p>We provide a sketch of the prooof. The details are left as an excercise.</p>
+<div class="proof admonition" id="proof">
+<p>Proof. 1. Truthful incentives <span class="math notranslate nohighlight">\(\Rightarrow\)</span> given others’ bid, all of <span class="math notranslate nohighlight">\(n\)</span>’s winning bids must always lead to the same price <span class="math notranslate nohighlight">\(p(v_{-n})\)</span>.
+2. Truthful incentives + Losers pay zero <span class="math notranslate nohighlight">\(\Rightarrow\)</span> <span class="math notranslate nohighlight">\(n\)</span> wins when its reported value exceeds <span class="math notranslate nohighlight">\(p(v_{-n})\)</span>.
+3. Efficiency <span class="math notranslate nohighlight">\(\Rightarrow\)</span> <span class="math notranslate nohighlight">\(n\)</span> wins when its reported value exceeds the highest opposing value <span class="math notranslate nohighlight">\(\max_{m\neq n}v_m\)</span>.
+4. <span class="math notranslate nohighlight">\((2)\)</span> and <span class="math notranslate nohighlight">\((3) \Rightarrow p(v_{-n}) = \max_{m\neq n}v_m\)</span>.</p>
+</div>
 </section>
 <section id="vickrey-clark-groves-vcg-mechanisms">
 <h2>Vickrey-Clark-Groves (VCG) Mechanisms<a class="headerlink" href="#vickrey-clark-groves-vcg-mechanisms" title="Permalink to this headline">#</a></h2>
-<span class="target" id="index-1"></span></section>
+<p id="index-1">Consider an abstract setting in which our “system” must choose one from a finite set of outcomes.
+Examples:</p>
+<ul class="simple">
+<li><p>How many items to assign to each bidder (from a set of identical items)?</p></li>
+<li><p>Who wins which from a set of distinct items?</p></li>
+<li><p>Which room in a rental house should be assigned to each roommate?</p></li>
+<li><p>Whether to build a children’s playground at the apartment complex and how to equip it?</p></li>
+<li><p>Building a bridge: whether to do it, where and which kind?</p></li>
+</ul>
+<p>The people are <span class="math notranslate nohighlight">\(n=1,\dots,N\)</span> and the possible decisions are numbered <span class="math notranslate nohighlight">\(k=1,\dots,K\)</span>. Person <span class="math notranslate nohighlight">\(n\)</span> has value <span class="math notranslate nohighlight">\(v_{nk}\)</span> for decision <span class="math notranslate nohighlight">\(k\)</span>. Notation: <span class="math notranslate nohighlight">\(v_n=(v_{n1},\dots,v_{nK})\)</span>, <span class="math notranslate nohighlight">\(v=(v_1,\dots,v_N)\)</span>. The system collects value reports and uses those to select a value-maximizing decision <span class="math notranslate nohighlight">\(k^{*}\)</span>: <span class="math notranslate nohighlight">\(k^* \in \arg\max_k v_{1k}+\dots+v_{Nk}\)</span>. But agents could misreport their values. Is there any way to incentivize truthful value reports? How?</p>
+<p>Some Ideas:</p>
+<ul class="simple">
+<li><p>A “direct mechanism” asks each player to report values for each possible decision.</p></li>
+<li><p>The system then uses the reports to choose the decision <span class="math notranslate nohighlight">\(k^*\)</span> that maximizes the total welfare and makes a payment (positive or negative) to each player.</p></li>
+<li><p>So… each player can, by exaggerating her report, cause the system to select any decision. Why would she report truthfully?</p></li>
+<li><p>Solution: arrange the payments to players to align each player’s interest with the total welfare.</p></li>
+<li><p>Given any reports by others, any two reports by a single agent <span class="math notranslate nohighlight">\(n\)</span> that lead to the same decision <span class="math notranslate nohighlight">\(k\)</span> must lead her to receive the same payment, which we denote by <span class="math notranslate nohighlight">\(p_n(k,v_{(-n)})\)</span>.</p></li>
+</ul>
+<div class="proof algorithm admonition" id="vcg-mechanism">
+<p class="admonition-title"><span class="caption-number">Algorithm 11 </span> (Vickrey-Clark-Groves (VCG) Mechanism)</p>
+<section class="algorithm-content" id="proof-content">
+<ol class="simple">
+<li><p>Each player <span class="math notranslate nohighlight">\(n\)</span> reports values <span class="math notranslate nohighlight">\(v_n\in\mathbb{R}^K\)</span></p></li>
+<li><p>The system uses reported values to select <span class="math notranslate nohighlight">\(k^(v):\ k^*(v)\in\arg\max_{k}\sum_{j=1}^N v_{jk}\)</span></p></li>
+<li><p>If <span class="math notranslate nohighlight">\(k^*(v)=k\)</span>, we pay player <span class="math notranslate nohighlight">\(n\)</span>:</p></li>
+</ol>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+p_n(k,v_{-n})&amp;=\sum_{j\neq n} v_{j,k} + f_n(v_{-n})
+\end{align*}\]</div>
+<ol class="simple">
+<li><p>Then <span class="math notranslate nohighlight">\(n\)</span>’s payoff is</p></li>
+</ol>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+$v_{nk}+p_n(k,v_{-n})=v_{nk}+\sum_{j\neq n} v_{jk} + f_n(v_{-n})$
+\end{align*}\]</div>
+</section>
+</div><div class="proof theorem admonition" id="vcg-truthful">
+<p class="admonition-title"><span class="caption-number">Theorem 11 </span> (VCG is Truthful)</p>
+<section class="theorem-content" id="proof-content">
+<p>Theorem</p>
+<ol class="simple">
+<li><p>Every VCG mechanism is truthful and selects a decision in <span class="math notranslate nohighlight">\(k^*(v)\)</span>.</p></li>
+<li><p>Every mechanism that is truthful and selects a decision in <span class="math notranslate nohighlight">\(k^*(v)\)</span> is a VCG mechanism.</p></li>
+</ol>
+</section>
+</div><div class="proof admonition" id="proof">
+<p>Proof. (Part 1) We must show that <span class="math notranslate nohighlight">\(n\)</span>’s payoff from reporting <span class="math notranslate nohighlight">\(v_n\)</span> truthfully minus her payoff from making any other report <span class="math notranslate nohighlight">\(\hat{v}n\)</span> is always non-negative. Truthful reporting leads to an outcome <span class="math notranslate nohighlight">\(k\in k^*(v_n,v{-n})\)</span>. Any other report of <span class="math notranslate nohighlight">\(\hat{v}_n\)</span> leads to an outcome <span class="math notranslate nohighlight">\(\hat{k}\in k^*(\hat{v}_n,v_{-n})\)</span>, so the payoff difference is:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+&amp; (\left(v_{nk}+p_{n}\left(k,\ v_{-n}\right)\right)-\left(v_{n\hat{k}}+p_{n}\left(\hat{k},v_{-n}\right)\right) \\
+&amp;=\left(v_{nk}+\sum_{j \neq n}^{ }v_{jk}+f_{n}\left(v_{-n}\right)\right)-\left(v_{n\hat{k}}+\sum_{j \neq n}^{ }v_{j\hat{k}}+f\left(v_{-n} \right)\right) \\
+&amp;\ge0
+\end{align*}\]</div>
+<p>The <span class="math notranslate nohighlight">\(f_n(v_{-n})\)</span> terms cancel one another. The remaining difference is non-negative because <span class="math notranslate nohighlight">\(k\in k^*(v_n,v_{-n})\)</span> maximizes total welfare.</p>
+<p>(Part 2) By construction, for any non-VCG payment rule, there is some <span class="math notranslate nohighlight">\({v_{-n}}\)</span> such that participant <span class="math notranslate nohighlight">\(n\)</span>’s total payoff <span class="math notranslate nohighlight">\({v_{nk}+p_n(k,v_{-n})}\)</span> is misaligned with the total welfare, say by favoring some <span class="math notranslate nohighlight">\(\hat{k}\)</span> over <span class="math notranslate nohighlight">\({k'}\)</span> by a positive amount <span class="math notranslate nohighlight">\({2\delta&gt;0}\)</span>.</p>
+<p>When <span class="math notranslate nohighlight">\({v_n}\)</span> is such that, given <span class="math notranslate nohighlight">\({v_{-n}}\)</span>, the total welfare is <span class="math notranslate nohighlight">\({\delta}\)</span> higher for <span class="math notranslate nohighlight">\({k'}\)</span> than <span class="math notranslate nohighlight">\(\hat{k}\)</span>, <span class="math notranslate nohighlight">\(n\)</span> will still favor outcome <span class="math notranslate nohighlight">\({\hat{k}}\)</span> and its associated payment by <span class="math notranslate nohighlight">\({\delta}\)</span>. By reporting a <span class="math notranslate nohighlight">\({\hat{v}_n}\)</span> according to which <span class="math notranslate nohighlight">\(\hat{k}\)</span> is uniquely valuable, <span class="math notranslate nohighlight">\(n\)</span> can manipulate the mechanism to select outcome <span class="math notranslate nohighlight">\({\hat{k}}\)</span>, which she favors: truthful reporting fails to maximize <span class="math notranslate nohighlight">\(n\)</span>’s payoff.</p>
+<p>TODO: finish proof (slide 28 lecture 9)</p>
+</div>
+</section>
+<section id="revenues">
+<h2>Revenues<a class="headerlink" href="#revenues" title="Permalink to this headline">#</a></h2>
+<p>(20 more slides)</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
