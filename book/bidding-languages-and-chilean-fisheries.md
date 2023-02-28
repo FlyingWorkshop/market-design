@@ -8,7 +8,7 @@
     * In that case, individual items are _substitutes_: if one item is most preferred at prices $p$ by a bidder, it is still most preferred if the other item prices increase. 
     * Deferred acceptance depends on this substitutes property! 
 * If a bidder may have any value for any non-empty subset, then since there are $2^K$ subsets, there are $2^{K-1}$ numbers to report. 
-* If there are $n_k$ items of types $k = 1, \dots, K$, then a package is an element of $\{0, \dots, n_1\} \times \dots \times \{0, \dots, n_k\}$, so the number of non-empty packages is $(n_+1) \times \dots \times (n_k + 1) - 1$.
+* If there are $n_k$ items of types $k = 1, \dots, K$, then a package is an element of $\{0, \dots, n_1\} \times \dots \times \{0, \dots, n_k\}$, so the number of non-empty packages is $(n+1) \times \dots \times (n_k + 1) - 1$.
 
 ```{glossary}
 substitutes

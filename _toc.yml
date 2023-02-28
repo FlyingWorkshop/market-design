@@ -13,12 +13,12 @@ parts:
     - file: book/stability-and-order 
     - file: book/house-allocation
     - file: book/school-choice # ~
-    - file: book/matching-with-contracts # !!
+    - file: book/matching-with-contracts
 - caption: Auction Theory
   chapters:
-    - file: book/auction-theory # !!
-    - file: book/auction-design
-    - file: book/multi-unit-auctions-with-matching.md # !!
+    - file: book/auction-theory # ~
+    - file: book/auction-design # ~
+    - file: book/multi-unit-auctions-with-matching.md # ~
     - file: book/sponsored-search-auctions # ~
     - file: book/bidding-languages-and-chilean-fisheries.md  # !!
     - file: book/radio-spectrum-auctions # !!
