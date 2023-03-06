@@ -9,18 +9,19 @@ parts:
 - caption: Matching Theory
   chapters:
     - file: book/matching-theory 
-    - file: book/game-theory-review-and-incentives
-    - file: book/stability-and-order 
-    - file: book/house-allocation
+    - file: book/game-theory-and-incentives
+    - file: book/stability-order-unraveling
+    - file: book/house-allocation-and-kidney-exchange
     - file: book/school-choice # ~
     - file: book/matching-with-contracts
 - caption: Auction Theory
   chapters:
     - file: book/auction-theory # ~
-    - file: book/auction-design # ~
+    - file: book/auction-design-and-applications # ~
+    - file: book/winner-curse # !!
     - file: book/multi-unit-auctions-with-matching.md # ~
     - file: book/sponsored-search-auctions # ~
-    - file: book/bidding-languages-and-chilean-fisheries.md  # !!
+    # - file: book/bidding-languages-and-chilean-fisheries.md  # !!
     - file: book/radio-spectrum-auctions # !!
     - file: book/incentive-reverse-auction # !!
 - caption: Resources

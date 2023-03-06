@@ -38,7 +38,7 @@ They proposed a variant of the pivot mechanism (“Vickrey auction”) with allo
 
 \begin{align*}
 S^{*} &= \arg\max_{S \in F}\sum_{j \in S}v_j\\
-p_i &= \sum_{j \in S^{*}} v_j - \max_{S \in F, i \in S} \sum_{j \in S - \{ i \} v_j}
+p_i &= \sum_{j \in S^{*}} v_j - \max_{S \in F, i \in S} \sum_{j \in S - \{ i \}} v_j
 \end{align*}
 
 where $S^{*}$ is the set of stations to remain on-air and $p_i$ is the price paid to stations going off-air $(i \not\in S^{*})$ which can be interpreted as the "opportunity cost."

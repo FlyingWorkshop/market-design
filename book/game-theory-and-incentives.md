@@ -1,4 +1,4 @@
-# Game Theory Review + Incentives
+# Game Theory and Incentives
 
 ## Game Theory and Mechanism Design
 

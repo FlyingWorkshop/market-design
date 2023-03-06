@@ -1,4 +1,4 @@
-# Auction Design
+# Auction Design and Applications
 
 ## Reserve Prices
 

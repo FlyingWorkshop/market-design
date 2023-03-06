@@ -1,4 +1,4 @@
-# Stability + Order
+# Stability, Order, and Unraveling
 
 ## History: Theory to Practice
 The study of matching started as mathematics: first by Gale and Shapley (1962) who introduced deferred acceptance algorithm, then others, including Stanford math Prof. Donald Knuth. In 1984, Al Roth made a surprising discovery. Since the 1950s, US hospitals have used a clearinghouse to assign graduating medical students to residencies. Students apply and interview at hospitals in the fall, then students and hospitals submit rank-order preferences in February. A computer algorithm is used to assign students to hospitals, and matches are all revealed on a single day: match day. Roth realized that the doctors has independently discovered and were using exactly the Gale and Shapley DA algorithm! 
@@ -25,7 +25,8 @@ Ideally, with some sort of experiment (lab? natural?)
 
 ### Algorithm
 
-```{prf:algorithm}
+```{prf:algorithm} Priority Matching
+:label: priority-matching
 1. Men and women submit their preferences.
 2. Each man-woman pair gets a priority based on their mutual rankings.
 3. An algorithm matches all priority 1 couples, takes them out of the market.
@@ -78,11 +79,6 @@ Priority Matching with order $1-1, 1-2, 2-1, 1-3, 3-1, 2-2, \ldots$
 4. Look for $2-2$ matches among remaining: NONE
 5. Look for $2-3$, $3-2$ matches among remaining: $(m_3, w_2)$
 Unstable: $(m_3, w_1)$ is a blocking pair.  
-```
-
-```{attention}
-[TODO]
-Get more practice [here]!
 ```
 
 ### Failure of Priority Matching
