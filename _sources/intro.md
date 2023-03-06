@@ -5,7 +5,6 @@
 :align: center
 ```
 
-
 ## Table of Contents
 ```{tableofcontents}
 ```

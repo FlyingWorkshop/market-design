@@ -13,15 +13,18 @@ There is a finite set of terms ${T}$ with typical element $t \in {T}$. Each man 
 
 ### Stability
 
-TODO: add glossary
+```{glossary}
+matching (contracts)
+    A matching is a function $\mu : M \cup W \rightarrow (M \cup W) \times T$ such that $\mu(m) \in (W \cup \{m\}) \times T$ and $\mu(w) \in (M \cup \{w\}) \times T$, and $\mu(m) = (w,t) \Leftrightarrow \mu(w) = (m,t)$. The same $t$ can appear in multiple contracts in $\mu$.
 
-A matching is a function $\mu : M \cup W \rightarrow (M \cup W) \times T$ such that $\mu(m) \in (W \cup \{m\}) \times T$ and $\mu(w) \in (M \cup \{w\}) \times T$, and $\mu(m) = (w,t) \Leftrightarrow \mu(w) = (m,t)$. The same $t$ can appear in multiple contracts in $\mu$.
+unstable matching (contracts)
+    A matching $\mu$ is unstable if:
+    1. Some contract $(m,w,t)$ is unacceptable to either $m$ or $w$, or
+    2. There is some blocking contract $(m',w',t')$ that $m$ and $w$ both prefer to their $\mu$-contract.
 
-A matching $\mu$ is unstable if:
-1. Some contract $(m,w,t)$ is unacceptable to either $m$ or $w$, or
-2. There is some blocking contract $(m',w',t')$ that $m$ and $w$ both prefer to their $\mu$-contract.
-
-A matching $\mu$ is stable if it is not unstable.
+stable matching (contracts)
+    A matching $\mu$ is stable if it is not unstable.
+```
 
 ### Extended Man-Offering Algorithm
 

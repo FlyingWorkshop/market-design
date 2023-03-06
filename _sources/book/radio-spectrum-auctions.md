@@ -72,11 +72,12 @@ A consequence: bidding on large licenses stops earlier.
 ### Theory
 
 ```{glossary}
-    straightforward bidding
-        Bidding is “straightforward” if each round bidders bid for the set of licenses that offer the most profit at current prices.
+straightforward bidding
+    Bidding is “straightforward” if each round bidders bid for the set of licenses that offer the most profit at current prices.
 ```
 
 ```{prf:theorem}
+:label: saa-theorem
 If bidders have “substitutes” values (e.g. want only one license) and bid straightforwardly, the SAA leads to an efficient allocation and lowest competitive prices.
 ```
 

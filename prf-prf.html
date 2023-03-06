@@ -1,49 +1,57 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Proof Index &#8212; Market Design</title>
-    
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="_static/styles/theme.css?digest=796348d33e8b1d947c94" rel="stylesheet">
+<link href="_static/styles/bootstrap.css?digest=796348d33e8b1d947c94" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=796348d33e8b1d947c94" rel="stylesheet">
 
-    
-  <link rel="stylesheet"
-    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=796348d33e8b1d947c94" rel="stylesheet">
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2">
 
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=4ec06e9971c5264fbd345897d5258098f11cc577" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="_static/proof.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
-    
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=796348d33e8b1d947c94">
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=796348d33e8b1d947c94">
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="_static/doctools.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=8bf782fb4ee92b3d3646425e50f299c4e1fd152d"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="_static/togglebutton.js"></script>
     <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
@@ -51,17 +59,14 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'prf-prf';</script>
     <link rel="canonical" href="https://FlyingWorkshop.github.io/market-design/prf-prf.html" />
     <link rel="shortcut icon" href="_static/fav.ico"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
 
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="docsearch:language" content="en">
 
     <script>
       DOCUMENTATION_OPTIONS.COLLAPSE_INDEX = true;
@@ -69,315 +74,614 @@ const thebe_selector_output = ".output, .cell_output"
 
 
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay overlay-navbar" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<!-- Checkboxes to toggle the in-page toc -->
-<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
-<label class="overlay overlay-pagetoc" for="__page-toc">
-    <div class="visually-hidden">Toggle in-page Table of Contents</div>
-</label>
-<!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
-<div class="header header-item noprint"></div>
+  
+  
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="180" data-default-mode="">
 
-    
-    <div class="container-fluid" id="banner"></div>
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
 
-    
+  
+  <input type="checkbox" class="sidebar-toggle" name="__primary" id="__primary">
+  <label class="overlay overlay-primary" for="__primary"></label>
 
-    <div class="container-xl">
-      <div class="row">
-          
-<!-- Sidebar -->
-<div class="bd-sidebar noprint" id="site-navigation">
-    <div class="bd-sidebar__content">
-        <div class="bd-sidebar__top"><div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="index.html">
-      
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
-        
-      
-      
-      <img src="_static/logo.png" class="logo" alt="logo">
-      
-      
-      <h1 class="site-logo" id="site-title">Market Design</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
-        <p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Matching Theory
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="book/matching-theory.html">
-   Matching Theory
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="book/game-theory-review-and-incentives.html">
-   Game Theory Review + Incentives
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="book/stability-and-order.html">
-   Stability + Order
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="book/house-allocation.html">
-   Housing Allocation
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="book/school-choice.html">
-   School Choice
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="book/matching-with-contracts.html">
-   Matching with Contracts
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Auction Theory
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="book/auction-theory.html">
-   Auction Theory
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="book/auction-design.html">
-   Auction Design
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="book/multi-unit-auctions-with-matching.html">
-   Multi-Unit Auctions with Matching
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="book/sponsored-search-auctions.html">
-   Sponsored Search Auctions
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="book/bidding-languages-and-chilean-fisheries.html">
-   Bidding Languages + Chilean Fisheries
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="book/radio-spectrum-auctions.html">
-   Radio Spectrum Auctions
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="book/incentive-reverse-auction.html">
-   Incentive Reverse Auction
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Resources
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="book/practice.html">
-   Practice
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="book/bibliography.html">
-   Bibliography
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="genindex.html">
-   Index
-  </a>
- </li>
-</ul>
+  
+  <input type="checkbox" class="sidebar-toggle" name="__secondary" id="__secondary">
+  <label class="overlay overlay-secondary" for="__secondary"></label>
 
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+      
+<form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
     </div>
-</nav></div>
-        <div class="bd-sidebar__bottom">
-             <!-- To handle the deprecated key -->
-            
-            <div class="navbar_extra_footer">
-            Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+  </div>
+
+  
+  <nav class="bd-header navbar navbar-expand-lg bd-navbar" id="navbar-main"><div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+      <span class="fa-solid fa-bars"></span>
+  </label>
+  <div id="navbar-start">
+    
+    
+  
+
+
+<a class="navbar-brand logo" href="intro.html">
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <img src="_static/logo.png" class="logo__image only-light" alt="Logo image">
+    <img src="_static/logo.png" class="logo__image only-dark" alt="Logo image">
+  
+  
+</a>
+    
+  </div>
+
+  
+  <div class="col-lg-9 navbar-header-items">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <nav class="navbar-nav">
+    <p class="sidebar-header-items__title" role="heading" aria-level="1" aria-label="Site Navigation">
+        Site Navigation
+    </p>
+    <ul id="navbar-main-elements" class="navbar-nav">
+        
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="book/matching-theory.html">
+                        Matching Theory
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="book/game-theory-and-incentives.html">
+                        Game Theory and Incentives
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="book/stability-order-unraveling.html">
+                        Stability, Order, and Unraveling
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="book/house-allocation-and-kidney-exchange.html">
+                        Housing Allocation and Kidney Exchange
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="book/school-choice.html">
+                        School Choice
+                      </a>
+                    </li>
+                
+            <div class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    More
+                </button>
+                <div class="dropdown-menu">
+                    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="book/matching-with-contracts.html">
+                        Matching with Contracts
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="book/auction-theory.html">
+                        Auction Theory
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="book/auction-design-and-applications.html">
+                        Auction Design and Applications
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="book/winner-curse.html">
+                        The Winner’s Curse
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="book/multi-unit-auctions-with-matching.html">
+                        Multi-Unit Auctions with Matching
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="book/sponsored-search-auctions.html">
+                        Sponsored Search Auctions
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="book/radio-spectrum-auctions.html">
+                        Radio Spectrum Auctions
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="book/incentive-reverse-auction.html">
+                        Incentive Reverse Auction
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="book/practice.html">
+                        Practice
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="book/bibliography.html">
+                        Bibliography
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="genindex.html">
+                        Index
+                      </a>
+                    </li>
+                
+                </div>
             </div>
             
-        </div>
+    </ul>
+</nav>
+      </div>
+      
     </div>
-    <div id="rtd-footer-container"></div>
+
+    <div id="navbar-end">
+      
+        <div class="navbar-end-item navbar-persistent--container">
+          
+<button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-toggle="tooltip">
+  <i class="fa-solid fa-magnifying-glass"></i>
+</button>
+        </div>
+      
+      
+      <div class="navbar-end-item">
+        <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+</button>
+      </div>
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+
+
+  
+  
+    <div class="navbar-persistent--mobile">
+<button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-toggle="tooltip">
+  <i class="fa-solid fa-magnifying-glass"></i>
+</button>
+    </div>
+  
+
+  
+
 </div>
+  </nav>
+  
 
-
-          
-
-
-          
-<!-- A tiny helper pixel to detect if we've scrolled -->
-<div class="sbt-scroll-pixel-helper"></div>
-<!-- Main content -->
-<div class="col py-0 content-container">
-    
-    <div class="header-article row sticky-top noprint">
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
         
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+      
+      <div class="navbar-center-item">
+        <nav class="navbar-nav">
+    <p class="sidebar-header-items__title" role="heading" aria-level="1" aria-label="Site Navigation">
+        Site Navigation
+    </p>
+    <ul id="navbar-main-elements" class="navbar-nav">
+        
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="book/matching-theory.html">
+                        Matching Theory
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="book/game-theory-and-incentives.html">
+                        Game Theory and Incentives
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="book/stability-order-unraveling.html">
+                        Stability, Order, and Unraveling
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="book/house-allocation-and-kidney-exchange.html">
+                        Housing Allocation and Kidney Exchange
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="book/school-choice.html">
+                        School Choice
+                      </a>
+                    </li>
+                
+            <div class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    More
+                </button>
+                <div class="dropdown-menu">
+                    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="book/matching-with-contracts.html">
+                        Matching with Contracts
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="book/auction-theory.html">
+                        Auction Theory
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="book/auction-design-and-applications.html">
+                        Auction Design and Applications
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="book/winner-curse.html">
+                        The Winner’s Curse
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="book/multi-unit-auctions-with-matching.html">
+                        Multi-Unit Auctions with Matching
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="book/sponsored-search-auctions.html">
+                        Sponsored Search Auctions
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="book/radio-spectrum-auctions.html">
+                        Radio Spectrum Auctions
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="book/incentive-reverse-auction.html">
+                        Incentive Reverse Auction
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="book/practice.html">
+                        Practice
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="book/bibliography.html">
+                        Bibliography
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="genindex.html">
+                        Index
+                      </a>
+                    </li>
+                
+                </div>
+            </div>
+            
+    </ul>
+</nav>
+      </div>
+      
+      </div>
+    
+
+    
+    
+    <div class="sidebar-header-items__end">
+      
+      <div class="navbar-end-item">
+        <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+</button>
+      </div>
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+      </ul>
+      </div>
+      
+    </div>
+    
+  </div>
+
+  
+  <div class="sidebar-start-items sidebar-primary__section">
+    <div class="sidebar-start-items__item">
+  
+
+
+<a class="navbar-brand logo" href="intro.html">
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <img src="_static/logo.png" class="logo__image only-light" alt="Logo image">
+    <img src="_static/logo.png" class="logo__image only-dark" alt="Logo image">
+  
+  
+</a>
+    </div>
+    <div class="sidebar-start-items__item">
+<form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+    </div>
+    <div class="sidebar-start-items__item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Matching Theory</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="book/matching-theory.html">Matching Theory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="book/game-theory-and-incentives.html">Game Theory and Incentives</a></li>
+<li class="toctree-l1"><a class="reference internal" href="book/stability-order-unraveling.html">Stability, Order, and Unraveling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="book/house-allocation-and-kidney-exchange.html">Housing Allocation and Kidney Exchange</a></li>
+<li class="toctree-l1"><a class="reference internal" href="book/school-choice.html">School Choice</a></li>
+<li class="toctree-l1"><a class="reference internal" href="book/matching-with-contracts.html">Matching with Contracts</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Auction Theory</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="book/auction-theory.html">Auction Theory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="book/auction-design-and-applications.html">Auction Design and Applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="book/winner-curse.html">The Winner’s Curse</a></li>
+<li class="toctree-l1"><a class="reference internal" href="book/multi-unit-auctions-with-matching.html">Multi-Unit Auctions with Matching</a></li>
+<li class="toctree-l1"><a class="reference internal" href="book/sponsored-search-auctions.html">Sponsored Search Auctions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="book/radio-spectrum-auctions.html">Radio Spectrum Auctions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="book/incentive-reverse-auction.html">Incentive Reverse Auction</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Resources</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="book/practice.html">Practice</a></li>
+<li class="toctree-l1"><a class="reference internal" href="book/bibliography.html">Bibliography</a></li>
+<li class="toctree-l1"><a class="reference internal" href="genindex.html">Index</a></li>
+</ul>
+
+    </div>
+</nav>
+    </div>
+  </div>
+  
+
+  
+  <div class="sidebar-end-items sidebar-primary__section">
+    <div class="sidebar-end-items__item">
+    </div>
+  </div>
+
+  
+  <div id="rtd-footer-container"></div>
+
+      </div>
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+        <div class="bd-content">
+          <div class="bd-article-container">
+            
+            <div class="bd-header-article">
+                
 
 
 
 <div class="col py-1 d-flex header-article-main">
     <div class="header-article__left">
-        
-        <label for="__navigation"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="right"
-title="Toggle navigation"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-bars"></i>
-  </span>
-
-</label>
-
-        
+        <label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" data-toggle="tooltip" data-placement="right" title="Toggle primary sidebar">
+            <span class="fa-solid fa-bars"></span>
+        </label>
     </div>
     <div class="header-article__right">
 <button onclick="toggleFullScreen()"
-  class="headerbtn"
+  class="btn btn-sm"
   data-toggle="tooltip"
 data-placement="bottom"
 title="Fullscreen mode"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   <i class="fas fa-expand"></i>
   </span>
 
 </button>
 
-<div class="menu-dropdown menu-dropdown-repository-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Source repositories">
-      <i class="fab fa-github"></i>
+
+
+<div class="dropdown dropdown-repository-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://github.com/FlyingWorkshop/market-design"
-   class="headerbtn"
+  <ul class="dropdown-menu">
+      <li><a href="https://github.com/FlyingWorkshop/market-design" target="_blank"
+   class="btn btn-sm dropdown-item"
    data-toggle="tooltip"
 data-placement="left"
 title="Source repository"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   <i class="fab fa-github"></i>
   </span>
-<span class="headerbtn__text-container">repository</span>
+<span class="btn__text-container">repository</span>
 </a>
-
-      </li>
+</a>
       
-      <li>
-        <a href="https://github.com/FlyingWorkshop/market-design/issues/new?title=Issue%20on%20page%20%2Fprf-prf.html&body=Your%20issue%20content%20here."
-   class="headerbtn"
+      <li><a href="https://github.com/FlyingWorkshop/market-design/issues/new?title=Issue%20on%20page%20%2Fprf-prf.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm dropdown-item"
    data-toggle="tooltip"
 data-placement="left"
 title="Open an issue"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   <i class="fas fa-lightbulb"></i>
   </span>
-<span class="headerbtn__text-container">open issue</span>
+<span class="btn__text-container">open issue</span>
 </a>
-
-      </li>
+</a>
       
-    </ul>
-  </div>
+  </ul>
 </div>
 
     </div>
 </div>
-
-<!-- Table of contents -->
-<div class="col-md-3 bd-toc show noprint">
-</div>
-    </div>
-    <div class="article row">
-        <div class="col pl-md-3 pl-lg-5 content-container">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1></h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                    </div>
-                </div>
             </div>
-            <main id="main-content" role="main">
-                
-              <div>
-                
+            
+            
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1></h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+            <article class="bd-article" role="main">
+              
 
    <h1>Proof Index</h1>
 
    <div class="modindex-jumpbox">
    <a href="#cap-GSP"><strong>GSP</strong></a> | 
    <a href="#cap-Man-Proposing-Truthful"><strong>Man-Proposing-Truthful</strong></a> | 
+   <a href="#cap-adapted-ttc"><strong>adapted-ttc</strong></a> | 
    <a href="#cap-algorithm-0"><strong>algorithm-0</strong></a> | 
    <a href="#cap-algorithm-2"><strong>algorithm-2</strong></a> | 
-   <a href="#cap-algorithm-3"><strong>algorithm-3</strong></a> | 
-   <a href="#cap-algorithm-4"><strong>algorithm-4</strong></a> | 
    <a href="#cap-algorithm-6"><strong>algorithm-6</strong></a> | 
    <a href="#cap-algorithm-7"><strong>algorithm-7</strong></a> | 
    <a href="#cap-ascending-auction"><strong>ascending-auction</strong></a> | 
+   <a href="#cap-boston-mech"><strong>boston-mech</strong></a> | 
+   <a href="#cap-columbus-mech"><strong>columbus-mech</strong></a> | 
    <a href="#cap-daa"><strong>daa</strong></a> | 
    <a href="#cap-dom-strat"><strong>dom-strat</strong></a> | 
    <a href="#cap-efficient-assignments"><strong>efficient-assignments</strong></a> | 
+   <a href="#cap-example-2"><strong>example-2</strong></a> | 
+   <a href="#cap-example-4"><strong>example-4</strong></a> | 
    <a href="#cap-extended-man-offering-daa"><strong>extended-man-offering-daa</strong></a> | 
    <a href="#cap-extended-theorems"><strong>extended-theorems</strong></a> | 
    <a href="#cap-greedy-packing"><strong>greedy-packing</strong></a> | 
    <a href="#cap-highest-clearing-price"><strong>highest-clearing-price</strong></a> | 
+   <a href="#cap-ineff-stable"><strong>ineff-stable</strong></a> | 
    <a href="#cap-lowest-clearing-price"><strong>lowest-clearing-price</strong></a> | 
+   <a href="#cap-old-nyc-mech"><strong>old-nyc-mech</strong></a> | 
    <a href="#cap-pay-as-bid"><strong>pay-as-bid</strong></a> | 
    <a href="#cap-price-premium"><strong>price-premium</strong></a> | 
+   <a href="#cap-priority-matching"><strong>priority-matching</strong></a> | 
    <a href="#cap-proposition-1"><strong>proposition-1</strong></a> | 
    <a href="#cap-proposition-2"><strong>proposition-2</strong></a> | 
    <a href="#cap-proposition-3"><strong>proposition-3</strong></a> | 
    <a href="#cap-remark-0"><strong>remark-0</strong></a> | 
    <a href="#cap-remark-1"><strong>remark-1</strong></a> | 
-   <a href="#cap-remark-2"><strong>remark-2</strong></a> | 
+   <a href="#cap-remark-3"><strong>remark-3</strong></a> | 
    <a href="#cap-remark-4"><strong>remark-4</strong></a> | 
    <a href="#cap-rural-hospitals"><strong>rural-hospitals</strong></a> | 
    <a href="#cap-saa"><strong>saa</strong></a> | 
+   <a href="#cap-saa-theorem"><strong>saa-theorem</strong></a> | 
    <a href="#cap-stable-matchings-exist"><strong>stable-matchings-exist</strong></a> | 
    <a href="#cap-theorem-1"><strong>theorem-1</strong></a> | 
    <a href="#cap-theorem-2"><strong>theorem-2</strong></a> | 
@@ -386,6 +690,7 @@ title="Open an issue"
    <a href="#cap-theorem-5"><strong>theorem-5</strong></a> | 
    <a href="#cap-theorem-6"><strong>theorem-6</strong></a> | 
    <a href="#cap-theorem-8"><strong>theorem-8</strong></a> | 
+   <a href="#cap-ttc-strat-proof"><strong>ttc-strat-proof</strong></a> | 
    <a href="#cap-vcg-mechanism"><strong>vcg-mechanism</strong></a> | 
    <a href="#cap-vcg-truthful"><strong>vcg-truthful</strong></a>
    </div>
@@ -405,15 +710,23 @@ title="Open an issue"
      <tr>
        <td></td>
        <td>
-       <a href="book/game-theory-review-and-incentives.html#Man-Proposing-Truthful"><code class="xref">Man-Proposing-Truthful</code></a> <em>(book/game-theory-review-and-incentives)</em></td><td>
+       <a href="book/game-theory-and-incentives.html#Man-Proposing-Truthful"><code class="xref">Man-Proposing-Truthful</code></a> <em>(book/game-theory-and-incentives)</em></td><td>
        <em>theorem</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-adapted-ttc"><td></td><td>
+       <strong>adapted-ttc</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="book/school-choice.html#adapted-ttc"><code class="xref">adapted-ttc</code></a> <em>(book/school-choice)</em></td><td>
+       <em>algorithm</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-algorithm-0"><td></td><td>
        <strong>algorithm-0</strong></td><td></td></tr>
      <tr>
        <td></td>
        <td>
-       <a href="book/stability-and-order.html#algorithm-0"><code class="xref">algorithm-0</code></a> <em>(book/stability-and-order)</em></td><td>
+       <a href="book/house-allocation-and-kidney-exchange.html#algorithm-0"><code class="xref">algorithm-0</code></a> <em>(book/house-allocation-and-kidney-exchange)</em></td><td>
        <em>algorithm</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-algorithm-2"><td></td><td>
@@ -421,23 +734,7 @@ title="Open an issue"
      <tr>
        <td></td>
        <td>
-       <a href="book/house-allocation.html#algorithm-2"><code class="xref">algorithm-2</code></a> <em>(book/house-allocation)</em></td><td>
-       <em>algorithm</em></td></tr>
-     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-algorithm-3"><td></td><td>
-       <strong>algorithm-3</strong></td><td></td></tr>
-     <tr>
-       <td></td>
-       <td>
-       <a href="book/school-choice.html#algorithm-3"><code class="xref">algorithm-3</code></a> <em>(book/school-choice)</em></td><td>
-       <em>algorithm</em></td></tr>
-     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-algorithm-4"><td></td><td>
-       <strong>algorithm-4</strong></td><td></td></tr>
-     <tr>
-       <td></td>
-       <td>
-       <a href="book/school-choice.html#algorithm-4"><code class="xref">algorithm-4</code></a> <em>(book/school-choice)</em></td><td>
+       <a href="book/house-allocation-and-kidney-exchange.html#algorithm-2"><code class="xref">algorithm-2</code></a> <em>(book/house-allocation-and-kidney-exchange)</em></td><td>
        <em>algorithm</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-algorithm-6"><td></td><td>
@@ -445,7 +742,7 @@ title="Open an issue"
      <tr>
        <td></td>
        <td>
-       <a href="book/house-allocation.html#algorithm-6"><code class="xref">algorithm-6</code></a> <em>(book/house-allocation)</em></td><td>
+       <a href="book/house-allocation-and-kidney-exchange.html#algorithm-6"><code class="xref">algorithm-6</code></a> <em>(book/house-allocation-and-kidney-exchange)</em></td><td>
        <em>algorithm</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-algorithm-7"><td></td><td>
@@ -453,7 +750,7 @@ title="Open an issue"
      <tr>
        <td></td>
        <td>
-       <a href="book/house-allocation.html#algorithm-7"><code class="xref">algorithm-7</code></a> <em>(book/house-allocation)</em></td><td>
+       <a href="book/house-allocation-and-kidney-exchange.html#algorithm-7"><code class="xref">algorithm-7</code></a> <em>(book/house-allocation-and-kidney-exchange)</em></td><td>
        <em>algorithm</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-ascending-auction"><td></td><td>
@@ -462,6 +759,22 @@ title="Open an issue"
        <td></td>
        <td>
        <a href="book/multi-unit-auctions-with-matching.html#ascending-auction"><code class="xref">ascending-auction</code></a> <em>(book/multi-unit-auctions-with-matching)</em></td><td>
+       <em>algorithm</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-boston-mech"><td></td><td>
+       <strong>boston-mech</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="book/school-choice.html#boston-mech"><code class="xref">boston-mech</code></a> <em>(book/school-choice)</em></td><td>
+       <em>algorithm</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-columbus-mech"><td></td><td>
+       <strong>columbus-mech</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="book/school-choice.html#columbus-mech"><code class="xref">columbus-mech</code></a> <em>(book/school-choice)</em></td><td>
        <em>algorithm</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-daa"><td></td><td>
@@ -487,6 +800,22 @@ title="Open an issue"
        <td>
        <a href="book/multi-unit-auctions-with-matching.html#efficient-assignments"><code class="xref">efficient-assignments</code></a> <em>(book/multi-unit-auctions-with-matching)</em></td><td>
        <em>theorem</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-example-2"><td></td><td>
+       <strong>example-2</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="book/school-choice.html#example-2"><code class="xref">example-2</code></a> <em>(book/school-choice)</em></td><td>
+       <em>example</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-example-4"><td></td><td>
+       <strong>example-4</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="book/school-choice.html#example-4"><code class="xref">example-4</code></a> <em>(book/school-choice)</em></td><td>
+       <em>example</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-extended-man-offering-daa"><td></td><td>
        <strong>extended-man-offering-daa</strong></td><td></td></tr>
@@ -520,12 +849,28 @@ title="Open an issue"
        <a href="book/sponsored-search-auctions.html#highest-clearing-price"><code class="xref">highest-clearing-price</code></a> <em>(book/sponsored-search-auctions)</em></td><td>
        <em>algorithm</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-ineff-stable"><td></td><td>
+       <strong>ineff-stable</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="book/school-choice.html#ineff-stable"><code class="xref">ineff-stable</code></a> <em>(book/school-choice)</em></td><td>
+       <em>remark</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-lowest-clearing-price"><td></td><td>
        <strong>lowest-clearing-price</strong></td><td></td></tr>
      <tr>
        <td></td>
        <td>
        <a href="book/sponsored-search-auctions.html#lowest-clearing-price"><code class="xref">lowest-clearing-price</code></a> <em>(book/sponsored-search-auctions)</em></td><td>
+       <em>algorithm</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-old-nyc-mech"><td></td><td>
+       <strong>old-nyc-mech</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="book/school-choice.html#old-nyc-mech"><code class="xref">old-nyc-mech</code></a> <em>(book/school-choice)</em></td><td>
        <em>algorithm</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-pay-as-bid"><td></td><td>
@@ -543,6 +888,14 @@ title="Open an issue"
        <td>
        <a href="book/sponsored-search-auctions.html#price-premium"><code class="xref">price-premium</code></a> <em>(book/sponsored-search-auctions)</em></td><td>
        <em>remark</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-priority-matching"><td></td><td>
+       <strong>priority-matching</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="book/stability-order-unraveling.html#priority-matching"><code class="xref">priority-matching</code></a> <em>(book/stability-order-unraveling)</em></td><td>
+       <em>algorithm</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-proposition-1"><td></td><td>
        <strong>proposition-1</strong></td><td></td></tr>
@@ -565,7 +918,7 @@ title="Open an issue"
      <tr>
        <td></td>
        <td>
-       <a href="book/house-allocation.html#proposition-3"><code class="xref">proposition-3</code></a> <em>(book/house-allocation)</em></td><td>
+       <a href="book/house-allocation-and-kidney-exchange.html#proposition-3"><code class="xref">proposition-3</code></a> <em>(book/house-allocation-and-kidney-exchange)</em></td><td>
        <em>proposition</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-remark-0"><td></td><td>
@@ -584,12 +937,12 @@ title="Open an issue"
        <a href="book/school-choice.html#remark-1"><code class="xref">remark-1</code></a> <em>(book/school-choice)</em></td><td>
        <em>remark</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-remark-2"><td></td><td>
-       <strong>remark-2</strong></td><td></td></tr>
+     <tr class="cap" id="cap-remark-3"><td></td><td>
+       <strong>remark-3</strong></td><td></td></tr>
      <tr>
        <td></td>
        <td>
-       <a href="book/school-choice.html#remark-2"><code class="xref">remark-2</code></a> <em>(book/school-choice)</em></td><td>
+       <a href="book/school-choice.html#remark-3"><code class="xref">remark-3</code></a> <em>(book/school-choice)</em></td><td>
        <em>remark</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-remark-4"><td></td><td>
@@ -616,6 +969,14 @@ title="Open an issue"
        <a href="book/radio-spectrum-auctions.html#saa"><code class="xref">saa</code></a> <em>(book/radio-spectrum-auctions)</em></td><td>
        <em>algorithm</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-saa-theorem"><td></td><td>
+       <strong>saa-theorem</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="book/radio-spectrum-auctions.html#saa-theorem"><code class="xref">saa-theorem</code></a> <em>(book/radio-spectrum-auctions)</em></td><td>
+       <em>theorem</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-stable-matchings-exist"><td></td><td>
        <strong>stable-matchings-exist</strong></td><td></td></tr>
      <tr>
@@ -629,7 +990,7 @@ title="Open an issue"
      <tr>
        <td></td>
        <td>
-       <a href="book/radio-spectrum-auctions.html#theorem-1"><code class="xref">theorem-1</code></a> <em>(book/radio-spectrum-auctions)</em></td><td>
+       <a href="book/house-allocation-and-kidney-exchange.html#theorem-1"><code class="xref">theorem-1</code></a> <em>(book/house-allocation-and-kidney-exchange)</em></td><td>
        <em>theorem</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-theorem-2"><td></td><td>
@@ -653,7 +1014,7 @@ title="Open an issue"
      <tr>
        <td></td>
        <td>
-       <a href="book/house-allocation.html#theorem-4"><code class="xref">theorem-4</code></a> <em>(book/house-allocation)</em></td><td>
+       <a href="book/house-allocation-and-kidney-exchange.html#theorem-4"><code class="xref">theorem-4</code></a> <em>(book/house-allocation-and-kidney-exchange)</em></td><td>
        <em>theorem</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-theorem-5"><td></td><td>
@@ -661,7 +1022,7 @@ title="Open an issue"
      <tr>
        <td></td>
        <td>
-       <a href="book/house-allocation.html#theorem-5"><code class="xref">theorem-5</code></a> <em>(book/house-allocation)</em></td><td>
+       <a href="book/house-allocation-and-kidney-exchange.html#theorem-5"><code class="xref">theorem-5</code></a> <em>(book/house-allocation-and-kidney-exchange)</em></td><td>
        <em>theorem</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-theorem-6"><td></td><td>
@@ -677,7 +1038,15 @@ title="Open an issue"
      <tr>
        <td></td>
        <td>
-       <a href="book/house-allocation.html#theorem-8"><code class="xref">theorem-8</code></a> <em>(book/house-allocation)</em></td><td>
+       <a href="book/house-allocation-and-kidney-exchange.html#theorem-8"><code class="xref">theorem-8</code></a> <em>(book/house-allocation-and-kidney-exchange)</em></td><td>
+       <em>theorem</em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-ttc-strat-proof"><td></td><td>
+       <strong>ttc-strat-proof</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="book/school-choice.html#ttc-strat-proof"><code class="xref">ttc-strat-proof</code></a> <em>(book/school-choice)</em></td><td>
        <em>theorem</em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-vcg-mechanism"><td></td><td>
@@ -698,36 +1067,70 @@ title="Open an issue"
    </table>
 
 
-              </div>
-              
-            </main>
-            <footer class="footer-article noprint">
-                
-    <!-- Previous / next buttons -->
+            </article>
+            
+
+            
+            
+            <footer class="bd-footer-article">
+                <!-- Previous / next buttons -->
 <div class='prev-next-area'>
 </div>
             </footer>
+            
+          </div>
+          
+          
+          
+          
         </div>
-    </div>
-    <div class="footer-content row">
-        <footer class="col footer"><p>
+        <footer class="bd-footer-content">
+          <div class="bd-footer-content__inner">
+            
+<div class="bd-footer-content__inner container">
   
-    By Logan Mondal Bhamidipaty and Paul Milgrom<br/>
-  
-      &copy; Copyright 2023.<br/>
-</p>
-        </footer>
-    </div>
+  <div class="footer-item">
     
-</div>
+<p class="component-author">
+By Logan Mondal Bhamidipaty and Paul Milgrom
+</p>
 
-
-      </div>
-    </div>
+  </div>
   
-  <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <div class="footer-item">
+    
+<p class="copyright">
 
+    &copy; Copyright 2023.<br>
+
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    <p class="last-updated">
+Last updated on None.<br>
+</p>
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </div>
+        </footer>
+        
+
+      </main>
+    </div>
+  </div>
+
+  
+    
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=796348d33e8b1d947c94"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=796348d33e8b1d947c94"></script>
 
   </body>
 </html>

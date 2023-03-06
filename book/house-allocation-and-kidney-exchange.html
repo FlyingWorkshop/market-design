@@ -1,0 +1,1364 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Housing Allocation and Kidney Exchange &#8212; Market Design</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=796348d33e8b1d947c94" rel="stylesheet">
+<link href="../_static/styles/bootstrap.css?digest=796348d33e8b1d947c94" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=796348d33e8b1d947c94" rel="stylesheet">
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=796348d33e8b1d947c94" rel="stylesheet">
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=4ec06e9971c5264fbd345897d5258098f11cc577" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=796348d33e8b1d947c94">
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=796348d33e8b1d947c94">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=8bf782fb4ee92b3d3646425e50f299c4e1fd152d"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'book/house-allocation-and-kidney-exchange';</script>
+    <link rel="canonical" href="https://FlyingWorkshop.github.io/market-design/book/house-allocation-and-kidney-exchange.html" />
+    <link rel="shortcut icon" href="../_static/fav.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="School Choice" href="school-choice.html" />
+    <link rel="prev" title="Stability, Order, and Unraveling" href="stability-order-unraveling.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="docsearch:language" content="en">
+  </head>
+  
+  
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="180" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  
+  <input type="checkbox" class="sidebar-toggle" name="__primary" id="__primary">
+  <label class="overlay overlay-primary" for="__primary"></label>
+
+  
+  <input type="checkbox" class="sidebar-toggle" name="__secondary" id="__secondary">
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+      
+<form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+    </div>
+  </div>
+
+  
+  <nav class="bd-header navbar navbar-expand-lg bd-navbar" id="navbar-main"><div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+      <span class="fa-solid fa-bars"></span>
+  </label>
+  <div id="navbar-start">
+    
+    
+  
+
+
+<a class="navbar-brand logo" href="../intro.html">
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Logo image">
+    <img src="../_static/logo.png" class="logo__image only-dark" alt="Logo image">
+  
+  
+</a>
+    
+  </div>
+
+  
+  <div class="col-lg-9 navbar-header-items">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <nav class="navbar-nav">
+    <p class="sidebar-header-items__title" role="heading" aria-level="1" aria-label="Site Navigation">
+        Site Navigation
+    </p>
+    <ul id="navbar-main-elements" class="navbar-nav">
+        
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="matching-theory.html">
+                        Matching Theory
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="game-theory-and-incentives.html">
+                        Game Theory and Incentives
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="stability-order-unraveling.html">
+                        Stability, Order, and Unraveling
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="#">
+                        Housing Allocation and Kidney Exchange
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="school-choice.html">
+                        School Choice
+                      </a>
+                    </li>
+                
+            <div class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    More
+                </button>
+                <div class="dropdown-menu">
+                    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="matching-with-contracts.html">
+                        Matching with Contracts
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="auction-theory.html">
+                        Auction Theory
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="auction-design-and-applications.html">
+                        Auction Design and Applications
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="winner-curse.html">
+                        The Winner’s Curse
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="multi-unit-auctions-with-matching.html">
+                        Multi-Unit Auctions with Matching
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="sponsored-search-auctions.html">
+                        Sponsored Search Auctions
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="radio-spectrum-auctions.html">
+                        Radio Spectrum Auctions
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="incentive-reverse-auction.html">
+                        Incentive Reverse Auction
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="practice.html">
+                        Practice
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="bibliography.html">
+                        Bibliography
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../genindex.html">
+                        Index
+                      </a>
+                    </li>
+                
+                </div>
+            </div>
+            
+    </ul>
+</nav>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+        <div class="navbar-end-item navbar-persistent--container">
+          
+<button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-toggle="tooltip">
+  <i class="fa-solid fa-magnifying-glass"></i>
+</button>
+        </div>
+      
+      
+      <div class="navbar-end-item">
+        <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+</button>
+      </div>
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+
+
+  
+  
+    <div class="navbar-persistent--mobile">
+<button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-toggle="tooltip">
+  <i class="fa-solid fa-magnifying-glass"></i>
+</button>
+    </div>
+  
+
+  
+  <label class="sidebar-toggle secondary-toggle" for="__secondary">
+      <span class="fa-solid fa-outdent"></span>
+  </label>
+  
+
+</div>
+  </nav>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+      
+      <div class="navbar-center-item">
+        <nav class="navbar-nav">
+    <p class="sidebar-header-items__title" role="heading" aria-level="1" aria-label="Site Navigation">
+        Site Navigation
+    </p>
+    <ul id="navbar-main-elements" class="navbar-nav">
+        
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="matching-theory.html">
+                        Matching Theory
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="game-theory-and-incentives.html">
+                        Game Theory and Incentives
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="stability-order-unraveling.html">
+                        Stability, Order, and Unraveling
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="#">
+                        Housing Allocation and Kidney Exchange
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="school-choice.html">
+                        School Choice
+                      </a>
+                    </li>
+                
+            <div class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    More
+                </button>
+                <div class="dropdown-menu">
+                    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="matching-with-contracts.html">
+                        Matching with Contracts
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="auction-theory.html">
+                        Auction Theory
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="auction-design-and-applications.html">
+                        Auction Design and Applications
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="winner-curse.html">
+                        The Winner’s Curse
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="multi-unit-auctions-with-matching.html">
+                        Multi-Unit Auctions with Matching
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="sponsored-search-auctions.html">
+                        Sponsored Search Auctions
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="radio-spectrum-auctions.html">
+                        Radio Spectrum Auctions
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="incentive-reverse-auction.html">
+                        Incentive Reverse Auction
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="practice.html">
+                        Practice
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="bibliography.html">
+                        Bibliography
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../genindex.html">
+                        Index
+                      </a>
+                    </li>
+                
+                </div>
+            </div>
+            
+    </ul>
+</nav>
+      </div>
+      
+      </div>
+    
+
+    
+    
+    <div class="sidebar-header-items__end">
+      
+      <div class="navbar-end-item">
+        <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+</button>
+      </div>
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+      </ul>
+      </div>
+      
+    </div>
+    
+  </div>
+
+  
+  <div class="sidebar-start-items sidebar-primary__section">
+    <div class="sidebar-start-items__item">
+  
+
+
+<a class="navbar-brand logo" href="../intro.html">
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Logo image">
+    <img src="../_static/logo.png" class="logo__image only-dark" alt="Logo image">
+  
+  
+</a>
+    </div>
+    <div class="sidebar-start-items__item">
+<form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+    </div>
+    <div class="sidebar-start-items__item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Matching Theory</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="matching-theory.html">Matching Theory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="game-theory-and-incentives.html">Game Theory and Incentives</a></li>
+<li class="toctree-l1"><a class="reference internal" href="stability-order-unraveling.html">Stability, Order, and Unraveling</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Housing Allocation and Kidney Exchange</a></li>
+<li class="toctree-l1"><a class="reference internal" href="school-choice.html">School Choice</a></li>
+<li class="toctree-l1"><a class="reference internal" href="matching-with-contracts.html">Matching with Contracts</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Auction Theory</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="auction-theory.html">Auction Theory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="auction-design-and-applications.html">Auction Design and Applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="winner-curse.html">The Winner’s Curse</a></li>
+<li class="toctree-l1"><a class="reference internal" href="multi-unit-auctions-with-matching.html">Multi-Unit Auctions with Matching</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sponsored-search-auctions.html">Sponsored Search Auctions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="radio-spectrum-auctions.html">Radio Spectrum Auctions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="incentive-reverse-auction.html">Incentive Reverse Auction</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Resources</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="practice.html">Practice</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bibliography.html">Bibliography</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../genindex.html">Index</a></li>
+</ul>
+
+    </div>
+</nav>
+    </div>
+  </div>
+  
+
+  
+  <div class="sidebar-end-items sidebar-primary__section">
+    <div class="sidebar-end-items__item">
+    </div>
+  </div>
+
+  
+  <div id="rtd-footer-container"></div>
+
+      </div>
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+        <div class="bd-content">
+          <div class="bd-article-container">
+            
+            <div class="bd-header-article">
+                
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        <label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" data-toggle="tooltip" data-placement="right" title="Toggle primary sidebar">
+            <span class="fa-solid fa-bars"></span>
+        </label>
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<div class="dropdown dropdown-repository-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      <li><a href="https://github.com/FlyingWorkshop/market-design" target="_blank"
+   class="btn btn-sm dropdown-item"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">repository</span>
+</a>
+</a>
+      
+      <li><a href="https://github.com/FlyingWorkshop/market-design/issues/new?title=Issue%20on%20page%20%2Fbook/house-allocation-and-kidney-exchange.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm dropdown-item"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">open issue</span>
+</a>
+</a>
+      
+      <li><a href="https://github.com/FlyingWorkshop/market-design/edit/master/book/house-allocation-and-kidney-exchange.md" target="_blank"
+   class="btn btn-sm dropdown-item"
+   data-toggle="tooltip"
+data-placement="left"
+title="Edit this page"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">suggest edit</span>
+</a>
+</a>
+      
+  </ul>
+</div>
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      <li><a href="../_sources/book/house-allocation-and-kidney-exchange.md" target="_blank"
+   class="btn btn-sm dropdown-item"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</a>
+      
+      <li>
+<button onclick="printPdf(this)"
+  class="btn btn-sm dropdown-item"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</a>
+      
+  </ul>
+</div>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary" data-toggle="tooltip" data-placement="left" title="Toggle secondary sidebar">
+            <span class="fa-solid fa-list"></span>
+        </label>
+    </div>
+</div>
+            </div>
+            
+            
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Housing Allocation and Kidney Exchange</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#house-allocation-problem">
+   House Allocation Problem
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#random-serial-dictatorship">
+   (Random) Serial Dictatorship
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#truthful-and-efficient">
+     Truthful and Efficient
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#example">
+       Example
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#top-trading-cycles">
+   Top Trading Cycles
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#an-important-variation">
+     An Important Variation
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#uniqueness">
+     Uniqueness
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#truthful">
+     Truthful
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#rsd-with-incumbents">
+   RSD with Incumbents
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#problems">
+     Problems
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#priority-line-mechanism">
+   Priority Line Mechanism
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#properties-of-priority-line">
+     Properties of Priority Line
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#relationship-with-sd-and-ttc">
+     Relationship with SD and TTC
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#question">
+       Question
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#kidney-exchange">
+   Kidney Exchange
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#resolving-the-shortage">
+     Resolving the Shortage
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#compatability">
+     Compatability
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#paired-exchange">
+     Paired Exchange
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exchange-in-practice">
+     Exchange in Practice
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#donor-chains">
+     Donor Chains
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+            <article class="bd-article" role="main">
+              
+  <section class="tex2jax_ignore mathjax_ignore" id="housing-allocation-and-kidney-exchange">
+<h1>Housing Allocation and Kidney Exchange<a class="headerlink" href="#housing-allocation-and-kidney-exchange" title="Permalink to this heading">#</a></h1>
+<p>In some matching markets, only one side of the market has preferences (or we care mostly about the preferences of one side). Sample applications include students picking housing on campus, organ transplants, school choice, and professional sports teams drafting college athletes.</p>
+<section id="house-allocation-problem">
+<h2>House Allocation Problem<a class="headerlink" href="#house-allocation-problem" title="Permalink to this heading">#</a></h2>
+<p><span class="math notranslate nohighlight">\(N\)</span> individuals and <span class="math notranslate nohighlight">\(N\)</span> houses (generalizable to <span class="math notranslate nohighlight">\(\neq\)</span>). Each individual has strict preference over houses.
+The goal is to assign each individual to a house.</p>
+<dl class="simple glossary">
+<dt id="term-Pareto-efficient-matching">Pareto efficient (matching)<a class="headerlink" href="#term-Pareto-efficient-matching" title="Permalink to this term">#</a></dt><dd><p>An allocation is Pareto efficient if no pair of individuals, or set of individuals, can “all do better” by trading houses.</p>
+</dd>
+</dl>
+<div class="admonition-intuition admonition">
+<p class="admonition-title">Intuition</p>
+<p>“I can’t do better without harming someone.”</p>
+</div>
+<dl class="simple glossary">
+<dt id="term-stability-housing">stability (housing)<a class="headerlink" href="#term-stability-housing" title="Permalink to this term">#</a></dt><dd><p>An outcome is unstable if a coalition of agents <em>blocks</em> a candidate assignment: i.e., from their initial endowments, there is another assignment they can arrange for themselves that they all prefer.</p>
+</dd>
+<dt id="term-core">core<a class="headerlink" href="#term-core" title="Permalink to this term">#</a></dt><dd><p>The <em>core</em> is the set of feasible unblocked assignments. Core assignments are Pareto efficient. Inefficient assignment would be blocked by the “coalition of the whole.” Not all Pareto efficient assignments are in the core: the core imposes additional constraints that respect prior ownership.</p>
+</dd>
+</dl>
+</section>
+<section id="random-serial-dictatorship">
+<h2>(Random) Serial Dictatorship<a class="headerlink" href="#random-serial-dictatorship" title="Permalink to this heading">#</a></h2>
+<div class="proof algorithm admonition" id="algorithm-0">
+<p class="admonition-title"><span class="caption-number">Algorithm 3 </span></p>
+<section class="algorithm-content" id="proof-content">
+<ol class="arabic simple">
+<li><p>Each student gets a priority (perhaps randomly assigned as in the housing draw).</p></li>
+<li><p>Students pick houses in order of their priority.</p></li>
+</ol>
+</section>
+</div><section id="truthful-and-efficient">
+<h3>Truthful and Efficient<a class="headerlink" href="#truthful-and-efficient" title="Permalink to this heading">#</a></h3>
+<div class="proof theorem admonition" id="theorem-1">
+<p class="admonition-title"><span class="caption-number">Theorem 6 </span></p>
+<section class="theorem-content" id="proof-content">
+<p>The serial dictatorship mechanism is efficient (i.e., no mutually agreeable trades afterwards) and truthful (no incentive to misreport).</p>
+</section>
+</div><div class="proof admonition" id="proof">
+<p>Proof. (Truthful)
+The individual with first pick gets her preferred house, so clearly has no incentive to lie.
+The individual with second pick gets her preferred house among remaining houses, so again has no reason to lie.
+And so on <span class="math notranslate nohighlight">\(\ldots\)</span></p>
+<p>(Effecient)
+The individual with priority one would do worse after any change in her house.
+Given that the individual with priority #1 is not changing, the individual with priority #2 would do worse by any change.
+And so on <span class="math notranslate nohighlight">\(\ldots\)</span></p>
+</div>
+<section id="example">
+<h4>Example<a class="headerlink" href="#example" title="Permalink to this heading">#</a></h4>
+<p>There are three people <span class="math notranslate nohighlight">\(1, 2, 3\)</span> and three houses <span class="math notranslate nohighlight">\(A, B, C\)</span>.
+Individual preferences:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(1: A \succ B \succ C\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(2: A \succ C \succ B\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(3: B \succ C \succ A\)</span></p></li>
+</ul>
+<p>What is the outcome if the order of picking is <span class="math notranslate nohighlight">\(1, 2, 3\)</span>? Is this outcome Pareto efficient?</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Solution<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">The assignment is <span class="math notranslate nohighlight">\(\{(1, A), (2, C), (3, B)\}\)</span>. The matching is Pareto effecient.</p>
+</div>
+</details></section>
+</section>
+</section>
+<section id="top-trading-cycles">
+<h2>Top Trading Cycles<a class="headerlink" href="#top-trading-cycles" title="Permalink to this heading">#</a></h2>
+<p>Now imagine that individuals start by owning a house, but the original allocation might be inefficient.</p>
+<div class="proof algorithm admonition" id="algorithm-2">
+<p class="admonition-title"><span class="caption-number">Algorithm 4 </span> (Gale’s TTC Algorithm)</p>
+<section class="algorithm-content" id="proof-content">
+<ol class="arabic simple">
+<li><p>Each house points to its owner</p></li>
+<li><p>Each person points to her most preferred (remaining) house</p></li>
+<li><p>This creates a directed graph; houses and people are “nodes.”</p>
+<ul class="simple">
+<li><p>There is at least one cycle. (Why?)</p></li>
+<li><p>Each person is in at most one cycle. (Why?)</p></li>
+</ul>
+</li>
+<li><p>Remove all cycles, assigning people to the house to which they are pointing.</p></li>
+<li><p>End if no houses or people remain. Otherwise, return to step 1.</p></li>
+</ol>
+</section>
+</div><section id="an-important-variation">
+<h3>An Important Variation<a class="headerlink" href="#an-important-variation" title="Permalink to this heading">#</a></h3>
+<p>What if we changed the algorithm, replacing “remove all cycles” with “remove one cycle”?</p>
+<div class="proof proposition admonition" id="proposition-3">
+<p class="admonition-title"><span class="caption-number">Proposition 1 </span></p>
+<section class="proposition-content" id="proof-content">
+<p>The order of elimination of cycles does not affect the TTC outcome.</p>
+</section>
+</div><p>Proof of this proposition (by mathematical induction, delaying the elimination of any particular cycle for <span class="math notranslate nohighlight">\(n\)</span> rounds) is left as an exercise.</p>
+</section>
+<section id="uniqueness">
+<h3>Uniqueness<a class="headerlink" href="#uniqueness" title="Permalink to this heading">#</a></h3>
+<div class="proof theorem admonition" id="theorem-4">
+<p class="admonition-title"><span class="caption-number">Theorem 7 </span></p>
+<section class="theorem-content" id="proof-content">
+<p>The outcome of the TTC algorithm is the unique core assignment in the housing market.</p>
+</section>
+</div><p>This is an amazing theorem. It asserts that: (1) a core assignment exists, (2) it’s unique, and (3) it can be found by the TCC algorithm.</p>
+<div class="proof admonition" id="proof">
+<p>Proof. The outcome of TTC is a core assignment:
+No blocking coalition can improve any agent matched at round one (because all such agents get their first choices).
+No blocking coalition can improve any agent matched in first two rounds (because, without changing assignments of the round 1 agents, the round two agents are already getting their best remaining houses).
+And so on by mathematical induction.</p>
+<p>Uniqueness:
+Consider any proposed assignment <span class="math notranslate nohighlight">\(x\)</span> that reassigns some round one individual from her TTC house. Then the round one group is a blocking coalition: it can give all its members their most preferred houses.
+Inductively, consider any assignment <span class="math notranslate nohighlight">\(x\)</span> that does not reassign any individual from TTC rounds <span class="math notranslate nohighlight">\(1,\ldots,k\)</span> but does reassign someone from round <span class="math notranslate nohighlight">\(k+1\)</span>. Then the round <span class="math notranslate nohighlight">\(k+1\)</span> group blocks <span class="math notranslate nohighlight">\(x\)</span>, because it gives all its members their most preferred remaining houses.
+Hence, by mathematical induction, any assignment <span class="math notranslate nohighlight">\(x\)</span> other than the TTC assignment is blocked. ∎</p>
+</div>
+</section>
+<section id="truthful">
+<h3>Truthful<a class="headerlink" href="#truthful" title="Permalink to this heading">#</a></h3>
+<div class="proof theorem admonition" id="theorem-5">
+<p class="admonition-title"><span class="caption-number">Theorem 8 </span></p>
+<section class="theorem-content" id="proof-content">
+<p>The TTC algorithm is truthful.</p>
+</section>
+</div><div class="proof admonition" id="proof">
+<p>Proof. Proof. Consider agent <span class="math notranslate nohighlight">\(n\)</span> and fix the reports of all other agents. If we run the TTC algorithm, eliminating only cycles not involving agent <span class="math notranslate nohighlight">\(n\)</span> until no more such cycles remain, then agent <span class="math notranslate nohighlight">\(n\)</span>’s highest ranked remaining house will be assigned to <span class="math notranslate nohighlight">\(n\)</span> at the next round. With that order of elimination of cycles, agent <span class="math notranslate nohighlight">\(n\)</span> can do no better than to report her ranking of houses truthfully.
+By our earlier Proposition, the TTC assignment is independent of the order of elimination of cycles. ∎</p>
+</div>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>Get more practice <a class="reference external" href="https://colab.research.google.com/drive/1XLvZAQjAziBjRF3UPDKXkOnIBYN4CW8O?usp=sharing">here</a>!</p>
+</div>
+</section>
+</section>
+<section id="rsd-with-incumbents">
+<h2>RSD with Incumbents<a class="headerlink" href="#rsd-with-incumbents" title="Permalink to this heading">#</a></h2>
+<p>What can we do if some people start with houses (“incumbents”) but others do not?</p>
+<p>A common problem in allocating student housing
+Many universities, e.g. Michigan, Duke, Northwestern, Penn, CMU, use a variation of random serial dictatorship (with incumbency).</p>
+<p>Let’s see how it works.</p>
+<div class="proof algorithm admonition" id="algorithm-6">
+<p class="admonition-title"><span class="caption-number">Algorithm 5 </span></p>
+<section class="algorithm-content" id="proof-content">
+<ol class="arabic simple">
+<li><p>Each agent with a house decides whether to keep their house or enter a lottery.</p></li>
+</ol>
+<ul class="simple">
+<li><p>Agents who keep their house are done.</p></li>
+<li><p>Houses that are abandoned are available later on.</p></li>
+</ul>
+<ol class="arabic simple" start="2">
+<li><p>Lottery used to order newcomers and agents who gave up their house (can be completely random or favor particular agents).</p></li>
+<li><p>Serial dictatorship applied using order from lottery and selection from available houses.</p></li>
+</ol>
+</section>
+</div><section id="problems">
+<h3>Problems<a class="headerlink" href="#problems" title="Permalink to this heading">#</a></h3>
+<p>There is a problem. Existing tenants are not guaranteed to get at least as good a house as their current house!
+This may cause existing tenants to avoid the lottery risk and the process may fail to take advantage of beneficial trades.
+Is there a way to protect existing tenants, enjoy all beneficial trades, and maybe ensure truthfulness, too? Yes!</p>
+</section>
+</section>
+<section id="priority-line-mechanism">
+<h2>Priority Line Mechanism<a class="headerlink" href="#priority-line-mechanism" title="Permalink to this heading">#</a></h2>
+<div class="admonition-intuition admonition">
+<p class="admonition-title">Intuition</p>
+<p>“you request my house – I get your turn”</p>
+</div>
+<div class="proof algorithm admonition" id="algorithm-7">
+<p class="admonition-title"><span class="caption-number">Algorithm 6 </span> (Priority Line Mechanism)</p>
+<section class="algorithm-content" id="proof-content">
+<ol class="arabic simple">
+<li><p>All agents are ordered according to some priority</p></li>
+<li><p>Agent with top priority chooses an unassigned house, then second agent, and so on, until someone requests an incumbent’s house.</p></li>
+<li><p>If the incumbent has already chosen a house, continue. If not, promote the incumbent to just above the requestor and re-start the procedure with the incumbent.</p></li>
+</ol>
+</section>
+</div><p>If a cycle forms, it is formed exclusively by incumbents (why?), so let’s clear that cycle and continue with the priority order.</p>
+<section id="properties-of-priority-line">
+<h3>Properties of Priority Line<a class="headerlink" href="#properties-of-priority-line" title="Permalink to this heading">#</a></h3>
+<div class="proof theorem admonition" id="theorem-8">
+<p class="admonition-title"><span class="caption-number">Theorem 9 </span></p>
+<section class="theorem-content" id="proof-content">
+<p>The Priority Line mechanism is Pareto-efficient, truthful and makes no incumbent tenant worse off.</p>
+</section>
+</div><div class="proof admonition" id="proof">
+<p>Proof. Similar to results we’ve shown. (Try it!)</p>
+</div>
+</section>
+<section id="relationship-with-sd-and-ttc">
+<h3>Relationship with SD and TTC<a class="headerlink" href="#relationship-with-sd-and-ttc" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>If there are no existing tenants: Priority Line = serial dictatorship.</p></li>
+<li><p>If everyone has a house: Priority Line = TTC.</p></li>
+<li><p>In fact, Priority Line is a version of TTC in which, at each round, every unoccupied house points to the agent with the (current) highest priority.</p></li>
+</ul>
+<section id="question">
+<h4>Question<a class="headerlink" href="#question" title="Permalink to this heading">#</a></h4>
+<p>Three people <span class="math notranslate nohighlight">\(1, 2, 3\)</span> and houses <span class="math notranslate nohighlight">\(A, B, C\)</span> with preferences and ownership:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(1: A \succ B \succ C\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(2: A \succ C \succ B\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(3: B \succ C \succ A\)</span> and <span class="math notranslate nohighlight">\(3\)</span> owns <span class="math notranslate nohighlight">\(A\)</span></p></li>
+</ul>
+<p>What happens in priority line if priority is <span class="math notranslate nohighlight">\(1,2,3\)</span>?</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Solution<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<ul class="simple">
+<li><p class="sd-card-text"><span class="math notranslate nohighlight">\(1 \rightarrow A\)</span> (owned by <span class="math notranslate nohighlight">\(3\)</span>), so <span class="math notranslate nohighlight">\(3 \rightarrow B\)</span>, match <span class="math notranslate nohighlight">\((3, B)\)</span>, <span class="math notranslate nohighlight">\(A\)</span> vaccant.</p></li>
+<li><p class="sd-card-text">Then <span class="math notranslate nohighlight">\(1 \rightarrow A\)</span>, so match <span class="math notranslate nohighlight">\((1, A)\)</span>. Leaves <span class="math notranslate nohighlight">\((2, C)\)</span>.</p></li>
+<li><p class="sd-card-text">So <span class="math notranslate nohighlight">\(\{(1, A), (2, C), (3, B)\}\)</span> is the final matching.</p></li>
+</ul>
+</div>
+</details><div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>Get more practice <a class="reference external" href="https://colab.research.google.com/drive/1Iz7YJAlnFs4TQyIgDZDS8MhZUZWmhqQI?usp=sharing">here</a>!</p>
+</div>
+</section>
+</section>
+</section>
+<section id="kidney-exchange">
+<h2>Kidney Exchange<a class="headerlink" href="#kidney-exchange" title="Permalink to this heading">#</a></h2>
+<p>Transplants are standard treatment for patients with failed kidneys. Transplants come from two sources</p>
+<ul class="simple">
+<li><p>Cadaveric transplants: donors who have died.</p></li>
+<li><p>Living donor transplants: typically relatives, spouses, etc.</p></li>
+</ul>
+<p>There is a shortage of transplant kidneys.</p>
+<ul class="simple">
+<li><p>Wait list for a transplant has been getting longer.</p></li>
+<li><p>Over 105,000 patients are on the wait list.</p></li>
+<li><p>Roughly 20,000 transplants a year, mostly cadaveric.</p></li>
+<li><p>In 2018, 9,500 people on the list died or became too sick to receive a transplant.</p></li>
+</ul>
+<section id="resolving-the-shortage">
+<h3>Resolving the Shortage<a class="headerlink" href="#resolving-the-shortage" title="Permalink to this heading">#</a></h3>
+<p>Buying and selling kidneys is illegal.
+Section 301 of National Organ Transplant Act</p>
+<blockquote>
+<div><p>“it shall be unlawful for any person to knowingly acquire, receive or otherwise transfer any human organ for valuable consideration for use in human transplantation.”</p>
+</div></blockquote>
+<p>There are probably ways to increase the supply of cadaveric kidneys (e.g. make donation the default).
+We’re going to focus on ways to increase the supply of living donor kidneys.</p>
+</section>
+<section id="compatability">
+<h3>Compatability<a class="headerlink" href="#compatability" title="Permalink to this heading">#</a></h3>
+<p>Donor kidney must be compatible with patient
+Blood type match</p>
+<ul class="simple">
+<li><p>O type patients can receive only O kidneys</p></li>
+<li><p>A type patients can receive O or A kidneys</p></li>
+<li><p>B type patients can receive O or B kidneys</p></li>
+<li><p>AB type patients can receive from any blood type
+Also tissue type match (HLA compatibility).
+Potential inefficiency: if a patient has a donor but can’t use the donor’s kidney, the donor goes home.</p></li>
+</ul>
+</section>
+<section id="paired-exchange">
+<h3>Paired Exchange<a class="headerlink" href="#paired-exchange" title="Permalink to this heading">#</a></h3>
+<p>Paired exchange: match two donor-patient pairs…</p>
+<ul class="simple">
+<li><p>Donor 1 is compatible with Patient 2, not Patient 1</p></li>
+<li><p>Donor 2 is compatible with Patient 1, not Patient 2</p></li>
+</ul>
+<p>List exchange: match one incompatible donor-patient pair and the waiting list</p>
+<ul class="simple">
+<li><p>Donor of incompatible pair donates to compatible patient nearest the top of the waiting list.</p></li>
+<li><p>Patient of incompatible pair goes to the top of the wait list.</p></li>
+</ul>
+<p>Similar to house allocation with existing tenants.</p>
+<ul class="simple">
+<li><p>The problems are (essentially) equivalent</p></li>
+<li><p>TTC can be used to efficiently assign kidneys.</p></li>
+</ul>
+<p>In 2004, RSU helped doctors in Boston to establish first clearinghouse for New England.</p>
+</section>
+<section id="exchange-in-practice">
+<h3>Exchange in Practice<a class="headerlink" href="#exchange-in-practice" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Moving from theory to practice has some twists</p></li>
+<li><p>US doctors think of compatibility as 0-1, which eliminates strict preference and allows for a different algorithm.</p></li>
+<li><p>Some limits on types of swaps (pairwise, or only 2/3-way).</p></li>
+<li><p>Have to decide how often to clear the market.</p></li>
+<li><p>Participation is a big issue. Compatible donors may not participate. Some hospitals may not participate.</p></li>
+</ul>
+<p>Real-world market design always raises extra issues!</p>
+</section>
+<section id="donor-chains">
+<h3>Donor Chains<a class="headerlink" href="#donor-chains" title="Permalink to this heading">#</a></h3>
+<p>In July 2007, Alliance for paired donations started an “Altruistic Donor Chain”
+Altruistic donor in Michigan donated kidney to woman in Phoenix.
+Husband of Phoenix woman gave kidney to woman in Toledo.
+Her mom gave kidney to patient A in Columbus, whose daughter simultaneously gave kidney to patient B in Columbus.
+And so on <span class="math notranslate nohighlight">\(\ldots\)</span></p>
+<img alt="../_images/donor-chain.png" class="align-center" src="../_images/donor-chain.png" />
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./book"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+            </article>
+            
+
+            
+            
+            <footer class="bd-footer-article">
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+  <a class='left-prev' id="prev-link" href="stability-order-unraveling.html" title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+          <p class="prev-next-subtitle">previous</p>
+          <p class="prev-next-title">Stability, Order, and Unraveling</p>
+      </div>
+  </a>
+  <a class='right-next' id="next-link" href="school-choice.html" title="next page">
+  <div class="prev-next-info">
+      <p class="prev-next-subtitle">next</p>
+      <p class="prev-next-title">School Choice</p>
+  </div>
+  <i class="fa-solid fa-angle-right"></i>
+  </a>
+</div>
+            </footer>
+            
+          </div>
+          
+          
+          
+            <div class="bd-sidebar-secondary bd-toc">
+              
+<div class="toc-item">
+  
+<div class="tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+</div>
+<nav id="bd-toc-nav" class="page-toc">
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#house-allocation-problem">
+   House Allocation Problem
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#random-serial-dictatorship">
+   (Random) Serial Dictatorship
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#truthful-and-efficient">
+     Truthful and Efficient
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#example">
+       Example
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#top-trading-cycles">
+   Top Trading Cycles
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#an-important-variation">
+     An Important Variation
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#uniqueness">
+     Uniqueness
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#truthful">
+     Truthful
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#rsd-with-incumbents">
+   RSD with Incumbents
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#problems">
+     Problems
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#priority-line-mechanism">
+   Priority Line Mechanism
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#properties-of-priority-line">
+     Properties of Priority Line
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#relationship-with-sd-and-ttc">
+     Relationship with SD and TTC
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#question">
+       Question
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#kidney-exchange">
+   Kidney Exchange
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#resolving-the-shortage">
+     Resolving the Shortage
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#compatability">
+     Compatability
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#paired-exchange">
+     Paired Exchange
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exchange-in-practice">
+     Exchange in Practice
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#donor-chains">
+     Donor Chains
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+</nav>
+</div>
+
+            </div>
+          
+          
+        </div>
+        <footer class="bd-footer-content">
+          <div class="bd-footer-content__inner">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Logan Mondal Bhamidipaty and Paul Milgrom
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+<p class="copyright">
+
+    &copy; Copyright 2023.<br>
+
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    <p class="last-updated">
+Last updated on None.<br>
+</p>
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </div>
+        </footer>
+        
+
+      </main>
+    </div>
+  </div>
+
+  
+    
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=796348d33e8b1d947c94"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=796348d33e8b1d947c94"></script>
+
+  </body>
+</html>

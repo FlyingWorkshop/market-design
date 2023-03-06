@@ -1,50 +1,58 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>School Choice &#8212; Market Design</title>
-    
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="../_static/styles/theme.css?digest=796348d33e8b1d947c94" rel="stylesheet">
+<link href="../_static/styles/bootstrap.css?digest=796348d33e8b1d947c94" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=796348d33e8b1d947c94" rel="stylesheet">
 
-    
-  <link rel="stylesheet"
-    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=796348d33e8b1d947c94" rel="stylesheet">
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2">
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=4ec06e9971c5264fbd345897d5258098f11cc577" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/proof.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
-    
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=796348d33e8b1d947c94">
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=796348d33e8b1d947c94">
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=8bf782fb4ee92b3d3646425e50f299c4e1fd152d"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js"></script>
     <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
@@ -54,506 +62,772 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'book/school-choice';</script>
     <link rel="canonical" href="https://FlyingWorkshop.github.io/market-design/book/school-choice.html" />
     <link rel="shortcut icon" href="../_static/fav.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Matching with Contracts" href="matching-with-contracts.html" />
-    <link rel="prev" title="Housing Allocation" href="house-allocation.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
-    
+    <link rel="prev" title="Housing Allocation and Kidney Exchange" href="house-allocation-and-kidney-exchange.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="docsearch:language" content="en">
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay overlay-navbar" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<!-- Checkboxes to toggle the in-page toc -->
-<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
-<label class="overlay overlay-pagetoc" for="__page-toc">
-    <div class="visually-hidden">Toggle in-page Table of Contents</div>
-</label>
-<!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
-<div class="header header-item noprint"></div>
+  
+  
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="180" data-default-mode="">
 
-    
-    <div class="container-fluid" id="banner"></div>
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
 
-    
+  
+  <input type="checkbox" class="sidebar-toggle" name="__primary" id="__primary">
+  <label class="overlay overlay-primary" for="__primary"></label>
 
-    <div class="container-xl">
-      <div class="row">
-          
-<!-- Sidebar -->
-<div class="bd-sidebar noprint" id="site-navigation">
-    <div class="bd-sidebar__content">
-        <div class="bd-sidebar__top"><div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="../index.html">
-      
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
-        
-      
-      
-      <img src="../_static/logo.png" class="logo" alt="logo">
-      
-      
-      <h1 class="site-logo" id="site-title">Market Design</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
-        <p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Matching Theory
- </span>
-</p>
-<ul class="current nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="matching-theory.html">
-   Matching Theory
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="game-theory-review-and-incentives.html">
-   Game Theory Review + Incentives
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="stability-and-order.html">
-   Stability + Order
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="house-allocation.html">
-   Housing Allocation
-  </a>
- </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   School Choice
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="matching-with-contracts.html">
-   Matching with Contracts
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Auction Theory
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="auction-theory.html">
-   Auction Theory
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="auction-design.html">
-   Auction Design
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="multi-unit-auctions-with-matching.html">
-   Multi-Unit Auctions with Matching
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="sponsored-search-auctions.html">
-   Sponsored Search Auctions
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="bidding-languages-and-chilean-fisheries.html">
-   Bidding Languages + Chilean Fisheries
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="radio-spectrum-auctions.html">
-   Radio Spectrum Auctions
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="incentive-reverse-auction.html">
-   Incentive Reverse Auction
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Resources
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="practice.html">
-   Practice
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="bibliography.html">
-   Bibliography
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../genindex.html">
-   Index
-  </a>
- </li>
-</ul>
+  
+  <input type="checkbox" class="sidebar-toggle" name="__secondary" id="__secondary">
+  <label class="overlay overlay-secondary" for="__secondary"></label>
 
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+      
+<form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
     </div>
-</nav></div>
-        <div class="bd-sidebar__bottom">
-             <!-- To handle the deprecated key -->
-            
-            <div class="navbar_extra_footer">
-            Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+  </div>
+
+  
+  <nav class="bd-header navbar navbar-expand-lg bd-navbar" id="navbar-main"><div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+      <span class="fa-solid fa-bars"></span>
+  </label>
+  <div id="navbar-start">
+    
+    
+  
+
+
+<a class="navbar-brand logo" href="../intro.html">
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Logo image">
+    <img src="../_static/logo.png" class="logo__image only-dark" alt="Logo image">
+  
+  
+</a>
+    
+  </div>
+
+  
+  <div class="col-lg-9 navbar-header-items">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <nav class="navbar-nav">
+    <p class="sidebar-header-items__title" role="heading" aria-level="1" aria-label="Site Navigation">
+        Site Navigation
+    </p>
+    <ul id="navbar-main-elements" class="navbar-nav">
+        
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="matching-theory.html">
+                        Matching Theory
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="game-theory-and-incentives.html">
+                        Game Theory and Incentives
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="stability-order-unraveling.html">
+                        Stability, Order, and Unraveling
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="house-allocation-and-kidney-exchange.html">
+                        Housing Allocation and Kidney Exchange
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="#">
+                        School Choice
+                      </a>
+                    </li>
+                
+            <div class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    More
+                </button>
+                <div class="dropdown-menu">
+                    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="matching-with-contracts.html">
+                        Matching with Contracts
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="auction-theory.html">
+                        Auction Theory
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="auction-design-and-applications.html">
+                        Auction Design and Applications
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="winner-curse.html">
+                        The Winner’s Curse
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="multi-unit-auctions-with-matching.html">
+                        Multi-Unit Auctions with Matching
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="sponsored-search-auctions.html">
+                        Sponsored Search Auctions
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="radio-spectrum-auctions.html">
+                        Radio Spectrum Auctions
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="incentive-reverse-auction.html">
+                        Incentive Reverse Auction
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="practice.html">
+                        Practice
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="bibliography.html">
+                        Bibliography
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../genindex.html">
+                        Index
+                      </a>
+                    </li>
+                
+                </div>
             </div>
             
-        </div>
+    </ul>
+</nav>
+      </div>
+      
     </div>
-    <div id="rtd-footer-container"></div>
+
+    <div id="navbar-end">
+      
+        <div class="navbar-end-item navbar-persistent--container">
+          
+<button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-toggle="tooltip">
+  <i class="fa-solid fa-magnifying-glass"></i>
+</button>
+        </div>
+      
+      
+      <div class="navbar-end-item">
+        <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+</button>
+      </div>
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+
+
+  
+  
+    <div class="navbar-persistent--mobile">
+<button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-toggle="tooltip">
+  <i class="fa-solid fa-magnifying-glass"></i>
+</button>
+    </div>
+  
+
+  
+  <label class="sidebar-toggle secondary-toggle" for="__secondary">
+      <span class="fa-solid fa-outdent"></span>
+  </label>
+  
+
 </div>
+  </nav>
+  
 
-
-          
-
-
-          
-<!-- A tiny helper pixel to detect if we've scrolled -->
-<div class="sbt-scroll-pixel-helper"></div>
-<!-- Main content -->
-<div class="col py-0 content-container">
-    
-    <div class="header-article row sticky-top noprint">
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
         
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+      
+      <div class="navbar-center-item">
+        <nav class="navbar-nav">
+    <p class="sidebar-header-items__title" role="heading" aria-level="1" aria-label="Site Navigation">
+        Site Navigation
+    </p>
+    <ul id="navbar-main-elements" class="navbar-nav">
+        
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="matching-theory.html">
+                        Matching Theory
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="game-theory-and-incentives.html">
+                        Game Theory and Incentives
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="stability-order-unraveling.html">
+                        Stability, Order, and Unraveling
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="house-allocation-and-kidney-exchange.html">
+                        Housing Allocation and Kidney Exchange
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="#">
+                        School Choice
+                      </a>
+                    </li>
+                
+            <div class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    More
+                </button>
+                <div class="dropdown-menu">
+                    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="matching-with-contracts.html">
+                        Matching with Contracts
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="auction-theory.html">
+                        Auction Theory
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="auction-design-and-applications.html">
+                        Auction Design and Applications
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="winner-curse.html">
+                        The Winner’s Curse
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="multi-unit-auctions-with-matching.html">
+                        Multi-Unit Auctions with Matching
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="sponsored-search-auctions.html">
+                        Sponsored Search Auctions
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="radio-spectrum-auctions.html">
+                        Radio Spectrum Auctions
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="incentive-reverse-auction.html">
+                        Incentive Reverse Auction
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="practice.html">
+                        Practice
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="bibliography.html">
+                        Bibliography
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../genindex.html">
+                        Index
+                      </a>
+                    </li>
+                
+                </div>
+            </div>
+            
+    </ul>
+</nav>
+      </div>
+      
+      </div>
+    
+
+    
+    
+    <div class="sidebar-header-items__end">
+      
+      <div class="navbar-end-item">
+        <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+</button>
+      </div>
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+      </ul>
+      </div>
+      
+    </div>
+    
+  </div>
+
+  
+  <div class="sidebar-start-items sidebar-primary__section">
+    <div class="sidebar-start-items__item">
+  
+
+
+<a class="navbar-brand logo" href="../intro.html">
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Logo image">
+    <img src="../_static/logo.png" class="logo__image only-dark" alt="Logo image">
+  
+  
+</a>
+    </div>
+    <div class="sidebar-start-items__item">
+<form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+    </div>
+    <div class="sidebar-start-items__item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Matching Theory</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="matching-theory.html">Matching Theory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="game-theory-and-incentives.html">Game Theory and Incentives</a></li>
+<li class="toctree-l1"><a class="reference internal" href="stability-order-unraveling.html">Stability, Order, and Unraveling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="house-allocation-and-kidney-exchange.html">Housing Allocation and Kidney Exchange</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">School Choice</a></li>
+<li class="toctree-l1"><a class="reference internal" href="matching-with-contracts.html">Matching with Contracts</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Auction Theory</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="auction-theory.html">Auction Theory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="auction-design-and-applications.html">Auction Design and Applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="winner-curse.html">The Winner’s Curse</a></li>
+<li class="toctree-l1"><a class="reference internal" href="multi-unit-auctions-with-matching.html">Multi-Unit Auctions with Matching</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sponsored-search-auctions.html">Sponsored Search Auctions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="radio-spectrum-auctions.html">Radio Spectrum Auctions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="incentive-reverse-auction.html">Incentive Reverse Auction</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Resources</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="practice.html">Practice</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bibliography.html">Bibliography</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../genindex.html">Index</a></li>
+</ul>
+
+    </div>
+</nav>
+    </div>
+  </div>
+  
+
+  
+  <div class="sidebar-end-items sidebar-primary__section">
+    <div class="sidebar-end-items__item">
+    </div>
+  </div>
+
+  
+  <div id="rtd-footer-container"></div>
+
+      </div>
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+        <div class="bd-content">
+          <div class="bd-article-container">
+            
+            <div class="bd-header-article">
+                
 
 
 
 <div class="col py-1 d-flex header-article-main">
     <div class="header-article__left">
-        
-        <label for="__navigation"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="right"
-title="Toggle navigation"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-bars"></i>
-  </span>
-
-</label>
-
-        
+        <label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" data-toggle="tooltip" data-placement="right" title="Toggle primary sidebar">
+            <span class="fa-solid fa-bars"></span>
+        </label>
     </div>
     <div class="header-article__right">
 <button onclick="toggleFullScreen()"
-  class="headerbtn"
+  class="btn btn-sm"
   data-toggle="tooltip"
 data-placement="bottom"
 title="Fullscreen mode"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   <i class="fas fa-expand"></i>
   </span>
 
 </button>
 
-<div class="menu-dropdown menu-dropdown-repository-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Source repositories">
-      <i class="fab fa-github"></i>
+
+
+<div class="dropdown dropdown-repository-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://github.com/FlyingWorkshop/market-design"
-   class="headerbtn"
+  <ul class="dropdown-menu">
+      <li><a href="https://github.com/FlyingWorkshop/market-design" target="_blank"
+   class="btn btn-sm dropdown-item"
    data-toggle="tooltip"
 data-placement="left"
 title="Source repository"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   <i class="fab fa-github"></i>
   </span>
-<span class="headerbtn__text-container">repository</span>
+<span class="btn__text-container">repository</span>
 </a>
-
-      </li>
+</a>
       
-      <li>
-        <a href="https://github.com/FlyingWorkshop/market-design/issues/new?title=Issue%20on%20page%20%2Fbook/school-choice.html&body=Your%20issue%20content%20here."
-   class="headerbtn"
+      <li><a href="https://github.com/FlyingWorkshop/market-design/issues/new?title=Issue%20on%20page%20%2Fbook/school-choice.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm dropdown-item"
    data-toggle="tooltip"
 data-placement="left"
 title="Open an issue"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   <i class="fas fa-lightbulb"></i>
   </span>
-<span class="headerbtn__text-container">open issue</span>
+<span class="btn__text-container">open issue</span>
 </a>
-
-      </li>
+</a>
       
-      <li>
-        <a href="https://github.com/FlyingWorkshop/market-design/edit/master/book/school-choice.md"
-   class="headerbtn"
+      <li><a href="https://github.com/FlyingWorkshop/market-design/edit/master/book/school-choice.md" target="_blank"
+   class="btn btn-sm dropdown-item"
    data-toggle="tooltip"
 data-placement="left"
 title="Edit this page"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   <i class="fas fa-pencil-alt"></i>
   </span>
-<span class="headerbtn__text-container">suggest edit</span>
+<span class="btn__text-container">suggest edit</span>
 </a>
-
-      </li>
+</a>
       
-    </ul>
-  </div>
+  </ul>
 </div>
 
-<div class="menu-dropdown menu-dropdown-download-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Download this page">
-      <i class="fas fa-download"></i>
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="../_sources/book/school-choice.md"
-   class="headerbtn"
+  <ul class="dropdown-menu">
+      <li><a href="../_sources/book/school-choice.md" target="_blank"
+   class="btn btn-sm dropdown-item"
    data-toggle="tooltip"
 data-placement="left"
 title="Download source file"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="headerbtn__text-container">.md</span>
+<span class="btn__text-container">.md</span>
 </a>
-
-      </li>
+</a>
       
       <li>
-        
 <button onclick="printPdf(this)"
-  class="headerbtn"
+  class="btn btn-sm dropdown-item"
   data-toggle="tooltip"
 data-placement="left"
 title="Print to PDF"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   <i class="fas fa-file-pdf"></i>
   </span>
-<span class="headerbtn__text-container">.pdf</span>
+<span class="btn__text-container">.pdf</span>
 </button>
-
-      </li>
+</a>
       
-    </ul>
-  </div>
+  </ul>
 </div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
-</label>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary" data-toggle="tooltip" data-placement="left" title="Toggle secondary sidebar">
+            <span class="fa-solid fa-list"></span>
+        </label>
     </div>
 </div>
-
-<!-- Table of contents -->
-<div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#objectives">
-   Objectives
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#school-choice-model">
-   School Choice Model
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#stability">
-   Stability
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#stability-as-fairness">
-   Stability as Fairness
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#boston-mechanism">
-   Boston Mechanism
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#problems">
-     Problems
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#boston-in-practice">
-     Boston in Practice
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#columbus-oh-schools">
-   Columbus (OH) Schools
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#old-nyc-schools">
-   (Old) NYC Schools
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#student-proposing-da">
-   Student Proposing DA
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#inefficient-stable-matchings">
-     Inefficient Stable Matchings
-    </a>
-   </li>
-  </ul>
- </li>
-</ul>
-
-    </nav>
-</div>
-    </div>
-    <div class="article row">
-        <div class="col pl-md-3 pl-lg-5 content-container">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>School Choice</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#objectives">
-   Objectives
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#school-choice-model">
-   School Choice Model
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#stability">
-   Stability
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#stability-as-fairness">
-   Stability as Fairness
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#boston-mechanism">
-   Boston Mechanism
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#problems">
-     Problems
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#boston-in-practice">
-     Boston in Practice
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#columbus-oh-schools">
-   Columbus (OH) Schools
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#old-nyc-schools">
-   (Old) NYC Schools
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#student-proposing-da">
-   Student Proposing DA
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#inefficient-stable-matchings">
-     Inefficient Stable Matchings
-    </a>
-   </li>
-  </ul>
- </li>
-</ul>
-
-                        </nav>
-                    </div>
-                </div>
             </div>
-            <main id="main-content" role="main">
-                
-              <div>
-                
+            
+            
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>School Choice</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#objectives">
+   Objectives
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#school-choice-model">
+   School Choice Model
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#stability">
+   Stability
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#stability-as-fairness">
+   Stability as Fairness
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#boston-mechanism">
+   Boston Mechanism
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#problems">
+     Problems
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#boston-in-practice">
+     Boston in Practice
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#columbus-oh-schools">
+   Columbus (OH) Schools
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#old-nyc-schools">
+   (Old) NYC Schools
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#student-proposing-da">
+   Student Proposing DA
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#question">
+     Question
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#stability-and-efficiency">
+   Stability and Efficiency
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ttc-for-school-choice">
+   TTC for School Choice
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#questions">
+     Questions
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#properties">
+     Properties
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#reforms">
+   Reforms
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#boston-reformation">
+     Boston Reformation
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#nyc-reformation">
+     NYC Reformation
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#practical-issues">
+   Practical Issues
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#lotteries">
+     Lotteries
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#information">
+     Information
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+            <article class="bd-article" role="main">
+              
   <section class="tex2jax_ignore mathjax_ignore" id="school-choice">
-<h1>School Choice<a class="headerlink" href="#school-choice" title="Permalink to this headline">#</a></h1>
+<h1>School Choice<a class="headerlink" href="#school-choice" title="Permalink to this heading">#</a></h1>
 <figure class="align-default" id="id1">
 <a class="reference internal image-reference" href="../_images/school-choice.png"><img alt="../_images/school-choice.png" src="../_images/school-choice.png" style="height: 400px;" /></a>
 <figcaption>
@@ -571,26 +845,24 @@ title="Print to PDF"
 <li><p>Common problem, with interesting open questions.</p></li>
 <li><p>Useful to illustrate trade-offs between different objectives (stability vs. efficient) and different mechanisms (DA vs TTC).</p></li>
 </ul>
-<p>In many countries including the US, children historically have gone to neighborhood schools.</p>
-<p>In more recent years, many US cities have adopted “school choice” programs, designed to give families additional flexibility, and maybe create some competition between schools.</p>
-<p>We’ll discuss how the matching mechanisms we’ve studied inform the design of these programs.</p>
+<p>In many countries including the US, children historically have gone to neighborhood schools. In more recent years, many US cities have adopted “school choice” programs, designed to give families additional flexibility, and maybe create some competition between schools. We’ll discuss how the matching mechanisms we’ve studied inform the design of these programs.</p>
 <section id="objectives">
-<h2>Objectives<a class="headerlink" href="#objectives" title="Permalink to this headline">#</a></h2>
+<h2>Objectives<a class="headerlink" href="#objectives" title="Permalink to this heading">#</a></h2>
 <p>What are the design goals?</p>
-<p>“Efficient” placements</p>
-<p>“Fair” procedure and outcomes</p>
-<p>Mechanisms that are easy to understand and use.</p>
-<p>Promote quality-enhancing competition among schools (?)</p>
-<p>Abdulkadiroglu and Sonmez (2003, AER) argued that placement mechanisms used in many cities are badly flawed and proposed alternative mechanisms.</p>
-<p>In the following years, gradually, many cities, eg. Boston, New York, Chicago, San Francisco, adopted new mechanisms.</p>
-<p>A flurry of research soon followed and still continues</p>
+<ol class="arabic simple">
+<li><p>“Efficient” placements</p></li>
+<li><p>“Fair” procedure and outcomes</p></li>
+<li><p>Mechanisms that are easy to understand and use.</p></li>
+<li><p>Promote quality-enhancing competition among schools (?)</p></li>
+</ol>
+<p><span id="id2">Abdulkadiroğlu and Sönmez [<a class="reference internal" href="bibliography.html#id4" title="Atila Abdulkadiroğlu and Tayfun Sönmez. School choice: a mechanism design approach. The American Economic Review, 93(3):729–747, 2003. URL: http://www.jstor.org/stable/3132114 (visited on 2023-03-05).">2003</a>]</span> argued that placement mechanisms used in many cities are badly flawed and proposed alternative mechanisms. In the following years, gradually, many cities, eg. Boston, New York, Chicago, San Francisco, adopted new mechanisms. A flurry of research soon followed and still continues</p>
 <ul class="simple">
 <li><p>Designing improved mechanisms &amp; studying the performance of mechanisms in use.</p></li>
 <li><p>Partially random nature of allocations allows causal empirical studies of school effectiveness.</p></li>
 </ul>
 </section>
 <section id="school-choice-model">
-<h2>School Choice Model<a class="headerlink" href="#school-choice-model" title="Permalink to this headline">#</a></h2>
+<h2>School Choice Model<a class="headerlink" href="#school-choice-model" title="Permalink to this heading">#</a></h2>
 <p>Set of students <span class="math notranslate nohighlight">\(S\)</span> and schools <span class="math notranslate nohighlight">\(C\)</span></p>
 <ul class="simple">
 <li><p>Each student can go to one school</p></li>
@@ -601,7 +873,7 @@ title="Print to PDF"
 <p>This is a “many-to-one” version of the matching model we started with.</p>
 </section>
 <section id="stability">
-<h2>Stability<a class="headerlink" href="#stability" title="Permalink to this headline">#</a></h2>
+<h2>Stability<a class="headerlink" href="#stability" title="Permalink to this heading">#</a></h2>
 <p>One notion of a “good” assignment might be an assignment that is stable.</p>
 <dl class="simple myst">
 <dt>Stability means:</dt><dd><p>no blocking individual – no student wants to drop out and no school wants to refuse a student.</p>
@@ -611,17 +883,16 @@ title="Print to PDF"
 </dl>
 </section>
 <section id="stability-as-fairness">
-<h2>Stability as Fairness<a class="headerlink" href="#stability-as-fairness" title="Permalink to this headline">#</a></h2>
-<p>No blocking individual means no student can be forced to attend a school they don’t want to attend, and no school can be forced to take a student they view as unqualified.</p>
-<p>No blocking pair can mean “no justified envy.” That is, no student <span class="math notranslate nohighlight">\(s\)</span> prefers school <span class="math notranslate nohighlight">\(c\)</span> to her assigned school <span class="math notranslate nohighlight">\(c\)</span>, when some other student with lower priority is assigned to <span class="math notranslate nohighlight">\(c\)</span>.</p>
+<h2>Stability as Fairness<a class="headerlink" href="#stability-as-fairness" title="Permalink to this heading">#</a></h2>
+<p>No blocking individual means no student can be forced to attend a school they don’t want to attend, and no school can be forced to take a student they view as unqualified. No blocking pair can mean “no justified envy.” That is, no student <span class="math notranslate nohighlight">\(s\)</span> prefers school <span class="math notranslate nohighlight">\(c\)</span> to her assigned school <span class="math notranslate nohighlight">\(c\)</span>, when some other student with lower priority is assigned to <span class="math notranslate nohighlight">\(c\)</span>.</p>
 </section>
 <section id="boston-mechanism">
-<h2>Boston Mechanism<a class="headerlink" href="#boston-mechanism" title="Permalink to this headline">#</a></h2>
-<div class="proof algorithm admonition" id="algorithm-0">
+<h2>Boston Mechanism<a class="headerlink" href="#boston-mechanism" title="Permalink to this heading">#</a></h2>
+<div class="proof algorithm admonition" id="boston-mech">
 <p class="admonition-title"><span class="caption-number">Algorithm 7 </span> (Old Boston Mechanism)</p>
 <section class="algorithm-content" id="proof-content">
 <p>Each student submits a preference ranking, and each school’s priority order over students is known.</p>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p>Consider the top choices of the students</p></li>
 <li><p>For each school, assign seats to students that ranked it first according to priority order.</p></li>
 <li><p>Stop if all seats assigned or run out of students ranking it first.</p></li>
@@ -630,45 +901,51 @@ title="Print to PDF"
 </ol>
 </section>
 </div><section id="problems">
-<h3>Problems<a class="headerlink" href="#problems" title="Permalink to this headline">#</a></h3>
+<h3>Problems<a class="headerlink" href="#problems" title="Permalink to this heading">#</a></h3>
 <div class="proof remark admonition" id="remark-1">
 <p class="admonition-title"><span class="caption-number">Remark 1 </span></p>
 <section class="remark-content" id="proof-content">
 <p>The Boston mechanism is not strategy-proof.</p>
 </section>
 </div><p>If you don’t put your priority school high on your rank list, you may lose it!</p>
-<p>Example: you want school A most and B second. You have high priority at B but not A. If a school is in high demand, then to be admitted you need both to rank it first and have high priority. Perhaps you should rank B first.</p>
-<p>This was well-understood by Boston parents, and frequently showed up on parent message boards.</p>
-<div class="proof remark admonition" id="remark-2">
+<div class="proof example admonition" id="example-2">
+<p class="admonition-title"><span class="caption-number">Example 1 </span></p>
+<section class="example-content" id="proof-content">
+<p>You want school <span class="math notranslate nohighlight">\(A\)</span> most and <span class="math notranslate nohighlight">\(B\)</span> second. You have high priority at <span class="math notranslate nohighlight">\(B\)</span> but not <span class="math notranslate nohighlight">\(A\)</span>. If a school is in high demand, then to be admitted you need both to rank it first and have high priority. Perhaps you should rank <span class="math notranslate nohighlight">\(B\)</span> first.</p>
+</section>
+</div><p>This was well-understood by Boston parents, and frequently showed up on parent message boards.</p>
+<div class="proof remark admonition" id="remark-3">
 <p class="admonition-title"><span class="caption-number">Remark 2 </span></p>
 <section class="remark-content" id="proof-content">
 <p>The Boston mechanism is also unfair.</p>
 </section>
-</div><p>Doesn’t necessarily lead to stable outcomes.
-Example: Consider the situation on the prior slide and suppose the family decides to take a risk, puts A first, and then ends up at much less preferred school C. The outcome is not stable because the family has high priority at B and prefers it to C. There is “justified envy.”<br />
-Or, it ranks B first and later learns that it could have gotten into A!
-(Economically) disadvantaged families often don’t know how to game the system.</p>
+</div><p>Doesn’t necessarily lead to stable outcomes.</p>
+<div class="proof example admonition" id="example-4">
+<p class="admonition-title"><span class="caption-number">Example 2 </span></p>
+<section class="example-content" id="proof-content">
+<p>Consider the situation on the prior slide and suppose the family decides to take a risk, puts <span class="math notranslate nohighlight">\(A\)</span> first, and then ends up at much less preferred school <span class="math notranslate nohighlight">\(C\)</span>. The outcome is not stable because the family has high priority at <span class="math notranslate nohighlight">\(B\)</span> and prefers it to <span class="math notranslate nohighlight">\(C\)</span>. There is “justified envy.”  Or, it ranks <span class="math notranslate nohighlight">\(B\)</span> first and later learns that it could have gotten into <span class="math notranslate nohighlight">\(A\)</span>! (Economically) disadvantaged families often don’t know how to game the system.</p>
 </section>
+</div></section>
 <section id="boston-in-practice">
-<h3>Boston in Practice<a class="headerlink" href="#boston-in-practice" title="Permalink to this headline">#</a></h3>
+<h3>Boston in Practice<a class="headerlink" href="#boston-in-practice" title="Permalink to this heading">#</a></h3>
 <p>Students entering in grades K,6,9 and new students submit preferences
-Schools have priorities as follows</p>
-<ol class="simple">
+Schools have priorities as follows:</p>
+<ol class="arabic simple">
 <li><p>Students already at the school.</p></li>
 <li><p>Students with a sibling at the school and in the walk zone</p></li>
 <li><p>Students with a sibling at the school but not in the walk zone</p></li>
 <li><p>Students in the walk zone</p></li>
-<li><p>Everyone else
-Abdulkadiroglu et al. found that 19% listed two over-demanded schools as top two choices and about a quarter of these students ended up unassigned – ugh!</p></li>
+<li><p>Everyone else</p></li>
 </ol>
+<p><span id="id3">Abdulkadiroglu <em>et al.</em> [<a class="reference internal" href="bibliography.html#id8" title="Atila Abdulkadiroglu, Parag A. Pathak, Alvin E. Roth, and Tayfun Sönmez. Changing the Boston School Choice Mechanism. Boston College Working Papers in Economics 639, Boston College Department of Economics, January 2006. URL: https://ideas.repec.org/p/boc/bocoec/639.html, doi:.">2006</a>]</span> found that 19% listed two over-demanded schools as top two choices and about a quarter of these students ended up unassigned – ugh!</p>
 </section>
 </section>
 <section id="columbus-oh-schools">
-<h2>Columbus (OH) Schools<a class="headerlink" href="#columbus-oh-schools" title="Permalink to this headline">#</a></h2>
-<div class="proof algorithm admonition" id="algorithm-3">
+<h2>Columbus (OH) Schools<a class="headerlink" href="#columbus-oh-schools" title="Permalink to this heading">#</a></h2>
+<div class="proof algorithm admonition" id="columbus-mech">
 <p class="admonition-title"><span class="caption-number">Algorithm 8 </span> (Columbus Mechanism)</p>
 <section class="algorithm-content" id="proof-content">
-<ol class="simple">
+<ol class="arabic simple">
 <li><p>Each student applies to up to three schools.</p></li>
 <li><p>For some schools, seats are guaranteed based on assignment area.</p></li>
 <li><p>Once those are filled, a lottery is held at each school and offers are made.</p></li>
@@ -678,11 +955,11 @@ Abdulkadiroglu et al. found that 19% listed two over-demanded schools as top two
 </section>
 </div></section>
 <section id="old-nyc-schools">
-<h2>(Old) NYC Schools<a class="headerlink" href="#old-nyc-schools" title="Permalink to this headline">#</a></h2>
-<div class="proof algorithm admonition" id="algorithm-4">
+<h2>(Old) NYC Schools<a class="headerlink" href="#old-nyc-schools" title="Permalink to this heading">#</a></h2>
+<div class="proof algorithm admonition" id="old-nyc-mech">
 <p class="admonition-title"><span class="caption-number">Algorithm 9 </span> (Old NYC Mechanism)</p>
 <section class="algorithm-content" id="proof-content">
-<ol class="simple">
+<ol class="arabic simple">
 <li><p>Each student (90,000 plus applying to high schools) can submit up to five applications.</p></li>
 <li><p>Each school receives applications and makes offers, plus it makes a waiting list.</p></li>
 <li><p>Students accept or reject offers.</p></li>
@@ -692,7 +969,7 @@ Abdulkadiroglu et al. found that 19% listed two over-demanded schools as top two
 </div><p>Roughly 30,000 students would be unassigned at the end; they would be administratively assigned.</p>
 </section>
 <section id="student-proposing-da">
-<h2>Student Proposing DA<a class="headerlink" href="#student-proposing-da" title="Permalink to this headline">#</a></h2>
+<h2>Student Proposing DA<a class="headerlink" href="#student-proposing-da" title="Permalink to this heading">#</a></h2>
 <p>What about the student proposing DA?</p>
 <ul class="simple">
 <li><p>We know this leads to a stable match: no justified envy.</p></li>
@@ -700,10 +977,141 @@ Abdulkadiroglu et al. found that 19% listed two over-demanded schools as top two
 <li><p>Plus it’s strategy-proof for the students, and we may not be worried about schools if priorities are clearly stated.
 So our earlier results indicate that student-proposing DA has attractive properties, but are there drawbacks?</p></li>
 </ul>
-<section id="inefficient-stable-matchings">
-<h3>Inefficient Stable Matchings<a class="headerlink" href="#inefficient-stable-matchings" title="Permalink to this headline">#</a></h3>
-<p>Example [TODO]</p>
-<p>TODO: finish lecture 7</p>
+<div class="proof remark admonition" id="ineff-stable">
+<p class="admonition-title"><span class="caption-number">Remark 3 </span></p>
+<section class="remark-content" id="proof-content">
+<p>Stable Matches can be inefficient.</p>
+</section>
+</div><section id="question">
+<h3>Question<a class="headerlink" href="#question" title="Permalink to this heading">#</a></h3>
+<p>Consider students <span class="math notranslate nohighlight">\(s_1\)</span>, <span class="math notranslate nohighlight">\(s_2\)</span>,, <span class="math notranslate nohighlight">\(s_3\)</span>, and schools <span class="math notranslate nohighlight">\(A\)</span>, <span class="math notranslate nohighlight">\(B\)</span> with preferences:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+    &amp;s_1: B \succ A &amp;A: s_1 \succ s_2 \succ s_3 \\
+    &amp;s_2: A &amp;B: s_3 \succ s_1 \\
+    &amp;s_3: A \succ B \\
+\end{align*}\]</div>
+<p>Each school has one slot. Show that stable match does not imply Pareto efficient match for the students.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Solution<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Student-Proposing DAA:</p>
+<p class="sd-card-text"><img alt="" src="../_images/student-proposing-daa-example.png" /></p>
+<p class="sd-card-text">Student-proposing DA yields <span class="math notranslate nohighlight">\(\{(s_1,A), (s_2, s_2), (s_3,B)\}\)</span>, but students prefer <span class="math notranslate nohighlight">\(\{(s_1,B), (s_2, s_2), (s_3, A)\}\)</span> even though it it’s stable.</p>
+</div>
+</details></section>
+</section>
+<section id="stability-and-efficiency">
+<h2>Stability and Efficiency<a class="headerlink" href="#stability-and-efficiency" title="Permalink to this heading">#</a></h2>
+<p>A stable match, even a student-optimal stable match, may not be Pareto efficient: some students may prefer to trade positions.</p>
+<p>Q1: If we want to find an assignment that’s Pareto efficient for students, how could we do it?</p>
+<p>Q2: if we find an assignment that’s Pareto efficient for students, will it necessarily be stable?</p>
+</section>
+<section id="ttc-for-school-choice">
+<h2>TTC for School Choice<a class="headerlink" href="#ttc-for-school-choice" title="Permalink to this heading">#</a></h2>
+<p>Schools are different from houses because</p>
+<ul class="simple">
+<li><p>A school has multiple positions not just one</p></li>
+<li><p>A student can have priority at multiple schools.</p></li>
+</ul>
+<p>Still, we can adapt TTC to this setting. <span id="id4">Abdulkadiroğlu and Sönmez [<a class="reference internal" href="bibliography.html#id4" title="Atila Abdulkadiroğlu and Tayfun Sönmez. School choice: a mechanism design approach. The American Economic Review, 93(3):729–747, 2003. URL: http://www.jstor.org/stable/3132114 (visited on 2023-03-05).">2003</a>]</span> explain how.</p>
+<div class="proof algorithm admonition" id="adapted-ttc">
+<p class="admonition-title"><span class="caption-number">Algorithm 10 </span> (Adapted TTC)</p>
+<section class="algorithm-content" id="proof-content">
+<ol class="arabic simple">
+<li><p>Each student points to her top-ranked school among those still with open seats</p></li>
+<li><p>Each school points to its top-priority student</p></li>
+<li><p>Cycles are identified and removed: that is, any matched student is assigned and removed and the school to which she is assigned has its quota reduced by one seat.</p></li>
+<li><p>Point again and repeat the process.</p></li>
+</ol>
+</section>
+</div><p>TTC effectively allows students (those in a cycle) to “trade” priorities.</p>
+<section id="questions">
+<h3>Questions<a class="headerlink" href="#questions" title="Permalink to this heading">#</a></h3>
+<p>Find a student Pareto efficient match TTC for the previous question.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Solution<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text"><img alt="" src="../_images/ttc-example.png" /></p>
+<p class="sd-card-text">Observe that the TTC assignment <span class="math notranslate nohighlight">\(\{(s_1,B), (s_2, s_2), (s_3, A)\}\)</span> is <em>NOT STABLE</em>.</p>
+</div>
+</details><p>Now, consider the following preferences:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+&amp;s_1:  A  \succ  B  \succ  C &amp;  A: s_2  \succ  s_3  \succ  s_1 \\
+&amp;s_2:  C  \succ  B  \succ  A &amp; B: s_2  \succ  s_3  \succ  s_1 \\
+&amp;s_3:  C  \succ  A  \succ  B &amp; C: s_2  \succ  s_1  \succ  s_3
+\end{align*}\]</div>
+<p>Run TTC to find a matching (schools have one slot each). How does this compare to using DA to find matching?</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Solution<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text"><img alt="" src="../_images/ttc-vs-da.png" /></p>
+<p class="sd-card-text">Here TTC and Student DA both yield <span class="math notranslate nohighlight">\(\{(s_1,B),(s_2,C),(s_3,A)\}\)</span>.</p>
+</div>
+</details></section>
+<section id="properties">
+<h3>Properties<a class="headerlink" href="#properties" title="Permalink to this heading">#</a></h3>
+<div class="proof theorem admonition" id="ttc-strat-proof">
+<p class="admonition-title"><span class="caption-number">Theorem 10 </span> (TTC is Strategy-Proof)</p>
+<section class="theorem-content" id="proof-content">
+<p>TTC is strategy-proof and its outcome is efficient.</p>
+</section>
+</div><div class="proof admonition" id="proof">
+<p>Proof. Proof is just like the housing problem: strategy-proofness is the same. Efficiency is the same as unblocked by the coalition of all agents.</p>
+</div>
+</section>
+</section>
+<section id="reforms">
+<h2>Reforms<a class="headerlink" href="#reforms" title="Permalink to this heading">#</a></h2>
+<section id="boston-reformation">
+<h3>Boston Reformation<a class="headerlink" href="#boston-reformation" title="Permalink to this heading">#</a></h3>
+<p><span id="id5">Abdulkadi̇roğlu <em>et al.</em> [<a class="reference internal" href="bibliography.html#id5" title="Ati̇la Abdulkadi̇roğlu, Parag A. Pathak, Alvin E. Roth, and Tayfun Sönmez. The boston public school match. The American Economic Review, 95(2):368–371, 2005. URL: http://www.jstor.org/stable/4132849 (visited on 2023-03-05).">2005</a>]</span> describe the reform of the Boston school match.
+They proposed either student-proposing DA or TTC; the school system chose DA in 2006.
+School board didn’t like the TTC idea of “trading priorities” and worried about “justified envy.”</p>
+</section>
+<section id="nyc-reformation">
+<h3>NYC Reformation<a class="headerlink" href="#nyc-reformation" title="Permalink to this heading">#</a></h3>
+<p><span id="id6">Abdulkadiroğlu <em>et al.</em> [<a class="reference internal" href="bibliography.html#id6" title="Atila Abdulkadiroğlu, Parag A. Pathak, and Alvin E. Roth. Strategy-proofness versus efficiency in matching with indifferences: redesigning the nyc high school match. American Economic Review, 99(5):1954-78, December 2009. URL: https://www.aeaweb.org/articles?id=10.1257/aer.99.5.1954, doi:10.1257/aer.99.5.1954.">2009</a>]</span> describe reform:</p>
+<ul class="simple">
+<li><p>NYC is big: 90,000 students enter high school each year!</p></li>
+<li><p>NYC schools do not have fixed priorities – and under the old system they were strategic in reporting preferences.</p></li>
+<li><p>NYC decided to adopt a limited student-proposing DA.</p></li>
+</ul>
+<p>Outcome: in first year of new program</p>
+<ul class="simple">
+<li><p>More than 70,000 got one of their choice schools.</p></li>
+<li><p>Another 7,600 got a choice school in follow-up RSD stage</p></li>
+<li><p>Just 3,000 were left, down from 30,000.</p></li>
+</ul>
+</section>
+</section>
+<section id="practical-issues">
+<h2>Practical Issues<a class="headerlink" href="#practical-issues" title="Permalink to this heading">#</a></h2>
+<section id="lotteries">
+<h3>Lotteries<a class="headerlink" href="#lotteries" title="Permalink to this heading">#</a></h3>
+<p>School priorities often are coarse. In Boston, five categories: (1) at the school, (2) sibling + walk zone, (3) sibling, (4) walk zone, (5) other. Use lottery to generate priority order to run DA/TTC – either separate for each school, or common for all.</p>
+<p>Consequence is that assignment partially random. Some view as arbitrary and unfair. Research consequence: lotteries allow evaluation of school effectiveness: compare subsequent performance of students who “lotteried in” or “lotteried out” of some charter school or other popular school. A (partially) randomized experiment!</p>
+</section>
+<section id="information">
+<h3>Information<a class="headerlink" href="#information" title="Permalink to this heading">#</a></h3>
+<p>School choice is premised on families making good decisions about how to rank schools. How informed are families? <span id="id7">Hastings and Weinstein [<a class="reference internal" href="bibliography.html#id7" title="Justine S. Hastings and Jeffrey M. Weinstein. Information, school choice, and academic achievement: evidence from two experiments. The Quarterly Journal of Economics, 123(4):1373–1414, 2008. URL: http://www.jstor.org/stable/40506212 (visited on 2023-03-05).">2008</a>]</span> evaluated choices in Charleston, SC. Low-income families were very likely to choose local school; high-income families were more responsive to school test scores. Experiment showed that disseminating information about school quality had big impact on family rankings.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>A key part of market design is helping participants make good decisions.</p>
+</div>
 </section>
 </section>
 </section>
@@ -728,50 +1136,215 @@ So our earlier results indicate that student-proposing DA has attractive propert
     </script>
     <script>kernelName = 'python3'</script>
 
-              </div>
-              
-            </main>
-            <footer class="footer-article noprint">
-                
-    <!-- Previous / next buttons -->
+            </article>
+            
+
+            
+            
+            <footer class="bd-footer-article">
+                <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="house-allocation.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Housing Allocation</p>
-        </div>
-    </a>
-    <a class='right-next' id="next-link" href="matching-with-contracts.html" title="next page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Matching with Contracts</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
+  <a class='left-prev' id="prev-link" href="house-allocation-and-kidney-exchange.html" title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+          <p class="prev-next-subtitle">previous</p>
+          <p class="prev-next-title">Housing Allocation and Kidney Exchange</p>
+      </div>
+  </a>
+  <a class='right-next' id="next-link" href="matching-with-contracts.html" title="next page">
+  <div class="prev-next-info">
+      <p class="prev-next-subtitle">next</p>
+      <p class="prev-next-title">Matching with Contracts</p>
+  </div>
+  <i class="fa-solid fa-angle-right"></i>
+  </a>
 </div>
             </footer>
-        </div>
-    </div>
-    <div class="footer-content row">
-        <footer class="col footer"><p>
+            
+          </div>
+          
+          
+          
+            <div class="bd-sidebar-secondary bd-toc">
+              
+<div class="toc-item">
   
-    By Logan Mondal Bhamidipaty and Paul Milgrom<br/>
-  
-      &copy; Copyright 2023.<br/>
-</p>
-        </footer>
-    </div>
-    
+<div class="tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+</div>
+<nav id="bd-toc-nav" class="page-toc">
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#objectives">
+   Objectives
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#school-choice-model">
+   School Choice Model
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#stability">
+   Stability
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#stability-as-fairness">
+   Stability as Fairness
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#boston-mechanism">
+   Boston Mechanism
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#problems">
+     Problems
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#boston-in-practice">
+     Boston in Practice
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#columbus-oh-schools">
+   Columbus (OH) Schools
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#old-nyc-schools">
+   (Old) NYC Schools
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#student-proposing-da">
+   Student Proposing DA
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#question">
+     Question
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#stability-and-efficiency">
+   Stability and Efficiency
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ttc-for-school-choice">
+   TTC for School Choice
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#questions">
+     Questions
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#properties">
+     Properties
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#reforms">
+   Reforms
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#boston-reformation">
+     Boston Reformation
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#nyc-reformation">
+     NYC Reformation
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#practical-issues">
+   Practical Issues
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#lotteries">
+     Lotteries
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#information">
+     Information
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+</nav>
 </div>
 
-
-      </div>
-    </div>
+            </div>
+          
+          
+        </div>
+        <footer class="bd-footer-content">
+          <div class="bd-footer-content__inner">
+            
+<div class="bd-footer-content__inner container">
   
-  <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <div class="footer-item">
+    
+<p class="component-author">
+By Logan Mondal Bhamidipaty and Paul Milgrom
+</p>
 
+  </div>
+  
+  <div class="footer-item">
+    
+<p class="copyright">
+
+    &copy; Copyright 2023.<br>
+
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    <p class="last-updated">
+Last updated on None.<br>
+</p>
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </div>
+        </footer>
+        
+
+      </main>
+    </div>
+  </div>
+
+  
+    
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=796348d33e8b1d947c94"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=796348d33e8b1d947c94"></script>
 
   </body>
 </html>
