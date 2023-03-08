@@ -6,19 +6,19 @@ root: intro
 # options:
 #   numbered: 3
 parts:
-- caption: Matching Theory
+- caption: Matching Theory # make changes that Ellie suggested
   chapters:
     - file: book/matching-theory 
     - file: book/game-theory-and-incentives
     - file: book/stability-order-unraveling
     - file: book/house-allocation-and-kidney-exchange
-    - file: book/school-choice # ~
+    - file: book/school-choice 
     - file: book/matching-with-contracts
 - caption: Auction Theory
   chapters:
     - file: book/auction-theory # ~
     - file: book/auction-design-and-applications # ~
-    - file: book/winner-curse # !!
+    - file: book/winner-curse # ~
     - file: book/multi-unit-auctions-with-matching.md # ~
     - file: book/sponsored-search-auctions # ~
     # - file: book/bidding-languages-and-chilean-fisheries.md  # !!
@@ -29,17 +29,3 @@ parts:
     - file: book/practice
     - file: book/bibliography
     - file: genindex
-
-
-# Or you organize the TOC by parts
-
-# parts:
-#   - caption: Chapters
-#     numbered: true
-#     maxdepth: 2
-#     chapters:
-#       - file: book/markdown
-#       - file: book/notebooks
-#   - caption: Appendices
-#     chapters:
-#       - file: book/bibliography
