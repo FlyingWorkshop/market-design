@@ -20,7 +20,7 @@ Spectrum auctions have fostered a great deal of interest in auctions and auction
 
 > It is, of course, true that the distribution of wealth as between the doctor a fectioner was affected by the decision, which is why questions of equity bulk s such cases. Indeed, if the efficiency with which the economic system worked was  independent of the legal position, this would be all that mattered. But this is  of all, the law may be such as to make certain desirable market transactions This is, indeed, my chief criticism of the present American law of radio comm Second, it may impose costly and time-consuming procedures. Third, the legal  of rights provides the starting point for the rearrangement of rights through ma actions. Such transactions are not costless, with a result that the initial deli rights may be maintained even though some other would be more efficient. Or, original position is modified, the most efficient delimitation of rights may not. Finally, a waste of resources may occur when the criteria used by the court rights result in resources being employed solely to establish a claim.
 
-{cite}`coase`
+{cite:t}`10.2307/724927`
 
 ## Simultaneous Ascending Auction (SAA)
 ```{index} simultaneous ascending auctions
