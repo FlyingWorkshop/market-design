@@ -18,8 +18,8 @@ game
     \mathbb{R}^n$
 
 
-dominant action
-    Action $a_i$ is (weakly) _dominant_ for player $i$ if for all $a_i'$ and $a_{-i}$: $u_i(a_i, a_{-i}) \geq u_i(a_i', a_{-i})$ and for some $\hat{a}_{-i}$, $u_i(a_i, \hat{a}_{-i}) > u_i(a_i', \hat{a}_{-i})$.
+weakly dominant action
+    Action $a_i$ is weakly _dominant_ for player $i$ if for all $a_i'$ and $a_{-i}$: $u_i(a_i, a_{-i}) \geq u_i(a_i', a_{-i})$ and for some $\hat{a}_{-i}$, $u_i(a_i, \hat{a}_{-i}) > u_i(a_i', \hat{a}_{-i})$.
 ```
 
 ```{tip} Intuition
@@ -28,7 +28,7 @@ It's a no-brainer for $i$ to play a dominant action if she has one; it is an opt
 
 ```{glossary}
 Nash equilbrium
-    Action profile $a = (a_1, \ldots, a_n)$ is a _Nash equilibrium_ if for each player $i$ and action $a_i'$, $U_i(a_i, a_{-i}) \geq u_i(a_i', a_{-1})$. In words, an action profile $a$ is a Nash equilibrium if no player $i$ can increase its own payoff above $u_i(a)$ by unilaterally changing in its action from $a_i$ to some other action $a_i'$.
+    Action profile $a = (a_1, \ldots, a_n)$ is a _Nash equilibrium_ if for each player $i$ and action $a_i'$, $u_i(a_i, a_{-i}) \geq u_i(a_i', a_{-1})$. In words, an action profile $a$ is a Nash equilibrium if no player $i$ can increase its own payoff above $u_i(a)$ by unilaterally changing in its action from $a_i$ to some other action $a_i'$.
 ```
 
 ### Incomplete Information
@@ -40,10 +40,8 @@ so each player's expected payoff depends on probabilities of what others would d
 
 ### Allocation Problems
 
-An allocation problem consists of player $i = 1, \ldots, n$, a set of possible outcomes or allocations $X$, and
-(possibly) payments by each player $p_1, \ldots, p_n$, and value functions $v_i(x)$ such that the payoff for each
-player is $v_i(x) - p_i$.
-Challenge:  the _mechanism designer_ typically does not know the payoff functions! The function is the player's privately known "type."
+An allocation problem consists of player $i = 1, \ldots, n$, a set of possible outcomes or allocations $X$, (possibly) payments by each player $p_1, \ldots, p_n$, and value functions $v_i(x)$ such that the payoff for each player is $v_i(x) - p_i$.
+Challenge: the _mechanism designer_ typically does not know the payoff functions! The function is the player's privately known "type."
 
 #### "Good" Allocations
 
@@ -55,8 +53,8 @@ Various criteria may define "good" allocations or outcomes. In auction problems,
 mechanism
     A mechanism $(M, x, p)$ is a triple consisting of:
     * A set of possible _messages_ for each player: $M_1, \ldots, M_n$
-    * An allocation rule: $X(m_1, \ldots, m_n)$
-    * Possibly: a payment rule $p: M_1 \times \ldots \times M_n \to \mathbb{R}^n$ where player $i$ pays $p_i(m_1, \ldots, m_n)$.
+    * An allocation rule: $x(m_1, \ldots, m_n)$
+    * A payment rule $p: M_1 \times \ldots \times M_n \to \mathbb{R}^n$ where player $i$ pays $p_i(m_1, \ldots, m_n)$.
 
     We will look at mechanisms with and without payments. If there are no payments, set all $p_i \equiv 0$.
 
@@ -64,32 +62,31 @@ matching mechanism
     A **matching mechanism** is a mapping from **reported** preferences into a matching. (no payments)
 
 truthful mechanism
-    A mechanism is **truthful** if truthful reporting is a dominant acution for each participant.
+    A mechanism is **truthful** if truthful reporting is a dominant action for each participant.
 
+strategy-proof mechanism
+    A _strategy/action_ for player $i$ specifies what message to send as a function of player $i$'s type. A mechanism is _strategy-proof_ if each player $i$ has a dominant strategy, that is, a strategy that is optimal regardless of the strategies chosen by the other players. Sometimes, we'll look at mechanisms that are not strategy-proof, using Nash equilibrium to forecast mechanism outcomes.
 ```
 
 #### Example 1: Gayle-Shapley Marriage Problem
 
-In the Gale-Shapley marriage problem, the messages are statements of preference (not necessarily truthful). The outcome/allocation/assignment is a matching, which the mechanism selects as a function of the reported preferences. No payments are made. A "type" is the preference list of each agent.
+In the Gayle-Shapley marriage problem, the messages are statements of preference (not necessarily truthful). The outcome/allocation/assignment is a matching, which the mechanism selects as a function of the reported preferences. No payments are made. A "type" is the preference list of each agent.
 
 #### Example 2: Simple Auction
 
-In a simple auction problem, the messages are the bids $(b_i \geq 0)$. The auction mechanism determines who wins and what everyone must pay as a function of the bids. A type is typically a person's value (maximum price).
+In a simple auction problem, the messages are the bids $(b_i \geq 0)$. The auction mechanism determines who wins and what everyone must pay as a function of the bids. A type is typically a person’s value (maximum willingness to pay).
 
 A mechanism plus payoffs defines a game. The possible actions are the messages: $M_1, \ldots, M_n$. The payoffs are functions of the messages $u_i(m_1, \ldots, m_n) = v_{i}\left(x\left(m_{1},\ldots,m_{n}\right)\right) - p_i(m_1, \ldots, m_n).$
 
 Often, we will focus on _direct mechanisms_: $M_i$ is equal to the set of $i$'s possible payoff functions (or preferences).
 
-```{glossary}
-strategy-proof mechanism
-    A _strategy/action_ for player $i$ specifies what message to send as a function of player $i$'s type. A mechanism is _strategy-proof_ if each player $i$ has a dominant strategy, that is, a strategy that is optimal regardless of the strategies chosen by the other players. Sometimes, we'll look at mechanisms that are not strategy-proof, using Nash equilibrium to forecast mechanism outcomes.
-```
+
 
 ### Applying GT to Market Design
 
 #### Studying existing markets
 
-Identify the "rules of the game," the incentives for participants, and how they behave. Then try ot understand why the market functions well, or not so well.
+Identify the "rules of the game," the incentives for participants, and how they behave. Then try to understand why the market functions well, or not so well.
 
 #### Designing new markets
 

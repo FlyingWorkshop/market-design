@@ -40,7 +40,7 @@ What are the design goals?
 Set of students $S$ and schools $C$
 
 * Each student can go to one school
-* Each school $c$ can admit qc students
+* Each school $c$ can admit $q_c$ students
 * Each student has strict preferences over schools.
 * Each school has a strict “priority order” over students.
 

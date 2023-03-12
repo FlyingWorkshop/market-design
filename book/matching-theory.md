@@ -83,7 +83,7 @@ If we have $|M| = |W| = n$, how many matchings are possible? What about when $|M
 2. Each man proposes to the highest-ranked acceptable woman on his list, or to nobody if no one on the list is acceptable.
 3. Each woman holds only her most preferred acceptable proposal and rejects all others.
 4. Each $m$ who is rejected by a woman removes her from his list.
-5. If no man is rejected, then each woman "accepts" her offer and is matched to the man whose proposal she holds.
+5. Repeat 2-4 until no man is rejected. If no man is rejected, then each woman "accepts" her offer and is matched to the man whose proposal she holds.
 ```
 
 This is the _"man-proposing"_ deferred acceptance algorithm; there is also a _"woman-proposing"_ version.
