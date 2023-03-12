@@ -65,10 +65,6 @@ Suppose NY is 200 points; LA and SF are each 100.
 Easy to switch to SF/LA if outbid on NY, but what if you are bidding for SF/LA and are outbid on LA only?
 A consequence: bidding on large licenses stops earlier.
 
-#### Example
-
-[TODO slide 14]
-
 ### Theory
 
 ```{glossary}
@@ -81,12 +77,7 @@ straightforward bidding
 If bidders have “substitutes” values (e.g. want only one license) and bid straightforwardly, the SAA leads to an efficient allocation and lowest competitive prices.
 ```
 
-Magic of the Market Results
-Auction outcome is “as if” the seller knew all the values and used a computer to find the efficient allocation & market-clearing prices – auction discovers the right prices and quantities.
-Bidders have “no regret” – at the final prices, each winner gets exactly the licenses that gives it the most profit, and no loser would like to be a winner (assignment is “stable” given prices).
+#### Magic of the Market Results:
+Auction outcome is “as if” the seller knew all the values and used a computer to find the efficient allocation & market-clearing prices: auction discovers the right prices and quantities. Bidders have “no regret” – at the final prices, each winner gets exactly the licenses that gives it the most profit, and no loser would like to be a winner (assignment is “stable” given prices).
 
-## "Gaming" in Spectrum Auctions
 
-### Entry Deterance
-
-[TODO slide 22]
