@@ -10,19 +10,20 @@ Federal government assigns rights to use the radio spectrum for television, radi
 
 Auctions to assign radio spectrum licenses
 Suggested by Herzel (1951) and Coase (1959) – paper is most famous for a footnote in which he suggested the Coase Theorem!
-FCC switched to auctions in early 1990s, adopting the Milgrom-Wilson auction proposal. Other countries adopted essentially the US design, sometimes with modifications. 
+FCC switched to auctions in early 1990s, adopting the Milgrom-Wilson auction proposal. Other countries adopted essentially the US design, sometimes with modifications.
 
 Spectrum auctions have fostered a great deal of interest in auctions and auction design – a difficult problem, with high stakes for consumers, firm and governments.
 
 ### Resolving Radio Spectrum Interference
 
->  What this analysis demonstrates, so far as the radio industry is con is that there is no analytical difference between the problem of interf tween operators on a single frequency and that of interference betw tors on adjacent frequencies. The latter problem, like the former, can  by delimiting the rights of operators to transmit signals which inte might potentially interfere, with those of others. Once this is done, left to market transactions to bring an optimum utilization rights.
+> What this analysis demonstrates, so far as the radio industry is con is that there is no analytical difference between the problem of interf tween operators on a single frequency and that of interference betw tors on adjacent frequencies. The latter problem, like the former, can  by delimiting the rights of operators to transmit signals which inte might potentially interfere, with those of others. Once this is done, left to market transactions to bring an optimum utilization rights.
 
 > It is, of course, true that the distribution of wealth as between the doctor a fectioner was affected by the decision, which is why questions of equity bulk s such cases. Indeed, if the efficiency with which the economic system worked was  independent of the legal position, this would be all that mattered. But this is  of all, the law may be such as to make certain desirable market transactions This is, indeed, my chief criticism of the present American law of radio comm Second, it may impose costly and time-consuming procedures. Third, the legal  of rights provides the starting point for the rearrangement of rights through ma actions. Such transactions are not costless, with a result that the initial deli rights may be maintained even though some other would be more efficient. Or, original position is modified, the most efficient delimitation of rights may not. Finally, a waste of resources may occur when the criteria used by the court rights result in resources being employed solely to establish a claim.
 
 {cite:t}`10.2307/724927`
 
 ## Simultaneous Ascending Auction (SAA)
+
 ```{index} simultaneous ascending auctions
 ```
 
@@ -42,15 +43,15 @@ Why simultaneous? .. relative to sequential auctions
 Price discovery! Bidders get some information about the prices of all licenses before finalizing their bids for all.  
 This leads to more efficient package choices and equalization of prices for similar items.  
 
-Why ascending? … relative to sealed bidding. 
+Why ascending? … relative to sealed bidding.
 Price discovery! Sealed bids convey too little information, requiring guesswork. Winning bidders “preserve privacy” about their values...
 But... there may be more opportunity for demand reduction, collusion.
 
 ### Termination Rule
 
-The FCC ends the auction for all items only when there is no new bid for any item. 
+The FCC ends the auction for all items only when there is no new bid for any item.
 
-Prevents “sniping”, in which last second bidders steal some item from the previous highest bidder. 
+Prevents “sniping”, in which last second bidders steal some item from the previous highest bidder.
 
 ### Activity Rules
 
@@ -62,12 +63,11 @@ Necessary so bidders don’t just sit back and wait.
 In practice, though, it can complicate bidding
 Suppose NY is 200 points; LA and SF are each 100.
 Easy to switch to SF/LA if outbid on NY, but what if you are bidding for SF/LA and are outbid on LA only?
-A consequence: bidding on large licenses stops earlier. 
+A consequence: bidding on large licenses stops earlier.
 
 #### Example
 
 [TODO slide 14]
-
 
 ### Theory
 
@@ -90,6 +90,3 @@ Bidders have “no regret” – at the final prices, each winner gets exactly t
 ### Entry Deterance
 
 [TODO slide 22]
-
-
-

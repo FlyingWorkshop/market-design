@@ -4,8 +4,8 @@
 
 Preferences in matching often involves additional terms besides just your partner’s identity:
 Dating: Will we go to the concert or the ball game, alone or with others, etc.
-College admissions: Whose lab will the student work in? Is financial aid offered? 
-Marriage: “Let’s have kids right away and take over dad’s store in Provo, Utah” or “Let’s travel abroad for a year and then live in a commune in Portland, OR.” 
+College admissions: Whose lab will the student work in? Is financial aid offered?
+Marriage: “Let’s have kids right away and take over dad’s store in Provo, Utah” or “Let’s travel abroad for a year and then live in a commune in Portland, OR.”
 
 ### Formulation
 
@@ -30,6 +30,7 @@ stable matching (contracts)
 
 ```{index} extended man-offering DAA
 ```
+
 ```{index} extended woman-offering DAA
 ```
 
@@ -45,7 +46,6 @@ stable matching (contracts)
 ```
 
 There is also an extended woman-offering algorithm, with the obvious reversal of roles.
-
 
 ### Theorems
 
@@ -63,18 +63,19 @@ Let $\mu$ be the output of the extended man-offering algorithm. 
 Example: the matching may have $m$ and $w$ going to the concert $t$ at Bing tonight, which he prefers, rather than to the basketball game $t'$ at Maples, which she prefers, when both $t$ and $t'$ were acceptable to both.
 
 Review of the results:
+
 * Outcome is stable
 * Man-best stable matching
 * Woman-worst stable matching
 * Truthful for men (not for women)
 
-### Deferred Acceptance as an Auction?!
+### Deferred Acceptance as an Auction?
 
-Suppose the two sides are buyers and sellers. 
+Suppose the two sides are buyers and sellers.
+
 * Each seller has one unit of its product and cares only about price and breaks ties in favor of the lowest numbered buyer.  
 * Each buyer cares about the item and the price, breaking ties in favor of the lowest numbered seller.
-With just one seller/one item, 
+With just one seller/one item,
 * the buyer offering deferred acceptance algorithm is an ascending (”English”) auction.
 * the seller offering deferred acceptance algorithm is a descending (”Dutch”) auction
 With multiple sellers, the auction is a less familiar one: a multi-product ascending (or descending) auction.
-

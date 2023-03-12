@@ -1,18 +1,18 @@
 # The Winner's Curse
 
-```{epigraph}
+:::{epigraph}
 If it is true, as common sense tells us, that a lease winner tends to be the bidder who most overestimates reserves potential, it follows that the "successful" bidders may not have been so successful after all. Studies of the industry's rate of return support that conclusion. By simulating the bidding game we can increase our understanding and
 thus decrease our chance for investment error.
-```
+:::
 
 {cite}`10.2118/2993-PA`
 
 ## Common Value Auction Models
 
-```{glossary}
+:::{glossary}
 common value auction models
     auction models in which bidders have private information about uncertain characteristics of the item being sold, rather than just about their own private values.  
-```
+:::
 
 Three Main Issues:
 
@@ -25,6 +25,7 @@ Three Main Issues:
 Having the highest bid suggests that you had one of the highest estimates compared to other bidders. If you respect your competitors' estimates, then winning may suggest that you overestimated the value of the certificate.
 
 ```{admonition} Question
+:class: tip
 Suppose we model the auction as a game. What are the Nash equilibrium bids?
 ```
 
@@ -35,6 +36,7 @@ Two bidders with “common value” $v$ drawn at random from a known distributio
 Bidder 1 receives a “signal” $s_1$  (correlated with $v$). Bidder 2 receives a signal $s_2$. Signals provide information about $v$, but not perfect. Assume $\mathbb{E}[v|s_1, s_2]$ is increasing in $(s_1, s_2)$.
 
 ```{admonition} Question
+:class: tip
 How should bidders account for the winner's curse? 
 ```
 
@@ -43,10 +45,12 @@ How should bidders account for the winner's curse?
 Suppose bidder 2 uses strategy: drop out at $b(s_2)$, with $b(\cdot)$ increasing. Bidder 1 has a signal $s_1$. Suppose price reaches $p$. At this point, 1 can rule out $b(s_2) < p$.
 
 ```{admonition} Question
+:class: tip
 Is it better for bidder 1 to drop out at $p$ or $p + \epsilon$?
 ```
 
-```{dropdown} Solution
+```{admonition} Solution
+:class: tip
 Makes no difference if $b(s_2) > p + \epsilon$. Only matters if $b(s_2) \approx p$. That is, if $s_2 = b^{-1}(p)$.
 ```
 
@@ -168,7 +172,8 @@ b(s_i) &= \mathbb{E}[v|s_i \text{ tied for $K+1$th highest of $N$ signals}] \\
 
 So, the auction price will be approximately the median signal!
 
-```{tip}
+```{admonition} Intuition
+:class: tip
 “Market prices can aggregate information from dispersed sources.”
 ```
 
@@ -186,6 +191,7 @@ Many auctions have some “common value” element
 The US government auctions the right to drill for oil on the outer continental shelf. Value of the oil is similar for the different bidders, but none knows exactly how much oil there is (or if there is any!). Prior to the auction, the bidders do seismic studies.
 
 Two kinds of sale:
+
 * “Drainage tract” – adjacent to a previously drilled tract.
 * “Wildcat tract” – not adjacent.
 
@@ -230,6 +236,7 @@ Do IPOs sell at a discount? Not necessarily. If everyone know 𝑣, competition 
 A possible explanation is the winner's curse. If some buyers are informed, then uninformed buyers will acquire more shares in undersubscribed IPOs with poor prospects while informed buyers acquire in the remaining IPOs. If informed betters earn supernormal profits and uninformed buyers earn normal profits, then the average return must be above normal ⇒ IPO shares are underpriced.  
 
 There are alternative explanations:
+
 * Investment banks set IPO prices low to cater to their clients.
 * Investment banks choose a low price to have control over who gets allocated shares and avoid any risk of undersell.
 
@@ -239,8 +246,9 @@ Perhaps well-designed IPO auction could aggregate information, but IPOs generall
 
 Bidder values can depend on both “private value” and “common value” factors.
 Focusing on the common value elements:  
-The event of winning reveals information about others' estimates.
-Sophisticated bidders account for this in their bidding.
-Bidders without accurate information should be cautious when bidding against better-informed bidders.  
-With many bidders and dispersed information, the auction price can be a surprisingly good indicator of the item's value.
-Sellers can sometimes reduce the winner's curse by the design of lots and/or by sharing information with bidders.
+
+* The event of winning reveals information about others' estimates.
+* Sophisticated bidders account for this in their bidding.
+* Bidders without accurate information should be cautious when bidding against better-informed bidders.  
+* With many bidders and dispersed information, the auction price can be a surprisingly good indicator of the item's value.
+* Sellers can sometimes reduce the winner's curse by the design of lots and/or by sharing information with bidders.

@@ -77,7 +77,7 @@ If we have $|M| = |W| = n$, how many matchings are possible? What about when $|M
 
 ### Algorithm
 
-```{prf:algorithm} Deferred Acceptance Algorithm
+```{prf:algorithm} Deferred Acceptance Algorithm (DAA)
 :label: daa
 1. Men and women rank all potential partners.
 2. Each man proposes to the highest-ranked acceptable woman on his list, or to nobody if no one on the list is acceptable.

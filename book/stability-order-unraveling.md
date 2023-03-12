@@ -1,22 +1,25 @@
 # Stability, Order, and Unraveling
 
 ## History: Theory to Practice
-The study of matching started as mathematics: first by Gale and Shapley (1962) who introduced deferred acceptance algorithm, then others, including Stanford math Prof. Donald Knuth. In 1984, Al Roth made a surprising discovery. Since the 1950s, US hospitals have used a clearinghouse to assign graduating medical students to residencies. Students apply and interview at hospitals in the fall, then students and hospitals submit rank-order preferences in February. A computer algorithm is used to assign students to hospitals, and matches are all revealed on a single day: match day. Roth realized that the doctors has independently discovered and were using exactly the Gale and Shapley DA algorithm! 
+
+The study of matching started as mathematics: first by Gale and Shapley (1962) who introduced deferred acceptance algorithm, then others, including Stanford math Prof. Donald Knuth. In 1984, Al Roth made a surprising discovery. Since the 1950s, US hospitals have used a clearinghouse to assign graduating medical students to residencies. Students apply and interview at hospitals in the fall, then students and hospitals submit rank-order preferences in February. A computer algorithm is used to assign students to hospitals, and matches are all revealed on a single day: match day. Roth realized that the doctors has independently discovered and were using exactly the Gale and Shapley DA algorithm!
 
 ### National Residency Matching Program (NRMP)
 
-History turns out to be illuminating. Into the 1930s, medical students found residencies through a completely decentralized process, but there were problems: students and hospitals made contracts earlier and earlier, eventually in second year of med school! Hospitals decided to change the system by adopting a centralized clearinghouse. The National Residency Matching Program (NRMP) was adopted, after various adjustments in 1952. The system has persisted but was modified in late 1990s to handle couples and some recent debate about salaries. 
+History turns out to be illuminating. Into the 1930s, medical students found residencies through a completely decentralized process, but there were problems: students and hospitals made contracts earlier and earlier, eventually in second year of med school! Hospitals decided to change the system by adopting a centralized clearinghouse. The National Residency Matching Program (NRMP) was adopted, after various adjustments in 1952. The system has persisted but was modified in late 1990s to handle couples and some recent debate about salaries.
 
 ```{admonition} Question
 Why might a centralized clearinghouse be useful? And how might the design of the clearinghouse matter?
 ```
 
 ### Stability and Orderly Markets
-Some hypotheses to consider:
-* Centralized clearinghouse can lead to more “orderly” market than decentralized (e.g., clinical psychology)
-* Designing a clearinghouse to achieve a stable match might discourage re-contracting, or pre-contracting. 
 
-Are these hypotheses true? How can we test them? 
+Some hypotheses to consider:
+
+* Centralized clearinghouse can lead to more “orderly” market than decentralized (e.g., clinical psychology)
+* Designing a clearinghouse to achieve a stable match might discourage re-contracting, or pre-contracting.
+
+Are these hypotheses true? How can we test them?
 Compare DA to alternative matching process.
 Compare centralized markets to decentralized.
 Ideally, with some sort of experiment (lab? natural?)
@@ -42,11 +45,13 @@ Compared with DA, will priority matching lead to a stable matching? Should peopl
 Find a stable matching.
 
 Women Preferences:
+
 * $w_1: m_2 \succ m_3 \succ m_1$
 * $w_2: m_2 \succ m_3 \succ m_1$
 * $w_3: m_2 \succ m_1 \succ m_3$
 
 Men Preferences:
+
 * $m_1: w_1 \succ w_2 \succ w_3$
 * $m_2: w_3 \succ w_2 \succ w_1$
 * $m_3: w_3 \succ w_1 \succ w_2$
@@ -89,13 +94,15 @@ The participants had pre-contracted, before the formal market. This is the type 
 We’ll have more to say about unraveling later.
 
 ### Stability and Market Participation
+
 Starting in the 1970s, an increasing number of couples graduated from medical school. Typically, couples want to be in the same city, but the DA algorithm doesn’t account for this; it might put a husband in Boston and wife in Chicago. So many couples started to go around the NRMP to find positions where they could be at the same hospital: match was threatened by a new form of unraveling. NRMP realized there was a problem and eventually asked Al Roth to redesign the match.
 
-### Couples: A Problem!
+### Couples: A Problem
 
 Couple $c = (c_1, c_2)$ and single student $s$. Two hospitals $h_1, h_2$ each hiring one student.
 
 Preferences:
+
 * $h_1: c_1 \succ s$
 * $h_2: s \succ c_2$
 * $s: h_1 \succ h_2$
@@ -118,9 +125,11 @@ There is no stable matching! Assign one member of couple? Then the couple will b
   - ($s$ rejects $h_2$)
   - $h_2 \rightarrow c_2$ ($c_2$ rejects)
 ```
+
 End State: $(h_1, s)$ match.
 
 #### Student-Offering DA Extension
+
 ```{list-table}
 :header-rows: 1
 
@@ -131,6 +140,7 @@ End State: $(h_1, s)$ match.
 * - $s \rightarrow h_1$ ($h_1$ rejects)
   - ($h_2$ rejects $c_2$)
 ```
+
 End State: $(h_2, s)$ match.
 
 ## NRMP Redesign
@@ -140,6 +150,7 @@ No “clean” solution to the couples problem. Student-proposing perhaps a bit 
 ### Takeaway
 
 NRMP is an unusual but illuminating design of a matching market because it is so organized.
+
 * Motivation for moving to a clearinghouse was unraveling (i.e., disorderly operation) of decentralized matching.
 * Design of the clearinghouse evidently quite important: systems with unstable matching seem to have fared poorly.
 
@@ -157,18 +168,19 @@ NRMP is an unusual but illuminating design of a matching market because it is so
 ## Timing Problems
 
 Decentralized markets with fixed appointment dates can have timing issues that may create problems
+
 * Employers and workers may have an incentive to **“jump the gun”** in order to ensure a match or a good match.
 * Employers may be hesitant to leave offers outstanding, and may want to use **“exploding offers”** to rush decisions.
 * The market can clear in a disorderly fashion so that participants end up with a relatively **limited set of choices**.
 
-Different markets have tried to address these problems in various ways, with varying success (!). 
+Different markets have tried to address these problems in various ways, with varying success (!).
 
 ## Matching Design
 
-
 Well-designed matching markets aim for several goals:
+
 1. Orderly process for making matches: ability to consider options, not be rushed into making decisions, coordinated timing.
-2. Good incentives: truthfulness, makes sense to participate, no desire to re-contract or side contract to avoid market outcome. 
-3. Good outcomes: efficient, stable, matching. 
+2. Good incentives: truthfulness, makes sense to participate, no desire to re-contract or side contract to avoid market outcome.
+3. Good outcomes: efficient, stable, matching.
 
 Factors we have identified as important include: the matching algorithm (DA vs. priority), preferences of participants (couples vs. singles), culture and ability to enforce rules (exploding offers vs. patience), broader environment (admission rates).
