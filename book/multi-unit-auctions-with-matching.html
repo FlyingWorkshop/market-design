@@ -405,11 +405,16 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#algorithm-to-allocate-efficiently">Algorithm to Allocate Efficiently?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ascending-clock-auction">Ascending (Clock) Auction</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-1">Example 1</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-2">Example 2</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-3-market-clearing-prices">Example 3: Market-Clearing Prices</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-magic-of-the-market">The Magic of the Market</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-of-results">Summary of Results</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#connection-to-matching">Connection to Matching</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deferred-acceptance">Deferred Acceptance?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deferreced-acceptance-auction">Deferreced Acceptance “Auction”</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
 </ul>
             </nav>
         </div>
@@ -476,7 +481,7 @@ Additional connections will be made on later slides.</p>
 \begin{bmatrix}
 30 &amp; 60 \\
 20 &amp; 40 \\
-10 &amp; 20 
+10 &amp; 20
 \end{bmatrix}
 \end{align*}\]</div>
 <p>The rows from top to bottom represent the values for <span class="math notranslate nohighlight">\(a\)</span>, <span class="math notranslate nohighlight">\(b\)</span>, and <span class="math notranslate nohighlight">\(c\)</span>. The left and right columns represent <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> respectively.</p>
@@ -484,20 +489,7 @@ Additional connections will be made on later slides.</p>
 <li><p>Can it be efficient to assign <span class="math notranslate nohighlight">\(\{(a, x), (b, y), (c, \emptyset)\}\)</span> with some payments, so <span class="math notranslate nohighlight">\(b\)</span> gets his most preferred item?</p></li>
 <li><p>Identify a Pareto efficient allocation.</p></li>
 </ol>
-<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
-<summary class="sd-summary-title sd-card-header">
-Solution<div class="sd-summary-down docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="sd-summary-up docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text">TODO: check this with Paul</p>
-<ol class="arabic simple">
-<li><p class="sd-card-text">Yes.</p></li>
-<li><p class="sd-card-text">TODO</p></li>
-</ol>
-</div>
-</details></section>
+</section>
 </section>
 <section id="efficient-assignments">
 <h2>Efficient Assignments<a class="headerlink" href="#efficient-assignments" title="Permalink to this heading">#</a></h2>
@@ -540,7 +532,7 @@ Solution<div class="sd-summary-down docutils">
 \begin{bmatrix}
 30 &amp; 60 \\
 20 &amp; 40 \\
-10 &amp; 20 
+10 &amp; 20
 \end{bmatrix}
 \end{align*}\]</div>
 <p>What is the efficient assignment?</p>
@@ -554,19 +546,113 @@ Solution<div class="sd-summary-down docutils">
 <p class="sd-card-text"><span class="math notranslate nohighlight">\(\{(a, y), (b, x)\}\)</span></p>
 </div>
 </details></section>
-<section id="example-2">
-<h3>Example 2<a class="headerlink" href="#example-2" title="Permalink to this heading">#</a></h3>
-<p>TODO</p>
-</section>
-<section id="example-3-market-clearing-prices">
-<h3>Example 3: Market-Clearing Prices<a class="headerlink" href="#example-3-market-clearing-prices" title="Permalink to this heading">#</a></h3>
-<p>TODO</p>
-<p>ADD PARALLELOLPIPED with PLOTLY</p>
-</section>
 </section>
 <section id="the-magic-of-the-market">
 <h2>The Magic of the Market<a class="headerlink" href="#the-magic-of-the-market" title="Permalink to this heading">#</a></h2>
-<p>TODO</p>
+<div class="proof theorem admonition" id="market-magic">
+<p class="admonition-title"><span class="caption-number">Theorem 15 </span></p>
+<section class="theorem-content" id="proof-content">
+<p>In the assignment market setting, a (“continuous”) simultaneous ascending auction with truthful bidding will both</p>
+<ul class="simple">
+<li><p>finish at the lowest (buyer best!) market clearing prices, and</p></li>
+<li><p>result in an efficient (value-maximizing) assignment .</p></li>
+</ul>
+</section>
+</div><p>The auction works like a deferred acceptance algorithm to find market clearing prices – an efficient assignment and market-clearing prices.</p>
+</section>
+<section id="summary-of-results">
+<h2>Summary of Results<a class="headerlink" href="#summary-of-results" title="Permalink to this heading">#</a></h2>
+<p>Assignment model: <span class="math notranslate nohighlight">\(N\)</span> bidders, <span class="math notranslate nohighlight">\(K\)</span> items. Each bidder wants at most one item. Bidder <span class="math notranslate nohighlight">\(i\)</span>’s payoff if it pays <span class="math notranslate nohighlight">\(p_k\)</span> for item <span class="math notranslate nohighlight">\(k\)</span> is <span class="math notranslate nohighlight">\(v_{ik} - p_k\)</span>.</p>
+<p>Key Results:</p>
+<ul class="simple">
+<li><p>There is an assignment that maximizes total value and is efficient. For almost all values, this assignment is unique.</p></li>
+<li><p>There are always market clearing prices for the items, and (item-by-item) minimal (“buyer best”) market clearing prices.</p></li>
+<li><p>These buyer-best prices can be found using an ascending auction – assuming truthful bidding.</p></li>
+</ul>
+</section>
+<section id="connection-to-matching">
+<h2>Connection to Matching<a class="headerlink" href="#connection-to-matching" title="Permalink to this heading">#</a></h2>
+<p>Think of each bidder as forming a preference list that factors in both item and money preferences (think of prices as being in discrete dollar increments)</p>
+<div class="proof example admonition" id="example-3">
+<p class="admonition-title"><span class="caption-number">Example 11 </span></p>
+<section class="example-content" id="proof-content">
+<p>First choice is to pay zero for item 1, second choice is to pay one dollar for item 1, third choice is to pay zero dollars for item 2, fourth choice is to pay two dollars for item 1, etc.</p>
+</section>
+</div><p>Items prefer more money, but don’t care who offers it.</p>
+<section id="deferred-acceptance">
+<h3>Deferred Acceptance?<a class="headerlink" href="#deferred-acceptance" title="Permalink to this heading">#</a></h3>
+<p>Each bidder submits a preference list.</p>
+<ol class="arabic simple">
+<li><p>Seller runs deferred acceptance algorithm</p></li>
+<li><p>Bidders “propose” to the items.</p></li>
+<li><p>Items reject all but the highest offer.</p></li>
+<li><p>Rejected bidders move to the next item on their preference list, if any. (They “raise their bids” as the algorithm proceeds).
+Algorithm will eventually terminate.</p></li>
+</ol>
+<p>TODO: cite</p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="head"><p><a class="reference internal" href="matching-theory.html#daa">Matching Algorithm</a></p></th>
+<th class="head"><p>“Auction” Algorithm</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>Men make offers to most preferred remaining acceptable woman.</p></td>
+<td><p>Bidders offer most preferred remaining acceptable purchase.</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>Women hold best man, reject others.</p></td>
+<td><p>“Sellers/items” hold best offer, reject others.</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>Rejected man strikes the woman from his/her list.</p></td>
+<td><p>Rejected bidder strikes offer from his/her list.</p></td>
+</tr>
+<tr class="row-odd"><td><p>4</p></td>
+<td><p>Process continues until no new offers or rejections.</p></td>
+<td><p>Process continues until no new offers or rejections.</p></td>
+</tr>
+<tr class="row-even"><td><p>5</p></td>
+<td><p>Implement last held allocation.</p></td>
+<td><p>Implement last held allocation.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="deferreced-acceptance-auction">
+<h3>Deferreced Acceptance “Auction”<a class="headerlink" href="#deferreced-acceptance-auction" title="Permalink to this heading">#</a></h3>
+<p>What we know from matching theory:</p>
+<ul class="simple">
+<li><p>DA algorithm will converge to a “stable” allocation.</p></li>
+<li><p>Bidder-offering DA gives stable allocation preferred by bidders, and is strategy-proof for the bidders.</p></li>
+</ul>
+<p>Stability: each bidder prefers the item they get, at the price they pay, to any other item at the price it receives. So at the final item prices, demand equals supply!</p>
+<p>Completing the auction/matching link:</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<ul class="simple">
+<li><p>A stable allocation is a competitive equilibrium</p></li>
+<li><p>Bidder-proposing DA gives the lowest mkt-clearing prices.</p></li>
+</ul>
+</div>
+<p>One can also show that the lowest market-clearing prices in the assignment model are exactly the Vickrey prices, and that truthful bidding in the assignment model is a Nash equilibrium.</p>
+</section>
+</section>
+<section id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Assignment model captures settings where bidders with diverse preferences must be assigned to a diverse set of goods, and payments are allowed.</p></li>
+<li><p>Competitive equilibrium is a natural candidate for a “good” outcome, especially with lowest market-clearing prices.</p></li>
+<li><p>A well-designed auction can elicit willingness-to-pay from bidders and identify market clearing prices.</p>
+<ul>
+<li><p>Simultaneous ascending auction</p></li>
+<li><p>Sealed bid assignment auction (Vickrey pricing)</p></li>
+</ul>
+</li>
+<li><p>There is a close connection to matching theory, and a version of the DA can work as an ascending auction.</p></li>
+</ul>
 </section>
 </section>
 
@@ -648,11 +734,16 @@ Solution<div class="sd-summary-down docutils">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#algorithm-to-allocate-efficiently">Algorithm to Allocate Efficiently?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ascending-clock-auction">Ascending (Clock) Auction</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-1">Example 1</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-2">Example 2</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-3-market-clearing-prices">Example 3: Market-Clearing Prices</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-magic-of-the-market">The Magic of the Market</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-of-results">Summary of Results</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#connection-to-matching">Connection to Matching</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deferred-acceptance">Deferred Acceptance?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deferreced-acceptance-auction">Deferreced Acceptance “Auction”</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
 </ul>
   </nav></div>
 

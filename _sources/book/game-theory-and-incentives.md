@@ -3,11 +3,11 @@
 ## Game Theory and Mechanism Design
 
 Classical game theory analyzes strategic behavior:
+
 * Given a strategic environment (a "game"), what can we say about the likely outcome?
 * Mechanism design flips the problem around
 * How can we create rules of play (a "mechanism") so that even if players are strategically sophisticated,
     we still get a desired outcome?
-
 
 ```{glossary}
 game
@@ -31,8 +31,8 @@ Nash equilbrium
     Action profile $a = (a_1, \ldots, a_n)$ is a _Nash equilibrium_ if for each player $i$ and action $a_i'$, $U_i(a_i, a_{-i}) \geq u_i(a_i', a_{-1})$. In words, an action profile $a$ is a Nash equilibrium if no player $i$ can increase its own payoff above $u_i(a)$ by unilaterally changing in its action from $a_i$ to some other action $a_i'$.
 ```
 
-
 ### Incomplete Information
+
 * What happens if the players don't know each other's payoff functions? For example, in an auction, players may
 not know the other bidders' valuations.
 * (Bayesian) Nash equilibrium is more subtle: each player's optimal choice depends on what it believes others' payoffs may be,
@@ -46,6 +46,7 @@ player is $v_i(x) - p_i$.
 Challenge:  the _mechanism designer_ typically does not know the payoff functions! The function is the player's privately known "type."
 
 #### "Good" Allocations
+
 Various criteria may define "good" allocations or outcomes. In auction problems, a good allocation might be one that is _Pareto efficient_ given everyone's values, or one that has high revenue for the seller. In matching problems, a good allocation might be one that is _stable_.
 
 ### Mechanisms
@@ -68,9 +69,11 @@ truthful mechanism
 ```
 
 #### Example 1: Gayle-Shapley Marriage Problem
+
 In the Gale-Shapley marriage problem, the messages are statements of preference (not necessarily truthful). The outcome/allocation/assignment is a matching, which the mechanism selects as a function of the reported preferences. No payments are made. A "type" is the preference list of each agent.
 
 #### Example 2: Simple Auction
+
 In a simple auction problem, the messages are the bids $(b_i \geq 0)$. The auction mechanism determines who wins and what everyone must pay as a function of the bids. A type is typically a person's value (maximum price).
 
 A mechanism plus payoffs defines a game. The possible actions are the messages: $M_1, \ldots, M_n$. The payoffs are functions of the messages $u_i(m_1, \ldots, m_n) = v_{i}\left(x\left(m_{1},\ldots,m_{n}\right)\right) - p_i(m_1, \ldots, m_n).$
@@ -85,9 +88,11 @@ strategy-proof mechanism
 ### Applying GT to Market Design
 
 #### Studying existing markets
+
 Identify the "rules of the game," the incentives for participants, and how they behave. Then try ot understand why the market functions well, or not so well.
 
 #### Designing new markets
+
 Identify the economic problem to be solved, the players and their incentives and information. Then try to understand what sort of market rules would lead to a good outcome when participants are selfish and smart.
 
 Economic theory provides a conceptual framework, but good practice also uses data and experiment to test hypotheses and identify things models may have missed.
@@ -101,9 +106,9 @@ Can stable matching mechanisms be truthful?
 ### From Algorithms to Mechanisms
 
 Algorithm analysis assumes that inputs are given and correct. Mechanism analysis also examines the inputs and asks:
+
 * Is the mechanism truthful?
 * Is it easy for participants to know what to report?
-
 
 ```{prf:theorem} Man-Proposing Mechanism is Truthful for Men
 :label: Man-Proposing-Truthful
@@ -127,4 +132,3 @@ Putting it all together, we get that for *any* reports by the women and the othe
 2. Which steps of the proof also apply to women (in the man-offering deferred acceptance algorithm)?
 3. What can you infer about the structure of women’s optimal reports when they play strategically?
 ```
-
