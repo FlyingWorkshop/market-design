@@ -42,7 +42,6 @@ The strategy $\bar{a}_n$ is a **dominant strategy** if it's the unique universal
 
 ## Truthful Mechanisms
 
-
 ```{glossary}
 truthful (auction)
     An auction is **truthful** if each player $n$ has a universal best reply, which is to report its true value $v_n$ to the auctioneer.
@@ -58,7 +57,9 @@ The second-price auction is the _only_ auction for this setting that has these t
 2. efficiency: the highest bid always wins
 3. losing bidders pay nothing
 ```
+
 We provide a sketch of the prooof. The details are left as an excercise.
+
 ```{prf:proof}
 Sketch:
 1. Truthful incentives $\Rightarrow$ given others' bid, all of $n$'s winning bids must always lead to the same price $p(v_{-n})$. 
@@ -80,7 +81,7 @@ Consider an abstract setting in which our “system” must choose one from a fi
 Examples:
 
 * How many items to assign to each bidder (from a set of identical items)?
-* Who wins which from a set of distinct items? 
+* Who wins which from a set of distinct items?
 * Which room in a rental house should be assigned to each roommate?
 * Whether to build a children’s playground at the apartment complex and how to equip it?  
 * Building a bridge: whether to do it, where and which kind?
@@ -89,9 +90,9 @@ The people are $n=1,\dots,N$ and the possible decisions are numbered $k=1,\dots,
 
 Some Ideas:
 
-* A “direct mechanism” asks each player to report values for each possible decision. 
+* A “direct mechanism” asks each player to report values for each possible decision.
 * The system then uses the reports to choose the decision $k^*$ that maximizes the total welfare and makes a payment (positive or negative) to each player.
-* So… each player can, by exaggerating her report, cause the system to select any decision. Why would she report truthfully? 
+* So… each player can, by exaggerating her report, cause the system to select any decision. Why would she report truthfully?
 * Solution: arrange the payments to players to align each player’s interest with the total welfare.  
 * Given any reports by others, any two reports by a single agent $n$ that lead to the same decision $k$ must lead her to receive the same payment, which we denote by $p_n(k,v_{(-n)})$.
 
@@ -181,8 +182,10 @@ Same ideas apply with values drawn from a distribution other than $U[0, 100]$, b
 ```
 
 ## Ascending Auction
+
 ```{index} ascending auctions
 ```
+
 ```{prf:algorithm} Ascending Auction
 :label: ascending-auction
 1. Price starts at zero, and rises gradually and continuously.
@@ -193,35 +196,44 @@ Final bidder wins, and pays the price at which the second-to-last bidder dropped
 ```
 
 ### Strategy
+
 ```{prf:remark} Ascending Auctions are Truthful
 Ascending auctions are truthful. Bidding until the price just equals your value is optimal regardless of others’ bids.
 ```
 
 ### Outcome
+
 Outcome
+
 * Bidder with highest value will win.
 * Winner will pay second highest value.
 
 ```{prf:example}
 Consider three bidders whose values are 25, 33, and 75. First exits at 25, second at 33 and auction ends.
 ```
+
 ### Revenue
+
 What average revenue can we expect from the ascending auction? (Assume two bidders with values 𝑈[0,100]).
+
 * Revenue will be equal to the second highest value.
 * Expected revenue is equal to the expected second highest value.
 
 If we repeatedly draw two values from $U[0,100]$,
+
 * On average, the highest draw will be 66 2/3.
 * On average, the second highest will be 33 1/3, which is also the average (or expected) revenue.  
 
 Questions: how would expected revenue be different if:
-* there were three bidders? 
-* values were drawn from $U[0,200]$? 
+
+* there were three bidders?
+* values were drawn from $U[0,200]$?
 * values were drawn from $U[100,200]$?
 
 ### Competition
 
 How are "gains" divided?
+
 ```{prf:example}
 Two bidders with values $U[0,100]$:
 * Expected value of winner: $66 \frac{2}{3}$.
@@ -240,6 +252,7 @@ With $10$ bidders, mean value of winner is $64 \frac{10}{11}$, mean price is $64
 ## Second-Price Auctions
 
 In equilibrium, it is a dominant strategy to bid truthfully. If all do that, then:
+
 * Bidder with highest value wins.
 * Pays an amount equal to second highest value.
 * Exactly the same as the ascending auction!
@@ -254,16 +267,18 @@ Three bidders with values 25, 33, 75. Winner has value 75, pays 33, as in ascend
 Bidders submit sealed bids. Bidder who submitted highest bid wins. Winning bidder pays his own bid.
 
 How should we expect participants to bid?
+
 * Best to submit a bid less than your true value.
 
-How much less? 
+How much less?
+
 * Submitting a higher bid increases the chance you will win, but also the amount you'll pay if you do win.
 
 No dominant strategy: Optimal bid depends on what you think the others will bid (unlike in the second-price auction!).
 
 We will use Nash equilibrium analysis.
 
-## Nash Equilibrium 
+## Nash Equilibrium
 
 ```{glossary}
 (Bayesian) Nash equilibrium
@@ -281,7 +296,7 @@ Suppose 2 uses the strategy $b_2 = \beta v_2$. Bidder 1 understands 2’s strate
 | $b_2 < b$ | $P(\beta v_2 < b) = P(v_2 < b / \beta)  = 0.01 b / \beta$ | $v_1 - b$ |
 | $b_2 > b$ | $P(\beta v_2 > b) = 1 - (0.01 b) / \beta$ | $0$ |
 
-Expected profit is $0.01 b / \beta (v_1 - b) + (1 - (0.01b) / \beta) 0$. Bidder 1's bidding problem is to maximize expected profit $\max_{b \leq 100 \beta} 0.01 b / \beta (v_1 - b)$. Since scaling doesn't effect the optimal bid, we can simply this as $\max_{b \leq 100 \beta} b  (v_1 - b)$. Our first order condition for an interior optimum is $(v_1 - b) - b = 0$. Rearranging, we get $b^{*} = v_1 / 2$ If bidder 2 uses the strategy $b = \beta v_2$, bidder 1's _best response_ is to use the strategy $b_1 = \min(v_1 / 2, 100 \beta)$. There is a Bayes-Nash equilibrium of the first-price auction with $b_1 = v_1 / 2, b_2 = v_2 / 2$. The bidder with the highest value wins in equilbrium. 
+Expected profit is $0.01 b / \beta (v_1 - b) + (1 - (0.01b) / \beta) 0$. Bidder 1's bidding problem is to maximize expected profit $\max_{b \leq 100 \beta} 0.01 b / \beta (v_1 - b)$. Since scaling doesn't effect the optimal bid, we can simply this as $\max_{b \leq 100 \beta} b  (v_1 - b)$. Our first order condition for an interior optimum is $(v_1 - b) - b = 0$. Rearranging, we get $b^{*} = v_1 / 2$ If bidder 2 uses the strategy $b = \beta v_2$, bidder 1's _best response_ is to use the strategy $b_1 = \min(v_1 / 2, 100 \beta)$. There is a Bayes-Nash equilibrium of the first-price auction with $b_1 = v_1 / 2, b_2 = v_2 / 2$. The bidder with the highest value wins in equilbrium.
 
 ```{admonition} Question
 What is the revenue on average?
@@ -295,7 +310,9 @@ Exactly the same as the ascending and second price! Same for each realization of
 Example: suppose bidder values are 75 and 50. What then?
 
 ### Recap
+
 We compared two sealed bid auctions:
+
 * High bidder wins and pays own bid
 * High bidder wins and pays next-highest bid.
 Result: on average the seller gets the same revenue.
@@ -309,6 +326,7 @@ When you change the game, you also change behavior! The equilibrium strategy goe
 ## Revenue Equivalence Theorem
 
 We’ve seen that several standard auctions share the following properties if bidders play according to Nash equilibrium:
+
 * The high value bidder wins.
 * The expected auction price equals the expected value of the second highest bidder.
 
@@ -317,7 +335,7 @@ We’ve seen that several standard auctions share the following properties if bi
 "Efficient" auctions (where the high value bidder wins) are "revenue equivalent" (yeild _exactly_ the same price on average).
 ```
 
-The theorem is more general then our two examples, and has been mentioned in the citations of two Nobel Prizes: William Vickrey in 1996 for the first version of the result, and Roger Myerson in 2007 for using a generalization of it to describe “optimal” auctions. 
+The theorem is more general then our two examples, and has been mentioned in the citations of two Nobel Prizes: William Vickrey in 1996 for the first version of the result, and Roger Myerson in 2007 for using a generalization of it to describe “optimal” auctions.
 
 ## Other Auctions
 
@@ -337,6 +355,7 @@ Descending price (Dutch) auction
 ## Elements of Auction Design
 
 Sellers have a variety of ways to modify the basic auction forms and try to increase their revenue or achieve other objectives.
+
 1. Attract more bidders to participate in the auction.
 2. Set a reserve price (or “minimum bid).
 3. Subsidize weak bidders to create competition.
@@ -367,6 +386,7 @@ Game theory models we’ve looked at assume that bidders understand the environm
 ## Summary
 
 Why Auctions?
+
 * Auctions can be especially useful when the demand is unknown and supply is limited.
 Truthful Mechanisms
 * The VCG mechanisms are truthful. They are the only truthful and efficient mechanisms for a certain wide class of problems.

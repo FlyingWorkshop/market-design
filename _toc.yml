@@ -17,8 +17,8 @@ parts:
 - caption: Auction Theory
   chapters:
     - file: book/auction-theory
-    - file: book/auction-design-and-applications # ~
-    - file: book/winner-curse # ~
+    - file: book/auction-design-and-applications
+    - file: book/winner-curse
     - file: book/multi-unit-auctions-with-matching.md # ~
     - file: book/sponsored-search-auctions # ~
     # - file: book/bidding-languages-and-chilean-fisheries.md  # !!
