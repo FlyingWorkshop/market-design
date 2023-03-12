@@ -441,7 +441,7 @@ we still get a desired outcome?</p></li>
 \mathbb{R}^n\)</span></p></li>
 </ul>
 </dd>
-<dt id="term-dominant-action">dominant action<a class="headerlink" href="#term-dominant-action" title="Permalink to this term">#</a></dt><dd><p>Action <span class="math notranslate nohighlight">\(a_i\)</span> is (weakly) <em>dominant</em> for player <span class="math notranslate nohighlight">\(i\)</span> if for all <span class="math notranslate nohighlight">\(a_i'\)</span> and <span class="math notranslate nohighlight">\(a_{-i}\)</span>: <span class="math notranslate nohighlight">\(u_i(a_i, a_{-i}) \geq u_i(a_i', a_{-i})\)</span> and for some <span class="math notranslate nohighlight">\(\hat{a}_{-i}\)</span>, <span class="math notranslate nohighlight">\(u_i(a_i, \hat{a}_{-i}) &gt; u_i(a_i', \hat{a}_{-i})\)</span>.</p>
+<dt id="term-weakly-dominant-action">weakly dominant action<a class="headerlink" href="#term-weakly-dominant-action" title="Permalink to this term">#</a></dt><dd><p>Action <span class="math notranslate nohighlight">\(a_i\)</span> is weakly <em>dominant</em> for player <span class="math notranslate nohighlight">\(i\)</span> if for all <span class="math notranslate nohighlight">\(a_i'\)</span> and <span class="math notranslate nohighlight">\(a_{-i}\)</span>: <span class="math notranslate nohighlight">\(u_i(a_i, a_{-i}) \geq u_i(a_i', a_{-i})\)</span> and for some <span class="math notranslate nohighlight">\(\hat{a}_{-i}\)</span>, <span class="math notranslate nohighlight">\(u_i(a_i, \hat{a}_{-i}) &gt; u_i(a_i', \hat{a}_{-i})\)</span>.</p>
 </dd>
 </dl>
 <div class="admonition tip">
@@ -450,7 +450,7 @@ we still get a desired outcome?</p></li>
 It’s a no-brainer for <span class="math notranslate nohighlight">\(i\)</span> to play a dominant action if she has one; it is an optimal choice <em>regardless of how the others may play</em>.</p>
 </div>
 <dl class="simple glossary">
-<dt id="term-Nash-equilbrium">Nash equilbrium<a class="headerlink" href="#term-Nash-equilbrium" title="Permalink to this term">#</a></dt><dd><p>Action profile <span class="math notranslate nohighlight">\(a = (a_1, \ldots, a_n)\)</span> is a <em>Nash equilibrium</em> if for each player <span class="math notranslate nohighlight">\(i\)</span> and action <span class="math notranslate nohighlight">\(a_i'\)</span>, <span class="math notranslate nohighlight">\(U_i(a_i, a_{-i}) \geq u_i(a_i', a_{-1})\)</span>. In words, an action profile <span class="math notranslate nohighlight">\(a\)</span> is a Nash equilibrium if no player <span class="math notranslate nohighlight">\(i\)</span> can increase its own payoff above <span class="math notranslate nohighlight">\(u_i(a)\)</span> by unilaterally changing in its action from <span class="math notranslate nohighlight">\(a_i\)</span> to some other action <span class="math notranslate nohighlight">\(a_i'\)</span>.</p>
+<dt id="term-Nash-equilbrium">Nash equilbrium<a class="headerlink" href="#term-Nash-equilbrium" title="Permalink to this term">#</a></dt><dd><p>Action profile <span class="math notranslate nohighlight">\(a = (a_1, \ldots, a_n)\)</span> is a <em>Nash equilibrium</em> if for each player <span class="math notranslate nohighlight">\(i\)</span> and action <span class="math notranslate nohighlight">\(a_i'\)</span>, <span class="math notranslate nohighlight">\(u_i(a_i, a_{-i}) \geq u_i(a_i', a_{-1})\)</span>. In words, an action profile <span class="math notranslate nohighlight">\(a\)</span> is a Nash equilibrium if no player <span class="math notranslate nohighlight">\(i\)</span> can increase its own payoff above <span class="math notranslate nohighlight">\(u_i(a)\)</span> by unilaterally changing in its action from <span class="math notranslate nohighlight">\(a_i\)</span> to some other action <span class="math notranslate nohighlight">\(a_i'\)</span>.</p>
 </dd>
 </dl>
 <section id="incomplete-information">
@@ -464,10 +464,8 @@ so each player’s expected payoff depends on probabilities of what others would
 </section>
 <section id="allocation-problems">
 <h3>Allocation Problems<a class="headerlink" href="#allocation-problems" title="Permalink to this heading">#</a></h3>
-<p>An allocation problem consists of player <span class="math notranslate nohighlight">\(i = 1, \ldots, n\)</span>, a set of possible outcomes or allocations <span class="math notranslate nohighlight">\(X\)</span>, and
-(possibly) payments by each player <span class="math notranslate nohighlight">\(p_1, \ldots, p_n\)</span>, and value functions <span class="math notranslate nohighlight">\(v_i(x)\)</span> such that the payoff for each
-player is <span class="math notranslate nohighlight">\(v_i(x) - p_i\)</span>.
-Challenge:  the <em>mechanism designer</em> typically does not know the payoff functions! The function is the player’s privately known “type.”</p>
+<p>An allocation problem consists of player <span class="math notranslate nohighlight">\(i = 1, \ldots, n\)</span>, a set of possible outcomes or allocations <span class="math notranslate nohighlight">\(X\)</span>, (possibly) payments by each player <span class="math notranslate nohighlight">\(p_1, \ldots, p_n\)</span>, and value functions <span class="math notranslate nohighlight">\(v_i(x)\)</span> such that the payoff for each player is <span class="math notranslate nohighlight">\(v_i(x) - p_i\)</span>.
+Challenge: the <em>mechanism designer</em> typically does not know the payoff functions! The function is the player’s privately known “type.”</p>
 <section id="good-allocations">
 <h4>“Good” Allocations<a class="headerlink" href="#good-allocations" title="Permalink to this heading">#</a></h4>
 <p>Various criteria may define “good” allocations or outcomes. In auction problems, a good allocation might be one that is <em>Pareto efficient</em> given everyone’s values, or one that has high revenue for the seller. In matching problems, a good allocation might be one that is <em>stable</em>.</p>
@@ -479,36 +477,34 @@ Challenge:  the <em>mechanism designer</em> typically does not know the payoff f
 <dt id="term-mechanism">mechanism<a class="headerlink" href="#term-mechanism" title="Permalink to this term">#</a></dt><dd><p>A mechanism <span class="math notranslate nohighlight">\((M, x, p)\)</span> is a triple consisting of:</p>
 <ul class="simple">
 <li><p>A set of possible <em>messages</em> for each player: <span class="math notranslate nohighlight">\(M_1, \ldots, M_n\)</span></p></li>
-<li><p>An allocation rule: <span class="math notranslate nohighlight">\(X(m_1, \ldots, m_n)\)</span></p></li>
-<li><p>Possibly: a payment rule <span class="math notranslate nohighlight">\(p: M_1 \times \ldots \times M_n \to \mathbb{R}^n\)</span> where player <span class="math notranslate nohighlight">\(i\)</span> pays <span class="math notranslate nohighlight">\(p_i(m_1, \ldots, m_n)\)</span>.</p></li>
+<li><p>An allocation rule: <span class="math notranslate nohighlight">\(x(m_1, \ldots, m_n)\)</span></p></li>
+<li><p>A payment rule <span class="math notranslate nohighlight">\(p: M_1 \times \ldots \times M_n \to \mathbb{R}^n\)</span> where player <span class="math notranslate nohighlight">\(i\)</span> pays <span class="math notranslate nohighlight">\(p_i(m_1, \ldots, m_n)\)</span>.</p></li>
 </ul>
 <p>We will look at mechanisms with and without payments. If there are no payments, set all <span class="math notranslate nohighlight">\(p_i \equiv 0\)</span>.</p>
 </dd>
 <dt id="term-matching-mechanism">matching mechanism<a class="headerlink" href="#term-matching-mechanism" title="Permalink to this term">#</a></dt><dd><p>A <strong>matching mechanism</strong> is a mapping from <strong>reported</strong> preferences into a matching. (no payments)</p>
 </dd>
-<dt id="term-truthful-mechanism">truthful mechanism<a class="headerlink" href="#term-truthful-mechanism" title="Permalink to this term">#</a></dt><dd><p>A mechanism is <strong>truthful</strong> if truthful reporting is a dominant acution for each participant.</p>
+<dt id="term-truthful-mechanism">truthful mechanism<a class="headerlink" href="#term-truthful-mechanism" title="Permalink to this term">#</a></dt><dd><p>A mechanism is <strong>truthful</strong> if truthful reporting is a dominant action for each participant.</p>
+</dd>
+<dt id="term-strategy-proof-mechanism">strategy-proof mechanism<a class="headerlink" href="#term-strategy-proof-mechanism" title="Permalink to this term">#</a></dt><dd><p>A <em>strategy/action</em> for player <span class="math notranslate nohighlight">\(i\)</span> specifies what message to send as a function of player <span class="math notranslate nohighlight">\(i\)</span>’s type. A mechanism is <em>strategy-proof</em> if each player <span class="math notranslate nohighlight">\(i\)</span> has a dominant strategy, that is, a strategy that is optimal regardless of the strategies chosen by the other players. Sometimes, we’ll look at mechanisms that are not strategy-proof, using Nash equilibrium to forecast mechanism outcomes.</p>
 </dd>
 </dl>
 <section id="example-1-gayle-shapley-marriage-problem">
 <h4>Example 1: Gayle-Shapley Marriage Problem<a class="headerlink" href="#example-1-gayle-shapley-marriage-problem" title="Permalink to this heading">#</a></h4>
-<p>In the Gale-Shapley marriage problem, the messages are statements of preference (not necessarily truthful). The outcome/allocation/assignment is a matching, which the mechanism selects as a function of the reported preferences. No payments are made. A “type” is the preference list of each agent.</p>
+<p>In the Gayle-Shapley marriage problem, the messages are statements of preference (not necessarily truthful). The outcome/allocation/assignment is a matching, which the mechanism selects as a function of the reported preferences. No payments are made. A “type” is the preference list of each agent.</p>
 </section>
 <section id="example-2-simple-auction">
 <h4>Example 2: Simple Auction<a class="headerlink" href="#example-2-simple-auction" title="Permalink to this heading">#</a></h4>
-<p>In a simple auction problem, the messages are the bids <span class="math notranslate nohighlight">\((b_i \geq 0)\)</span>. The auction mechanism determines who wins and what everyone must pay as a function of the bids. A type is typically a person’s value (maximum price).</p>
+<p>In a simple auction problem, the messages are the bids <span class="math notranslate nohighlight">\((b_i \geq 0)\)</span>. The auction mechanism determines who wins and what everyone must pay as a function of the bids. A type is typically a person’s value (maximum willingness to pay).</p>
 <p>A mechanism plus payoffs defines a game. The possible actions are the messages: <span class="math notranslate nohighlight">\(M_1, \ldots, M_n\)</span>. The payoffs are functions of the messages <span class="math notranslate nohighlight">\(u_i(m_1, \ldots, m_n) = v_{i}\left(x\left(m_{1},\ldots,m_{n}\right)\right) - p_i(m_1, \ldots, m_n).\)</span></p>
 <p>Often, we will focus on <em>direct mechanisms</em>: <span class="math notranslate nohighlight">\(M_i\)</span> is equal to the set of <span class="math notranslate nohighlight">\(i\)</span>’s possible payoff functions (or preferences).</p>
-<dl class="simple glossary">
-<dt id="term-strategy-proof-mechanism">strategy-proof mechanism<a class="headerlink" href="#term-strategy-proof-mechanism" title="Permalink to this term">#</a></dt><dd><p>A <em>strategy/action</em> for player <span class="math notranslate nohighlight">\(i\)</span> specifies what message to send as a function of player <span class="math notranslate nohighlight">\(i\)</span>’s type. A mechanism is <em>strategy-proof</em> if each player <span class="math notranslate nohighlight">\(i\)</span> has a dominant strategy, that is, a strategy that is optimal regardless of the strategies chosen by the other players. Sometimes, we’ll look at mechanisms that are not strategy-proof, using Nash equilibrium to forecast mechanism outcomes.</p>
-</dd>
-</dl>
 </section>
 </section>
 <section id="applying-gt-to-market-design">
 <h3>Applying GT to Market Design<a class="headerlink" href="#applying-gt-to-market-design" title="Permalink to this heading">#</a></h3>
 <section id="studying-existing-markets">
 <h4>Studying existing markets<a class="headerlink" href="#studying-existing-markets" title="Permalink to this heading">#</a></h4>
-<p>Identify the “rules of the game,” the incentives for participants, and how they behave. Then try ot understand why the market functions well, or not so well.</p>
+<p>Identify the “rules of the game,” the incentives for participants, and how they behave. Then try to understand why the market functions well, or not so well.</p>
 </section>
 <section id="designing-new-markets">
 <h4>Designing new markets<a class="headerlink" href="#designing-new-markets" title="Permalink to this heading">#</a></h4>
