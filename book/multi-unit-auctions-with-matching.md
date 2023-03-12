@@ -159,7 +159,6 @@ Each bidder submits a preference list.
 4. Rejected bidders move to the next item on their preference list, if any. (They “raise their bids” as the algorithm proceeds).
 Algorithm will eventually terminate.
 
-TODO: cite
 | | {prf:ref}`Matching Algorithm <daa>` | "Auction" Algorithm |
 |---|--------------------|---------------------|
 | 1 | Men make offers to most preferred remaining acceptable woman.| Bidders offer most preferred remaining acceptable purchase.|
