@@ -433,12 +433,12 @@ document.write(`
 <h1>Auction Theory<a class="headerlink" href="#auction-theory" title="Permalink to this heading">#</a></h1>
 <section id="single-item-auctions">
 <h2>Single Item Auctions<a class="headerlink" href="#single-item-auctions" title="Permalink to this heading">#</a></h2>
-<p>A seller has a single item that she wants to sell. How can she identify the right buyer and price? Why use an auction instead of s1. ply setting a price? The seller may not know what price to set, and guessing can lead to problems: too high, no sale; too low, excess demand. Potential buyers know their max prices but don’t always reveal them (everyone loves a good deal!). If <strong>acceptance</strong> of any offer is <strong>deferred</strong> until all offers can be compared, then the mechanism is called an <strong>auction</strong> and leads to <strong>competition</strong> and <strong>price discover</strong>.</p>
+<p>A seller has a single item that she wants to sell. How can she identify the right buyer and price? Why use an auction instead of simply setting a price? The seller may not know what price to set, and guessing can lead to problems: too high, no sale; too low, excess demand. Potential buyers know their max prices but don’t always reveal them (everyone loves a good deal!). If <strong>acceptance</strong> of any offer is <strong>deferred</strong> until all offers can be compared, then the mechanism is called an <strong>auction</strong> and leads to <strong>competition</strong> and <strong>price discovery</strong>.</p>
 <blockquote class="epigraph">
 <div><p>Auctions are games that guide prices to mimic markets.
 – Josh Gross</p>
 </div></blockquote>
-<p>We can model this with <span class="math notranslate nohighlight">\(N\)</span> bidders. The item is worht <span class="math notranslate nohighlight">\(v_n &gt; 0\)</span> to bidder <span class="math notranslate nohighlight">\(n\)</span> (if <span class="math notranslate nohighlight">\(v_n \leq 0\)</span> then they don’t join the auction). Losing bidders have payoffs of zero. The winning bidder pays <span class="math notranslate nohighlight">\(p\)</span> has payoff <span class="math notranslate nohighlight">\(v_n - p\)</span>.</p>
+<p>We can model this with <span class="math notranslate nohighlight">\(N\)</span> bidders. The item is worth <span class="math notranslate nohighlight">\(v_n &gt; 0\)</span> to bidder <span class="math notranslate nohighlight">\(n\)</span> (if <span class="math notranslate nohighlight">\(v_n \leq 0\)</span> then they don’t join the auction). Losing bidders have payoffs of zero. The winning bidder pays <span class="math notranslate nohighlight">\(p\)</span> has payoff <span class="math notranslate nohighlight">\(v_n - p\)</span>.</p>
 </section>
 <section id="sealed-bid-auctions">
 <h2>Sealed-Bid Auctions<a class="headerlink" href="#sealed-bid-auctions" title="Permalink to this heading">#</a></h2>
@@ -488,7 +488,7 @@ document.write(`
 <li><p>losing bidders pay nothing</p></li>
 </ol>
 </section>
-</div><p>We provide a sketch of the prooof. The details are left as an excercise.</p>
+</div><p>We provide a sketch of the proof. The details are left as an exercise.</p>
 <div class="proof admonition" id="proof">
 <p>Proof. Sketch:</p>
 <ol class="arabic simple">
@@ -580,7 +580,7 @@ v_{nk}=\begin{cases}
 <h2>Revenues<a class="headerlink" href="#revenues" title="Permalink to this heading">#</a></h2>
 <dl class="glossary">
 <dt id="term-sealed-bidding">sealed bidding<a class="headerlink" href="#term-sealed-bidding" title="Permalink to this term">#</a></dt><dd><p>Seller asks for single round of sealed bids. The highest bidder wins and pays its bid.</p>
-<p>Common in selling real estate, timber,commodities, construction or service contracts (where “low bid” wins!). It is also possible to use a second-price auction.</p>
+<p>Common in selling real estate, timber, commodities, construction or service contracts (where “low bid” wins!). It is also possible to use a second-price auction.</p>
 </dd>
 <dt id="term-ascending-auction">ascending auction<a class="headerlink" href="#term-ascending-auction" title="Permalink to this term">#</a></dt><dd><p>Price starts low, bidders (or auctioneer) raise price until only one bidder is left.</p>
 <p>Common for art, antiques, cars, charity auctions, livestock, real estate, company “take-overs”, job market (if you’re lucky!).</p>

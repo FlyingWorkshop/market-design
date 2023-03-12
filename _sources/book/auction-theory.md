@@ -2,14 +2,14 @@
 
 ## Single Item Auctions
 
-A seller has a single item that she wants to sell. How can she identify the right buyer and price? Why use an auction instead of s1. ply setting a price? The seller may not know what price to set, and guessing can lead to problems: too high, no sale; too low, excess demand. Potential buyers know their max prices but don't always reveal them (everyone loves a good deal!). If **acceptance** of any offer is **deferred** until all offers can be compared, then the mechanism is called an **auction** and leads to **competition** and **price discover**.
+A seller has a single item that she wants to sell. How can she identify the right buyer and price? Why use an auction instead of simply setting a price? The seller may not know what price to set, and guessing can lead to problems: too high, no sale; too low, excess demand. Potential buyers know their max prices but don't always reveal them (everyone loves a good deal!). If **acceptance** of any offer is **deferred** until all offers can be compared, then the mechanism is called an **auction** and leads to **competition** and **price discovery**.
 
 ```{epigraph}
 Auctions are games that guide prices to mimic markets.
 -- Josh Gross
 ```
 
-We can model this with $N$ bidders. The item is worht $v_n > 0$ to bidder $n$ (if $v_n \leq 0$ then they don't join the auction). Losing bidders have payoffs of zero. The winning bidder pays $p$ has payoff $v_n - p$.
+We can model this with $N$ bidders. The item is worth $v_n > 0$ to bidder $n$ (if $v_n \leq 0$ then they don't join the auction). Losing bidders have payoffs of zero. The winning bidder pays $p$ has payoff $v_n - p$.
 
 ## Sealed-Bid Auctions
 
@@ -58,7 +58,7 @@ The second-price auction is the _only_ auction for this setting that has these t
 3. losing bidders pay nothing
 ```
 
-We provide a sketch of the prooof. The details are left as an excercise.
+We provide a sketch of the proof. The details are left as an exercise.
 
 ```{prf:proof}
 Sketch:
@@ -157,7 +157,7 @@ One can verify that $k' \in k^{*}(v)$ and that $v_{n{hat{k}}} + p_n(\hat{k}, v_{
 sealed bidding
     Seller asks for single round of sealed bids. The highest bidder wins and pays its bid.
 
-    Common in selling real estate, timber,commodities, construction or service contracts (where “low bid” wins!). It is also possible to use a second-price auction.  
+    Common in selling real estate, timber, commodities, construction or service contracts (where “low bid” wins!). It is also possible to use a second-price auction.  
 
 ascending auction
     Price starts low, bidders (or auctioneer) raise price until only one bidder is left.
