@@ -11,21 +11,21 @@ Auctions are games that guide prices to mimic markets.
 
 We can model this with $N$ bidders. The item is worht $v_n > 0$ to bidder $n$ (if $v_n \leq 0$ then they don't join the auction). Losing bidders have payoffs of zero. The winning bidder pays $p$ has payoff $v_n - p$.
 
-
 ## Sealed-Bid Auctions
+
 ```{index} sealed-bid auctions
 ```
 
 A sealed bid auctions (also called "blind auctions") are auctions where bidders submit bids secretly and simultaneously, so no one knows the bid of anyone else. The highest bid always wins, but they don't always pay the highest price for reasons we'll explore later.
 
 ```{glossary}
-"First-Price" Auctions
+first-price auction
     * Each bidder privately writes down a number
     * The highest number wins (ties broken arbitrarily)
     * The winning bidders pays a price equal to **her bid**
     * *Each bidder should bid **less than the maximum** they're willing to pay*
 
-"Second-Price" Auctions
+second-price auction
     * Each bidder privately writes down a number
     * The highest number is the winning bid (ties broken arbitrarily)
     * The winning bidder pays a price equal to the highest losing bid
@@ -71,11 +71,14 @@ Sketch:
 ```
 
 ## Vickrey-Clark-Groves (VCG) Mechanisms
+
 ```{index} Vickrey-Clark-Groves (VCG) Mechanisms
 ```
 
 Consider an abstract setting in which our “system” must choose one from a finite set of outcomes.
+
 Examples:
+
 * How many items to assign to each bidder (from a set of identical items)?
 * Who wins which from a set of distinct items? 
 * Which room in a rental house should be assigned to each roommate?
@@ -85,6 +88,7 @@ Examples:
 The people are $n=1,\dots,N$ and the possible decisions are numbered $k=1,\dots,K$. Person $n$ has value $v_{nk}$ for decision $k$. Notation: $v_n=(v_{n1},\dots,v_{nK})$, $v=(v_1,\dots,v_N)$. The system collects value reports and uses those to select a value-maximizing decision $k^{*}$: $k^* \in \arg\max_k v_{1k}+\dots+v_{Nk}$. But agents could misreport their values. Is there any way to incentivize truthful value reports? How?
 
 Some Ideas:
+
 * A “direct mechanism” asks each player to report values for each possible decision. 
 * The system then uses the reports to choose the decision $k^*$ that maximizes the total welfare and makes a payment (positive or negative) to each player.
 * So… each player can, by exaggerating her report, cause the system to select any decision. Why would she report truthfully? 
@@ -165,6 +169,7 @@ ascending auction
 ### Canonical Model
 
 Potential Buyers:
+
 * $N$ bidders with values $v_1, v_2, \dots, v_N$
 * Values $v_j$ drawn are independently from uniform distribution on $[0, 100]$.
 * Each buyer's value is his own private information.
