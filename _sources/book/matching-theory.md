@@ -7,6 +7,7 @@
 Two different kinds of parties to be matched. Participants of both kinds care about to whom they are matched. Money and prices can't be used to guide the match.
 
 ### Sample Applications
+
 * School assignment
 * College admissions
 * Medical residencies
@@ -48,6 +49,7 @@ stable matching
 #### Question
 
 There are two men $m, m'$ and two women $w, w'$.
+
 * $m$ prefers $w$ to $w'$ to $m$ ($w \succ_m w' \succ_m m$)
 * $m'$ prefers $w'$ to $w$ to $m'$
 * $w$ prefers $m$ to $m'$ to $w$
@@ -68,12 +70,13 @@ Get more practice [here](https://colab.research.google.com/drive/1ca7I3ArNiOGom9
 
 If we have $|M| = |W| = n$, how many matchings are possible? What about when $|M| \neq |W|$? How does this change if we no longer assume strict preferences? How do we define "blocking pairs" if we give up strict preferences?
 
-
 ## Deferred Acceptance Algorithm
+
 ```{index} Deferred Acceptance Algorithm (DAA)
 ```
 
 ### Algorithm
+
 ```{prf:algorithm} Deferred Acceptance Algorithm
 :label: daa
 1. Men and women rank all potential partners.
@@ -82,13 +85,16 @@ If we have $|M| = |W| = n$, how many matchings are possible? What about when $|M
 4. Each $m$ who is rejected by a woman removes her from his list.
 5. If no man is rejected, then each woman "accepts" her offer and is matched to the man whose proposal she holds.
 ```
+
 This is the _"man-proposing"_ deferred acceptance algorithm; there is also a _"woman-proposing"_ version.
 
 ### Existence
+
 ```{prf:theorem} Stable Matchings Exist
 :label: stable-matchings-exist
 The deferred acceptance algorithm ends in finite time with a stable matching. (In particular, a stable matching exists).
 ```
+
 ```{prf:proof}
 The algorithm must end in a finite number of rounds. Suppose $m$ and $w$ are matched. Each must be acceptable to the other. (Why?) There is no blocking pair $(m, w')$ because if $m$ prefers $w'$ to $w$, then (1) at some time, $m$ _had_
 proposed to $w'$ and she eventually rejected him. Either $m$ is unacceptable to $w'$ or she then held a man she preferred to $m$. At every later round, $w'$ held the same man or some more preferred one, so $w'$ prefers her final match to $m$. Therefore, there are _NO BLOCKING PAIRS_. $\blacksquare$
@@ -102,6 +108,7 @@ Man-Optimal
 ```{prf:theorem}
 The man-proposing DA algorithm produces the man-optimal stable matching.
 ```
+
 ```{prf:proof}
 We say that $w$ is _possible_ for $m$ if $(m, w)$ is in some stable matching. Show _by induction_ that no man is ever rejected by a woman who is possible for him. True at round 0. Suppose this is the case through round $n$ of the algorithm. Suppose at round $n+1$, woman $w$ rejects $m$ in favor of $m'$. Note, this means $m'$ made an offer to $w$ in round $n+1$ and hence all the women whom $m'$ prefers to $w$ have rejected him and so, by the inductive hypothesis, must be impossible for him. We claim that $w$ must be _impossible_ for $m$. Suppose to the contrary that $w$ is possible for $m$ and consider the stable matching $X$ that includes $(m, w)$ and $(m', w')$ for some $w'$. By the inductive hypothesis, $m'$ must prefer $w$ to $w'$. But then $(m', w)$ blocks $X$, so $X$ is not stable. So in no round of the man-proposing DA is any man rejected by a possible woman. $\blacksquare$
 ```
@@ -112,23 +119,28 @@ Pessimal Stable Matchings
 ```{prf:theorem}
 The man-proposing DA produces the woman-pessimal stable matching.
 ```
+
 ```{prf:proof}
 We have already shown that the outcome $X$ of the man-offering algorithm is a man-optimal stable matching. We must show that any other matching $X'$ is better for all the women whose partners have changed.Suppose that woman $w$ is matched to $m$ at $X$ and to a different man $m' \neq m$ at another stable matching $X'$. Suppose $m$ is matched to woman $w'$ in the matching $X'$. Since $X$ is man-optimal, $m$ prefers $w$ to $w'$. But since $X'$ is stable, it is not blocked by $(m, w)$, so $w$ must prefer $m'$ to $m$. $\blacksquare$ 
 ```
 
 ### Better-than-Optimal Matchings
+
 The man-optimal stable matching is best for men _among stable matchings_, but there may be unstable matchings that all men weakly prefer and some strictly prefer.
 
 #### Example
+
 Say we have three men and two women.
 
 Man Preferences:
+
 * $m_1: w_1 \succ w_2$
 * $m_2: w_2 \succ w_1$
 * $m_3: w_1 \succ w_2$
 
 Woman Preferences:
-* $w_1: m_2 \succ m_3 \succ m_1$ 
+
+* $w_1: m_2 \succ m_3 \succ m_1$
 * $w_2: m_1 \succ m_3 \succ m_2$
 
 What is the unique stable matching? Are there any matchings that all men weakly prefer?
@@ -149,9 +161,11 @@ Why "rural hospitals?" Deferred acceptance is used to assign doctors to hospital
 :label: rural-hospitals
 The sets of men and women who are unmatched is the same in _all_ stable matchings.
 ```
+
 ```{warning}
 This does not mean that the matchings are the same, just that the sets of men and women who are matched or unmatched is the same across all stable matchings.
 ```
+
 ```{prf:proof}
 Let $M, W$ be the _sets_ of men and women matched in the man-optimal stable matching (which is also woman-pessimal). Let $M', W'$ be the _sets_ of men and women matched in some other stable matching. We seek to show that $M = M'$ and
 

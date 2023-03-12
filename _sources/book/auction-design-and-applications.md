@@ -175,6 +175,7 @@ What auction design works to deter collusion?
 ```
 
 {term}`ascending auction`:
+
 * Suppose bidders A and B agree in advance that A should win at a low price. Although B can cheat on the agreement and keep bidding, there is little to gain, since A can just keep bidding. That possibility helps to enforce the agreement.
 
 sealed bidding ({term}`first-price auction`):

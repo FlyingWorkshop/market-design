@@ -30,7 +30,7 @@ Each “node” represents the location of a (ultra high frequency) UHF-TV stati
 :name: node-map
 ```
 
-A set of stations can all continue to broadcast if there is a way to assign channels to the stations without interference. There are about $130,000$ co-channel constraints shown in the graph. ($2.7$ million detailed constraints). This is similar to graph coloring, which is an [NP-complete problem](https://en.wikipedia.org/wiki/NP-completeness). 
+A set of stations can all continue to broadcast if there is a way to assign channels to the stations without interference. There are about $130,000$ co-channel constraints shown in the graph. ($2.7$ million detailed constraints). This is similar to graph coloring, which is an [NP-complete problem](https://en.wikipedia.org/wiki/NP-completeness).
 
 ## FCC's 2011 Initial Internal Proposal
 
@@ -45,12 +45,12 @@ where $S^{*}$ is the set of stations to remain on-air and $p_i$ is the price pai
 
 TODO: don't understand the pricing error
 
-Percentage pricing errors around $2500$ times optimization errors. 
+Percentage pricing errors around $2500$ times optimization errors.
 FCC computational experiments showed that computed approximate Vickrey prices were badly inaccurate
 
 ### Problems with Vickrey Auction
 
-1. Depends on intractable computations 
+1. Depends on intractable computations
 2. Requires very high trust
 3. Ignores procurement budgets
 4. Is not group strategy-proof
@@ -62,7 +62,7 @@ FCC computational experiments showed that computed approximate Vickrey prices we
 As we will see, these deficiencies can _all_ be overcome at little efficiency cost for the incentive auction!
 ```
 
-Vickrey auctions also require _too much trust_ in practice. The auction model can be difficult to interpret, so many bidders barely understand the computations. Most cannot determine the outcomes from the bids. The FCC can't even guarentee that computations will be accurate, and by law, they can't share bid data to allow verifying the computation.
+Vickrey auctions also require *too much trust* in practice. The auction model can be difficult to interpret, so many bidders barely understand the computations. Most cannot determine the outcomes from the bids. The FCC can't even guarentee that computations will be accurate, and by law, they can't share bid data to allow verifying the computation.
 
 TODO: is it because the model is super big?
 
@@ -75,6 +75,7 @@ The Vickrey auction is not budge aware, group strategy-proof, or generally price
 :align: center
 :name: incentive-example
 ```
+
 ```{prf:proof}
 Consider the following example.
 Initially, stations $A$ and $B$ share a channel and $C$ uses another. Our goal is to reduce use from two channels to one. Optimization: If $v_A + v_B < v_C$, then we should buy $A$ and $B$; otherwise, we should buy $C$. If $C$ wins, the Vickrey prices are $p_C = v_A + v_B$. If $A$ and $B$ win, they are $p_A = v_C - v_B$ and $p_B = v_C - v_A$. As this example shows, the Vickrey auction is:
@@ -89,11 +90,12 @@ Initially, stations $A$ and $B$ share a channel and $C$ uses another. Our goal i
 ```
 
 Milgrom-Segal descending clock auctions overcome the problems of the Vickrey auction:
+
 1. can compute well and quickly  
 2. require no bidder trust  
 3. can accommodate budget constraints
 4. are group strategy-proof (without side payments)
-5. can accommodate any mix of efficiency and cost minimization objectives 
+5. can accommodate any mix of efficiency and cost minimization objectives
 6. produce competitive, market-clearing prices
 7. preserve winner privacy
 
@@ -101,7 +103,7 @@ Milgrom-Segal descending clock auctions overcome the problems of the Vickrey auc
 
 ### The Channel Reallocation Optimization Problem
 
-Goal: Given the current set of stations $N$, find the feasible subset of stations $S^{*}$ that should continue to broadcast (in a more limited set of channels) to maximize the total value of the stations remaining on-air. 
+Goal: Given the current set of stations $N$, find the feasible subset of stations $S^{*}$ that should continue to broadcast (in a more limited set of channels) to maximize the total value of the stations remaining on-air.
 
 \begin{align*}
 \max_{S \in F} \sum_{n \in S} v_n
@@ -128,6 +130,6 @@ where $K$ is the knapsack constraint.
 2. “Pack” items in numerical order so long as there is space remaining. If there is no room to pack an item, set it aside and continue.
 ```
 
-The difference between the maximum value and the greedy algorithm value is at most $\frac{v_{m}}{s_{m}}\left(K-\sum_{j=1}^{m-1}s_{j}\right)$: a fraction of the value of the first item 𝑚 that is excluded from the knapsack. 
+The difference between the maximum value and the greedy algorithm value is at most $\frac{v_{m}}{s_{m}}\left(K-\sum_{j=1}^{m-1}s_{j}\right)$: a fraction of the value of the first item 𝑚 that is excluded from the knapsack.
 
 [TODO continue from slide 16]

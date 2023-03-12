@@ -404,7 +404,10 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#financial-securities-example">Financial Securities Example</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#information-aggregation">Information Aggregation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#information-aggregation">Information Aggregation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#common-values-in-practice">Common Values in Practice</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ocs-auctions">OCS Auctions</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wildcat-vs-drainage">Wildcat vs Drainage</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#internet-advertising">Internet Advertising</a></li>
@@ -492,9 +495,8 @@ Then, bidder 1’s equilibrium strategy must be <span class="math notranslate no
 <p id="index-0">Suppose both bidders use that equilibrium strategy. Then bidder 1 wins if and only if their bid at strategy <span class="math notranslate nohighlight">\(s_1\)</span> is greater than the bid at strategy <span class="math notranslate nohighlight">\(s_2\)</span> of bidder 2, which can be expressed as:</p>
 <div class="math notranslate nohighlight">
 \[\text{bidder 1 wins} \iff b^{*}(s_1) &gt; b^{*}(s_2) \iff s_1 &gt; s_2\]</div>
-<p>TODO: what does smaller mean (slide 11, lec 11)
-Bidder 1’s expected value with pooled information is <span class="math notranslate nohighlight">\(\mathbb{E}[v|s_1,s_2]\)</span>. Bidder 1’s payment <span class="math notranslate nohighlight">\(b^*(s_2) = \mathbb{E}[v|s_2,s_2]\)</span>. Then Bidder 1 is glad she won, and does not want to change her bid.</p>
-<p>Bidder 2’s expected value post-auction is <span class="math notranslate nohighlight">\(\mathbb{E}[v|s_1,s_2]\)</span>. If bidder 2 had bid higher and won, she would pay <span class="math notranslate nohighlight">\(b^*(s_1) = \mathbb{E}[v|s_1,s_1]\)</span>. Then Bidder 2 is glad they lost and does not want to change their bid.</p>
+<p>Bidder 1’s expected value with pooled information is <span class="math notranslate nohighlight">\(\mathbb{E}[v|s_1,s_2]\)</span>. Bidder 1’s payment <span class="math notranslate nohighlight">\(b^*(s_2) = \mathbb{E}[v|s_2,s_2]\)</span>. Then bidder 1 is glad she won, and does not want to change her bid.</p>
+<p>Bidder 2’s expected value post-auction is <span class="math notranslate nohighlight">\(\mathbb{E}[v|s_1,s_2]\)</span>. If bidder 2 had bid higher and won, she would pay <span class="math notranslate nohighlight">\(b^*(s_1) = \mathbb{E}[v|s_1,s_1]\)</span>. Then bidder 2 is glad they lost and does not want to change their bid.</p>
 <p>The no-regret property states if bidder 1 could learn <span class="math notranslate nohighlight">\(s_2\)</span> and see bidder 2’s bid (in addition to <span class="math notranslate nohighlight">\(s_1\)</span>) before finalizing her own bid, she could not gain by revising her bid.</p>
 </section>
 <section id="common-value-bidding">
@@ -523,16 +525,11 @@ Bidder 1’s expected value with pooled information is <span class="math notrans
 <li><p>Loser’s curse: Losing means the nine other signals were all higher.</p></li>
 </ul>
 </section>
-</div><p>TODO: pick up from here slide 14</p>
-</section>
+</div></section>
 <section id="mixing-kinds-of-uncertainty">
 <h2>Mixing Kinds of Uncertainty<a class="headerlink" href="#mixing-kinds-of-uncertainty" title="Permalink to this heading">#</a></h2>
 <p>Some version of the common values logic arises whenever other bidders may have information that is relevant for your value, not just from their tastes (“private values”) being uncertain.</p>
-<p>Suppose we’re bidding for a certificate which, for me, will pay the sum of the dots showing from ten rolls of a pair of dice.
-The roll of one pair leads, on average, to seven dots showing.
-Ten rolls leads, on average, to 70.
-If I’m risk neutral and nobody gets to see the outcome, I should bid 70, without regard to other bidders’ estimates.
-…but if someone does get to see the outcome and his payoff is, say, eight times the number of dots, that is very different!</p>
+<p>Suppose we’re bidding for a certificate which, for me, will pay the sum of the dots showing from ten rolls of a pair of dice. The roll of one pair leads, on average, to seven dots showing. Ten rolls leads, on average, to 70. If I’m risk neutral and nobody gets to see the outcome, I should bid 70, without regard to other bidders’ estimates, but if someone does get to see the outcome and his payoff is, say, eight times the number of dots, that is very different!</p>
 </section>
 <section id="providing-information-to-bidders">
 <h2>Providing Information to Bidders<a class="headerlink" href="#providing-information-to-bidders" title="Permalink to this heading">#</a></h2>
@@ -550,8 +547,8 @@ What is the rationale for having so little inspection and pricing of individual 
 <section id="financial-securities-example">
 <h3>Financial Securities Example<a class="headerlink" href="#financial-securities-example" title="Permalink to this heading">#</a></h3>
 <p>Financial securities may be traded more efficiently when there is less potential for asymmetric information about common value factors.
-Buyer is less concerned about adverse selection (“why was that seller so eager to sell?”), and seller is similarly less concerned…
-Saves resources that might be spent collecting information offensively (to exploit other traders) or defensively…</p>
+Buyer is less concerned about adverse selection (“why was that seller so eager to sell?”), and seller is similarly less concerned.
+Saves resources that might be spent collecting information offensively (to exploit other traders) or defensively.</p>
 <p>Helps to understand relative liquidity of certain securities
 Index funds (safer than stock-picking if insiders have good information about individual stocks.)
 Bonds backed by pools of mortgages (saves needing to know about the default risk of each individual mortgage) although the 2007 financial crisis revealed some of the risks that can still be created.<br />
@@ -560,54 +557,70 @@ Highly collateralized loans: pawn shops &amp; repos</p>
 </section>
 <section id="information-aggregation">
 <h2>Information Aggregation<a class="headerlink" href="#information-aggregation" title="Permalink to this heading">#</a></h2>
-<p>TODO: clean up and add pictures from slides (lec 11, slide 22 and more)</p>
-<p>Market prices can sometimes summarize the information of many traders.
-How many driving miles is it from X to Y?
-Information aggregation
-Suppose we have many bidders, and each has an independent estimate <em>𝑠_𝑖</em>=𝑣+<em>𝜖_𝑖</em> with <em>𝜖_𝑖</em> symmetrically distributed around 0.</p>
-<p>The Median of the bidder’s estimates 𝑠𝑖 can be a good estimate of 𝑣. Why?</p>
-<p>𝑀𝑒𝑑𝑖𝑎𝑛__𝑠_𝑖__=𝑀𝑒𝑑𝑖𝑎𝑛_𝑣+<em>𝜖_𝑖</em>_=𝑣+𝑀𝑒𝑑𝑖𝑎𝑛(<em>𝜖_𝑖</em>) ≈ 𝑣.</p>
-<p>“The wisdom of crowds”
-Information aggregation
-Suppose we have many bidders, and each has an independent estimate <em>𝑠_𝑖</em>=𝑣+<em>𝜖_𝑖</em>.</p>
-<p>If many bidders compete in an auction, is the resulting price a good estimate of 𝑣?</p>
+<p>Market prices can sometimes summarize the information of many traders.</p>
+<p>Suppose we have many bidders, and each has an independent estimate <span class="math notranslate nohighlight">\(s_i = v + \epsilon_i\)</span> with <span class="math notranslate nohighlight">\(\epsilon_i\)</span> symmetrically distributed around <span class="math notranslate nohighlight">\(0\)</span>.</p>
+<p>The Median of the bidder’s estimates <span class="math notranslate nohighlight">\(s_i\)</span> can be a good estimate of <span class="math notranslate nohighlight">\(v\)</span>. Why?</p>
+<p><span class="math notranslate nohighlight">\(\text{Median}(s_i) = \text{Median}(v) + \epsilon_i \approx v\)</span>.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Intuition
+“The wisdom of crowds”</p>
+</div>
+<div class="admonition-question admonition">
+<p class="admonition-title">Question</p>
+<p>If many bidders compete in an auction, is the resulting price a good estimate of <span class="math notranslate nohighlight">\(v\)</span>?</p>
+</div>
 <p>Potentially YES!, auction price can aggregate information.</p>
 <p>Let’s go through a somewhat loose sketch of the argument.
 Why Information Aggregation?
-𝑁 bidders, 𝐾=𝑁/2 items, top 𝐾 bids win and pay 𝐾+1st bid.</p>
-<p>Equilibrium bidding: bid so that if you “just” win, you’ll “just” want to win (else should raise/lower bid).
-𝑏__𝑠_𝑖__=𝔼_𝑣__𝑠_𝑖_ tied for 𝐾+<em>1_𝑡ℎ</em> highest of 𝑁 signals_≈𝔼_𝑉__𝑠_𝑖_ is the median signal_=𝔼_𝑣__𝑠_𝑖_=𝑣+𝑚𝑒𝑑𝑖𝑎𝑛__𝜖_𝑗___≈_𝑠_𝑖_.
-Price will be 𝑏(<em>𝑠_𝐾+1</em>) where <em>𝑠_𝐾+1</em> is 𝐾+<em>1_𝑡ℎ</em> highest signal.</p>
+<span class="math notranslate nohighlight">\(N\)</span> bidders, <span class="math notranslate nohighlight">\(K = N/2\)</span> items, top <span class="math notranslate nohighlight">\(K\)</span> bids win and pay <span class="math notranslate nohighlight">\(K+1\)</span>th bid.</p>
+<p>Equilibrium bidding: bid so that if you “just” win, you’ll “just” want to win (else should raise/lower bid).</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+b(s_i) &amp;= \mathbb{E}[v|s_i \text{ tied for $K+1$th highest of $N$ signals}] \\
+&amp;\approx \mathbb{E}[v | s_i \text{ is the median signal}] \\
+&amp;= \mathbb{E}[v|s_i = v + \text{Median}(\epsilon_j)]
+\end{align*}\]</div>
+<p>&amp;\approx s_i
+\end{align*}</p>
 <p>So, the auction price will be approximately the median signal!</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
 <p>“Market prices can aggregate information from dispersed sources.”</p>
-<p>Information Aggregation
-Common values in practice
-Many auctions have some “common value” element
-Timber auctions: uncertainty about how many board-feet of each kind of timber on the tract that’s being sold.
-Oil lease auctions: bidders do independent seismic studies – each has valuable information about the uncertain amount of recoverable oil. Some may also have drilled nearby.
-Service procurement auctions: uncertain characteristic is the difficulty of the job.
-Initial public offerings (IPOs): uncertainty about a company’s people, technology, and the strength and plans of competitors.
-…many more examples…</p>
+</div>
+<section id="common-values-in-practice">
+<h3>Common Values in Practice<a class="headerlink" href="#common-values-in-practice" title="Permalink to this heading">#</a></h3>
+<p>Many auctions have some “common value” element</p>
+<ol class="arabic simple">
+<li><p>Timber auctions: uncertainty about how many board-feet of each kind of timber on the tract that’s being sold.</p></li>
+<li><p>Oil lease auctions: bidders do independent seismic studies – each has valuable information about the uncertain amount of recoverable oil. Some may also have drilled nearby.</p></li>
+<li><p>Service procurement auctions: uncertain characteristic is the difficulty of the job.</p></li>
+<li><p>Initial public offerings (IPOs): uncertainty about a company’s people, technology, and the strength and plans of competitors.</p></li>
+</ol>
+</section>
 </section>
 <section id="ocs-auctions">
 <h2>OCS Auctions<a class="headerlink" href="#ocs-auctions" title="Permalink to this heading">#</a></h2>
-<p>The US government auctions the right to drill for oil on the outer continental shelf.
-Value of the oil is similar for the different bidders, but none knows exactly how much oil there is (or if there is any!).
-Prior to the auction, the bidders do seismic studies.</p>
-<p>Two kinds of sale
-“Drainage tract” – adjacent to a previously drilled tract.
-“Wildcat tract” – not adjacent…</p>
+<p>The US government auctions the right to drill for oil on the outer continental shelf. Value of the oil is similar for the different bidders, but none knows exactly how much oil there is (or if there is any!). Prior to the auction, the bidders do seismic studies.</p>
+<p>Two kinds of sale:</p>
+<ul class="simple">
+<li><p>“Drainage tract” – adjacent to a previously drilled tract.</p></li>
+<li><p>“Wildcat tract” – not adjacent.</p></li>
+</ul>
 </section>
 <section id="wildcat-vs-drainage">
 <h2>Wildcat vs Drainage<a class="headerlink" href="#wildcat-vs-drainage" title="Permalink to this heading">#</a></h2>
-<p>TODO: add image and also drainage image (slide 26 and 25)
-Drainage sales
-Comparison</p>
+<figure class="align-default" id="wildcat1">
+<a class="reference internal image-reference" href="../_images/wildcat-drainage1.png"><img alt="../_images/wildcat-drainage1.png" src="../_images/wildcat-drainage1.png" style="height: 400px;" /></a>
+</figure>
+<figure class="align-default" id="wildcat2">
+<a class="reference internal image-reference" href="../_images/wildcat-drainage2.png"><img alt="../_images/wildcat-drainage2.png" src="../_images/wildcat-drainage2.png" style="height: 400px;" /></a>
+</figure>
+<div class="admonition-question admonition">
+<p class="admonition-title">Question</p>
 <p>What might explain the differences in profits and participation?</p>
-<p>Drainage sales are very profitable for neighbors, unprofitable for non-neighbors.
-Winner’s curse</p>
-<p>Wildcat sales yield low profits.
-More bidders and more effective competition</p>
+</div>
+<p>Drainage sales are very profitable for neighbors, unprofitable for non-neighbors (winner’s curse). Wildcat sales yield low profits. More bidders and more effective competition</p>
 </section>
 <section id="internet-advertising">
 <h2>Internet Advertising<a class="headerlink" href="#internet-advertising" title="Permalink to this heading">#</a></h2>
@@ -625,13 +638,13 @@ Less sophisticated advertisers who submit the same bid for good and bad opportun
 </section>
 <section id="why-doesn-t-everyone-invest">
 <h2>Why Doesn’t Everyone Invest?<a class="headerlink" href="#why-doesn-t-everyone-invest" title="Permalink to this heading">#</a></h2>
-<p>A possible explanation is the winner’s curse.
-If some buyers are informed, then uninformed buyers will acquire more shares in undersubscribed IPOs with poor prospects while informed buyers acquire in the remaining IPOs.<br />
-If informed betters earn supernormal profits and uninformed buyers earn normal profits, then the average return must be above normal ⇒ IPO shares are underpriced.</p>
-<p>There are alternative explanations
-Investment banks set IPO prices low to cater to their clients.
-Investment banks choose a low price to have control over who gets allocated shares and avoid any risk of undersell.</p>
-<p>Perhaps well-designed IPO auction could aggregate information, but IPOs generally don’t use auctions…</p>
+<p>A possible explanation is the winner’s curse. If some buyers are informed, then uninformed buyers will acquire more shares in undersubscribed IPOs with poor prospects while informed buyers acquire in the remaining IPOs. If informed betters earn supernormal profits and uninformed buyers earn normal profits, then the average return must be above normal ⇒ IPO shares are underpriced.</p>
+<p>There are alternative explanations:</p>
+<ul class="simple">
+<li><p>Investment banks set IPO prices low to cater to their clients.</p></li>
+<li><p>Investment banks choose a low price to have control over who gets allocated shares and avoid any risk of undersell.</p></li>
+</ul>
+<p>Perhaps well-designed IPO auction could aggregate information, but IPOs generally don’t use auctions.</p>
 </section>
 <section id="summary">
 <h2>Summary<a class="headerlink" href="#summary" title="Permalink to this heading">#</a></h2>
@@ -722,7 +735,10 @@ Sellers can sometimes reduce the winner’s curse by the design of lots and/or b
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#financial-securities-example">Financial Securities Example</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#information-aggregation">Information Aggregation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#information-aggregation">Information Aggregation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#common-values-in-practice">Common Values in Practice</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ocs-auctions">OCS Auctions</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wildcat-vs-drainage">Wildcat vs Drainage</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#internet-advertising">Internet Advertising</a></li>
