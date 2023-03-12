@@ -389,7 +389,7 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#background">Background</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Sponsored Search Auctions (?)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Sponsored Search Auctions</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#keyword-auctions">Keyword Auctions</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brief-history">Brief History</a></li>
 </ul>
@@ -402,10 +402,18 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#algorithmic-min-max-clearing-price-discovery">Algorithmic Min/Max Clearing Price Discovery</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pay-as-bid-auctions">Pay-As-Bid Auctions</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#google-generalized-second-price-gsp-auctions">Google Generalized Second Price (GSP) Auctions</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example">Example</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-gsp-equilibria">Finding GSP Equilibria</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vickrey-auction">Vickrey Auction</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pricing">Pricing</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-vickrey-vcg-formula">The Vickrey (VCG) Formula</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-of-results">Summary of Results</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#keyword-auction-design">Keyword Auction Design</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sponsored-vs-organic-results">Sponsored vs Organic Results</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
 </ul>
             </nav>
         </div>
@@ -422,11 +430,9 @@ document.write(`
 <section id="background">
 <h2>Background<a class="headerlink" href="#background" title="Permalink to this heading">#</a></h2>
 <p><a href="https://www.statista.com/statistics/266249/advertising-revenue-of-google/" rel="nofollow"><img src="https://www.statista.com/graphic/1/266249/advertising-revenue-of-google.jpg" alt="Statistic: Advertising revenue of Google from 2001 to 2021 (in billion U.S. dollars) | Statista" style="width: 100%; height: auto !important; max-width:1000px;-ms-interpolation-mode: bicubic;"/></a><br />Find more statistics at  <a href="https://www.statista.com" rel="nofollow">Statista</a></p>
-<p>[TODO get data on how much is from sponsored search]</p>
 </section>
 <section id="id1">
-<h2>Sponsored Search Auctions (?)<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
-<p>TODO: ask Milgrom if this is the right title or if it’s supposed to be keyword auctions</p>
+<h2>Sponsored Search Auctions<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
 <p id="index-0">Search advertising is a huge auction market. In 2021, Google ad revenue in 2021 was $209 billion.</p>
 <blockquote class="epigraph">
 <div><p>“Most people don’t realize that all that money comes pennies at a time.”</p>
@@ -535,7 +541,6 @@ Bidder <span class="math notranslate nohighlight">\(1\)</span> demands position 
 <li><p class="sd-card-text">Prefers position <span class="math notranslate nohighlight">\(1\)</span> to <span class="math notranslate nohighlight">\(2\)</span>: <span class="math notranslate nohighlight">\(200 \times (10 - p_1) \geq 100 \times (10 - p_2)\)</span></p></li>
 <li><p class="sd-card-text">Prefers position <span class="math notranslate nohighlight">\(1\)</span> to nothing: <span class="math notranslate nohighlight">\(200 \times (10 - p_1) \geq 0\)</span></p></li>
 </ul>
-<p class="sd-card-text">[TODO add picture here of market clearing zone]</p>
 </div>
 </details></section>
 <section id="price-premium-for-more-clicks">
@@ -578,7 +583,7 @@ v_k &amp;\geq p_k
 \end{align*}\]</div>
 </section>
 </div><div class="proof algorithm admonition" id="highest-clearing-price">
-<p class="admonition-title"><span class="caption-number">Algorithm 17 </span> (_highest clearing price discovery)</p>
+<p class="admonition-title"><span class="caption-number">Algorithm 17 </span> (_<em>highest</em> clearing price discovery)</p>
 <section class="algorithm-content" id="proof-content">
 <ol class="arabic simple">
 <li><p>Set <span class="math notranslate nohighlight">\(p_k = v_{K}\)</span> so that bidder <span class="math notranslate nohighlight">\(K\)</span> is just willing to buy.</p></li>
@@ -648,18 +653,129 @@ Then running the pay-as-bid auction yields:</p>
 <p>Proof. Consider two positions with <span class="math notranslate nohighlight">\(200\)</span> and <span class="math notranslate nohighlight">\(100\)</span> clicks. Also consider a bidder with value <span class="math notranslate nohighlight">\(v_1 = 10\)</span>. There are competing bids <span class="math notranslate nohighlight">\(v_2 = 4\)</span> and <span class="math notranslate nohighlight">\(v_3 = 8\)</span>. If our bidder bids <span class="math notranslate nohighlight">\(10\)</span>, they get the top position and pay <span class="math notranslate nohighlight">\(8\)</span> and profit <span class="math notranslate nohighlight">\(200 \times 2 = 400\)</span>. However, if they bid below their value at <span class="math notranslate nohighlight">\(5\)</span>, then they win the second position and pay <span class="math notranslate nohighlight">\(4\)</span>, so their profit is <span class="math notranslate nohighlight">\(100 \times 6 = 600\)</span>. So, bidding untruthfully is more profitable.</p>
 </div>
 <p>Note that the GSP isn’t always untruthful. If the competing bids were instead <span class="math notranslate nohighlight">\(6\)</span> and <span class="math notranslate nohighlight">\(8\)</span>, then the dominant action for the bidder would have been to bid truthfully at <span class="math notranslate nohighlight">\(10\)</span>.</p>
-<section id="example">
-<h3>Example<a class="headerlink" href="#example" title="Permalink to this heading">#</a></h3>
-<p>TODO (slide 26)</p>
-<div class="admonition attention">
-<p class="admonition-title">Attention</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
 <p>Get more practice <a class="reference external" href="https://colab.research.google.com/drive/1Io1l9eAxCRpfQL7pa2i8s5anwWKOvcYR?usp=sharing">here</a>!</p>
 </div>
-</section>
 <section id="finding-gsp-equilibria">
 <h3>Finding GSP Equilibria<a class="headerlink" href="#finding-gsp-equilibria" title="Permalink to this heading">#</a></h3>
-<p>TODO</p>
+<p>Fix any set of market clearing per-click prices: <span class="math notranslate nohighlight">\(p_1, \dots, p_N\)</span>. Assume that <span class="math notranslate nohighlight">\(N &gt; K\)</span>.
+There is a GSP equilibrium in which:</p>
+<ol class="arabic simple">
+<li><p>Bidder 1 bids any amount more than <span class="math notranslate nohighlight">\(p_1\)</span></p></li>
+<li><p>Bidder 2 bids <span class="math notranslate nohighlight">\(p_1\)</span></p></li>
+<li><p>Bidder 3 bids <span class="math notranslate nohighlight">\(p_2\)</span>.</p></li>
+<li><p>etc.
+Bidder <span class="math notranslate nohighlight">\(k\)</span> will prefer to buy position <span class="math notranslate nohighlight">\(k\)</span> and pay <span class="math notranslate nohighlight">\(p_k\)</span> rather than buy position <span class="math notranslate nohighlight">\(m\)</span> and paying <span class="math notranslate nohighlight">\(p_m\)</span> – that’s why the prices were market clearing!</p></li>
+</ol>
 </section>
+</section>
+<section id="vickrey-auction">
+<h2>Vickrey Auction<a class="headerlink" href="#vickrey-auction" title="Permalink to this heading">#</a></h2>
+<div class="proof algorithm admonition" id="vic-auc">
+<span id="index-6"></span><p class="admonition-title"><span class="caption-number">Algorithm 20 </span> (Vickrey auction)</p>
+<section class="algorithm-content" id="proof-content">
+<ol class="arabic simple">
+<li><p>Bidders submit bids (dollar per-click)</p></li>
+<li><p>Seller selects the assignment that maximizes total value</p></li>
+</ol>
+<ul class="simple">
+<li><p>Puts highest bidder in top position, next in 2nd slot, etc.</p></li>
+</ul>
+<ol class="arabic simple" start="3">
+<li><p>Charges any winner the total value that its bid displaces.</p></li>
+</ol>
+<ul class="simple">
+<li><p>For bidder <span class="math notranslate nohighlight">\(n\)</span>, each bidder below <span class="math notranslate nohighlight">\(n\)</span> is displaced by one position, so must add up the value of all these “lost” clicks.</p></li>
+</ul>
+</section>
+</div><p>Dominant strategy to bid one’s true value. Facebook uses a Vickrey auction.</p>
+<section id="pricing">
+<h3>Pricing<a class="headerlink" href="#pricing" title="Permalink to this heading">#</a></h3>
+<p>Order per-click bids: <span class="math notranslate nohighlight">\(b_1 &gt; b_2 &gt; \dots &gt; b_K\)</span></p>
+<p>Consider bidder who wins <span class="math notranslate nohighlight">\(k\)</span>th slot.</p>
+<ul class="simple">
+<li><p>Displaces <span class="math notranslate nohighlight">\(k+1, \dots, K\)</span></p></li>
+<li><p>Leaves <span class="math notranslate nohighlight">\(1, \dots, k - 1\)</span> intact.
+Displaced bidder <span class="math notranslate nohighlight">\(j\)</span> would get <span class="math notranslate nohighlight">\(x_{j-1}\)</span> clicks in position <span class="math notranslate nohighlight">\(j-1\)</span>, but instead gets <span class="math notranslate nohighlight">\(x_j\)</span> clicks in position <span class="math notranslate nohighlight">\(j\)</span>.
+<span class="math notranslate nohighlight">\(k\)</span>’s Vickrey price is <span class="math notranslate nohighlight">\(\sum_{j &gt; k} b_j(x_{j-1} - x_j)\)</span>.</p></li>
+</ul>
+<a class="reference internal image-reference" href="../_images/vickrey-pricing.png"><img alt="../_images/vickrey-pricing.png" class="align-center" src="../_images/vickrey-pricing.png" style="width: 200px;" /></a>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In GSP, bidder <span class="math notranslate nohighlight">\(k\)</span> pays: <span class="math notranslate nohighlight">\(b_{k+1}x_k\)</span></p>
+</div>
+</section>
+</section>
+<section id="the-vickrey-vcg-formula">
+<h2>The Vickrey (VCG) Formula<a class="headerlink" href="#the-vickrey-vcg-formula" title="Permalink to this heading">#</a></h2>
+<p>In the Vickrey, if a bidder wins, then it pays the resulting “opportunity cost.”</p>
+<ul class="simple">
+<li><p>Payment = the loss of value to others caused by the change.</p></li>
+<li><p>Consequence: A bidder prefers the efficient allocation.</p></li>
+</ul>
+<p>The VCG “pivot” mechanism extends and generalizes that idea.</p>
+<ul class="simple">
+<li><p>The problem is to choose some decision <span class="math notranslate nohighlight">\(x \in X\)</span> from a finite set.</p></li>
+<li><p>Each participant <span class="math notranslate nohighlight">\(n\)</span> reports a value function <span class="math notranslate nohighlight">\(v_n: X \to \mathbb{R}_+\)</span></p></li>
+<li><p>Mechanism selects <span class="math notranslate nohighlight">\(x^*\)</span> to solve <span class="math notranslate nohighlight">\(\max_{x \in X}\sum_n v_n(x)\)</span>.</p></li>
+<li><p>Without <span class="math notranslate nohighlight">\(j\)</span>, the mechanism would select <span class="math notranslate nohighlight">\(x_j^∗\)</span> to <span class="math notranslate nohighlight">\(\max_{x \in X}\sum_{n \neq j} v_n(x)\)</span>.</p></li>
+<li><p>VCG pivot mechanism: <span class="math notranslate nohighlight">\(j\)</span> pays <span class="math notranslate nohighlight">\(\sum_{n \neq j}(v_n(x_j^*) - v_n(x^*))\)</span></p>
+<ul>
+<li><p>That is, <span class="math notranslate nohighlight">\(j\)</span> pays for any loss she causes to others, so she prefers to cause a loss only when her own benefit is larger!</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="summary-of-results">
+<h2>Summary of Results<a class="headerlink" href="#summary-of-results" title="Permalink to this heading">#</a></h2>
+<p><strong>Result 1.</strong> The generalized second price auction (GSP) does not have a dominant strategy.</p>
+<p><strong>Result 2.</strong> The Nash Equilibria of the GSP are “equivalent” to the set of competitive equilibria<a class="footnote-reference brackets" href="#footnote1" id="id3" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a>:
+Bidders obtain their surplus-maximizing positions
+For any NE of the GSP, the prices paid correspond to market clearing prices, and for any set of market clearing prices, there is a corresponding NE of GSP.</p>
+<p><strong>Result 3.</strong> The Vickrey auction is truthful and its payments in the position auction are equal to the lowest market-clearing prices.</p>
+</section>
+<section id="keyword-auction-design">
+<h2>Keyword Auction Design<a class="headerlink" href="#keyword-auction-design" title="Permalink to this heading">#</a></h2>
+<p>Platforms can exercise some control over prices</p>
+<ul class="simple">
+<li><p>Restricting the number of slots can increase prices.</p></li>
+<li><p>Setting a reserve price can increase prices</p></li>
+</ul>
+<p>Platforms can also “quality-adjust” bids</p>
+<ul class="simple">
+<li><p>In practice, ads that are more “clickable” get promoted.</p></li>
+<li><p>Bids can be ranked according to bid * quality.</p></li>
+<li><p>This gives an advantage to high-quality advertisements.</p></li>
+</ul>
+</section>
+<section id="sponsored-vs-organic-results">
+<h2>Sponsored vs Organic Results<a class="headerlink" href="#sponsored-vs-organic-results" title="Permalink to this heading">#</a></h2>
+<p>Google and Bing show “organic” search results on the left side of the page and “sponsored” results above or on the right.</p>
+<p>The assignment of positions on the page is different</p>
+<ul class="simple">
+<li><p>Organic search results: use algorithm to assess “relevance”</p></li>
+<li><p>Sponsored search results: use bids to assess “value”</p></li>
+</ul>
+<p>To some extent there is competition: if a site gets a good organic position, should it pay for another? Search engines have to think about maximizing user experience but also about capturing revenue from advertisers.</p>
+</section>
+<section id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Search auctions create a real-time market in which advertising opportunities are allocated to bidders.</p></li>
+<li><p>Auction theory suggests that the “generalized second-price” rules used in practice might be reasonably efficient.</p>
+<ul>
+<li><p>GSP is not “truthful” but it has efficient Nash equilibria with competitive prices.</p></li>
+<li><p>Vickrey auction is truthful but more complicated.</p></li>
+</ul>
+</li>
+<li><p>In practice, the search platforms have some scope to engage in optimal auction design.</p></li>
+</ul>
+<hr class="footnotes docutils" />
+<aside class="footnote brackets" id="footnote1" role="note">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id3">1</a><span class="fn-bracket">]</span></span>
+<p>Small caveat here, there are also some “dominated” NE of the GSP that we’re ignoring.</p>
+</aside>
 </section>
 </section>
 
@@ -725,7 +841,7 @@ Then running the pay-as-bid auction yields:</p>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#background">Background</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Sponsored Search Auctions (?)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Sponsored Search Auctions</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#keyword-auctions">Keyword Auctions</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brief-history">Brief History</a></li>
 </ul>
@@ -738,10 +854,18 @@ Then running the pay-as-bid auction yields:</p>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#algorithmic-min-max-clearing-price-discovery">Algorithmic Min/Max Clearing Price Discovery</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pay-as-bid-auctions">Pay-As-Bid Auctions</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#google-generalized-second-price-gsp-auctions">Google Generalized Second Price (GSP) Auctions</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example">Example</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-gsp-equilibria">Finding GSP Equilibria</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vickrey-auction">Vickrey Auction</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pricing">Pricing</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-vickrey-vcg-formula">The Vickrey (VCG) Formula</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-of-results">Summary of Results</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#keyword-auction-design">Keyword Auction Design</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sponsored-vs-organic-results">Sponsored vs Organic Results</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
 </ul>
   </nav></div>
 
