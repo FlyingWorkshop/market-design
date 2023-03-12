@@ -22,7 +22,7 @@ parts:
     - file: book/multi-unit-auctions-with-matching.md
     - file: book/sponsored-search-auctions
     # - file: book/bidding-languages-and-chilean-fisheries.md  # !!
-    - file: book/radio-spectrum-auctions # !!
+    - file: book/radio-spectrum-auctions
     - file: book/incentive-reverse-auction # !!
 - caption: Resources
   chapters:
