@@ -402,6 +402,8 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-classic-knapsack-problem">The Classic “Knapsack Problem”</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#an-equivalent-descending-clock-auction">An Equivalent Descending Clock Auction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transforming-the-cost-minimization-objective">Transforming the Cost-Minimization Objective</a></li>
 </ul>
             </nav>
         </div>
@@ -440,7 +442,6 @@ S^{*} &amp;= \arg\max_{S \in F}\sum_{j \in S}v_j\\
 p_i &amp;= \sum_{j \in S^{*}} v_j - \max_{S \in F, i \in S} \sum_{j \in S - \{ i \}} v_j
 \end{align*}\]</div>
 <p>where <span class="math notranslate nohighlight">\(S^{*}\)</span> is the set of stations to remain on-air and <span class="math notranslate nohighlight">\(p_i\)</span> is the price paid to stations going off-air <span class="math notranslate nohighlight">\((i \not\in S^{*})\)</span> which can be interpreted as the “opportunity cost.”</p>
-<p>TODO: don’t understand the pricing error</p>
 <p>Percentage pricing errors around <span class="math notranslate nohighlight">\(2500\)</span> times optimization errors.
 FCC computational experiments showed that computed approximate Vickrey prices were badly inaccurate</p>
 <section id="problems-with-vickrey-auction">
@@ -459,7 +460,6 @@ FCC computational experiments showed that computed approximate Vickrey prices we
 <p>As we will see, these deficiencies can <em>all</em> be overcome at little efficiency cost for the incentive auction!</p>
 </div>
 <p>Vickrey auctions also require <em>too much trust</em> in practice. The auction model can be difficult to interpret, so many bidders barely understand the computations. Most cannot determine the outcomes from the bids. The FCC can’t even guarentee that computations will be accurate, and by law, they can’t share bid data to allow verifying the computation.</p>
-<p>TODO: is it because the model is super big?</p>
 <div class="proof remark admonition" id="remark-0">
 <p class="admonition-title"><span class="caption-number">Remark 8 </span></p>
 <section class="remark-content" id="proof-content">
@@ -500,7 +500,6 @@ Initially, stations <span class="math notranslate nohighlight">\(A\)</span> and 
 \max_{S \in F} \sum_{n \in S} v_n
 \end{align*}\]</div>
 <p>where <span class="math notranslate nohighlight">\(v_n\)</span> are station values.</p>
-<p>TODO: what does “feasible to pack mean?” slide 14</p>
 </section>
 <section id="the-classic-knapsack-problem">
 <h3>The Classic “Knapsack Problem”<a class="headerlink" href="#the-classic-knapsack-problem" title="Permalink to this heading">#</a></h3>
@@ -517,10 +516,122 @@ Initially, stations <span class="math notranslate nohighlight">\(A\)</span> and 
 <li><p>“Pack” items in numerical order so long as there is space remaining. If there is no room to pack an item, set it aside and continue.</p></li>
 </ol>
 </section>
-</div><p>The difference between the maximum value and the greedy algorithm value is at most <span class="math notranslate nohighlight">\(\frac{v_{m}}{s_{m}}\left(K-\sum_{j=1}^{m-1}s_{j}\right)\)</span>: a fraction of the value of the first item 𝑚 that is excluded from the knapsack.</p>
-<p>[TODO continue from slide 16]</p>
+</div><p>The difference between the maximum value and the greedy algorithm value is at most <span class="math notranslate nohighlight">\(\frac{v_{m}}{s_{m}}\left(K-\sum_{j=1}^{m-1}s_{j}\right)\)</span>: a fraction of the value of the first item <span class="math notranslate nohighlight">\(m\)</span> that is excluded from the knapsack.</p>
 </section>
 </section>
+<section id="an-equivalent-descending-clock-auction">
+<h2>An Equivalent Descending Clock Auction<a class="headerlink" href="#an-equivalent-descending-clock-auction" title="Permalink to this heading">#</a></h2>
+<p>An informal description of one descending clock auction :</p>
+<ul class="simple">
+<li><p>The “base clock” <span class="math notranslate nohighlight">\(q: [0, 1] \to \mathbb{R}_+\)</span> is a continuous, decreasing function of “time” with <span class="math notranslate nohighlight">\(q(0)\)</span> large and <span class="math notranslate nohighlight">\(q(1) = 0\)</span>.</p></li>
+<li><p>At each time <span class="math notranslate nohighlight">\(t \in [0,1]\)</span>, if there is still space for station <span class="math notranslate nohighlight">\(j\)</span>, its tentative offer price <span class="math notranslate nohighlight">\(p_j(t)\)</span> to go off air is set to <span class="math notranslate nohighlight">\(s_j q(t)\)</span>.</p></li>
+<li><p>Bidders decide whether their offers are acceptable.</p></li>
+<li><p>If after the decisions at <span class="math notranslate nohighlight">\(t\)</span> there is no space left for station <span class="math notranslate nohighlight">\(j\)</span>, then for <span class="math notranslate nohighlight">\(t' &gt; t\)</span>, its offer price <span class="math notranslate nohighlight">\(p_j(t')\)</span> is set to <span class="math notranslate nohighlight">\(p_j(t)\)</span>.</p></li>
+<li><p>“Bid truthfully” means: “Remain active at <span class="math notranslate nohighlight">\(t\)</span> if <span class="math notranslate nohighlight">\(p_j(t) &gt; v_j\)</span>; otherwise, exit and continue broadcasting.”</p></li>
+</ul>
+<div class="proof proposition admonition" id="proposition-2">
+<p class="admonition-title"><span class="caption-number">Proposition 4 </span></p>
+<section class="proposition-content" id="proof-content">
+<p>In this clock auction, if all bidders bid truthfully, then the same bidders are packed on air in the same order as for the preceding greedy algorithm.</p>
+</section>
+</div><p>Instead of proceeding continuously as in the informal example, it proceeds in a series of discrete rounds using a finite set of possible non-negative prices <span class="math notranslate nohighlight">\(P\)</span>.</p>
+<p>An auction rule is a function <span class="math notranslate nohighlight">\(p: H \to P^N\)</span> that maps history of bidder activity in previous rounds into current price vector.</p>
+<ul class="simple">
+<li><p>The price offered to a bidder in any round must be no higher than in the previous round.</p></li>
+<li><p>The auction ends in the first round that no prices change.</p></li>
+<li><p>Every such function describes a different auction.</p></li>
+</ul>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p><strong>Some</strong> descending clock auctions using fast heuristics compute quickly. In knapsack problems, some also compute “well.”</p>
+</div>
+<dl class="simple glossary">
+<dt id="term-obviously-dominates">obviously dominates<a class="headerlink" href="#term-obviously-dominates" title="Permalink to this term">#</a></dt><dd><p>A strategy <span class="math notranslate nohighlight">\(\sigma_n\)</span> for player <span class="math notranslate nohighlight">\(n\)</span> obviously dominates another strategy <span class="math notranslate nohighlight">\(\hat{\sigma}_n\)</span> if whenever their recommendations differ at some information set, the best payoff that can follow the deviation is no better than the worst payoff that can follow playing <span class="math notranslate nohighlight">\(\sigma_n\)</span>.</p>
+</dd>
+<dt id="term-obviously-dominant-strategy">obviously dominant strategy<a class="headerlink" href="#term-obviously-dominant-strategy" title="Permalink to this term">#</a></dt><dd><p>A strategy <span class="math notranslate nohighlight">\(\sigma_n\)</span> is obviously dominant if it obviously dominates every other strategy.</p>
+</dd>
+</dl>
+<div class="proof theorem admonition" id="theorem-3">
+<p class="admonition-title"><span class="caption-number">Theorem 18 </span></p>
+<section class="theorem-content" id="proof-content">
+<p>In <em>every</em> descending clock auction, bidding truthfully is an obviously dominant strategy.</p>
+</section>
+</div><div class="proof corollary admonition" id="corollary-4">
+<p class="admonition-title"><span class="caption-number">Corollary 1 </span></p>
+<section class="corollary-content" id="proof-content">
+<p>In every descending clock auction, no coalition has a deviation from truthful bidding that strictly increases all coalition member payoffs, regardless of any strategies of the other bidders.</p>
+</section>
+</div><div class="proof admonition" id="proof">
+<p>Proof. (Sketch) By obvious strategy-proofness, the first player in the coalition to deviate cannot benefit from her deviation.</p>
+</div>
+<div class="proof property admonition" id="property-5">
+<p class="admonition-title"><span class="caption-number">Property 1 </span></p>
+<section class="property-content" id="proof-content">
+<p>Descending clock auctions:</p>
+<ul class="simple">
+<li><p>can be chosen to compute quickly and well</p></li>
+<li><p>are obviously strategy-proof</p></li>
+<li><p>are group strategy-proof (absent transfers)</p></li>
+<li><p>can always be extended to accommodate budget constraints</p></li>
+<li><p>produce ex post competitive, market-clearing prices</p></li>
+<li><p>can be chosen to accommodate cost minimization</p></li>
+<li><p>(uniquely) preserve winner privacy</p></li>
+</ul>
+</section>
+</div><dl class="simple glossary">
+<dt id="term-budget-respecting">budget-respecting<a class="headerlink" href="#term-budget-respecting" title="Permalink to this term">#</a></dt><dd><p><span class="math notranslate nohighlight">\(p_B\)</span> is a budget-respecting extension of <span class="math notranslate nohighlight">\(p\)</span> for budget <span class="math notranslate nohighlight">\(B\)</span> if</p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(p_B\)</span> is a clock descending auction for which the total cost can never exceed <span class="math notranslate nohighlight">\(B\)</span></p></li>
+<li><p>for any value profile <span class="math notranslate nohighlight">\(v\)</span> such that <span class="math notranslate nohighlight">\(p\)</span> realizes total cost less than <span class="math notranslate nohighlight">\(B\)</span>, the courses
+ of prices for <span class="math notranslate nohighlight">\(p_B\)</span> and <span class="math notranslate nohighlight">\(p\)</span> are identical.</p></li>
+</ol>
+</dd>
+</dl>
+<div class="proof theorem admonition" id="theorem-6">
+<p class="admonition-title"><span class="caption-number">Theorem 19 </span></p>
+<section class="theorem-content" id="proof-content">
+<p>For every descending clock auction <span class="math notranslate nohighlight">\(p\)</span> and every budget <span class="math notranslate nohighlight">\(B&gt;0\)</span>, there exists a budget-respecting extension <span class="math notranslate nohighlight">\(p_B\)</span> for budget <span class="math notranslate nohighlight">\(B\)</span>.</p>
+</section>
+</div></section>
+<section id="transforming-the-cost-minimization-objective">
+<h2>Transforming the Cost-Minimization Objective<a class="headerlink" href="#transforming-the-cost-minimization-objective" title="Permalink to this heading">#</a></h2>
+<p>In a procurement auction that incentivizes truthful bidding, the expected total payment can be rewritten in this form:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\mathbb{E}\left[\sum_{n \in T, T^C \in \mathcal{F}} C_n(v_n)\right]
+\end{align*}\]</div>
+<p>We would like to design the auction so that for each vector <span class="math notranslate nohighlight">\(v\)</span>, we minimize the following expression (approximately):</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\sum_{n \in T, T^C \in \mathcal{F}}C_n(v_n)
+\end{align*}\]</div>
+<div class="proof proposition admonition" id="proposition-7">
+<p class="admonition-title"><span class="caption-number">Proposition 5 </span> (Greedy Optimization)</p>
+<section class="proposition-content" id="proof-content">
+<p>Suppose that each <span class="math notranslate nohighlight">\(C_n(\cdot)\)</span> is increasing and continuous and that station sizes are taken to be <span class="math notranslate nohighlight">\(s_n &gt; 0\)</span>. If a clock auction sets prices for feasible stations at each time <span class="math notranslate nohighlight">\(t\)</span> to satisfy <span class="math notranslate nohighlight">\(\frac{1}{s_n}C_n(p_n^*(t)) = (1 - t)\bar{v}\)</span> then, for all <span class="math notranslate nohighlight">\(v \in [0, \bar{v}]^N\)</span>, the clock auction “greedily maximizes” the objective.</p>
+</section>
+</div><div class="note admonition">
+<p class="admonition-title">Notation</p>
+<p>Given descending clock auction <span class="math notranslate nohighlight">\(\hat{p\)</span>} and any value profile <span class="math notranslate nohighlight">\(v\)</span>, let <span class="math notranslate nohighlight">\(\hat{\omega}(v)\)</span> denote the set of winners and <span class="math notranslate nohighlight">\(p_{\hat{\omega}}(v)\)</span> denote the the prices they pay.</p>
+</div>
+<div class="proof theorem admonition" id="theorem-8">
+<p class="admonition-title"><span class="caption-number">Theorem 20 </span></p>
+<section class="theorem-content" id="proof-content">
+<p>The price profile <span class="math notranslate nohighlight">\((p_{\hat{\omega}}(v), v_{-\hat{\omega}(v)})\)</span> (in which winners bid their <span class="math notranslate nohighlight">\(\hat{p}\)</span>-prices and losers bid their values) is a <a class="reference internal" href="auction-theory.html#term-Bayesian-Nash-equilibrium"><span class="xref std std-term">Nash equilibrium</span></a> of the first-price auction sealed-bid auction with value profile <span class="math notranslate nohighlight">\(v\)</span> and winner selection rule <span class="math notranslate nohighlight">\(\hat{\omega}\)</span>.</p>
+</section>
+</div><dl class="simple glossary">
+<dt id="term-unconditional-winner-privacy-UWP">unconditional winner privacy (UWP)<a class="headerlink" href="#term-unconditional-winner-privacy-UWP" title="Permalink to this term">#</a></dt><dd><p>An (extensive-form) communication protocol satisfies unconditional winner privacy (UWP) if no winner reveals any information about his value beyond what is needed to prove that he should win, given others’ values.</p>
+</dd>
+</dl>
+<div class="proof theorem admonition" id="theorem-9">
+<p class="admonition-title"><span class="caption-number">Theorem 21 </span></p>
+<section class="theorem-content" id="proof-content">
+<ol class="arabic simple">
+<li><p>Every descending clock auction with truthful bidding satisfies UWP.</p></li>
+<li><p>If a monotonic winner selection rule can be implemented by a protocol that satisfies UWP, then it can be implemented by a descending clock auction with truthful bidding.</p></li>
+</ol>
+</section>
+</div></section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -598,6 +709,8 @@ Initially, stations <span class="math notranslate nohighlight">\(A\)</span> and 
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-classic-knapsack-problem">The Classic “Knapsack Problem”</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#an-equivalent-descending-clock-auction">An Equivalent Descending Clock Auction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transforming-the-cost-minimization-objective">Transforming the Cost-Minimization Objective</a></li>
 </ul>
   </nav></div>
 
