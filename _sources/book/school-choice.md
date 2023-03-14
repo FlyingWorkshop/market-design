@@ -4,7 +4,7 @@
 :name: school-choice
 :height: 400px
 
-_Wanderer above the Sea of Fog_ by Caspar David Friedbrich inpainted with an aerial view of Stanford's campus with DALL-E-2.
+_Wanderer above the Sea of Fog_ by Caspar David Friedrich inpainted with an aerial view of Stanford's campus with DALL-E-2.
 ```
 
 So far, two approaches to matching problems
@@ -169,9 +169,10 @@ Student-proposing DA yields $\{(s_1,A), (s_2, s_2), (s_3,B)\}$, but students pre
 
 A stable match, even a student-optimal stable match, may not be Pareto efficient: some students may prefer to trade positions.
 
-Q1: If we want to find an assignment that’s Pareto efficient for students, how could we do it?
-
-Q2: if we find an assignment that’s Pareto efficient for students, will it necessarily be stable?
+```{admonition} Questions
+1. If we want to find an assignment that’s Pareto efficient for students, how could we do it?
+2. If we find an assignment that’s Pareto efficient for students, will it necessarily be stable?
+```
 
 ## TTC for School Choice
 

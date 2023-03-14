@@ -395,7 +395,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#termination-rule">Termination Rule</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#activity-rules">Activity Rules</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#theory">Theory</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#magic-of-the-market-results">Magic of the Market Results:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#magic-of-the-market-results">Magic of the Market Results</a></li>
 </ul>
 </li>
 </ul>
@@ -417,17 +417,15 @@ document.write(`
 <section id="fcc-spectrum-auctions">
 <h2>FCC Spectrum Auctions<a class="headerlink" href="#fcc-spectrum-auctions" title="Permalink to this heading">#</a></h2>
 <p>Federal government assigns rights to use the radio spectrum for television, radio, cell phones, etc. – historically done by administrative process or lottery.</p>
-<p>Auctions to assign radio spectrum licenses
-Suggested by Herzel (1951) and Coase (1959) – paper is most famous for a footnote in which he suggested the Coase Theorem!
-FCC switched to auctions in early 1990s, adopting the Milgrom-Wilson auction proposal. Other countries adopted essentially the US design, sometimes with modifications.</p>
+<p>Auctions to assign radio spectrum licenses were suggested by Herzel (1951) and Coase (1959); the paper is most famous for a footnote in which he suggested the Coase Theorem! FCC switched to auctions in early 1990s, adopting the Milgrom-Wilson auction proposal. Other countries adopted essentially the US design, sometimes with modifications.</p>
 <p>Spectrum auctions have fostered a great deal of interest in auctions and auction design – a difficult problem, with high stakes for consumers, firm and governments.</p>
 <section id="resolving-radio-spectrum-interference">
 <h3>Resolving Radio Spectrum Interference<a class="headerlink" href="#resolving-radio-spectrum-interference" title="Permalink to this heading">#</a></h3>
 <blockquote>
-<div><p>What this analysis demonstrates, so far as the radio industry is con is that there is no analytical difference between the problem of interf tween operators on a single frequency and that of interference betw tors on adjacent frequencies. The latter problem, like the former, can  by delimiting the rights of operators to transmit signals which inte might potentially interfere, with those of others. Once this is done, left to market transactions to bring an optimum utilization rights.</p>
+<div><p>What this analysis demonstrates, so far as the radio industry is concerned, is that there is no analytical difference between the problem of interference between operators on a single frequency and that of interference between operators on adjacent frequencies. The latter problem, like the former, can be solved by delimiting the rights of operators to transmit signals which interfere, or might potentially interfere, with those of others. Once this is done, left to market transactions to bring an optimum utilization rights.</p>
 </div></blockquote>
 <blockquote>
-<div><p>It is, of course, true that the distribution of wealth as between the doctor a fectioner was affected by the decision, which is why questions of equity bulk s such cases. Indeed, if the efficiency with which the economic system worked was  independent of the legal position, this would be all that mattered. But this is  of all, the law may be such as to make certain desirable market transactions This is, indeed, my chief criticism of the present American law of radio comm Second, it may impose costly and time-consuming procedures. Third, the legal  of rights provides the starting point for the rearrangement of rights through ma actions. Such transactions are not costless, with a result that the initial deli rights may be maintained even though some other would be more efficient. Or, original position is modified, the most efficient delimitation of rights may not. Finally, a waste of resources may occur when the criteria used by the court rights result in resources being employed solely to establish a claim.</p>
+<div><p>It is, of course, true that the distribution of wealth as between the doctor and the confectioner was affected by the decision, which is why questions of equity bulk so largely in such cases. Indeed, if the efficiency with which the economic system worked was  independent of the legal position, this would be all that mattered. But this is not so. First of all, the law may be such as to make certain desirable market transactions impossible. This is, indeed, my chief criticism of the present American law of radio communication. Second, it may impose costly and time-consuming procedures. Third, the legal delimitation of rights provides the starting point for the rearrangement of rights through market transactions. Such transactions are not costless, with a result that the initial delimitation of rights may be maintained even though some other would be more efficient. Or, even if the original position is modified, the most efficient delimitation of rights may not be attained. Finally, a waste of resources may occur when the criteria used by the court rights result in resources being employed solely to establish a claim.</p>
 </div></blockquote>
 <p><span id="id1">Coase [<a class="reference internal" href="bibliography.html#id3" title="R. H. Coase. The federal communications commission. The Journal of Law &amp; Economics, 2:1–40, 1959. URL: http://www.jstor.org/stable/724927 (visited on 2023-03-08).">1959</a>]</span></p>
 </section>
@@ -446,17 +444,22 @@ Auction ends when no new bids are submitted.</p>
 </section>
 </div><section id="motivation">
 <h3>Motivation<a class="headerlink" href="#motivation" title="Permalink to this heading">#</a></h3>
-<p>Why simultaneous? .. relative to sequential auctions
-Price discovery! Bidders get some information about the prices of all licenses before finalizing their bids for all.<br />
+<div class="admonition-question admonition">
+<p class="admonition-title">Question</p>
+<p>Why simultaneous relative to sequential auctions?</p>
+</div>
+<p>Price discovery! Bidders get some information about the prices of all licenses before finalizing their bids for all.
 This leads to more efficient package choices and equalization of prices for similar items.</p>
-<p>Why ascending? … relative to sealed bidding.
-Price discovery! Sealed bids convey too little information, requiring guesswork. Winning bidders “preserve privacy” about their values…
+<div class="admonition-question admonition">
+<p class="admonition-title">Question</p>
+<p>Why ascending relative to sealed bidding?</p>
+</div>
+<p>Price discovery! Sealed bids convey too little information, requiring guesswork. Winning bidders “preserve privacy” about their values…
 But… there may be more opportunity for demand reduction, collusion.</p>
 </section>
 <section id="termination-rule">
 <h3>Termination Rule<a class="headerlink" href="#termination-rule" title="Permalink to this heading">#</a></h3>
-<p>The FCC ends the auction for all items only when there is no new bid for any item.</p>
-<p>Prevents “sniping”, in which last second bidders steal some item from the previous highest bidder.</p>
+<p>The FCC ends the auction for all items only when there is no new bid for any item. Prevents “sniping”, in which last second bidders steal some item from the previous highest bidder.</p>
 </section>
 <section id="activity-rules">
 <h3>Activity Rules<a class="headerlink" href="#activity-rules" title="Permalink to this heading">#</a></h3>
@@ -481,7 +484,7 @@ A consequence: bidding on large licenses stops earlier.</p>
 <p>If bidders have “substitutes” values (e.g. want only one license) and bid straightforwardly, the SAA leads to an efficient allocation and lowest competitive prices.</p>
 </section>
 </div><section id="magic-of-the-market-results">
-<h4>Magic of the Market Results:<a class="headerlink" href="#magic-of-the-market-results" title="Permalink to this heading">#</a></h4>
+<h4>Magic of the Market Results<a class="headerlink" href="#magic-of-the-market-results" title="Permalink to this heading">#</a></h4>
 <p>Auction outcome is “as if” the seller knew all the values and used a computer to find the efficient allocation &amp; market-clearing prices: auction discovers the right prices and quantities. Bidders have “no regret” – at the final prices, each winner gets exactly the licenses that gives it the most profit, and no loser would like to be a winner (assignment is “stable” given prices).</p>
 </section>
 </section>
@@ -558,7 +561,7 @@ A consequence: bidding on large licenses stops earlier.</p>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#termination-rule">Termination Rule</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#activity-rules">Activity Rules</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#theory">Theory</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#magic-of-the-market-results">Magic of the Market Results:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#magic-of-the-market-results">Magic of the Market Results</a></li>
 </ul>
 </li>
 </ul>

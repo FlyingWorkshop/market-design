@@ -155,16 +155,13 @@ One can verify that $k' \in k^{*}(v)$ and that $v_{n{hat{k}}} + p_n(\hat{k}, v_{
 
 ```{glossary}
 sealed bidding
-    Seller asks for single round of sealed bids. The highest bidder wins and pays its bid.
-
-    Common in selling real estate, timber, commodities, construction or service contracts (where “low bid” wins!). It is also possible to use a second-price auction.  
+    * Seller asks for single round of sealed bids. The highest bidder wins and pays its bid.
+    * Common in selling real estate, timber, commodities, construction or service contracts (where “low bid” wins!). It is also possible to use a second-price auction.  
 
 ascending auction
-    Price starts low, bidders (or auctioneer) raise price until only one bidder is left.
-
-    Common for art, antiques, cars, charity auctions, livestock, real estate, company “take-overs”, job market (if you’re lucky!).
-    
-    Variant: price starts high and slowly drops until someone buys – used in Dutch flower auctions, “clearance” sales.
+    * Price starts low, bidders (or auctioneer) raise price until only one bidder is left
+    * Common for art, antiques, cars, charity auctions, livestock, real estate, company “take-overs”, job market (if you’re lucky!).
+    * Variant: price starts high and slowly drops until someone buys–used in Dutch flower auctions, “clearance” sales.
 ```
 
 ### Canonical Model
@@ -182,9 +179,6 @@ Same ideas apply with values drawn from a distribution other than $U[0, 100]$, b
 ```
 
 ## Ascending Auction
-
-```{index} ascending auctions
-```
 
 ```{prf:algorithm} Ascending Auction
 :label: ascending-auction

@@ -25,7 +25,7 @@ Additional connections will be made on later slides.
 
 ### Example: Cubicle Assignment
 
-Say we are tasked with assigning cubicles to economics graduate students. To find an effecient assignment without prices or money, we can assign random numbers (RSD). The assignment is Pareto efficient for any random order, so there are many Pareto efficient assignments! Adding money changes things.
+Say we are tasked with assigning cubicles to economics graduate students. To find an efficient assignment without prices or money, we can assign random numbers (RSD). The assignment is Pareto efficient for any random order, so there are many Pareto efficient assignments! Adding money changes things.
 
 #### Questions
 
@@ -167,7 +167,7 @@ Algorithm will eventually terminate.
 | 4 | Process continues until no new offers or rejections. | Process continues until no new offers or rejections.|
 | 5 | Implement last held allocation. | Implement last held allocation. |
 
-### Deferreced Acceptance "Auction"
+### Deferred Acceptance "Auction"
 
 What we know from matching theory:
 
@@ -180,7 +180,7 @@ Completing the auction/matching link:
 
 ```{important}
 * A stable allocation is a competitive equilibrium
-* Bidder-proposing DA gives the lowest mkt-clearing prices.
+* Bidder-proposing DA gives the lowest market-clearing prices.
 ```
 
 One can also show that the lowest market-clearing prices in the assignment model are exactly the Vickrey prices, and that truthful bidding in the assignment model is a Nash equilibrium.
