@@ -8,17 +8,15 @@
 
 Federal government assigns rights to use the radio spectrum for television, radio, cell phones, etc. – historically done by administrative process or lottery.
 
-Auctions to assign radio spectrum licenses
-Suggested by Herzel (1951) and Coase (1959) – paper is most famous for a footnote in which he suggested the Coase Theorem!
-FCC switched to auctions in early 1990s, adopting the Milgrom-Wilson auction proposal. Other countries adopted essentially the US design, sometimes with modifications.
+Auctions to assign radio spectrum licenses were suggested by Herzel (1951) and Coase (1959); the paper is most famous for a footnote in which he suggested the Coase Theorem! FCC switched to auctions in early 1990s, adopting the Milgrom-Wilson auction proposal. Other countries adopted essentially the US design, sometimes with modifications.
 
 Spectrum auctions have fostered a great deal of interest in auctions and auction design – a difficult problem, with high stakes for consumers, firm and governments.
 
 ### Resolving Radio Spectrum Interference
 
-> What this analysis demonstrates, so far as the radio industry is con is that there is no analytical difference between the problem of interf tween operators on a single frequency and that of interference betw tors on adjacent frequencies. The latter problem, like the former, can  by delimiting the rights of operators to transmit signals which inte might potentially interfere, with those of others. Once this is done, left to market transactions to bring an optimum utilization rights.
+> What this analysis demonstrates, so far as the radio industry is concerned, is that there is no analytical difference between the problem of interference between operators on a single frequency and that of interference between operators on adjacent frequencies. The latter problem, like the former, can be solved by delimiting the rights of operators to transmit signals which interfere, or might potentially interfere, with those of others. Once this is done, left to market transactions to bring an optimum utilization rights.
 
-> It is, of course, true that the distribution of wealth as between the doctor a fectioner was affected by the decision, which is why questions of equity bulk s such cases. Indeed, if the efficiency with which the economic system worked was  independent of the legal position, this would be all that mattered. But this is  of all, the law may be such as to make certain desirable market transactions This is, indeed, my chief criticism of the present American law of radio comm Second, it may impose costly and time-consuming procedures. Third, the legal  of rights provides the starting point for the rearrangement of rights through ma actions. Such transactions are not costless, with a result that the initial deli rights may be maintained even though some other would be more efficient. Or, original position is modified, the most efficient delimitation of rights may not. Finally, a waste of resources may occur when the criteria used by the court rights result in resources being employed solely to establish a claim.
+> It is, of course, true that the distribution of wealth as between the doctor and the confectioner was affected by the decision, which is why questions of equity bulk so largely in such cases. Indeed, if the efficiency with which the economic system worked was  independent of the legal position, this would be all that mattered. But this is not so. First of all, the law may be such as to make certain desirable market transactions impossible. This is, indeed, my chief criticism of the present American law of radio communication. Second, it may impose costly and time-consuming procedures. Third, the legal delimitation of rights provides the starting point for the rearrangement of rights through market transactions. Such transactions are not costless, with a result that the initial delimitation of rights may be maintained even though some other would be more efficient. Or, even if the original position is modified, the most efficient delimitation of rights may not be attained. Finally, a waste of resources may occur when the criteria used by the court rights result in resources being employed solely to establish a claim.
 
 {cite:t}`10.2307/724927`
 
@@ -39,19 +37,22 @@ Auction ends when no new bids are submitted.
 
 ### Motivation
 
-Why simultaneous? .. relative to sequential auctions
-Price discovery! Bidders get some information about the prices of all licenses before finalizing their bids for all.  
-This leads to more efficient package choices and equalization of prices for similar items.  
+```{admonition} Question
+Why simultaneous relative to sequential auctions?
+```
+Price discovery! Bidders get some information about the prices of all licenses before finalizing their bids for all.
+This leads to more efficient package choices and equalization of prices for similar items.
 
-Why ascending? … relative to sealed bidding.
+```{admonition} Question
+Why ascending relative to sealed bidding?
+```
+
 Price discovery! Sealed bids convey too little information, requiring guesswork. Winning bidders “preserve privacy” about their values...
 But... there may be more opportunity for demand reduction, collusion.
 
 ### Termination Rule
 
-The FCC ends the auction for all items only when there is no new bid for any item.
-
-Prevents “sniping”, in which last second bidders steal some item from the previous highest bidder.
+The FCC ends the auction for all items only when there is no new bid for any item. Prevents “sniping”, in which last second bidders steal some item from the previous highest bidder.
 
 ### Activity Rules
 
@@ -77,7 +78,6 @@ straightforward bidding
 If bidders have “substitutes” values (e.g. want only one license) and bid straightforwardly, the SAA leads to an efficient allocation and lowest competitive prices.
 ```
 
-#### Magic of the Market Results:
+#### Magic of the Market Results
+
 Auction outcome is “as if” the seller knew all the values and used a computer to find the efficient allocation & market-clearing prices: auction discovers the right prices and quantities. Bidders have “no regret” – at the final prices, each winner gets exactly the licenses that gives it the most profit, and no loser would like to be a winner (assignment is “stable” given prices).
-
-

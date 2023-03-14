@@ -2,7 +2,7 @@
 
 ## History: Theory to Practice
 
-The study of matching started as mathematics: first by Gale and Shapley (1962) who introduced deferred acceptance algorithm, then others, including Stanford math Prof. Donald Knuth. In 1984, Al Roth made a surprising discovery. Since the 1950s, US hospitals have used a clearinghouse to assign graduating medical students to residencies. Students apply and interview at hospitals in the fall, then students and hospitals submit rank-order preferences in February. A computer algorithm is used to assign students to hospitals, and matches are all revealed on a single day: match day. Roth realized that the doctors has independently discovered and were using exactly the Gale and Shapley DA algorithm!
+The study of matching started as mathematics: first by Gale and Shapley (1962) who introduced the deferred acceptance algorithm, then others, including Stanford math Prof. Donald Knuth. In 1984, Al Roth made a surprising discovery. Since the 1950s, US hospitals have used a clearinghouse to assign graduating medical students to residencies. Students apply and interview at hospitals in the fall, then students and hospitals submit rank-order preferences in February. A computer algorithm is used to assign students to hospitals, and matches are all revealed on a single day: match day. Roth realized that the doctors has independently discovered and were using exactly the Gale and Shapley DA algorithm!
 
 ### National Residency Matching Program (NRMP)
 

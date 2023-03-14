@@ -45,7 +45,7 @@ Mid-1990s: Overture (GoTo) allows advertisers to bid for keywords, offering to p
 
 2000s: Google and Overture modify keyword auction to have advertisers pay minimum amount necessary to maintain their position (GSP).
 
-Auction design becomes more sophisticated; auctions used to allocate advertising on many webpages, not just search.
+Auction design becomes more sophisticated; auctions used to allocate advertising on many web pages, not just search.
 
 ## Assignment Model (Variation)
 
@@ -75,7 +75,7 @@ Two positions: receive $200$ and $100$ clicks per day. Bidders $1, 2, 3$ have pe
   - $200$
 ```
 
-Find the effecient allocation and compute the total value it creates.
+Find the efficient allocation and compute the total value it creates.
 
 ```{dropdown} Solution
 Bidder $1$ gets the top position: value $200 \times 10 = 2000$. Bidder $2$ gets the second position $100 \times 4 = 400$, so the efficient allocation creates value $2400$.
@@ -223,6 +223,7 @@ Get more practice [here](https://colab.research.google.com/drive/1Io1l9eAxCRpfQL
 
 Fix any set of market clearing per-click prices: $p_1, \dots, p_N$. Assume that $N > K$.
 There is a GSP equilibrium in which:
+
 1. Bidder 1 bids any amount more than $p_1$
 2. Bidder 2 bids $p_1$
 3. Bidder 3 bids $p_2$.
@@ -237,7 +238,7 @@ Bidder $k$ will prefer to buy position $k$ and pay $p_k$ rather than buy positio
 ```{prf:algorithm} Vickrey auction
 :label: vic-auc
 
-1. Bidders submit bids (dollar per-click)
+1. Bidders submit bids (dollars per click)
 2. Seller selects the assignment that maximizes total value
   * Puts highest bidder in top position, next in 2nd slot, etc.
 3. Charges any winner the total value that its bid displaces.
@@ -251,9 +252,10 @@ Dominant strategy to bid one’s true value. Facebook uses a Vickrey auction.
 Order per-click bids: $b_1 > b_2 > \dots > b_K$
 
 Consider bidder who wins $k$th slot.
+
 * Displaces $k+1, \dots, K$
 * Leaves $1, \dots, k - 1$ intact.
-Displaced bidder $j$ would get $x_{j-1}$ clicks in position $j-1$, but instead gets $x_j$ clicks in position $j$. 
+Displaced bidder $j$ would get $x_{j-1}$ clicks in position $j-1$, but instead gets $x_j$ clicks in position $j$.
 $k$’s Vickrey price is $\sum_{j > k} b_j(x_{j-1} - x_j)$.
 
 ```{image} ../images/vickrey-pricing.png
@@ -268,10 +270,12 @@ In GSP, bidder $k$ pays: $b_{k+1}x_k$
 ## The Vickrey (VCG) Formula
 
 In the Vickrey, if a bidder wins, then it pays the resulting “opportunity cost.”  
-* Payment = the loss of value to others caused by the change. 
+
+* Payment = the loss of value to others caused by the change.
 * Consequence: A bidder prefers the efficient allocation.  
 
 The VCG “pivot” mechanism extends and generalizes that idea.
+
 * The problem is to choose some decision $x \in X$ from a finite set.
 * Each participant $n$ reports a value function $v_n: X \to \mathbb{R}_+$
 * Mechanism selects $x^*$ to solve $\max_{x \in X}\sum_n v_n(x)$.
@@ -287,15 +291,17 @@ The VCG “pivot” mechanism extends and generalizes that idea.
 Bidders obtain their surplus-maximizing positions
 For any NE of the GSP, the prices paid correspond to market clearing prices, and for any set of market clearing prices, there is a corresponding NE of GSP.
 
-**Result 3.** The Vickrey auction is truthful and its payments in the position auction are equal to the lowest market-clearing prices. 
+**Result 3.** The Vickrey auction is truthful and its payments in the position auction are equal to the lowest market-clearing prices.
 
 ## Keyword Auction Design
 
 Platforms can exercise some control over prices
+
 * Restricting the number of slots can increase prices.
 * Setting a reserve price can increase prices
 
 Platforms can also “quality-adjust” bids
+
 * In practice, ads that are more “clickable” get promoted.
 * Bids can be ranked according to bid * quality.
 * This gives an advantage to high-quality advertisements.
@@ -305,6 +311,7 @@ Platforms can also “quality-adjust” bids
 Google and Bing show “organic” search results on the left side of the page and “sponsored” results above or on the right.
 
 The assignment of positions on the page is different
+
 * Organic search results: use algorithm to assess “relevance”
 * Sponsored search results: use bids to assess “value”
 
@@ -312,11 +319,10 @@ To some extent there is competition: if a site gets a good organic position, sho
 
 ## Summary
 
-* Search auctions create a real-time market in which advertising opportunities are allocated to bidders. 
+* Search auctions create a real-time market in which advertising opportunities are allocated to bidders.
 * Auction theory suggests that the “generalized second-price” rules used in practice might be reasonably efficient.
   * GSP is not “truthful” but it has efficient Nash equilibria with competitive prices.
   * Vickrey auction is truthful but more complicated.
-* In practice, the search platforms have some scope to engage in optimal auction design. 
-
+* In practice, the search platforms have some scope to engage in optimal auction design.
 
 [^footnote1]: Small caveat here, there are also some “dominated” NE of the GSP that we're ignoring.

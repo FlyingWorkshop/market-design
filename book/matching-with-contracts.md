@@ -9,7 +9,7 @@ Marriage: “Let’s have kids right away and take over dad’s store in Provo, 
 
 ### Formulation
 
-There is a finite set of terms ${T}$ with typical element $t \in {T}$. Each man $m$ has a strict ranking of pairs of the form $(w,t)$ or "unmatched". Each woman $w$ has a strict ranking of pairs of the form $(m,t)$ or "unmatched". A triple $(m,w,t) \in {M} \times {W} \times {T}$ is called a contract. Think of a contract form that has two blank lines and a series of check boxes. One writes the names of the contracting parties $m$ and $w$ into the lines and checks boxes to determine contract options or terms.
+There is a finite set of terms ${T}$ with typical element $t \in {T}$. Each man $m$ has a strict ranking of pairs of the form $(w,t)$ or "unmatched". Each woman $w$ has a strict ranking of pairs of the form $(m,t)$ or "unmatched". A triple $(m,w,t) \in {M} \times {W} \times {T}$ is called a contract. Think of a contract form that has two blank lines and a series of checkboxes. One writes the names of the contracting parties $m$ and $w$ into the lines and checks boxes to determine contract options or terms.
 
 ### Stability
 
