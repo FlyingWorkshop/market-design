@@ -8,13 +8,13 @@ Two bidders with values $v_1$ and $v_2$ both drawn uniformly on $[0,100]$.
 Can the seller benefit from setting a “reserve” price, that is, a minimum price below which she won’t sell?
 ```
 
-Seller sets reserve price $r$ and runs an ascending auction. The clock starts from $r$ and goes up, so rational bidders with low values may decline to bid.
+The seller sets a reserve price $r$ and runs an ascending auction. The clock starts from $r$ and goes up, so rational bidders with low values may decline to bid.
 
 Three cases:
 
-1. If both values below $r$, then no sale.
-2. If $r$ between both values, then sale at $r$.
-3. Both values above $r$, then sale at lower of the bidder values.
+1. If both values are below $r$, then no sale occurs.
+2. If $r$ is between both values, then the sale occurs at $r$.
+3. If both values are above $r$, then the sale occurs at $\min(v_1, v_2)$.
 
 Revenue:
 
@@ -59,9 +59,9 @@ Effect of Reserve with $N=2,3$
 
 ### Evidence on Reserve Prices
 
-We’ve seen how reserve prices work in theory but what about in practice. Does it help to set a higher reserve?
-
-Seems as if it might be hard to test
+```{admonition} Question
+We’ve seen how reserve prices work in theory, but what about in practice? Does it help to set a higher reserve? Seems as if it might be hard to test.
+```
 
 * At a used car auction, the BMWs will have higher reserve prices than the Chevys, but are also worth more.
 * Best evidence would be experimental - sell multiple versions of the same thing with different reserve prices.
@@ -98,11 +98,11 @@ Problem: how to choose $x$ in each case! Set-asides provide more certainty about
 We’ve identified two ways to raise more revenue:
 
 * Reserve prices: withhold “quantity” to get a higher price.
-* Subsidies: favor weak bidder to get more competition.
+* Subsidies: favor weak bidders to get more competition.
 
 General analysis of “optimal” or “revenue-maximizing” auctions (for which Roger Myerson won 2007 Nobel Prize):
 
-* Ascending auctions are efficient (high value bidder wins), but
+* Ascending auctions are efficient (high-value bidder wins), but
 * Sellers generally can benefit from distorting an auction away from efficiency in order to realize higher revenue (just like any monopolist!)
 
 ### Practical Issues
@@ -119,7 +119,7 @@ Practical auction design also has to worry about
 
 #### Collusion
 
-Collusion occurs if bidders agree in advance or during the auction to let prices settle at a low level. This is generally illegal, but it can and does happen.Concern is often biggest (and can be less obviously illegal) when there are multiple items for sale: e.g. "you take those, I’ll take these – let’s end the auction."
+Collusion occurs if bidders agree in advance or during the auction to let prices settle at a low level. This is generally illegal, but it can and does happen. Concern is often biggest (and can be less obviously illegal) when there are multiple items for sale: e.g. "you take those, I’ll take these – let’s end the auction."
 
 With a single item – collusion might rely on
 

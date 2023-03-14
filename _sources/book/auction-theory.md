@@ -296,14 +296,14 @@ Suppose 2 uses the strategy $b_2 = \beta v_2$. Bidder 1 understands 2’s strate
 | $b_2 < b$ | $P(\beta v_2 < b) = P(v_2 < b / \beta)  = 0.01 b / \beta$ | $v_1 - b$ |
 | $b_2 > b$ | $P(\beta v_2 > b) = 1 - (0.01 b) / \beta$ | $0$ |
 
-Expected profit is $0.01 b / \beta (v_1 - b) + (1 - (0.01b) / \beta) 0$. Bidder 1's bidding problem is to maximize expected profit $\max_{b \leq 100 \beta} 0.01 b / \beta (v_1 - b)$. Since scaling doesn't effect the optimal bid, we can simply this as $\max_{b \leq 100 \beta} b  (v_1 - b)$. Our first order condition for an interior optimum is $(v_1 - b) - b = 0$. Rearranging, we get $b^{*} = v_1 / 2$ If bidder 2 uses the strategy $b = \beta v_2$, bidder 1's _best response_ is to use the strategy $b_1 = \min(v_1 / 2, 100 \beta)$. There is a Bayes-Nash equilibrium of the first-price auction with $b_1 = v_1 / 2, b_2 = v_2 / 2$. The bidder with the highest value wins in equilbrium.
+Expected profit is $0.01 b / \beta (v_1 - b) + (1 - (0.01b) / \beta) 0$. Bidder 1's bidding problem is to maximize expected profit $\max_{b \leq 100 \beta} 0.01 b / \beta (v_1 - b)$. Since scaling doesn't affect the optimal bid, we can simplify this as $\max_{b \leq 100 \beta} b  (v_1 - b)$. Our first order condition for an interior optimum is $(v_1 - b) - b = 0$. Rearranging, we get $b^{*} = v_1 / 2$ If bidder 2 uses the strategy $b = \beta v_2$, bidder 1's _best response_ is to use the strategy $b_1 = \min(v_1 / 2, 100 \beta)$. There is a Bayes-Nash equilibrium of the first-price auction with $b_1 = v_1 / 2, b_2 = v_2 / 2$. The bidder with the highest value wins in equilibrium.
 
 ```{admonition} Question
 What is the revenue on average?
 ```
 
 ```{dropdown} Solution
-Values are distributed on $U[0, 100]$, so bids are distributred $U[0, 50]$. High value, on average is $66.\bar{6}$ and high bid on average is $33.\bar{3}$.
+Values are distributed on $U[0, 100]$, so bids are distributed $U[0, 50]$. High value, on average is $66.\bar{6}$ and high bid on average is $33.\bar{3}$.
 ```
 
 Exactly the same as the ascending and second price! Same for each realization of bidder values, or just on average?
@@ -332,7 +332,7 @@ We’ve seen that several standard auctions share the following properties if bi
 
 ```{prf:theorem} Revenue Equivalence Theorem
 :label: rev-equiv
-"Efficient" auctions (where the high value bidder wins) are "revenue equivalent" (yeild _exactly_ the same price on average).
+"Efficient" auctions (where the high value bidder wins) are "revenue equivalent" (yield _exactly_ the same price on average).
 ```
 
 The theorem is more general then our two examples, and has been mentioned in the citations of two Nobel Prizes: William Vickrey in 1996 for the first version of the result, and Roger Myerson in 2007 for using a generalization of it to describe “optimal” auctions.

@@ -439,12 +439,12 @@ document.write(`
 <p class="admonition-title">Question</p>
 <p>Can the seller benefit from setting a “reserve” price, that is, a minimum price below which she won’t sell?</p>
 </div>
-<p>Seller sets reserve price <span class="math notranslate nohighlight">\(r\)</span> and runs an ascending auction. The clock starts from <span class="math notranslate nohighlight">\(r\)</span> and goes up, so rational bidders with low values may decline to bid.</p>
+<p>The seller sets a reserve price <span class="math notranslate nohighlight">\(r\)</span> and runs an ascending auction. The clock starts from <span class="math notranslate nohighlight">\(r\)</span> and goes up, so rational bidders with low values may decline to bid.</p>
 <p>Three cases:</p>
 <ol class="arabic simple">
-<li><p>If both values below <span class="math notranslate nohighlight">\(r\)</span>, then no sale.</p></li>
-<li><p>If <span class="math notranslate nohighlight">\(r\)</span> between both values, then sale at <span class="math notranslate nohighlight">\(r\)</span>.</p></li>
-<li><p>Both values above <span class="math notranslate nohighlight">\(r\)</span>, then sale at lower of the bidder values.</p></li>
+<li><p>If both values are below <span class="math notranslate nohighlight">\(r\)</span>, then no sale occurs.</p></li>
+<li><p>If <span class="math notranslate nohighlight">\(r\)</span> is between both values, then the sale occurs at <span class="math notranslate nohighlight">\(r\)</span>.</p></li>
+<li><p>If both values are above <span class="math notranslate nohighlight">\(r\)</span>, then the sale occurs at <span class="math notranslate nohighlight">\(\min(v_1, v_2)\)</span>.</p></li>
 </ol>
 <p>Revenue:</p>
 <p>Use the law of total probability to calculate the expected revenue.</p>
@@ -487,8 +487,10 @@ document.write(`
 </figure>
 <section id="evidence-on-reserve-prices">
 <h3>Evidence on Reserve Prices<a class="headerlink" href="#evidence-on-reserve-prices" title="Permalink to this heading">#</a></h3>
-<p>We’ve seen how reserve prices work in theory but what about in practice. Does it help to set a higher reserve?</p>
-<p>Seems as if it might be hard to test</p>
+<div class="admonition-question admonition">
+<p class="admonition-title">Question</p>
+<p>We’ve seen how reserve prices work in theory, but what about in practice? Does it help to set a higher reserve? Seems as if it might be hard to test.</p>
+</div>
 <ul class="simple">
 <li><p>At a used car auction, the BMWs will have higher reserve prices than the Chevys, but are also worth more.</p></li>
 <li><p>Best evidence would be experimental - sell multiple versions of the same thing with different reserve prices.</p></li>
@@ -530,11 +532,11 @@ In practice, sellers set either very low ($0.99) reserve prices or high reserve 
 <p>We’ve identified two ways to raise more revenue:</p>
 <ul class="simple">
 <li><p>Reserve prices: withhold “quantity” to get a higher price.</p></li>
-<li><p>Subsidies: favor weak bidder to get more competition.</p></li>
+<li><p>Subsidies: favor weak bidders to get more competition.</p></li>
 </ul>
 <p>General analysis of “optimal” or “revenue-maximizing” auctions (for which Roger Myerson won 2007 Nobel Prize):</p>
 <ul class="simple">
-<li><p>Ascending auctions are efficient (high value bidder wins), but</p></li>
+<li><p>Ascending auctions are efficient (high-value bidder wins), but</p></li>
 <li><p>Sellers generally can benefit from distorting an auction away from efficiency in order to realize higher revenue (just like any monopolist!)</p></li>
 </ul>
 <section id="practical-issues">
@@ -551,7 +553,7 @@ In practice, sellers set either very low ($0.99) reserve prices or high reserve 
 </ul>
 <section id="collusion">
 <h4>Collusion<a class="headerlink" href="#collusion" title="Permalink to this heading">#</a></h4>
-<p>Collusion occurs if bidders agree in advance or during the auction to let prices settle at a low level. This is generally illegal, but it can and does happen.Concern is often biggest (and can be less obviously illegal) when there are multiple items for sale: e.g. “you take those, I’ll take these – let’s end the auction.”</p>
+<p>Collusion occurs if bidders agree in advance or during the auction to let prices settle at a low level. This is generally illegal, but it can and does happen. Concern is often biggest (and can be less obviously illegal) when there are multiple items for sale: e.g. “you take those, I’ll take these – let’s end the auction.”</p>
 <p>With a single item – collusion might rely on</p>
 <ul class="simple">
 <li><p>Side agreements: you win today and share the profit with me.</p></li>

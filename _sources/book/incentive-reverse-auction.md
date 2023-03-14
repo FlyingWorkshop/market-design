@@ -53,17 +53,17 @@ FCC computational experiments showed that computed approximate Vickrey prices we
 3. Ignores procurement budgets
 4. Is not group strategy-proof
 5. Cannot balance efficiency and cost objectives
-6. May produce an uncompetitively high price vector  
+6. May produce an uncompetitive high price vector  
 7. Reveals winning bidders’ values
 
 ```{important}
 As we will see, these deficiencies can _all_ be overcome at little efficiency cost for the incentive auction!
 ```
 
-Vickrey auctions also require *too much trust* in practice. The auction model can be difficult to interpret, so many bidders barely understand the computations. Most cannot determine the outcomes from the bids. The FCC can't even guarentee that computations will be accurate, and by law, they can't share bid data to allow verifying the computation.
+Vickrey auctions also require *too much trust* in practice. The auction model can be difficult to interpret, so many bidders barely understand the computations. Most cannot determine the outcomes from the bids. The FCC can't even guarantee that computations will be accurate, and by law, they can't share bid data to allow verifying the computation.
 
 ```{prf:remark}
-The Vickrey auction is not budge aware, group strategy-proof, or generally price competitive.
+The Vickrey auction is not budget aware, group strategy-proof, or generally price competitive.
 ```
 
 ```{image} ../images/incentive-example.png

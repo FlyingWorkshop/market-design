@@ -22,7 +22,7 @@ Two different kinds of parties to be matched. Participants of both kinds care ab
 ### Participants of Two Kinds
 
 A set of men $M$ and women $W$.
-A set of men $M$ with typical man $m \in M$ and a set of women $W$ with typical woman $w \in W$. We assume one-to-one matching. Each man can be matched to one woman or remained unmatched and vice versa. People have strict preferences over their potential partner. A man $m$ is "acceptable" to a woman $w$ is she prefers him to being unmatched. We define an "acceptable" woman similarly.
+A set of men $M$ with typical man $m \in M$ and a set of women $W$ with typical woman $w \in W$. We assume one-to-one matching. Each man can be matched to one woman or remained unmatched and vice versa. People have strict preferences over their potential partner. A man $m$ is "acceptable" to a woman $w$ if she prefers him to being unmatched. We define an "acceptable" woman similarly.
 
 ```{glossary}
 matching
@@ -59,7 +59,7 @@ How many matchings are possible? Which are stable and which are unstable? Why?
 
 ```{dropdown} Solution
 There are three possible matchings:
-$\{(m, w), (m', w')\}$, $\{(m, w'), (m', w)\}$, and $\{(m, m), (m', m'), (w, w), (w', w')\}$. Clearly, the last matching is unstable because everyone perfers matching to _someone_ over _no one_. The second matching is also unstable because $w$ and $m$ both prefer each other over their current partners. The first matching is thus the unique stable matching.
+$\{(m, w), (m', w')\}$, $\{(m, w'), (m', w)\}$, and $\{(m, m), (m', m'), (w, w), (w', w')\}$. Clearly, the last matching is unstable because everyone prefers matching to _someone_ over _no one_. The second matching is also unstable because $w$ and $m$ both prefer each other over their current partners. The first matching is thus the unique stable matching.
 ```
 
 ```{attention}

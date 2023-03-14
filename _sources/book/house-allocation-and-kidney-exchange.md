@@ -35,7 +35,7 @@ core
 ### Truthful and Efficient
 
 ```{prf:theorem}
-The serial dictatorship mechanism is efficient (i.e., no mutually agreeable trades afterwards) and truthful (no incentive to misreport). 
+The serial dictatorship mechanism is efficient (i.e., no mutually agreeable trades afterward) and truthful (no incentive to misreport). 
 ```
 
 ```{prf:proof}
@@ -44,7 +44,7 @@ The individual with first pick gets her preferred house, so clearly has no incen
 The individual with second pick gets her preferred house among remaining houses, so again has no reason to lie.
 And so on $\ldots$
 
-(Effecient)
+(Efficient)
 The individual with priority one would do worse after any change in her house.
 Given that the individual with priority #1 is not changing, the individual with priority #2 would do worse by any change.
 And so on $\ldots$
@@ -62,7 +62,7 @@ Individual preferences:
 What is the outcome if the order of picking is $1, 2, 3$? Is this outcome Pareto efficient?
 
 ```{dropdown} Solution
-The assignment is $\{(1, A), (2, C), (3, B)\}$. The matching is Pareto effecient.
+The assignment is $\{(1, A), (2, C), (3, B)\}$. The matching is Pareto efficient.
 ```
 
 ## Top Trading Cycles
@@ -158,7 +158,7 @@ Is there a way to protect existing tenants, enjoy all beneficial trades, and may
 ```{prf:algorithm} Priority Line Mechanism
 1. All agents are ordered according to some priority
 2. Agent with top priority chooses an unassigned house, then second agent, and so on, until someone requests an incumbent’s house. 
-3. If the incumbent has already chosen a house, continue. If not, promote the incumbent to just above the requestor and re-start the procedure with the incumbent. 
+3. If the incumbent has already chosen a house, continue. If not, promote the incumbent to just above the requestor and restart the procedure with the incumbent. 
 ```
 
 If a cycle forms, it is formed exclusively by incumbents (why?), so let’s clear that cycle and continue with the priority order.
@@ -208,8 +208,8 @@ Transplants are standard treatment for patients with failed kidneys. Transplants
 
 There is a shortage of transplant kidneys.
 
-* Wait list for a transplant has been getting longer.
-* Over 105,000 patients are on the wait list.
+* Waitlist for a transplant has been getting longer.
+* Over 105,000 patients are on the waitlist.
 * Roughly 20,000 transplants a year, mostly cadaveric.
 * In 2018, 9,500 people on the list died or became too sick to receive a transplant.
 
@@ -244,7 +244,7 @@ Paired exchange: match two donor-patient pairs...
 List exchange: match one incompatible donor-patient pair and the waiting list
 
 * Donor of incompatible pair donates to compatible patient nearest the top of the waiting list.
-* Patient of incompatible pair goes to the top of the wait list.
+* Patient of incompatible pair goes to the top of the waitlist.
 
 Similar to house allocation with existing tenants.
 
