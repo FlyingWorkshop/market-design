@@ -27,7 +27,7 @@ It's a no-brainer for $i$ to play a dominant action if she has one; it is an opt
 ```
 
 ```{glossary}
-Nash equilbrium
+Nash equilibrium
     Action profile $a = (a_1, \ldots, a_n)$ is a _Nash equilibrium_ if for each player $i$ and action $a_i'$, $u_i(a_i, a_{-i}) \geq u_i(a_i', a_{-1})$. In words, an action profile $a$ is a Nash equilibrium if no player $i$ can increase its own payoff above $u_i(a)$ by unilaterally changing in its action from $a_i$ to some other action $a_i'$.
 ```
 
@@ -121,7 +121,7 @@ Suppose that instead of reporting that only $w$ is acceptable, $m$ makes a "trun
 
 Say that $m$ had just reported truthfully, then the DAA would select the man-optimal stable matching $\hat{x}$. Any matching that was blocked or unacceptable with the truncated report is still blocked or unacceptable in the same way. Hence $\hat{x}$ is still the man-optimal stable matching and $\mu_{\hat{x}(m) = w'}$.
 
-Putting it all together, we get that for *any* reports by the women and the other men, if man $m$ reports truthfully instead of reporitng $r$, he will be matched to woman $w'$ instead of to woman $w$ where $w' \succ_m w$.
+Putting it all together, we get that for *any* reports by the women and the other men, if man $m$ reports truthfully instead of reporting $r$, he will be matched to woman $w'$ instead of to woman $w$ where $w' \succ_m w$.
 ```
 
 ```{admonition} Exercise
