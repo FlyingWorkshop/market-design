@@ -40,7 +40,7 @@ blocking pair
 unstable matching
     A matching is unstable if either:
         1. Some individual is matched to an unacceptable partner, or 
-        2. There is blocking pair $(m, w)$ – that is, a man $m$ and a woman.
+        2. There is blocking pair $(m, w)$ – that is, a man $m$ and a woman $w$ who are not matched, yet each prefer the other to their current partner in the matching.
 
 stable matching
     If a matching isn't unstable, it's stable.
@@ -58,8 +58,16 @@ There are two men $m, m'$ and two women $w, w'$.
 How many matchings are possible? Which are stable and which are unstable? Why?
 
 ```{dropdown} Solution
-There are three possible matchings:
-$\{(m, w), (m', w')\}$, $\{(m, w'), (m', w)\}$, and $\{(m, m), (m', m'), (w, w), (w', w')\}$. Clearly, the last matching is unstable because everyone prefers matching to _someone_ over _no one_. The second matching is also unstable because $w$ and $m$ both prefer each other over their current partners. The first matching is thus the unique stable matching.
+There are seven possible matchings:
+1. $\{(m, w), (m', w')\}$
+2. $\{(m, w), (m', m'), (w', w')\}$
+3. $\{(m, w'), (m', w)\}$
+4. $\{(m, w'), (m', m'), (w, w)\}$
+5. $\{(m, m), (m', w'), (w, w)\}$
+6. $\{(m, m), (m', w), (w', w')\}$
+7. $\{(m, m), (m', m'), (w, w), (w', w')\}$
+
+Clearly, any matching containing a self-match is unstable because everyone prefers _someone_ to _no one_. $\{(m, w'), (m', w)\}$ is also unstable because $(m, w)$ is a blocking pair. Thus, $\{(m, w), (m', w')\}$ is the unique stable matching.
 ```
 
 ```{attention}
@@ -146,7 +154,7 @@ Woman Preferences:
 What is the unique stable matching? Are there any matchings that all men weakly prefer?
 
 ```{dropdown} Solution
-The unique stable matching is $\{(m_1, w_2), (m_2, w_2), (m_3, w_3)\}$, but _men_ would be better off if $m_1$ and $m_2$ could swap partners.
+The unique stable matching is $\{(m_1, w_2), (m_2, w_1), (m_3, m_3)\}$, but _men_ would be better off if $m_1$ and $m_2$ could swap partners.
 ```
 
 ```{admonition} Lesson

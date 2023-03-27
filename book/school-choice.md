@@ -146,7 +146,7 @@ Stable Matches can be inefficient.
 
 ### Question
 
-Consider students $s_1$, $s_2$,, $s_3$, and schools $A$, $B$ with preferences:
+Consider students $s_1$, $s_2$, $s_3$, and schools $A$, $B$ with preferences:
 
 \begin{align*}
     &s_1: B \succ A &A: s_1 \succ s_2 \succ s_3 \\
@@ -162,7 +162,7 @@ Student-Proposing DAA:
 
 ![](../images/student-proposing-daa-example.png)
 
-Student-proposing DA yields $\{(s_1,A), (s_2, s_2), (s_3,B)\}$, but students prefer $\{(s_1,B), (s_2, s_2), (s_3, A)\}$ even though it it's stable.
+Student-proposing DA yields $\{(s_1,A), (s_2, s_2), (s_3,B)\}$, but students prefer $\{(s_1,B), (s_2, s_2), (s_3, A)\}$ even though it isn't stable.
 ```
 
 ## Stability and Efficiency

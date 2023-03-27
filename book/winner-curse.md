@@ -165,8 +165,7 @@ Equilibrium bidding: bid so that if you “just” win, you'll “just” want t
 \begin{align*}
 b(s_i) &= \mathbb{E}[v|s_i \text{ tied for $K+1$th highest of $N$ signals}] \\
 &\approx \mathbb{E}[v | s_i \text{ is the median signal}] \\
-&= \mathbb{E}[v|s_i = v + \text{Median}(\epsilon_j)]
-\end{align*} \\
+&= \mathbb{E}[v|s_i = v + \text{Median}(\epsilon_j)] \\
 &\approx s_i
 \end{align*}
 
