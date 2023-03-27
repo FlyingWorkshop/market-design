@@ -32,7 +32,7 @@ second-price auction
     * Second-price auctions are truthful: each bidder should bid exactly the maximum it is willing to pay
 
 universal best reply
-    The action $\bar{a}_n$ is a _universal best reply_ for player $n$ if for _all_ $a_{-n} \in A_n$, we have $\bar{a}_n \in \text{argmax}_{s_n} u_n(a_n, a_{-n})$
+    The action $\bar{a}_n$ is a _universal best reply_ for player $n$ if for _all_ $a_{-n} \in A_n$, we have $\bar{a}_n \in \text{argmax}_{a_n} u_n(a_n, a_{-n})$
 ````
 
 ```{prf:remark}
@@ -54,7 +54,7 @@ The second-price auction is truthful.
 ```{prf:proposition}
 The second-price auction is the _only_ auction for this setting that has these three properties:
 1. Truthfulness: the auction is always truthful
-2. efficiency: the highest bid always wins
+2. efficiency: the bidder with the highest value bid always wins
 3. losing bidders pay nothing
 ```
 
@@ -99,14 +99,14 @@ Some Ideas:
 ```{prf:algorithm} Vickrey-Clark-Groves (VCG) Mechanism
 :label: vcg-mechanism
 1. Each player $n$ reports values $v_n\in\mathbb{R}^K$
-2. The system uses reported values to select $k^(v):\ k^*(v)\in\arg\max_{k}\sum_{j=1}^N v_{jk}$
+2. The system uses reported values to select $k^*(v):\ k^*(v)\in\arg\max_{k}\sum_{j=1}^N v_{jk}$
 3. If $k^*(v)=k$, we pay player $n$:
 \begin{align*}
 p_n(k,v_{-n})&=\sum_{j\neq n} v_{j,k} + f_n(v_{-n})
 \end{align*}
 4. Then $n$’s payoff is
 \begin{align*}
-$v_{nk}+p_n(k,v_{-n})=v_{nk}+\sum_{j\neq n} v_{jk} + f_n(v_{-n})$
+v_{nk}+p_n(k,v_{-n})=v_{nk}+\sum_{j\neq n} v_{jk} + f_n(v_{-n})
 \end{align*}
 ```
 
@@ -119,7 +119,7 @@ Theorem
 
 ```{prf:proof}
 
-(Part 1) We must show that $n$'s payoff from reporting $v_n$ truthfully minus her payoff from making any other report $\hat{v}n$ is always non-negative. Truthful reporting leads to an outcome $k\in k^*(v_n,v{-n})$. Any other report of $\hat{v}_n$ leads to an outcome $\hat{k}\in k^*(\hat{v}_n,v_{-n})$, so the payoff difference is:
+(Part 1) We must show that $n$'s payoff from reporting $v_n$ truthfully minus her payoff from making any other report $\hat{v}_n$ is always non-negative. Truthful reporting leads to an outcome $k\in k^*(v_n,v{-n})$. Any other report of $\hat{v}_n$ leads to an outcome $\hat{k}\in k^*(\hat{v}_n,v_{-n})$, so the payoff difference is:
 
 \begin{align*}
 & \left(v_{nk}+p_{n}\left(k,\ v_{-n}\right)\right)-\left(v_{n\hat{k}}+p_{n}\left(\hat{k},v_{-n}\right)\right) \\
@@ -309,7 +309,10 @@ We compared two sealed bid auctions:
 
 * High bidder wins and pays own bid
 * High bidder wins and pays next-highest bid.
+
 Result: on average the seller gets the same revenue.
+
+$v/2$ is only a Bayesian Nash equilibrium if the number of bidders is 2.
 
 ```{important}
 Why don’t you get more by charging the winner his own bid, rather than a lower amount?

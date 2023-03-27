@@ -458,7 +458,7 @@ document.write(`
 <li><p>Second-price auctions are truthful: each bidder should bid exactly the maximum it is willing to pay</p></li>
 </ul>
 </dd>
-<dt id="term-universal-best-reply">universal best reply<a class="headerlink" href="#term-universal-best-reply" title="Permalink to this term">#</a></dt><dd><p>The action <span class="math notranslate nohighlight">\(\bar{a}_n\)</span> is a <em>universal best reply</em> for player <span class="math notranslate nohighlight">\(n\)</span> if for <em>all</em> <span class="math notranslate nohighlight">\(a_{-n} \in A_n\)</span>, we have <span class="math notranslate nohighlight">\(\bar{a}_n \in \text{argmax}_{s_n} u_n(a_n, a_{-n})\)</span></p>
+<dt id="term-universal-best-reply">universal best reply<a class="headerlink" href="#term-universal-best-reply" title="Permalink to this term">#</a></dt><dd><p>The action <span class="math notranslate nohighlight">\(\bar{a}_n\)</span> is a <em>universal best reply</em> for player <span class="math notranslate nohighlight">\(n\)</span> if for <em>all</em> <span class="math notranslate nohighlight">\(a_{-n} \in A_n\)</span>, we have <span class="math notranslate nohighlight">\(\bar{a}_n \in \text{argmax}_{a_n} u_n(a_n, a_{-n})\)</span></p>
 </dd>
 </dl>
 <div class="proof remark admonition" id="dom-strat">
@@ -484,7 +484,7 @@ document.write(`
 <p>The second-price auction is the <em>only</em> auction for this setting that has these three properties:</p>
 <ol class="arabic simple">
 <li><p>Truthfulness: the auction is always truthful</p></li>
-<li><p>efficiency: the highest bid always wins</p></li>
+<li><p>efficiency: the bidder with the highest value bid always wins</p></li>
 <li><p>losing bidders pay nothing</p></li>
 </ol>
 </section>
@@ -524,7 +524,7 @@ document.write(`
 <section class="algorithm-content" id="proof-content">
 <ol class="arabic simple">
 <li><p>Each player <span class="math notranslate nohighlight">\(n\)</span> reports values <span class="math notranslate nohighlight">\(v_n\in\mathbb{R}^K\)</span></p></li>
-<li><p>The system uses reported values to select <span class="math notranslate nohighlight">\(k^(v):\ k^*(v)\in\arg\max_{k}\sum_{j=1}^N v_{jk}\)</span></p></li>
+<li><p>The system uses reported values to select <span class="math notranslate nohighlight">\(k^*(v):\ k^*(v)\in\arg\max_{k}\sum_{j=1}^N v_{jk}\)</span></p></li>
 <li><p>If <span class="math notranslate nohighlight">\(k^*(v)=k\)</span>, we pay player <span class="math notranslate nohighlight">\(n\)</span>:</p></li>
 </ol>
 <div class="amsmath math notranslate nohighlight">
@@ -536,7 +536,7 @@ p_n(k,v_{-n})&amp;=\sum_{j\neq n} v_{j,k} + f_n(v_{-n})
 </ol>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}
-$v_{nk}+p_n(k,v_{-n})=v_{nk}+\sum_{j\neq n} v_{jk} + f_n(v_{-n})$
+v_{nk}+p_n(k,v_{-n})=v_{nk}+\sum_{j\neq n} v_{jk} + f_n(v_{-n})
 \end{align*}\]</div>
 </section>
 </div><div class="proof theorem admonition" id="vcg-truthful">
@@ -549,7 +549,7 @@ $v_{nk}+p_n(k,v_{-n})=v_{nk}+\sum_{j\neq n} v_{jk} + f_n(v_{-n})$
 </ol>
 </section>
 </div><div class="proof admonition" id="proof">
-<p>Proof. (Part 1) We must show that <span class="math notranslate nohighlight">\(n\)</span>’s payoff from reporting <span class="math notranslate nohighlight">\(v_n\)</span> truthfully minus her payoff from making any other report <span class="math notranslate nohighlight">\(\hat{v}n\)</span> is always non-negative. Truthful reporting leads to an outcome <span class="math notranslate nohighlight">\(k\in k^*(v_n,v{-n})\)</span>. Any other report of <span class="math notranslate nohighlight">\(\hat{v}_n\)</span> leads to an outcome <span class="math notranslate nohighlight">\(\hat{k}\in k^*(\hat{v}_n,v_{-n})\)</span>, so the payoff difference is:</p>
+<p>Proof. (Part 1) We must show that <span class="math notranslate nohighlight">\(n\)</span>’s payoff from reporting <span class="math notranslate nohighlight">\(v_n\)</span> truthfully minus her payoff from making any other report <span class="math notranslate nohighlight">\(\hat{v}_n\)</span> is always non-negative. Truthful reporting leads to an outcome <span class="math notranslate nohighlight">\(k\in k^*(v_n,v{-n})\)</span>. Any other report of <span class="math notranslate nohighlight">\(\hat{v}_n\)</span> leads to an outcome <span class="math notranslate nohighlight">\(\hat{k}\in k^*(\hat{v}_n,v_{-n})\)</span>, so the payoff difference is:</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}
 &amp; \left(v_{nk}+p_{n}\left(k,\ v_{-n}\right)\right)-\left(v_{n\hat{k}}+p_{n}\left(\hat{k},v_{-n}\right)\right) \\
@@ -756,9 +756,10 @@ Example: suppose bidder values are 75 and 50. What then?</p>
 <p>We compared two sealed bid auctions:</p>
 <ul class="simple">
 <li><p>High bidder wins and pays own bid</p></li>
-<li><p>High bidder wins and pays next-highest bid.
-Result: on average the seller gets the same revenue.</p></li>
+<li><p>High bidder wins and pays next-highest bid.</p></li>
 </ul>
+<p>Result: on average the seller gets the same revenue.</p>
+<p><span class="math notranslate nohighlight">\(v/2\)</span> is only a Bayesian Nash equilibrium if the number of bidders is 2.</p>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
 <p>Why don’t you get more by charging the winner his own bid, rather than a lower amount?</p>

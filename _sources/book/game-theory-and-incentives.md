@@ -13,9 +13,8 @@ Classical game theory analyzes strategic behavior:
 game
     A game in a strategic form is a triple $(N, A, u)$ consisting of:
     * A set of players $N = \{1, \ldots, n\}$
-    * Possible _actions_ for each player: $A_1, \ldots, A_n$
-    * Payoff functions for each player: $u_i(a_1, \ldots, a_n)$ for $u: A_1 \times \dots \times A_n \to
-    \mathbb{R}^n$
+    * A set of possible _actions_ $A_i$ for player $i$ for $i \in N$
+    * Payoff functions for each player: $u_i(a_1, \ldots, a_n)$ for $u: A_1 \times \dots \times A_n \to \mathbb{R}$
 
 
 weakly dominant action
@@ -28,7 +27,7 @@ It's a no-brainer for $i$ to play a dominant action if she has one; it is an opt
 
 ```{glossary}
 Nash equilibrium
-    Action profile $a = (a_1, \ldots, a_n)$ is a _Nash equilibrium_ if for each player $i$ and action $a_i'$, $u_i(a_i, a_{-i}) \geq u_i(a_i', a_{-1})$. In words, an action profile $a$ is a Nash equilibrium if no player $i$ can increase its own payoff above $u_i(a)$ by unilaterally changing in its action from $a_i$ to some other action $a_i'$.
+    Action profile $a = (a_1, \ldots, a_n)$ is a _Nash equilibrium_ if for each player $i$ and action $a_i'$, $u_i(a_i, a_{-i}) \geq u_i(a_i', a_{-i})$. In words, an action profile $a$ is a Nash equilibrium if no player $i$ can increase its own payoff above $u_i(a)$ by unilaterally changing in its action from $a_i$ to some other action $a_i'$.
 ```
 
 ### Incomplete Information
@@ -119,13 +118,12 @@ A key observation is that since $m$ is matched in every stable matching, any acc
 
 Suppose that instead of reporting that only $w$ is acceptable, $m$ makes a "truncated truthful report" meaning that the women are ordered truthfully but those ranked below $w$ are reported to be unacceptable. As before, $m$ is matched in every stable matching even with the truncated report. Say the DAA now matches $m$ to woman $w'$ where $w' \succ_m w$. 
 
-Say that $m$ had just reported truthfully, then the DAA would select the man-optimal stable matching $\hat{x}$. Any matching that was blocked or unacceptable with the truncated report is still blocked or unacceptable in the same way. Hence $\hat{x}$ is still the man-optimal stable matching and $\mu_{\hat{x}(m) = w'}$.
+Say that $m$ had just reported truthfully, then the DAA would select the man-optimal stable matching $\hat{x}$. Any matching that was blocked or unacceptable with the truncated report is still blocked or unacceptable in the same way. Hence $\hat{x}$ is still the man-optimal stable matching and $\mu_{\hat{x}}(m) = w'$.
 
-Putting it all together, we get that for *any* reports by the women and the other men, if man $m$ reports truthfully instead of reporting $r$, he will be matched to woman $w'$ instead of to woman $w$ where $w' \succ_m w$.
+Putting it all together, we get that for *any* reports by the women and the other men, if man $m$ reports truthfully instead of reporting $r$, he will be matched to woman $w'$ instead of to woman $w$ where $w' \succ_m w$. $\blacksquare$
 ```
 
 ```{admonition} Exercise
-1. Show that truthful reporting is a weakly dominant action for the men.
-2. Which steps of the proof also apply to women (in the man-offering deferred acceptance algorithm)?
-3. What can you infer about the structure of women’s optimal reports when they play strategically?
+1. Which steps of the proof also apply to women (in the man-offering deferred acceptance algorithm)?
+2. What can you infer about the structure of women’s optimal reports when they play strategically?
 ```

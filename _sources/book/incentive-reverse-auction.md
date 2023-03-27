@@ -80,7 +80,7 @@ Initially, stations $A$ and $B$ share a channel and $C$ uses another. Our goal i
 * NOT generally price competitive. If $A$ and $B$ win, $p_A + p_B > v_C$
 ```
 
-### Milgram-Segal Descending Clock Auctions
+### Milgrom-Segal Descending Clock Auctions
 
 ```{index} Milgrom-Segal auctions
 ```
@@ -213,7 +213,7 @@ Suppose that each $C_n(\cdot)$ is increasing and continuous and that station siz
 
 ```{admonition} Notation
 :class: note
-Given descending clock auction $\hat{p$} and any value profile $v$, let $\hat{\omega}(v)$ denote the set of winners and $p_{\hat{\omega}}(v)$ denote the the prices they pay.
+Given descending clock auction $\hat{p}$ and any value profile $v$, let $\hat{\omega}(v)$ denote the set of winners and $p_{\hat{\omega}}(v)$ denote the the prices they pay.
 ```
 
 ```{prf:theorem}

@@ -466,7 +466,7 @@ A set of men <span class="math notranslate nohighlight">\(M\)</span> with typica
 </dd>
 <dt id="term-unstable-matching">unstable matching<a class="headerlink" href="#term-unstable-matching" title="Permalink to this term">#</a></dt><dd><p>A matching is unstable if either:
 1. Some individual is matched to an unacceptable partner, or
-2. There is blocking pair <span class="math notranslate nohighlight">\((m, w)\)</span> – that is, a man <span class="math notranslate nohighlight">\(m\)</span> and a woman.</p>
+2. There is blocking pair <span class="math notranslate nohighlight">\((m, w)\)</span> – that is, a man <span class="math notranslate nohighlight">\(m\)</span> and a woman <span class="math notranslate nohighlight">\(w\)</span> who are not matched, yet each prefer the other to their current partner in the matching.</p>
 </dd>
 <dt id="term-stable-matching">stable matching<a class="headerlink" href="#term-stable-matching" title="Permalink to this term">#</a></dt><dd><p>If a matching isn’t unstable, it’s stable.</p>
 </dd>
@@ -488,8 +488,17 @@ Solution<div class="sd-summary-down docutils">
 <div class="sd-summary-up docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
 </summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text">There are three possible matchings:
-<span class="math notranslate nohighlight">\(\{(m, w), (m', w')\}\)</span>, <span class="math notranslate nohighlight">\(\{(m, w'), (m', w)\}\)</span>, and <span class="math notranslate nohighlight">\(\{(m, m), (m', m'), (w, w), (w', w')\}\)</span>. Clearly, the last matching is unstable because everyone prefers matching to <em>someone</em> over <em>no one</em>. The second matching is also unstable because <span class="math notranslate nohighlight">\(w\)</span> and <span class="math notranslate nohighlight">\(m\)</span> both prefer each other over their current partners. The first matching is thus the unique stable matching.</p>
+<p class="sd-card-text">There are seven possible matchings:</p>
+<ol class="arabic simple">
+<li><p class="sd-card-text"><span class="math notranslate nohighlight">\(\{(m, w), (m', w')\}\)</span></p></li>
+<li><p class="sd-card-text"><span class="math notranslate nohighlight">\(\{(m, w), (m', m'), (w', w')\}\)</span></p></li>
+<li><p class="sd-card-text"><span class="math notranslate nohighlight">\(\{(m, w'), (m', w)\}\)</span></p></li>
+<li><p class="sd-card-text"><span class="math notranslate nohighlight">\(\{(m, w'), (m', m'), (w, w)\}\)</span></p></li>
+<li><p class="sd-card-text"><span class="math notranslate nohighlight">\(\{(m, m), (m', w'), (w, w)\}\)</span></p></li>
+<li><p class="sd-card-text"><span class="math notranslate nohighlight">\(\{(m, m), (m', w), (w', w')\}\)</span></p></li>
+<li><p class="sd-card-text"><span class="math notranslate nohighlight">\(\{(m, m), (m', m'), (w, w), (w', w')\}\)</span></p></li>
+</ol>
+<p class="sd-card-text">Clearly, any matching containing a self-match is unstable because everyone prefers <em>someone</em> to <em>no one</em>. <span class="math notranslate nohighlight">\(\{(m, w'), (m', w)\}\)</span> is also unstable because <span class="math notranslate nohighlight">\((m, w)\)</span> is a blocking pair. Thus, <span class="math notranslate nohighlight">\(\{(m, w), (m', w')\}\)</span> is the unique stable matching.</p>
 </div>
 </details><div class="admonition attention">
 <p class="admonition-title">Attention</p>
@@ -583,7 +592,7 @@ Solution<div class="sd-summary-down docutils">
 <div class="sd-summary-up docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
 </summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text">The unique stable matching is <span class="math notranslate nohighlight">\(\{(m_1, w_2), (m_2, w_2), (m_3, w_3)\}\)</span>, but <em>men</em> would be better off if <span class="math notranslate nohighlight">\(m_1\)</span> and <span class="math notranslate nohighlight">\(m_2\)</span> could swap partners.</p>
+<p class="sd-card-text">The unique stable matching is <span class="math notranslate nohighlight">\(\{(m_1, w_2), (m_2, w_1), (m_3, m_3)\}\)</span>, but <em>men</em> would be better off if <span class="math notranslate nohighlight">\(m_1\)</span> and <span class="math notranslate nohighlight">\(m_2\)</span> could swap partners.</p>
 </div>
 </details><div class="admonition-lesson admonition">
 <p class="admonition-title">Lesson</p>

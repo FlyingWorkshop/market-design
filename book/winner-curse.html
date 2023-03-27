@@ -574,10 +574,9 @@ Why Information Aggregation?
 \[\begin{align*}
 b(s_i) &amp;= \mathbb{E}[v|s_i \text{ tied for $K+1$th highest of $N$ signals}] \\
 &amp;\approx \mathbb{E}[v | s_i \text{ is the median signal}] \\
-&amp;= \mathbb{E}[v|s_i = v + \text{Median}(\epsilon_j)]
+&amp;= \mathbb{E}[v|s_i = v + \text{Median}(\epsilon_j)] \\
+&amp;\approx s_i
 \end{align*}\]</div>
-<p>&amp;\approx s_i
-\end{align*}</p>
 <p>So, the auction price will be approximately the median signal!</p>
 <div class="tip admonition">
 <p class="admonition-title">Intuition</p>
