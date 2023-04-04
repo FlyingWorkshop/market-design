@@ -173,6 +173,11 @@ Decentralized markets with fixed appointment dates can have timing issues that m
 * Employers may be hesitant to leave offers outstanding, and may want to use **“exploding offers”** to rush decisions.
 * The market can clear in a disorderly fashion so that participants end up with a relatively **limited set of choices**.
 
+```{glossary}
+exploding offer
+  An offer with a response deadline before the official close of the market (i.e., before the agent can expect to receive all potential offers).
+```
+
 Different markets have tried to address these problems in various ways, with varying success (!).
 
 ## Matching Design
