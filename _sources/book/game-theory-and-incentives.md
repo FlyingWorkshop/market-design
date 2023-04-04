@@ -116,7 +116,7 @@ Suppose man $m$ makes report $r$ that (fixing others' reports) leads to matching
 
 A key observation is that since $m$ is matched in every stable matching, any acceptable matching $y$ in which $m$ is unmatched must be blocked by either $(m, w)$ or some $(m', w')$ with $m \neq m'$.
 
-Suppose that instead of reporting that only $w$ is acceptable, $m$ makes a "truncated truthful report" meaning that the women are ordered truthfully but those ranked below $w$ are reported to be unacceptable. As before, $m$ is matched in every stable matching even with the truncated report. Say the DAA now matches $m$ to woman $w'$ where $w' \succ_m w$. 
+Suppose that instead of reporting that only $w$ is acceptable, $m$ makes a "truncated truthful report" meaning that the women are ordered truthfully but those ranked below $w$ are reported to be unacceptable. As before, $m$ is matched in every stable matching even with the truncated report. Say the DAA now matches $m$ to woman $w'$ where $w' \succeq_m w$. Note that under this truncated report, man $m$ cannot be matched with a woman he likes less than woman $w$.
 
 Say that $m$ had just reported truthfully, then the DAA would select the man-optimal stable matching $\hat{x}$. Any matching that was blocked or unacceptable with the truncated report is still blocked or unacceptable in the same way. Hence $\hat{x}$ is still the man-optimal stable matching and $\mu_{\hat{x}}(m) = w'$.
 

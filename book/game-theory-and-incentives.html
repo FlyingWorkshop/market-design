@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -39,8 +39,8 @@
     <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -533,7 +533,7 @@ Challenge: the <em>mechanism designer</em> typically does not know the payoff fu
 </div><div class="proof admonition" id="proof">
 <p>Proof. Suppose man <span class="math notranslate nohighlight">\(m\)</span> makes report <span class="math notranslate nohighlight">\(r\)</span> that (fixing others’ reports) leads to matching <span class="math notranslate nohighlight">\(x\)</span> in which <span class="math notranslate nohighlight">\(m\)</span> is matched to woman <span class="math notranslate nohighlight">\(w\)</span>: <span class="math notranslate nohighlight">\(\mu_x(m) = w\)</span>. If instead of reporting <span class="math notranslate nohighlight">\(r\)</span>, <span class="math notranslate nohighlight">\(m\)</span> reports that <span class="math notranslate nohighlight">\(w\)</span> is his only acceptable woman, <span class="math notranslate nohighlight">\(x\)</span> is still an acceptable stable matching to all parties. By the <a class="reference internal" href="matching-theory.html#rural-hospitals">rural hospitals theorem</a>, <span class="math notranslate nohighlight">\(m\)</span> is matched in every stable matching with the revised report. Since <span class="math notranslate nohighlight">\(w\)</span> is the only acceptable woman, <a class="reference internal" href="matching-theory.html#daa">DAA</a> matches <span class="math notranslate nohighlight">\(m\)</span> to <span class="math notranslate nohighlight">\(w\)</span>.</p>
 <p>A key observation is that since <span class="math notranslate nohighlight">\(m\)</span> is matched in every stable matching, any acceptable matching <span class="math notranslate nohighlight">\(y\)</span> in which <span class="math notranslate nohighlight">\(m\)</span> is unmatched must be blocked by either <span class="math notranslate nohighlight">\((m, w)\)</span> or some <span class="math notranslate nohighlight">\((m', w')\)</span> with <span class="math notranslate nohighlight">\(m \neq m'\)</span>.</p>
-<p>Suppose that instead of reporting that only <span class="math notranslate nohighlight">\(w\)</span> is acceptable, <span class="math notranslate nohighlight">\(m\)</span> makes a “truncated truthful report” meaning that the women are ordered truthfully but those ranked below <span class="math notranslate nohighlight">\(w\)</span> are reported to be unacceptable. As before, <span class="math notranslate nohighlight">\(m\)</span> is matched in every stable matching even with the truncated report. Say the DAA now matches <span class="math notranslate nohighlight">\(m\)</span> to woman <span class="math notranslate nohighlight">\(w'\)</span> where <span class="math notranslate nohighlight">\(w' \succ_m w\)</span>.</p>
+<p>Suppose that instead of reporting that only <span class="math notranslate nohighlight">\(w\)</span> is acceptable, <span class="math notranslate nohighlight">\(m\)</span> makes a “truncated truthful report” meaning that the women are ordered truthfully but those ranked below <span class="math notranslate nohighlight">\(w\)</span> are reported to be unacceptable. As before, <span class="math notranslate nohighlight">\(m\)</span> is matched in every stable matching even with the truncated report. Say the DAA now matches <span class="math notranslate nohighlight">\(m\)</span> to woman <span class="math notranslate nohighlight">\(w'\)</span> where <span class="math notranslate nohighlight">\(w' \succeq_m w\)</span>. Note that under this truncated report, man <span class="math notranslate nohighlight">\(m\)</span> cannot be matched with a woman he likes less than woman <span class="math notranslate nohighlight">\(w\)</span>.</p>
 <p>Say that <span class="math notranslate nohighlight">\(m\)</span> had just reported truthfully, then the DAA would select the man-optimal stable matching <span class="math notranslate nohighlight">\(\hat{x}\)</span>. Any matching that was blocked or unacceptable with the truncated report is still blocked or unacceptable in the same way. Hence <span class="math notranslate nohighlight">\(\hat{x}\)</span> is still the man-optimal stable matching and <span class="math notranslate nohighlight">\(\mu_{\hat{x}}(m) = w'\)</span>.</p>
 <p>Putting it all together, we get that for <em>any</em> reports by the women and the other men, if man <span class="math notranslate nohighlight">\(m\)</span> reports truthfully instead of reporting <span class="math notranslate nohighlight">\(r\)</span>, he will be matched to woman <span class="math notranslate nohighlight">\(w'\)</span> instead of to woman <span class="math notranslate nohighlight">\(w\)</span> where <span class="math notranslate nohighlight">\(w' \succ_m w\)</span>. <span class="math notranslate nohighlight">\(\blacksquare\)</span></p>
 </div>
@@ -574,7 +574,10 @@ Challenge: the <em>mechanism designer</em> typically does not know the payoff fu
               
               
                 <footer class="bd-footer-article">
-                  <!-- Previous / next buttons -->
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="matching-theory.html"
@@ -594,7 +597,10 @@ Challenge: the <em>mechanism designer</em> typically does not know the payoff fu
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
+</div></div>
+  
 </div>
+
                 </footer>
               
             </div>
@@ -639,7 +645,7 @@ Challenge: the <em>mechanism designer</em> typically does not know the payoff fu
             
           </div>
           <footer class="bd-footer-content">
-            <div class="bd-footer-content__inner">
+            
 <div class="bd-footer-content__inner container">
   
   <div class="footer-item">
@@ -669,7 +675,7 @@ By Logan Mondal Bhamidipaty and Paul Milgrom
     
   </div>
   
-</div></div>
+</div>
           </footer>
         
 
@@ -678,8 +684,8 @@ By Logan Mondal Bhamidipaty and Paul Milgrom
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
 
   <footer class="bd-footer">
   </footer>
