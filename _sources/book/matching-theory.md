@@ -175,7 +175,5 @@ This does not mean that the matchings are the same, just that the sets of men an
 ```
 
 ```{prf:proof}
-Let $M, W$ be the _sets_ of men and women matched in the man-optimal stable matching (which is also woman-pessimal). Let $M', W'$ be the _sets_ of men and women matched in some other stable matching. We seek to show that $M = M'$ and
-
-$W = W'$. Any man in $M'$ must also be matched in the man-optimal stable matching, so $M' \subseteq M$ $\ldots$ and also $|M'| \leq |M|$.  Similarly, since any woman in $W$ is no worse off in the alternative matching, $W \subseteq W'$ $\ldots$ and also $|W| \leq |W'|$. In any feasible matching, the number of matched men equals the number of matched women, so $|M| = |W|$ and $|M'| = |W'|$. We have: $\left|M'\right|\le\left|M\right|=\left|W\right|\le\left|W'\right|=\left|M'\right|$, so all these are equal. Adding the set inclusions, we must have some $M=M'$ and $W=W'$. $\blacksquare$
+Let $M, W$ be the _sets_ of men and women matched in the man-optimal stable matching (which is also woman-pessimal). Let $M', W'$ be the _sets_ of men and women matched in some other stable matching. We seek to show that $M = M'$ and $W = W'$. Any man in $M'$ must also be matched in the man-optimal stable matching, so $M' \subseteq M$ $\ldots$ and also $|M'| \leq |M|$.  Similarly, since any woman in $W$ is no worse off in the alternative matching, $W \subseteq W'$ $\ldots$ and also $|W| \leq |W'|$. In any feasible matching, the number of matched men equals the number of matched women, so $|M| = |W|$ and $|M'| = |W'|$. We have: $\left|M'\right|\le\left|M\right|=\left|W\right|\le\left|W'\right|=\left|M'\right|$, so all these are equal. Adding the set inclusions, we must have some $M=M'$ and $W=W'$. $\blacksquare$
 ```
