@@ -195,9 +195,9 @@ What happens in priority line if priority is $1,2,3$?
 * So $\{(1, A), (2, C), (3, B)\}$ is the final matching.
 ```
 
-```{attention}
+<!-- ```{attention}
 Get more practice [here](https://colab.research.google.com/drive/1Iz7YJAlnFs4TQyIgDZDS8MhZUZWmhqQI?usp=sharing)!
-```
+``` -->
 
 ## Kidney Exchange
 
